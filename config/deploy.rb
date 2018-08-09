@@ -4,10 +4,10 @@ require 'mina/git'
 
 account = 'cartron'
 
-set :repository, 'git@gitlab.com:logomotion/cartron'
+set :repository, 'git@gitlab.com:logomotion/cartron-www'
 set :branch, 'master'
 
-set :domain, 'logomotion.fr'
+set :domain, '164.132.169.100'
 set :user, 'root'
 
 set :forward_agent, true
