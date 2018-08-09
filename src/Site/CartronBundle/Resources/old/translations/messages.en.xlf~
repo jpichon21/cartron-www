@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="1">
+        <source>Vidéo</source>
+        <target>Vidéo</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>voir la vidéo</source>
+        <target>voir la vidéo</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>NEWS</source>
+        <target>NEWS</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>La maison Joseph Cartron était présente à la dernière édition de Cocktail spirit</source>
+        <target>La maison Joseph Cartron était présente à la dernière édition de Cocktail spirit</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>fermer</source>
+        <target>fermer</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Mot de passe oublié</source>
+        <target>Forgot Password</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Pour visiter</source>
+        <target>To visit</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>vous devez avoir l’âge légal dans votre pays</source>
+        <target>you must be of legal age in your country</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>entrez sur le site</source>
+        <target>enter the site</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Accéder directement à votre</source>
+        <target>Go directly to your</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>ESPACE PRO</source>
+        <target>SPACE PRO</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Demande d’accès à l’espace professionnel</source>
+        <target>Request for access to the professional space</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>L’abus d’alcool est dangereux pour la santé</source>
+        <target>Alcohol abuse is dangerous for health</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>à consommer avec modération</source>
+        <target>to consume with moderation</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Patrimoine</source>
+        <target>HERITAGE</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Savoir-faire</source>
+        <target>Savoir-faire</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Collection</source>
+        <target>Collection</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Dégustation</source>
+        <target>Dégustation</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>Espace</source>
+        <target>Espace</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>professionnel</source>
+        <target>professionnel</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>Contactez-nous</source>
+        <target>Contactez-nous</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>CREMES DE CASSIS DE BOURGOGNE</source>
+        <target>CREMES DE CASSIS DE BOURGOGNE</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>CREMES DE FRUITS de création</source>
+        <target>CREMES DE FRUITS de création</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>LIQUEURS de création</source>
+        <target>LIQUEURS de création</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>APERITIFS DE tradition</source>
+        <target>APERITIFS DE tradition</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>EAUX DE VIE de tradition</source>
+        <target>EAUX DE VIE de tradition</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>MARC ET FINE DE BOURGOGNE</source>
+        <target>MARC ET FINE DE BOURGOGNE</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Mentions légales</source>
+        <target>Mentions légales</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>L’abus d’alcool est dangereux pour la santé. Consommer avec modération</source>
+        <target>L’abus d’alcool est dangereux pour la santé. Consommer avec modération</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Fermer</source>
+        <target>Fermer</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>mentions légales</source>
+        <target>mentions légales</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>Propriétaire du Site Internet: Joseph Cartron</source>
+        <target>Propriétaire du Site Internet: Joseph Cartron</target>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>Adresse: 25, Rue du Docteur Legrand – BP 28</source>
+        <target>Adresse: 25, Rue du Docteur Legrand – BP 28</target>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>21701 nuits-Saint-Georges Cedex - France</source>
+        <target>21701 nuits-Saint-Georges Cedex - France</target>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>Telephone</source>
+        <target>Telephone</target>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>Design &amp; Développement &amp; maintenance technique: BIGGERBAND</source>
+        <target>Design &amp; Développement &amp; maintenance technique: BIGGERBAND</target>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>Crédits Images: Joseph Cartron</source>
+        <target>Crédits Images: Joseph Cartron</target>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>Conditions d'utilisation et propriétés</source>
+        <target>Conditions d'utilisation et propriétés</target>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>Toute représentation totale ou partielle de ce site et de son contenu, par quelques procédés que ce soient, sans autorisation préalable est interdite et constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont la violation est passible de sanctions pénales. Ils doivent notamment s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de toute collecte, de toute utilisation détournée, et d'une manière générale, de tout acte susceptible de porter atteinte à la vie privée ou à la réputation des personnes</source>
+        <target>Toute représentation totale ou partielle de ce site et de son contenu, par quelques procédés que ce soient, sans autorisation préalable est interdite et constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont la violation est passible de sanctions pénales. Ils doivent notamment s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de toute collecte, de toute utilisation détournée, et d'une manière générale, de tout acte susceptible de porter atteinte à la vie privée ou à la réputation des personnes</target>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>Hébergeur: Oleane</source>
+        <target>Hébergeur: Oleane</target>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>Votre demande a bien été envoyée</source>
+        <target>Votre demande a bien été envoyée</target>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>l’élaboration</source>
+        <target>l’élaboration</target>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>du goût</source>
+        <target>du goût</target>
+      </trans-unit>
+      <trans-unit id="44">
+        <source>Les Crèmes et les Liqueurs de création</source>
+        <target>__Les Crèmes et les Liqueurs de création</target>
+      </trans-unit>
+      <trans-unit id="45">
+        <source>La Bourgogne est le coeur et l’inspiration de la maison Cartron</source>
+        <target>__La Bourgogne est le coeur et l’inspiration de la maison Cartron</target>
+      </trans-unit>
+      <trans-unit id="46">
+        <source>Les produits Joseph Cartron s’inscrivent dans la tradition des produits Bourguignons : Ils sont le résultat d’une alchimie unique, d’une combinaison de savoir-faire entre producteurs locaux, distillateurs locaux pour l’eau de vie et la maison Joseph Cartron</source>
+        <target>__Les produits Joseph Cartron s’inscrivent dans la tradition des produits Bourguignons : Ils sont le résultat d’une alchimie unique, d’une combinaison de savoir-faire entre producteurs locaux, distillateurs locaux pour l’eau de vie et la maison Joseph Cartron</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Ces liens étroits et durables avec les producteurs du terroir, sur plusieurs générations ont permis de construire de véritables partenariats, d’acquérir une connaissance intime du fruit et de travailler les créations Cartron dans le respect des recettes originales</source>
+        <target>__Ces liens étroits et durables avec les producteurs du terroir, sur plusieurs générations ont permis de construire de véritables partenariats, d’acquérir une connaissance intime du fruit et de travailler les créations Cartron dans le respect des recettes originales</target>
+      </trans-unit>
+      <trans-unit id="48">
+        <source>Cette sélection drastique des fruits permet aux produits Joseph Cartron de révéler toute l’authenticité du fruit .
+                            En effet, Aujourd’hui encore La maison Joseph Cartron achète 70% de ses fruits en Bourgogne. Ainsi, elle travaille des fruits récoltés à pleine maturité puisqu’elle choisit elle même le moment de la récolte . Ces conditions de récolte rendent possible le transfert de l’intégralité de la saveur du fruit</source>
+        <target>__Cette sélection drastique des fruits permet aux produits Joseph Cartron de révéler toute l’authenticité du fruit .
+                            En effet, Aujourd’hui encore La maison Joseph Cartron achète 70% de ses fruits en Bourgogne. Ainsi, elle travaille des fruits récoltés à pleine maturité puisqu’elle choisit elle même le moment de la récolte . Ces conditions de récolte rendent possible le transfert de l’intégralité de la saveur du fruit</target>
+      </trans-unit>
+      <trans-unit id="49">
+        <source>Les Eaux de vie de tradition &gt;</source>
+        <target>__Les Eaux de vie de tradition &gt;</target>
+      </trans-unit>
+      <trans-unit id="50">
+        <source>le laboratoire</source>
+        <target>le laboratoire</target>
+      </trans-unit>
+      <trans-unit id="51">
+        <source>de création</source>
+        <target>de création</target>
+      </trans-unit>
+      <trans-unit id="52">
+        <source>la sélection</source>
+        <target>la sélection</target>
+      </trans-unit>
+      <trans-unit id="53">
+        <source>des fruits</source>
+        <target>des fruits</target>
+      </trans-unit>
+      <trans-unit id="54">
+        <source>Les coulisses de fabrication renferment un concentré de talent, de recettes, d'exigence et de savoir-faire que chaque génération aime à se transmettre et à cultiver</source>
+        <target>__Les coulisses de fabrication renferment un concentré de talent, de recettes, d'exigence et de savoir-faire que chaque génération aime à se transmettre et à cultiver</target>
+      </trans-unit>
+      <trans-unit id="55">
+        <source>En effet, l'ensemble des processus de fabrication est en parfait équilibre et harmonie : Sélection et cueillette du fruit à pleine maturité, macération dans l'alcool neutre, infusion, mélange et ajout de sucre, filtrage, distillation , vieillissement, assemblage... restent artisanaux</source>
+        <target>__En effet, l'ensemble des processus de fabrication est en parfait équilibre et harmonie : Sélection et cueillette du fruit à pleine maturité, macération dans l'alcool neutre, infusion, mélange et ajout de sucre, filtrage, distillation , vieillissement, assemblage... restent artisanaux</target>
+      </trans-unit>
+      <trans-unit id="56">
+        <source>De plus, chaque production avant commercialisation fait l'objet de tests de goûts par les équipes de production et les nez de la Maison. La justesse de ce patrimoine, de ce savoir-faire, c'est ce qui identifie lapromesse de la marque Joseph Cartron : l'explosion de toutes ses notes gustatives sur le fruit</source>
+        <target>__De plus, chaque production avant commercialisation fait l'objet de tests de goûts par les équipes de production et les nez de la Maison. La justesse de ce patrimoine, de ce savoir-faire, c'est ce qui identifie lapromesse de la marque Joseph Cartron : l'explosion de toutes ses notes gustatives sur le fruit</target>
+      </trans-unit>
+      <trans-unit id="57">
+        <source>l'élaboration</source>
+        <target>l'élaboration</target>
+      </trans-unit>
+      <trans-unit id="58">
+        <source>La séléction</source>
+        <target>La séléction</target>
+      </trans-unit>
+      <trans-unit id="59">
+        <source>Choisir avec soin les meilleurs matières premières</source>
+        <target>__Choisir avec soin les meilleurs matières premières</target>
+      </trans-unit>
+      <trans-unit id="60">
+        <source>La sélection des fruits est draconienne , c’est le début de l’expression du savoir-faire de la maison, c’est sans doute la raison pour laquelle la maison Joseph Cartron travaille depuis plusieurs générations avec les mêmes producteurs de fruits</source>
+        <target>__La sélection des fruits est draconienne , c’est le début de l’expression du savoir-faire de la maison, c’est sans doute la raison pour laquelle la maison Joseph Cartron travaille depuis plusieurs générations avec les mêmes producteurs de fruits</target>
+      </trans-unit>
+      <trans-unit id="61">
+        <source>C’est également à ce stade que peut débuter la création et l’innovation , en fonction de la parfaite connaissance des fruits et de leur ramassage au moment idoine, puis de la maturation nécessaire à l’expression de goûts et de parfums</source>
+        <target>__C’est également à ce stade que peut débuter la création et l’innovation , en fonction de la parfaite connaissance des fruits et de leur ramassage au moment idoine, puis de la maturation nécessaire à l’expression de goûts et de parfums</target>
+      </trans-unit>
+      <trans-unit id="62">
+        <source>Traiter les fruits avec respect grâce au savoir-faire de la maison</source>
+        <target>__Traiter les fruits avec respect grâce au savoir-faire de la maison</target>
+      </trans-unit>
+      <trans-unit id="63">
+        <source>En effet, Les opération sont menées de façon artisanale, dans le respect de recettes éprouvées par le temps</source>
+        <target>__En effet, Les opération sont menées de façon artisanale, dans le respect de recettes éprouvées par le temps</target>
+      </trans-unit>
+      <trans-unit id="64">
+        <source>l‘élaboration</source>
+        <target>l‘élaboration</target>
+      </trans-unit>
+      <trans-unit id="65">
+        <source>Laisser faire la nature , laisser le temps au produit d’exprimer au mieux la saveur du fruit dans le juste équilibre entre le fruit, l’alcool et le sucre</source>
+        <target>__Laisser faire la nature , laisser le temps au produit d’exprimer au mieux la saveur du fruit dans le juste équilibre entre le fruit, l’alcool et le sucre</target>
+      </trans-unit>
+      <trans-unit id="66">
+        <source>Créer des saveurs de tradition et d’innovation grâce à des assemblages nouveaux élaborés en collaboration avec de grands mixologues</source>
+        <target>__Créer des saveurs de tradition et d’innovation grâce à des assemblages nouveaux élaborés en collaboration avec de grands mixologues</target>
+      </trans-unit>
+      <trans-unit id="67">
+        <source>L’HISTOIRE</source>
+        <target>__L’HISTOIRE</target>
+      </trans-unit>
+      <trans-unit id="68">
+        <source>Cartron, créateur de saveur depuis</source>
+        <target>__Cartron, créateur de saveur depuis</target>
+      </trans-unit>
+      <trans-unit id="69">
+        <source>En 1882 Joseph Cartron fonde la maison éponyme à Nuits St Georges</source>
+        <target>__En 1882 Joseph Cartron fonde la maison éponyme à Nuits St Georges</target>
+      </trans-unit>
+      <trans-unit id="70">
+        <source>Lire la suite</source>
+        <target>__Lire la suite</target>
+      </trans-unit>
+      <trans-unit id="71">
+        <source>LA BOURGOGNE</source>
+        <target>__LA BOURGOGNE</target>
+      </trans-unit>
+      <trans-unit id="72">
+        <source>En Héritage</source>
+        <target>__En Héritage</target>
+      </trans-unit>
+      <trans-unit id="73">
+        <source>La bourgogne fait partie intégrante de l’histoire de la famille Cartron depuis plus de trois siècles</source>
+        <target>__La bourgogne fait partie intégrante de l’histoire de la famille Cartron depuis plus de trois siècles</target>
+      </trans-unit>
+      <trans-unit id="74">
+        <source>LES LICORNES</source>
+        <target>__LES LICORNES</target>
+      </trans-unit>
+      <trans-unit id="75">
+        <source>L’emblème de la Maison Cartron</source>
+        <target>__L’emblème de la Maison Cartron</target>
+      </trans-unit>
+      <trans-unit id="76">
+        <source>Amateur d’art et de littérature, Ami des surréalistes , Armand Cartron a créé au début des années</source>
+        <target>__Amateur d’art et de littérature, Ami des surréalistes , Armand Cartron a créé au début des années</target>
+      </trans-unit>
+      <trans-unit id="77">
+        <source>Retour</source>
+        <target>__Retour</target>
+      </trans-unit>
+      <trans-unit id="78">
+        <source>En 1882 Joseph Cartron fonde la maison éponyme à Nuits St Georges, fournissant les débits de boissons, la jeune société distribuait les incontournables limonades et eau de Seltz et fabriquait en outre des liqueurs d’anthologie comme la Prunelle, le Marasquin, le Cacao, le Kummel , l’Idéal Bourguignon ou encore la Bisette</source>
+        <target>__En 1882 Joseph Cartron fonde la maison éponyme à Nuits St Georges, fournissant les débits de boissons, la jeune société distribuait les incontournables limonades et eau de Seltz et fabriquait en outre des liqueurs d’anthologie comme la Prunelle, le Marasquin, le Cacao, le Kummel , l’Idéal Bourguignon ou encore la Bisette</target>
+      </trans-unit>
+      <trans-unit id="79">
+        <source>Mais ce qui distingua dés le départ cette petite entreprise familiale , c’est la création de la crème de cassis Double crème appelée à l’époque «Double crème de cassis Cartron» comme une reconnaissance naturelle de l’authenticité et de l’originalité de ce produit dans le berceau même de la crème de cassis</source>
+        <target>__Mais ce qui distingua dés le départ cette petite entreprise familiale , c’est la création de la crème de cassis Double crème appelée à l’époque «Double crème de cassis Cartron» comme une reconnaissance naturelle de l’authenticité et de l’originalité de ce produit dans le berceau même de la crème de cassis</target>
+      </trans-unit>
+      <trans-unit id="80">
+        <source>Sans enfant, Joseph, le fondateur</source>
+        <target>__Sans enfant, Joseph, le fondateur</target>
+      </trans-unit>
+      <trans-unit id="81">
+        <source>L’entreprise, bien implantée localement</source>
+        <target>__L’entreprise, bien implantée localement</target>
+      </trans-unit>
+      <trans-unit id="82">
+        <source>C’est Armand, le fils d’Henri, entré dans la société dans les années 30 qui va diriger l’entreprise de 1940 à 1985, et la marquer de son empreinte .
+                                                                                    C’est sous son règne que les murs de l’entreprise ont été naturellement poussés pour l’agrandir et que le conditionnement des bouteilles a été mécanisé</source>
+        <target>__C’est Armand, le fils d’Henri, entré dans la société dans les années 30 qui va diriger l’entreprise de 1940 à 1985, et la marquer de son empreinte .
+                                                                                    C’est sous son règne que les murs de l’entreprise ont été naturellement poussés pour l’agrandir et que le conditionnement des bouteilles a été mécanisé</target>
+      </trans-unit>
+      <trans-unit id="83">
+        <source>Armand est un créatif, gastronome, lettré, pianiste émérite, il est aussi un nez et un palais très fin. Il va donc développer largement la gamme des produits en s’attachant à la qualité des saveurs et des parfums .
+                                                                                    C’est à lui que la maison doit de nombreuses recettes originales, telles que le n°7 , septième essai d’une rare alchimie destinée à partager la Bourgogne des fruits rouges grâce à l’harmonie particulière de 15 composants.
+                                                                                    Ces créations consignées par écrit dans un cahier d’écolier sont aujourd’hui encore jalousement gardées.
+                                                                                    Enfin, Armand, crée un réseau d’agents multicartes en France qui va permettre à la société de s’orienter vers la belle restauration et les cavistes en plein développement, qui draînent la clientèle à la recherche de qualité .
+                                                                                    Ce réseau de distribution sélective perdure encore aujourd’hui</source>
+        <target>__Armand est un créatif, gastronome, lettré, pianiste émérite, il est aussi un nez et un palais très fin. Il va donc développer largement la gamme des produits en s’attachant à la qualité des saveurs et des parfums .
+                                                                                    C’est à lui que la maison doit de nombreuses recettes originales, telles que le n°7 , septième essai d’une rare alchimie destinée à partager la Bourgogne des fruits rouges grâce à l’harmonie particulière de 15 composants.
+                                                                                    Ces créations consignées par écrit dans un cahier d’écolier sont aujourd’hui encore jalousement gardées.
+                                                                                    Enfin, Armand, crée un réseau d’agents multicartes en France qui va permettre à la société de s’orienter vers la belle restauration et les cavistes en plein développement, qui draînent la clientèle à la recherche de qualité .
+                                                                                    Ce réseau de distribution sélective perdure encore aujourd’hui</target>
+      </trans-unit>
+      <trans-unit id="84">
+        <source>Armand est un créatif</source>
+        <target>__Armand est un créatif</target>
+      </trans-unit>
+      <trans-unit id="85">
+        <source>La Maison lui doit de nombreuses recettes originales</source>
+        <target>__La Maison lui doit de nombreuses recettes originales</target>
+      </trans-unit>
+      <trans-unit id="86">
+        <source>Ces créations, consignées par écrit</source>
+        <target>__Ces créations, consignées par écrit</target>
+      </trans-unit>
+      <trans-unit id="87">
+        <source>En 1990, succédant à son père, Xavier Cartron prend la direction de la société familiale</source>
+        <target>__En 1990, succédant à son père, Xavier Cartron prend la direction de la société familiale</target>
+      </trans-unit>
+      <trans-unit id="88">
+        <source>Après HEC et une carrière de 22 années dans la finance , c’est un nouveau regard qu’il pose sur la maison mais avec,toujours, le souci de faire vivre ce patrimoine . Il va définir une stratégie claire quant au positionnement haut de gamme de ses produits, lancer un grand programme de modernisation de l’outil de production et développer une stratégie de distribution sélective offensive en France et à l’international</source>
+        <target>__Après HEC et une carrière de 22 années dans la finance , c’est un nouveau regard qu’il pose sur la maison mais avec,toujours, le souci de faire vivre ce patrimoine . Il va définir une stratégie claire quant au positionnement haut de gamme de ses produits, lancer un grand programme de modernisation de l’outil de production et développer une stratégie de distribution sélective offensive en France et à l’international</target>
+      </trans-unit>
+      <trans-unit id="89">
+        <source>A ces fins, Xavier Cartron étoffe le réseau d’agents multicartes et s’entoure d’une véritable équipe d’encadrement. Il crée une organisation aux rouages bien huilés de façon à toujours offrir un produit de qualité et à être à l’écoute de ses clients .
+                                                                                        Le développement à l’export s’accélère alors fortement . Les produits de la maison Joseph Cartron s’établissent légitimement dans les restaurants étoilés et font leur apparition sur les étagères des bars des hôtels de Luxe.
+                                                                                        La transmission étant partie intégrante de l’ADN de Joseph Cartron, c’est bien naturellement, qu’à son tour, Xavier Cartron a passé la main à sa fille en 2011</source>
+        <target>__A ces fins, Xavier Cartron étoffe le réseau d’agents multicartes et s’entoure d’une véritable équipe d’encadrement. Il crée une organisation aux rouages bien huilés de façon à toujours offrir un produit de qualité et à être à l’écoute de ses clients .
+                                                                                        Le développement à l’export s’accélère alors fortement . Les produits de la maison Joseph Cartron s’établissent légitimement dans les restaurants étoilés et font leur apparition sur les étagères des bars des hôtels de Luxe.
+                                                                                        La transmission étant partie intégrante de l’ADN de Joseph Cartron, c’est bien naturellement, qu’à son tour, Xavier Cartron a passé la main à sa fille en 2011</target>
+      </trans-unit>
+      <trans-unit id="90">
+        <source>La transmission familiale étant partie</source>
+        <target>__La transmission familiale étant partie</target>
+      </trans-unit>
+      <trans-unit id="91">
+        <source>A l’âge de 38 ans, Judith Cartron prend un virage important : Elle quitte une carrière professionnelle bien tracée et Paris pour rejoindre l’entreprise familiale</source>
+        <target>__A l’âge de 38 ans, Judith Cartron prend un virage important : Elle quitte une carrière professionnelle bien tracée et Paris pour rejoindre l’entreprise familiale</target>
+      </trans-unit>
+      <trans-unit id="92">
+        <source>Judith Cartron a pris progressivement les rênes de l’entreprise aux côtés de son père qui pendant 3 ans lui transmet les valeurs et le savoir-faire de l’entreprise</source>
+        <target>__Judith Cartron a pris progressivement les rênes de l’entreprise aux côtés de son père qui pendant 3 ans lui transmet les valeurs et le savoir-faire de l’entreprise</target>
+      </trans-unit>
+      <trans-unit id="93">
+        <source>Passionnée par ce  nouveau challenge</source>
+        <target>__Passionnée par ce  nouveau challenge</target>
+      </trans-unit>
+      <trans-unit id="94">
+        <source>Depuis juillet 2011, Judith Cartron est présidente de la Maison Joseph Cartron devenant ainsi la première femme, et la 5ème génération de cette fameuse lignée de distillateurs liquoristes, à diriger l’entreprise</source>
+        <target>__Depuis juillet 2011, Judith Cartron est présidente de la Maison Joseph Cartron devenant ainsi la première femme, et la 5ème génération de cette fameuse lignée de distillateurs liquoristes, à diriger l’entreprise</target>
+      </trans-unit>
+      <trans-unit id="95">
+        <source>Elle développe aujourd’hui</source>
+        <target>__Elle développe aujourd’hui</target>
+      </trans-unit>
+      <trans-unit id="96">
+        <source>L’histoire de la famille cartron</source>
+        <target>__L’histoire de la famille cartron</target>
+      </trans-unit>
+      <trans-unit id="97">
+        <source>en bourgogne depuis plus de 3 siècles</source>
+        <target>__en bourgogne depuis plus de 3 siècles</target>
+      </trans-unit>
+      <trans-unit id="98">
+        <source>La Bourgogne fait partie intégrante de l’histoire de la famille Cartron depuis plus de trois siècles</source>
+        <target>__La Bourgogne fait partie intégrante de l’histoire de la famille Cartron depuis plus de trois siècles</target>
+      </trans-unit>
+      <trans-unit id="99">
+        <source>En effet, Jean Cartron quitte l’ouest de la France, et plus précisément la Vendée, au moment de la Révolution Française pour venir s’installer en Bourgogne, à Argilly, à quelques kilomètres de Nuits-Saint-Georges. Il devient rapidement propriétaire terrien grâce à son mariage avec une Bourguignonne</source>
+        <target>__En effet, Jean Cartron quitte l’ouest de la France, et plus précisément la Vendée, au moment de la Révolution Française pour venir s’installer en Bourgogne, à Argilly, à quelques kilomètres de Nuits-Saint-Georges. Il devient rapidement propriétaire terrien grâce à son mariage avec une Bourguignonne</target>
+      </trans-unit>
+      <trans-unit id="100">
+        <source>Par la suite, son petit-fils, Pierre Cartron, le père de Joseph, s’installe à Nuits-Saint-Georges au début des années 1870. C’est dans cette ville que Joseph créera la société éponyme en 1882 où elle est toujours ancrée</source>
+        <target>__Par la suite, son petit-fils, Pierre Cartron, le père de Joseph, s’installe à Nuits-Saint-Georges au début des années 1870. C’est dans cette ville que Joseph créera la société éponyme en 1882 où elle est toujours ancrée</target>
+      </trans-unit>
+      <trans-unit id="101">
+        <source>C’est aussi la Bourgogne qui lui a donné ses armes en lieu et place des licornes et l’envie de rechercher l’excellence du goût</source>
+        <target>__C’est aussi la Bourgogne qui lui a donné ses armes en lieu et place des licornes et l’envie de rechercher l’excellence du goût</target>
+      </trans-unit>
+      <trans-unit id="102">
+        <source>Depuis cette date, Nuits-Saint-Georges et la Bourgogne ont toujours été le berceau de la famille Cartron</source>
+        <target>__Depuis cette date, Nuits-Saint-Georges et la Bourgogne ont toujours été le berceau de la famille Cartron</target>
+      </trans-unit>
+      <trans-unit id="103">
+        <source>la bourgogne est le coeur</source>
+        <target>__la bourgogne est le coeur</target>
+      </trans-unit>
+      <trans-unit id="104">
+        <source>et l’inspiration de la maison joseph cartron</source>
+        <target>__et l’inspiration de la maison joseph cartron</target>
+      </trans-unit>
+      <trans-unit id="105">
+        <source>La Bourgogne est le coeur et l'inspiration de la Maison Joseph Cartron</source>
+        <target>__La Bourgogne est le coeur et l'inspiration de la Maison Joseph Cartron</target>
+      </trans-unit>
+      <trans-unit id="106">
+        <source>Les produits Joseph Cartron s'inscrivent dans la tradition des produits bourguignons : les liens étroits et durables créés avec les producteurs et distillateurs du terroir depuis plusieurs générations ont permis à la Maison Joseph Cartron de construire de véritables partenariats, d'acquérir une connaissance intime du fruit et de travailler ses créations avec les variétés de fruits les plus aromatiques, dans le respect des recettes originales</source>
+        <target>__Les produits Joseph Cartron s'inscrivent dans la tradition des produits bourguignons : les liens étroits et durables créés avec les producteurs et distillateurs du terroir depuis plusieurs générations ont permis à la Maison Joseph Cartron de construire de véritables partenariats, d'acquérir une connaissance intime du fruit et de travailler ses créations avec les variétés de fruits les plus aromatiques, dans le respect des recettes originales</target>
+      </trans-unit>
+      <trans-unit id="107">
+        <source>Aujourd'hui encore, la Maison Joseph Cartron achète 70% de ses fruits en Bourgogne, ce qui lui permet de choisir elle-même le moment de la récolte et de travailler les fruits à un stade de maturité optimum</source>
+        <target>__Aujourd'hui encore, la Maison Joseph Cartron achète 70% de ses fruits en Bourgogne, ce qui lui permet de choisir elle-même le moment de la récolte et de travailler les fruits à un stade de maturité optimum</target>
+      </trans-unit>
+      <trans-unit id="108">
+        <source>L'utilisation de ces variétés de fruits locales, souvent à faible rendement comme le cassis Noir de Bourgogne, permet des créations typiquement bourguignonnes absolument incomparables en terme de goût telles que</source>
+        <target>__L'utilisation de ces variétés de fruits locales, souvent à faible rendement comme le cassis Noir de Bourgogne, permet des créations typiquement bourguignonnes absolument incomparables en terme de goût telles que</target>
+      </trans-unit>
+      <trans-unit id="109">
+        <source>La Crème de Cassis de Bourgogne qui a toujours été le fer de lance de la Maison</source>
+        <target>__La Crème de Cassis de Bourgogne qui a toujours été le fer de lance de la Maison</target>
+      </trans-unit>
+      <trans-unit id="110">
+        <source>Les Crèmes de Pêche de Vigne, de Framboise, de Cerise de Bourgogne</source>
+        <target>__Les Crèmes de Pêche de Vigne, de Framboise, de Cerise de Bourgogne</target>
+      </trans-unit>
+      <trans-unit id="111">
+        <source>Le Ratafia et le Guignolet de Bourgogne</source>
+        <target>__Le Ratafia et le Guignolet de Bourgogne</target>
+      </trans-unit>
+      <trans-unit id="112">
+        <source>La Poire Williams des Monts de la Côte d'Or</source>
+        <target>__La Poire Williams des Monts de la Côte d'Or</target>
+      </trans-unit>
+      <trans-unit id="113">
+        <source>Le Marc et la Fine de Bourgogne</source>
+        <target>__Le Marc et la Fine de Bourgogne</target>
+      </trans-unit>
+      <trans-unit id="114">
+        <source>Savoir-fatire</source>
+        <target>Savoir-fatire</target>
+      </trans-unit>
+      <trans-unit id="115">
+        <source>Les Eaux de vie de tradition&lt;</source>
+        <target>Les Eaux de vie de tradition&lt;</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Avant leur élevage et assemblage, les Eaux-de-Vie de fruits, le Marc et la Fine de Bourgogne Joseph Cartron sont distillés dans la plus pure tradition via les alambics des distillateurs ambulants</source>
+        <target>__Avant leur élevage et assemblage, les Eaux-de-Vie de fruits, le Marc et la Fine de Bourgogne Joseph Cartron sont distillés dans la plus pure tradition via les alambics des distillateurs ambulants</target>
+      </trans-unit>
+      <trans-unit id="117">
+        <source>premier_connexion.datenaissance</source>
+        <target>birthdate</target>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Se sevenire</source>
+        <target>Stay signed in</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

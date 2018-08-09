@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Test Application{% endblock %}</title>
+		<meta name="description" content="Joseph Cartron - Crèmes de Fruits – Liqueurs – Eaux-de-Vie. Maison familiale fondée en 1882 à Nuits-Saint-Georges."/>
+        <link href="{{ asset('bundles/sitecartron/css/style.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('bundles/sitecartron/css/skin.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('bundles/sitecartron/css/jqtransform.css') }}" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="{{ asset('bundles/sitecartron/js/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/sitecartron/js/jquery.toggleval.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/sitecartron/js/jquery.jcarousel.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/sitecartron/js/jquery.jqtransform.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/sitecartron/js/main.js') }}"></script>
+		<meta id="viewport" name="viewport" />
+        
+    </head>
+    <body id="agegate">
+        <input type="hidden" id="path_login" value="{{ path("site_cartron_login_pro") }}" />
+        <input type="hidden" id="path_mpo" value="{{ path("site_cartron_mpo_pro") }}" />
+            {% block body %}{% endblock %}
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  
+	  ga('create', 'UA-44915246-1', 'cartron.fr');
+	  ga('send', 'pageview');  
+	</script>
+
+    </body>
+</html>

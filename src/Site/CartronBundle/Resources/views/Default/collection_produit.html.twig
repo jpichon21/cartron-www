@@ -1,0 +1,140 @@
+{% extends "SiteCartronBundle::layout.html.twig" %}
+{% block title %}JOSEPH CARTRON{% endblock %}
+{% block body %}
+<script type="text/javascript">
+  $(function() {
+    var slideshow = $('#camera_wrap_1').html();
+    function get_parameters(hash){
+        var elementFocusHash = hash;
+        elementFocusHash = elementFocusHash.substring(1,elementFocusHash.length);
+        return elementFocusHash; 
+    }
+    startCamera(window.location.hash);
+    function startCamera(hash){
+      $('#camera_wrap_1').html(slideshow);
+      if(hash == ""){
+        var item = $(".current-load").attr("class");
+        item = item.split(" ");
+        item = item[1];
+      } else {
+          var item = get_parameters(hash);
+      }
+      $('#camera_wrap_1').camera({
+              thumbnails: true,
+              barDirection: 'rightToLeft',
+              fx: 'scrollHorz',
+              autoAdvance: false,
+              startSlide: item,
+              height: '575px',
+              onEndTransition: function(){
+                  $elements = $('#camera_wrap_1').find('.cameraCont .cameraSlide').length-3;
+                  var ind = $('#camera_wrap_1').find('.camera_target .cameraSlide.cameracurrent').index();
+                  if(ind == $elements) $('.camera_next').hide(); else $('.camera_next').show();
+                  if(ind == 0) $('.camera_prev').hide(); else $('.camera_prev').show();
+                  window.location.hash = ind+1;
+              }
+        });
+      }
+  $('.scroll').jScrollPane({scrollbarWidth: 4});
+  $('.accueil-produits, .note-degustation, .note-elaboration').jScrollPane({scrollbarWidth: 4, autoReinitialise: true});
+  })
+</script>
+
+
+
+<div id="collection-produits" class="test2">
+  <style>
+    .collection-home .menu_collection #marc_{{ idcollection }} a{
+    border-bottom:2px solid #{{ defaultColor }};
+    }
+    #camera_wrap_1 .visuel h2 a, #camera_wrap_1 .description p span, .description .note-degustation h3, .description .note-elaboration h3{
+    color:#{{ defaultColor }} !important;
+    }
+    #camera_wrap_1 .description .link-produits a span{
+    position:relative;
+    background:none !important;
+    color: #FFFFFF;
+    height: 29px;
+    line-height: 29px;
+    padding: 0 10px 0 25px;
+    }
+    #camera_wrap_1 .description .link-produits a span b{
+    color:#{{ defaultColor }} !important; font-size:20px; position:absolute; top:-9px; left:11px;
+    }
+    .accueil-produits, .note-degustation, .note-elaboration{
+    width: 422px;
+    height: 300px;
+    overflow: auto;
+    }
+
+    .jspTrack{
+    background:#FFF;
+    }
+    .accueil-produits .jspDrag, .note-degustation .jspDrag, .note-elaboration .jspDrag{
+    background:#{{ defaultColor }} !important;
+    }
+  </style>
+  <div class="main">
+    <div class="collection-home">
+      <div class="menu_collection">
+        <ul>                    
+          {% for article in collections %}
+          <li id="marc_{{ article.id }}">
+            {{ render(controller('SiteCartronBundle:Default:lienMenuPageCollection', {'id':article.id,'titreEn':article.titreEn,'titreFr':article.titreFr,'rid':''})) }}
+          </li>
+          <style>
+            .collection-home .menu_collection #marc_{{ article.id }} a:hover, .collection-home .menu_collection li a.active{
+            border-bottom:2px solid #{{ article.color }};
+            }
+          </style>
+          {% endfor %}
+        </ul>
+      </div> <!-- # end menu collection -->   
+
+  
+      <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
+	
+	
+	
+        {% for article in sousMenu %}
+
+        <div  data-thumb="{{ asset('upload/'~article.icone) }}" data-src="{{ asset('bundles/sitecartron/images/trans.png') }}">
+          <div class="camera_effected">
+            <div class="visuel">
+              <h2><a href="#0" onclick="return false" class="acc-produit">{% if(app.session.get('_locale')=='en') %} {{ article.titreEn }} {% else %} {{ article.titreFr }} {% endif %}</a></h2>
+              <img src="{{ asset('upload/'~article.image) }}" alt="">
+            </div>
+            <div class="description">
+              {% if(article.id == articleDefault.id) %}
+              <div class="current-load {{ loop.index }} accueil-produits">
+              {% else %}
+              <div class="accueil-produits {{ loop.index }}">
+              {% endif %}
+                {% if(app.session.get('_locale')=='en') %} {{ article.descriptionEn|raw }} {% else %} {{ article.descriptionFr|raw }} {% endif %}
+                <p class="marge9"><span>{{ "Degré" | trans }} :</span> {{ article.degre }}%</p>
+                <p class="marge9"><span>{{ "Contenance" | trans }} :</span>{% if(app.session.get('_locale')=='en') %} {{ article.contenanceEn }} {% else %} {{ article.contenanceFr }} {% endif %}</p>
+                <p class="marge9"><span>{{ "Conserver" | trans }}</span>{% if(app.session.get('_locale')=='en') %} {{ article.conserverEn }} {% else %} {{ article.conserverFr }} {% endif %}</p>
+              </div>
+              <div class="note-degustation">
+                <h3>{{ "Note de dégustation" | trans }}</h3>
+                {% if(app.session.get('_locale')=='en') %} {{ article.noteDegustationEn|raw }} {% else %} {{ article.noteDegustationFr|raw }} {% endif %}
+              </div>
+              <div class="note-elaboration">
+                <h3>{{ "Elaboration" | trans }}</h3>
+                {% if(app.session.get('_locale')=='en') %} {{ article.elaborationEn|raw }} {% else %} {{ article.elaborationFr|raw }} {% endif %}
+              </div>
+              <div class="link-produits">
+                <a href="{% if(app.session.get('_locale')=='en') %} {{ article.recetteEn }} {% else %} {{ article.recetteFr }} {% endif %}"><span><b>&rsaquo;</b>{{ "Recettes" | trans }}</span></a>
+                <a class="degustation"><span><b>&rsaquo;</b>{{ "Note de dégustation" | trans }}</span></a>
+                <a class="elaboration"><span><b>&rsaquo;</b>{{ "Elaboration" | trans }}</span></a>
+              </div>
+            </div>
+          </div>
+        </div> 
+        {% endfor %}
+
+      </div>
+    </div>    
+  </div>
+</div>
+{% endblock %}

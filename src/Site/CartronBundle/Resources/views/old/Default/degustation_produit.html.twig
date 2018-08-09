@@ -1,0 +1,143 @@
+{% extends "SiteCartronBundle::layout.html.twig" %}
+{% block title %}JOSEPH CARTRON{% endblock %}
+{% block body %}
+
+<script type="text/javascript" src="{{ asset('bundles/sitecartron/js/jquery.cycle2.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/sitecartron/js/jquery.cycle2.carousel.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/sitecartron/js/jquery.cycle2.tile.js') }}"></script>
+
+<script type="text/javascript">
+    $(function() {
+        $('.subMenu').jScrollPane({scrollbarWidth: 6});
+
+        $('.next').hover(function() {
+            $('#degustation .main').stop().animate({backgroundPosition: '45% 0px'}, 2000);
+        }, function() {
+            $('#degustation .main').stop().animate({backgroundPosition: '50% 0'}, 2000);
+        });
+
+    })
+    </script>
+    <div id="degustation-produits">
+        <div class="main">
+            <div class="degustation-home">
+                <div class="menu_degustation">
+                    <ul>
+
+                        {% for article in degustation %}
+                        <li class="menuLiWithSubMenu">
+                            <a href="#"> {% if(app.session.get('_locale')=='en') %} {{ article.titreEn }} {% else %} {{ article.titreFr }} {% endif %}</a>
+                            <div class="scrollMenu">
+                                <ul class="subMenu">
+                                       {% for sm in sousMenu %}
+                                            {% if(sm.idDegustation.id == article.id) %}
+                                        <li>
+                                            <a href="{{ path('site_cartron_degustation_produit',{id:sm.id}) }}">
+                                                       {% if(app.session.get('_locale')=='en') %} {{ sm.titreEn }} {% else %} {{ sm.titreFr }} {% endif %}
+                                                </a>
+                                            </li>
+                                           {% endif %}
+                                       {% endfor %}
+                                        </ul>
+                                    </div>
+                                </li>
+                                    {% endfor %}
+
+                            </ul>
+                        </div> <!-- # end menu degustation -->
+                        <div class="content">
+
+                            <div id="slideshow-1">
+
+                                <a href="#" class="cycle-prev"></a>  <a href="#" class="cycle-next"></a>
+                                <div id="cycle-1" class="cycle-slideshow"
+                                     data-cycle-slides=".cycle"
+                                     data-cycle-fx="scrollHorz"  
+                                     data-cycle-timeout="0"
+                                     data-cycle-prev="#slideshow-1 .cycle-prev"
+                                     data-cycle-next="#slideshow-1 .cycle-next"
+                                     data-cycle-caption="#slideshow-1 .custom-caption"
+                                     >
+                                    <div class="cycle {% if(articleDefault.couleurArrierePlan=='noir') %} {{ 'imageNoir' }} {% endif %}">
+                                        <img src="{{ asset('upload/'~articleDefault.image) }}" width="977" height="577" alt="" />
+                                        <div class="description">
+                                            <h3> {% if(app.session.get('_locale')=='en') %} {{ articleDefault.titreEn }} {% else %} {{ articleDefault.titreFr }} {% endif %} </h3>
+                                            <div class="text">
+                                                {% if(app.session.get('_locale')=='en') %} {{ articleDefault.descriptionEn|raw|striptags('p') }} {% else %} {{ articleDefault.descriptionFr|raw|striptags('p') }} {% endif %}
+                                                </div>
+                                                <div class="sep"></div>
+                                                <h4>Note de Dégustation</h4>
+                                                <div class="text">
+                                                 {% if(app.session.get('_locale')=='en') %} {{ articleDefault.noteDegustationEn|raw|striptags('p') }} {% else %} {{ articleDefault.noteDegustationFr|raw|striptags('p') }} {% endif %}
+                                                    </div>
+                                                    <div class="sep"></div>
+                                                    <div class="icons">
+                                                        <a href="#" class="facebook"></a>
+                                                        <a href="#" class="telecharger"></a>
+                                                        <a href="#" class="imprimer"></a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                    {% for article in sousMenu %}
+                                     {% if(article.id != articleDefault.id) %}
+                                            <div class="cycle {% if(article.couleurArrierePlan=='noir') %} {{ "imageNoir" }} {% endif %}">
+                                                <img src="{{ asset('upload/'~article.image) }}" width="977" height="577" alt="" />
+                                                <div class="description">
+                                                    <h3>{% if(app.session.get('_locale')=='en') %} {{ article.titreEn }} {% else %} {{ article.titreFr }} {% endif %}</h3>
+                                                    <div class="text">
+                                                     {% if(app.session.get('_locale')=='en') %} {{ article.descriptionEn|raw|striptags('p') }} {% else %} {{ article.descriptionFr|raw|striptags('p') }} {% endif %}
+                                                        </div>
+                                                        <div class="sep"></div>
+                                                        <h4>Note de Dégustation</h4>
+                                                        <div class="text">
+                                                   {% if(app.session.get('_locale')=='en') %} {{ article.noteDegustationEn|raw|striptags('p') }} {% else %} {{ article.noteDegustationFr|raw|striptags('p') }} {% endif %}
+                                                            </div>
+                                                            <div class="sep"></div>
+                                                            <div class="icons">
+                                                                <a href="#" class="facebook"></a>
+                                                                <a href="#" class="telecharger"></a>
+                                                                <a href="#" class="imprimer"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        {% endif %}
+                                        {% endfor %}
+
+
+
+                                                </div>
+                                            </div>
+                                            <div class="caroubas">
+                                                <div id="slideshow-2">
+                                                    <div id="cycle-2" class="cycle-slideshow"
+                                                         data-cycle-slides="> div"
+                                                         data-cycle-timeout="0"
+                                                         data-cycle-prev="#slideshow-2 .cycle-prev"
+                                                         data-cycle-next="#slideshow-2 .cycle-next"
+                                                         data-cycle-caption="#slideshow-2 .custom-caption"
+                                                         data-cycle-caption-template="Slide slideNum of slideCount"
+                                                         data-cycle-fx="carousel"
+                                                         data-cycle-carousel-visible="9"
+                                                         data-cycle-carousel-fluid=true
+                                                         data-allow-wrap="true"
+                                                         >
+                                                        <div>
+                                                            <img src="{{ asset('upload/'~articleDefault.image) }}" width="72" height="27" alt="" /></div>
+                                                        {% for article in sousMenu %}
+                                                            {% if(article.id != articleDefault.id) %}
+                                                            <div><img src="{{ asset('upload/'~article.image) }}" width="72" height="27" alt="" /></div>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                            </div>
+
+                                                            <a href="#" class="cycle-prev"></a>  <a href="#" class="cycle-next"></a>
+                                                        </div>
+                                                    </div>
+
+                                                </div> <!-- # end content degustation -->            
+                                            </div>    
+                                        </div>
+                                    </div>
+{% endblock %}

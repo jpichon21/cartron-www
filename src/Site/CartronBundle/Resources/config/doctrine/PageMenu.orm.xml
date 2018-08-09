@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Site\CartronBundle\Entity\PageMenu" table="page_menu">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="titreFr" type="string" column="titre_fr" length="255" nullable="true"/>
+    <field name="descriptionFr" type="text" column="description_fr" nullable="true"/>
+    <field name="ficheFr" type="string" column="fiche_fr" length="255" nullable="true"/>
+    <field name="titreEn" type="string" column="titre_en" length="255" nullable="true"/>
+    <field name="descriptionEn" type="text" column="description_en" nullable="true"/>
+    <field name="ficheEn" type="string" column="fiche_en" length="255" nullable="true"/>
+    <field name="labelFr" type="string" column="label_fr" length="255" nullable="true"/>
+    <field name="lebleEn" type="string" column="leble_en" length="255" nullable="true"/>
+  </entity>
+</doctrine-mapping>

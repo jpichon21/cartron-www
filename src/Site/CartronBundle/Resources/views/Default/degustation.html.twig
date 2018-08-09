@@ -1,0 +1,63 @@
+{% extends "SiteCartronBundle::layout.html.twig" %}
+{% block title %}JOSEPH CARTRON{% endblock %}
+{% block body %}
+
+<script type="text/javascript">
+  $(function() {
+  $('.subMenu').jScrollPane({scrollbarWidth: 6});  
+  new cartron.Degustation({'$container':$('#degustation .main')});
+  new cartron.Responsive({'$container':$('#degustation .content'), 'offset':55});
+  });
+</script>
+<div id="degustation">
+  <div class="main">
+    <div class="degustation-home">
+      <div class="menu_degustation">
+        <div class="center">
+	      <ul>
+	        {% for article in degustation %}
+	        <li class="menuLiWithSubMenu">
+	          {{ render(controller('SiteCartronBundle:Default:lienMenuPageDegustation', {'id':article.id,'titreEn':article.titreEn,'titreFr':article.titreFr})) }}
+	          <div class="scrollMenu">
+	            <ul class="subMenu">
+	              {% for sm in sousMenu %}
+	              {% if(sm.idDegustation.id == article.id) %}
+	              <li>
+	                <a href="{{ path('site_cartron_degustation_produit',{id:sm.id}) }}">
+	                  {% if(app.session.get('_locale')=='en') %} {{ sm.titreEn }} {% else %} {{ sm.titreFr }} {% endif %}
+	                </a>
+	              </li>
+	              {% endif %}
+	              {% endfor %}
+	            </ul>
+				<div style="clear:both;"></div>
+	          </div>
+	        </li>
+	        {% endfor %}
+			
+	      </ul>
+        </div>
+      </div> <!-- # end menu degustation -->
+      <div class="content">
+        <div class="parralax">
+          {% for article in degustation %}
+
+          <div {% if(loop.index >1) %} class="hd" {% else %} class="sh" {% endif %} id="ar_{{ loop.index }}">
+            <h2><b><span>{{ "sélection" | trans }}</span> {% if(app.session.get('_locale')=='en') %} {{ article.titreEn }} {% else %} {{ article.titreFr }} {% endif %}</b></h2>                                
+            {{ render(controller('SiteCartronBundle:Default:lienPageDegustation', {'id':article.id})) }}
+          </div>
+          {% endfor %}
+
+          <a href="#0" class="next"></a>
+          <a href="#0" class="prev"></a>
+          <input type="hidden" id="nbr" value="{{ degustation|length }}" />
+        </div> <!-- # end content degustation -->            
+      </div> 
+    </div>    
+  </div>
+</div>
+<style>
+  .hd{display: none}
+  .sh{display: block}
+</style>
+{% endblock %}

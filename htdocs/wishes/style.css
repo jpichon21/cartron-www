@@ -1,0 +1,28 @@
+div {
+  display: flex;
+  min-height: 100vh;
+}
+p {
+  margin: auto;
+}
+
+/* deco */
+body {margin: 0;
+  	font-family: "helvetica", "arial", "sans-serif";
+  	font-size: 12px;
+  	text-align: center;
+  	text-decoration: none;
+  	background: #202a30;
+  	
+}
+div {
+    
+}
+p {
+    color: #DDD;
+    padding: 1em;
+}
+a {
+color: #777;
+text-decoration: none;
+}
