@@ -16,7 +16,7 @@ set :term_mode, nil
 set :deploy_to, "/home/#{account}/src_dev/www" if ENV['on'] == 'dev'
 set :deploy_to, "/home/#{account}/src_prod/www" if ENV['on'] == 'prod'
 
-set :shared_dirs, ['vendor', 'htdocs/upload', 'htdocs/videos']
+set :shared_dirs, ['htdocs/upload', 'htdocs/videos']
 set :shared_files, ['htdocs/.htaccess', 'htdocs/robots.txt', 'app/config/parameters.yml']
 
 task :deploy => :environment do
