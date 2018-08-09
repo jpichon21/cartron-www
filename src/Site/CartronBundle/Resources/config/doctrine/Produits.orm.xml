@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Site\CartronBundle\Entity\Produits" table="produits">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="titreFr" type="string" column="titre_fr" length="255" nullable="true"/>
+    <field name="descriptionFr" type="text" column="description_fr" nullable="true"/>
+    <field name="titreEn" type="string" column="titre_en" length="255" nullable="true"/>
+    <field name="descriptionEn" type="text" column="description_en" nullable="true"/>
+    <field name="ficheProduitFr" type="string" column="fiche_produit_fr" length="255" nullable="true"/>
+    <field name="ficheProduitEn" type="string" column="fiche_produit_en" length="255" nullable="true"/>
+    <field name="packshotJpgFr" type="string" column="packshot_jpg_fr" length="255" nullable="true"/>
+    <field name="packshotJpgEn" type="string" column="packshot_jpg_en" length="255" nullable="true"/>
+    <field name="packshotPdfEn" type="string" column="packshot_pdf_en" length="255" nullable="true"/>
+    <field name="packshotPdfFr" type="string" column="packshot_pdf_fr" length="255" nullable="true"/>
+    <field name="packshotEpsFr" type="string" column="packshot_eps_fr" length="255" nullable="true"/>
+    <field name="packshotEpsEn" type="string" column="packshot_eps_en" length="255" nullable="true"/>
+    <field name="ficheLogistiqueFr" type="string" column="fiche_logistique_fr" length="255" nullable="true"/>
+    <field name="ficheLogistiqueEn" type="string" column="fiche_logistique_en" length="255" nullable="true"/>
+    <field name="medailles1En" type="string" column="medailles1_en" length="255" nullable="true"/>
+    <field name="medailles1Fr" type="string" column="medailles1_fr" length="255" nullable="true"/>
+    <field name="medailles2Fr" type="string" column="medailles2_fr" length="255" nullable="true"/>
+    <field name="medailles2En" type="string" column="medailles2_en" length="255" nullable="true"/>
+    <field name="medailles3En" type="string" column="medailles3_en" length="255" nullable="true"/>
+    <field name="medailles3Fr" type="string" column="medailles3_fr" length="255" nullable="true"/>
+    <field name="medailles4En" type="string" column="medailles4_en" length="255" nullable="true"/>
+    <field name="medailles4Fr" type="string" column="medailles4_fr" length="255" nullable="true"/>
+    <field name="recetteFr" type="string" column="recette_fr" length="255" nullable="true"/>
+    <field name="recetteEn" type="string" column="recette_en" length="255" nullable="true"/>
+    <field name="image" type="string" column="image" length="255" nullable="true"/>
+    <many-to-one field="idSousMenu" target-entity="SousMenuProduits">
+      <join-columns>
+        <join-column name="id_sous_menu" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idDegustation" target-entity="DegustationPro">
+      <join-columns>
+        <join-column name="id_degustation" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

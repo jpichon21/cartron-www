@@ -1,0 +1,18 @@
+# Cache and logs (Symfony2)
+/app/cache/*
+/app/logs/*
+
+# Cache, session files and logs (Symfony3)
+/var/cache/*
+/var/logs/*
+/var/sessions/*
+
+# Parameters
+/app/config/parameters.yml
+
+# Managed by Composer
+/vendor/
+
+# Assets and user uploads
+/htdocs/bundles/
+/htdocs/uploads/

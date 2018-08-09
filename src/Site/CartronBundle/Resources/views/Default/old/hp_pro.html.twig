@@ -1,0 +1,30 @@
+{% extends "SiteCartronBundle::layout.html.twig" %}
+{% block title %}JOSEPH CARTRON{% endblock %}
+{% block body %}
+
+<script type="text/javascript">
+    $(function() {
+        $('.scroll').jScrollPane({scrollbarWidth: 4});
+        $("#nav").menu();
+    })
+    </script> 
+</head>
+<div id="pro">
+    <div class="main">
+        <div class="pro-home">
+        {{ render(controller('SiteCartronBundle:Default:menuPro')) }}
+
+                <div class="content">
+                    <div class="textAccueil">
+                        <p class="titre">Bienvenue sur l’espace professionnel</p>
+                        <p class="nom">{{ app.session.get('name') }}</p>
+                        <p>Vous trouverez ici <br />toutes les informations et fichiers nécessaires <br />concernant la Maison Joseph Cartron.</p>
+                    </div>
+                </div>
+
+            </div>    
+        </div>
+    </div>
+
+
+{% endblock %}

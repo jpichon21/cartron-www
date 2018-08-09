@@ -1,0 +1,49 @@
+<ul id="nav">
+    <li>
+        <a href="#">produits</a>
+        <ul>
+            {% for sousMenuProduit in sousMenuProduits %}
+            <li>
+                <a href="{{ path("site_cartron_liste_produit_pro", {'id':sousMenuProduit.id, 'type':'produit'}) }}">
+                        {% if(app.session.get('_locale')=='en') %} {{ sousMenuProduit.titreEn }} {% else %} {{ sousMenuProduit.titreFr }} {% endif %}
+                    </a>
+                {% if(produits) %}
+                    <ul>
+                        {% for produit in produits %}
+                            {% if(sousMenuProduit.id==produit.idSousMenu) %}
+                            <li><a href="">{% if(app.session.get('_locale')=='en') %} {{ produit.titreEn }} {% else %} {{ produit.titreFr }} {% endif %}</a></li>
+                            {% endif %}
+                         {% endfor %}
+                    </ul>
+                 {% endif %}
+            </li>
+            {% endfor %}
+        </ul> <!-- fin du sous-menu -->
+    </li>
+    <li>
+        <a href="#">dégustation</a>                     
+         <ul>
+            {% for sousMenuDegustationProduit in sousMenuDegustationProduits %}
+            <li>
+                <a href="{{ path("site_cartron_liste_produit_pro", {'id':sousMenuDegustationProduit.id, 'type':'degustation'}) }}">
+                    {% if(app.session.get('_locale')=='en') %} {{ sousMenuDegustationProduit.titreEn }} {% else %} {{ sousMenuDegustationProduit.titreFr }} {% endif %}
+                    </a>
+                {% if(produits3) %}
+                
+                    <ul>
+                        {% for produit1 in produits3 %}
+                           
+                            {% if(sousMenuDegustationProduit.id == produit1.idDegustation) %}
+                                <li><a href="#">{% if(app.session.get('_locale')=='en') %} {{ produit1.titreEn }} {% else %} {{ produit1.titreFr }} {% endif %}</a></li>
+                            {% endif %}
+                         {% endfor %}
+                    </ul>
+                 {% endif %}
+            </li>
+            {% endfor %}
+        </ul> <!-- fin du sous-menu -->
+    </li>
+    {% for am in autreMenu %}
+        <li><a href="#">{{ am.titreEn }}</a></li>
+    {% endfor %}
+</ul>

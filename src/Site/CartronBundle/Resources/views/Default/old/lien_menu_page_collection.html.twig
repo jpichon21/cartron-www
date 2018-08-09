@@ -1,0 +1,3 @@
+<a class="marc_{{ id }}" href="{{ path('site_cartron_collection_produit',{id:sousMenu.0.id}) }}" >
+    {% if(app.session.get('_locale')=='en') %} {{ titreEn|raw }} {% else %} {{ titreFr|raw }} {% endif %}
+</a>

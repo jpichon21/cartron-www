@@ -1,0 +1,99 @@
+{% extends "SiteCartronBundle::layout.html.twig" %}
+{% block title %}JOSEPH CARTRON{% endblock %}
+{% block body %}
+
+
+<script type="text/javascript">
+    $(function() 
+    {
+    	
+    	new cartron.Responsive({'$container':$('#home'), 'offset':102})
+    	
+        $('#liste-news').jcarousel({ scroll: 2 });
+
+        var myPlayer = _V_("example_video_1");
+
+        $('.pop-videos-content .close').click(function(){ myPlayer.pause() });
+
+        var w = $(window).width();
+        if (w > 1280)
+            $('#home .main').css('background-image', 'url({{ asset('bundles/sitecartron/images/bg-main-hp2.jpg') }})');
+
+    });
+    </script>
+    <link href="{{ asset('bundles/sitecartron/css/video-js.css') }}" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="{{ asset('bundles/sitecartron/js/video.js') }}"></script>
+    <div id="home">
+        <div class="main">
+
+        </div>
+    </div>
+
+    <div class="caroussel-home">
+        <div class="video-news-home">
+            <div class="video-home">
+                <a href="#0" class="voir-video lanch_video" onclick="return false"><img  src="{{ asset('bundles/sitecartron/images/img-video-home.jpg') }}" alt="" /></a>
+                <div class="txt-video-news-home">
+                    <h2><a href="#" class="lanch_video"><span id="s_vd">{{ "Vidéo" | trans }} /</span> <span id="t_vd">{% if(app.session.get('_locale')=='en') %} {{ video.0.titreEn  }} {% else %} {{ video.0.titreFr }} {% endif %}</span></a></h2>
+                    <a href="#" class="voir-video lanch_video">{{ "voir la vidéo" | trans }}</a>
+                </div>
+            </div>
+            <div class="news-home">
+                <a href="#" class="lanch_news" ><img width="109" height="59" src="{{ asset('upload/'~articles.0.image) }}" alt="" /></a>
+                <div class="txt-video-news-home">
+                    <h2><a href="#" class="lanch_news"><span id="s_news">{{ "NEWS" | trans }} /</span> <span id="t_news">{% if(app.session.get('_locale')=='en') %} {{ articles.0.titreEn }} {% else %} {{ articles.0.titleFr }} {% endif %}</span></a></h2>
+                    <p>{% if(app.session.get('_locale')=='en') %} {{ articles.0.descEn|striptags|truncate(100, true, '...')|raw }} {% else %} {{ articles.0.descFr|striptags|truncate(100, true, '...')|raw }} {% endif %}</p>
+                </div>
+            </div>
+            <br clear="all" />
+        </div>
+    </div>
+
+
+
+    <div class="overlay-news overlay">
+        <div class="pop-up-news">
+
+            <div class="pop-news-content">
+                <a class="close" href="#">{{ "fermer" | trans }}</a>
+                <div id="default_news" style="padding-bottom: 20px; overflow: hidden;">
+                    <img alt="" width="548" src="{{ asset('upload/'~articles.0.image) }}">
+                   {% if(app.session.get('_locale')=='en') %} {{ articles.0.descEn|raw }} {% else %} {{ articles.0.descFr|raw }} {% endif %}
+                    <div class="share"><a class="facebook" href="">facebook</a><a class="twitter" href="">twitter</a><br clear="all"></div>
+                </div>
+            </div>
+            <ul id="liste-news" class="jcarousel-skin-tango">
+                {% for article in articles %}
+                    <li class="news_hp" id="news_hp_{{ article.id }}" style=" cursor: pointer"><img src="{{ asset('upload/'~article.image) }}"  width="110" height="60" alt="" /><h3>{% if(app.session.get('_locale')=='en') %} {{ article.titreEn|raw }} {% else %} {{ article.titleFr|raw }} {% endif %}</h3></li>
+                {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="overlay-videos overlay">
+                <div class="pop-up-videos">
+                    <div class="pop-videos-content">
+                        <a href="#" class="close">fermer</a>
+
+                        <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="739" height="486"
+                               poster="{{ asset('bundles/sitecartron/images/video-home.jpg') }}"
+                               data-setup="{}">
+                            {% if(app.session.get('_locale')=='fr') %}
+                            <source src="{{ asset('upload/video_hp/cartron_fr.mp4')  }}" type='video/mp4' />
+                            <source src="{{ asset('upload/video_hp/cartron_fr.webm')  }}" type='video/webm' />
+                            <source src="{{ asset('upload/video_hp/cartron_fr.ogv')  }}" type='video/ogg' />
+                            <track kind="captions" src="demo.captions.vtt" srclang="en" label="English" />
+                            {% else %}
+                            <source src="{{ asset('upload/video_hp/cartron_en.mp4')  }}" type='video/mp4' />
+                            <source src="{{ asset('upload/video_hp/cartron_en.webm')  }}" type='video/webm' />
+                            <source src="{{ asset('upload/video_hp/cartron_en.ogv')  }}" type='video/ogg' />
+                            <track kind="captions" src="demo.captions.vtt" srclang="en" label="English" />
+                            {% endif %}
+
+                        </video>
+
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" value="{{ path('site_cartron_get_news') }}" id="path_news_hp" />
+{% endblock %}

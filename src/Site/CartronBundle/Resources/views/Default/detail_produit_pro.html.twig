@@ -1,0 +1,50 @@
+{% extends "SiteCartronBundle::layout.html.twig" %}
+{% block title %}JOSEPH CARTRON{% endblock %}
+{% block body %}
+
+<script type="text/javascript">
+    $(function() {
+        $('.scroll').jScrollPane({scrollbarWidth: 4});
+        $("#nav").menu();
+    })
+    </script> 
+</head>
+<div id="pro">
+    <div class="main">
+        <div class="pro-home">
+        {{ render(controller('SiteCartronBundle:Default:menuPro')) }}
+
+                <div class="content">
+                    <div class="detailVisuel">
+                        <img src="{{ asset('upload/'~article.image) }}" width="308" height="554" alt="" />
+                    </div>
+                    <div class="detailDescript">
+                        <h3>{% if(app.session.get('_locale')=='en') %} {{ article.titreEn }} {% else %} {{ article.titreFr }} {% endif %} - <span>{% if(article.idDegustation) %} {% if(app.session.get('_locale')=='en') %} {{ article.idDegustation.titreEn }} {% else %} {{ article.idDegustation.titreFr }} {% endif %}  {% else %}{% if(app.session.get('_locale')=='en') %} {{ article.idSousMenu.titreEn }}  {% else %} {{ article.idSousMenu.titreFr }} {% endif %}  {% endif %}</span></h3>
+                        {% if(app.session.get('_locale')=='en') %} {{ article.descriptionEn | raw  }} {% else %} {{ article.descriptionFr | raw  }} {% endif %}
+                        <a target="_blank" href="{% if(app.session.get('_locale')=='en') %} {{ asset('upload/'~article.ficheProduitEn) }} {% else %} {{ asset('upload/'~article.ficheProduitFr) }} {% endif %}" class="telecharger">Télécharger la fiche produit</a>
+                        <div class="sep"></div>
+                        <a href="#" class="telecharger">Télécharger le packshot</a>
+                        <ul>
+                            <li><a  target="_blank"  href="{{ asset('upload/'~article.image) }}">jpg</a> |</li>
+                            <li><a  target="_blank"  href="{{ asset('upload/'~article.image) }}">pdf</a> |</li>
+                            <li><a  target="_blank"  href="{{ asset('upload/'~article.image) }}">eps</a></li>
+                        </ul>
+                        <br clear="all" />
+                        <a target="_blank" href="{% if(app.session.get('_locale')=='en') %} {{ asset('upload/'~article.recetteEn) }} {% else %} {{ asset('upload/'~article.recetteFr) }} {% endif %}" class="telecharger">Télécharger les recettes</a>
+                        <a target="_blank" href="{% if(app.session.get('_locale')=='en') %} {{ asset('upload/'~article.ficheLogistiqueEn) }} {% else %} {{ asset('upload/'~article.ficheLogistiqueFr) }} {% endif %}" class="telecharger">Télécharger la fiche logistique</a>
+                        <a target="_blank" href="#0" class="telecharger">Télécharger les médailles</a>
+                        <ul>
+                            <li><a target="_blank" href="{% if(app.session.get('_locale')=='en') %} {{ asset('upload/'~article.medailles1En) }} {% else %} {{ asset('upload/'~article.medailles1Fr) }} {% endif %}">2010</a> |</li>
+                            <li><a target="_blank" href="{% if(app.session.get('_locale')=='en') %} {{ asset('upload/'~article.medailles2En) }} {% else %} {{ asset('upload/'~article.medailles2Fr) }} {% endif %}">2011</a> |</li>
+                            <li><a target="_blank" href="{% if(app.session.get('_locale')=='en') %} {{ asset('upload/'~article.medailles3En) }} {% else %} {{ asset('upload/'~article.medailles3Fr) }} {% endif %}">2012</a></li>
+                            <li><a target="_blank" href="{% if(app.session.get('_locale')=='en') %} {{ asset('upload/'~article.medailles4En) }} {% else %} {{ asset('upload/'~article.medailles4Fr) }} {% endif %}">2013</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>    
+        </div>
+    </div>
+
+
+{% endblock %}

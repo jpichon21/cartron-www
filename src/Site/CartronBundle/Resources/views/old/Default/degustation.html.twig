@@ -1,0 +1,53 @@
+{% extends "SiteCartronBundle::layout.html.twig" %}
+{% block title %}JOSEPH CARTRON{% endblock %}
+{% block body %}
+
+<script type="text/javascript">
+    $(function() {
+        $('.subMenu').jScrollPane({scrollbarWidth: 6});
+
+        $('.next').hover(function() {
+            $('#degustation .main').stop().animate({backgroundPosition: '45% 0px'}, 2000);
+        }, function() {
+            $('#degustation .main').stop().animate({backgroundPosition: '50% 0'}, 2000);
+        });
+
+    })
+    </script>
+
+    <div id="degustation">
+        <div class="main">
+            <div class="degustation-home">
+                <div class="menu_degustation">
+                    <ul>
+
+                        {% for article in degustation %}
+                        <li class="menuLiWithSubMenu">
+                            <a href="#"> {% if(app.session.get('_locale')=='en') %} {{ article.titreEn }} {% else %} {{ article.titreFr }} {% endif %}</a>
+                            <div class="scrollMenu">
+                                <ul class="subMenu">
+                                       {% for sm in sousMenu %}
+                                            {% if(sm.idDegustation.id == article.id) %}
+                                                <li>
+                                                <a href="{{ path('site_cartron_degustation_produit',{id:sm.id}) }}">
+                                                       {% if(app.session.get('_locale')=='en') %} {{ sm.titreEn }} {% else %} {{ sm.titreFr }} {% endif %}
+                                                </a>
+                                                </li>
+                                           {% endif %}
+                                       {% endfor %}
+                                        </ul>
+                                    </div>
+                                </li>
+                                    {% endfor %}
+
+                            </ul>
+                        </div> <!-- # end menu degustation -->
+                        <div class="content">
+                            <h2><span>sélection</span> PARFUMS</h2>
+                            <a href="#" class="entrer">Entrez</a>
+                            <a href="#" class="next"></a>
+                        </div> <!-- # end content degustation -->            
+                    </div>    
+                </div>
+            </div>
+{% endblock %}

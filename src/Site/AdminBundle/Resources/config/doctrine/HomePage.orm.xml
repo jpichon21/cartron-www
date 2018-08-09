@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Site\AdminBundle\Entity\HomePage" table="home_page">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="titleFr" type="string" column="title_fr" length="255" nullable="true"/>
+    <field name="descFr" type="text" column="desc_fr" nullable="true"/>
+    <field name="titreEn" type="string" column="titre_en" length="255" nullable="true"/>
+    <field name="descEn" type="text" column="desc_en" nullable="true"/>
+    <field name="image" type="string" column="image" length="300" nullable="true"/>
+  </entity>
+</doctrine-mapping>

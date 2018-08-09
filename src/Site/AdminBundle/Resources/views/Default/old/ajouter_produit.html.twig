@@ -1,0 +1,226 @@
+{% extends "SiteAdminBundle::layout.html.twig" %}
+{% block body %}
+{{ tinymce_init() }}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.styledselect_form_1').selectbox({inputClass: "styledselect_form_1"});
+    });
+    </script>
+    <!-- start content -->
+    <div id="content">
+
+        <!--  start page-heading -->
+        <div id="page-heading">
+
+             {% if (app.request.get('_route') == 'site_admin_manage_produits_pro') %}
+            <h1>Ajouter produit (Espace pro) </h1>   
+            {% else %}
+            <h1>Ajouter dégustation (Espace pro) </h1>
+            {% endif %} 
+        </div>
+        <!-- end page-heading -->
+
+        <table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+            <tr>
+                <th rowspan="3" class="sized"><img src="{{ asset('bundles/siteadmin/images/shared/side_shadowleft.jpg')}}" width="20" height="300" alt="" /></th>
+                <th class="topleft"></th>
+                <td id="tbl-border-top">&nbsp;</td>
+                <th class="topright"></th>
+                <th rowspan="3" class="sized"><img src="{{ asset('bundles/siteadmin/images/shared/side_shadowright.jpg')}}" width="20" height="300" alt="" /></th>
+            </tr>
+            <tr>
+                <td id="tbl-border-left"></td>
+                <td>
+                    <!--  start content-table-inner ...................................................................... START -->
+                    <div id="content-table-inner">
+
+
+
+                        <form action="" method="post" {{ form_enctype(form) }}>
+
+
+                            <table cellspacing="0" cellpadding="0" border="0" id="id-form">
+                                <tbody>
+                                {% if (app.request.get('_route') == 'site_admin_manage_produits_pro') %}
+                                        <tr>
+                                            <th valign="top">Sous menu produit:</th>
+                                            <td>{{ form_widget(form.idSousMenu, { 'attr': {'class': 'styledselect_form_1'} }) }}</td>
+                                            <td></td>
+                                        </tr>   
+                                {% else %}
+                                        <tr>
+                                            <th valign="top">Dégustation:</th>
+                                            <td>{{ form_widget(form.idDegustation, { 'attr': {'class': 'styledselect_form_1'} }) }}</td>
+                                            <td></td>
+                                        </tr>
+                                  {% endif %}                           
+                                        <tr>
+                                            <th valign="top">Image:</th>
+                                            <td>{{ form_widget(form.image)}}</td>
+                                            <td></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th valign="top">Titre FR:</th>
+                                            <td>{{ form_widget(form.titreFr, { 'attr': {'class': 'inp-form'} }) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">Description FR:</th>
+                                            <td>{{ form_widget(form.descriptionFr) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        
+                                         <tr>
+                                            <th valign="top">Recette Fr:</th>
+                                            <td>{{ form_widget(form.recetteFr)}}  {{ form_errors(form.recetteFr) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <th valign="top">Packshot Pdf Fr:</th>
+                                            <td>{{ form_widget(form.packshotPdfFr)}}  {{ form_errors(form.packshotPdfFr) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">Packshot Eps Fr:</th>
+                                            <td>{{ form_widget(form.packshotEpsFr)}} {{ form_errors(form.packshotEpsFr) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">Packshot Jpg Fr:</th>
+                                            <td>{{ form_widget(form.packshotJpgFr)}} {{ form_errors(form.packshotJpgFr) }}</td>
+                                            <td></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th valign="top">Fiche Produit Fr:</th>
+                                            <td>{{ form_widget(form.ficheProduitFr)}} {{ form_errors(form.ficheProduitFr) }}</td>
+                                            <td></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th valign="top">Fiche LogistiqueFr:</th>
+                                            <td>{{ form_widget(form.ficheLogistiqueFr)}} {{ form_errors(form.ficheLogistiqueFr) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">Médailles 2010 Fr:</th>
+                                            <td>{{ form_widget(form.medailles1Fr)}}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">Médailles 2011 Fr:</th>
+                                            <td>{{ form_widget(form.medailles2Fr)}} {{ form_errors(form.medailles2Fr) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">Médailles 2012 Fr:</th>
+                                            <td>{{ form_widget(form.medailles3Fr)}} {{ form_errors(form.medailles3Fr) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">Médailles 2013 Fr:</th>
+                                            <td>{{ form_widget(form.medailles4Fr)}} {{ form_errors(form.medailles4Fr) }}</td>
+                                            <td></td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <th valign="top">Titre EN:</th>
+                                            <td>{{ form_widget(form.titreEn, { 'attr': {'class': 'inp-form'} }) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">Description En:</th>
+                                            <td>{{ form_widget(form.descriptionEn) }}</textarea></td>
+                                            <td></td>
+                                        </tr>
+                                        
+                                         <tr>
+                                            <th valign="top">Recette En:</th>
+                                            <td>{{ form_widget(form.recetteEn)}}  {{ form_errors(form.recetteEn) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <th valign="top">Fiche Produit En:</th>
+                                            <td>{{ form_widget(form.ficheProduitEn)}} {{ form_errors(form.ficheProduitEn) }}</td>
+                                            <td></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th valign="top">Packshot Jpg En:</th>
+                                            <td>{{ form_widget(form.packshotJpgEn)}} {{ form_errors(form.packshotJpgEn) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">Packshot Pdf En:</th>
+                                            <td>{{ form_widget(form.packshotPdfEn)}} {{ form_errors(form.packshotPdfEn) }}</td>
+                                            <td></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th valign="top">Packshot Eps En:</th>
+                                            <td>{{ form_widget(form.packshotEpsEn)}} {{ form_errors(form.packshotEpsEn) }}</td>
+                                            <td></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th valign="top">Fiche Logistique En:</th>
+                                            <td>{{ form_widget(form.ficheLogistiqueEn)}} {{ form_errors(form.ficheLogistiqueEn) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">Médailles 2010 En:</th>
+                                            <td>{{ form_widget(form.medailles1En)}} {{ form_errors(form.medailles1En) }}</td>
+                                            <td></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th valign="top">Médailles 2011 En:</th>
+                                            <td>{{ form_widget(form.medailles2En)}} {{ form_errors(form.medailles2En) }}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">Médailles 2012 En:</th>
+                                            <td>{{ form_widget(form.medailles3En)}} {{ form_errors(form.medailles3En) }}</td>
+                                            <td></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th valign="top">Médailles 2013 En:</th>
+                                            <td>{{ form_widget(form.medailles4En)}} {{ form_errors(form.medailles4En) }}</td>
+                                            <td></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <td valign="top">
+                                        {{ form_widget(form._token) }}
+                                                    <input class="form-submit" type="submit" />
+
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </form>
+
+                            </div>
+                            <!--  end content-table-inner ............................................END  -->
+                        </td>
+                        <td id="tbl-border-right"></td>
+                    </tr>
+                    <tr>
+                        <th class="sized bottomleft"></th>
+                        <td id="tbl-border-bottom">&nbsp;</td>
+                        <th class="sized bottomright"></th>
+                    </tr>
+                </table>
+                <div class="clear">&nbsp;</div>
+
+            </div>
+            <!--  end content -->
+{% endblock %}

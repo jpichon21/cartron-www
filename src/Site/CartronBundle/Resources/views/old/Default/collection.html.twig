@@ -1,0 +1,69 @@
+{% extends "SiteCartronBundle::layout.html.twig" %}
+{% block title %}JOSEPH CARTRON{% endblock %}
+{% block body %}
+    <script type="text/javascript">
+    $(function() {
+        $('.scroll').jScrollPane({scrollbarWidth: 4});
+    })
+    </script>
+
+    <div id="collection">
+        <div class="main">
+            <div class="collection-home">
+                        <div class="menu_collection">
+                            <ul>                    
+                                {% for article in collections %}
+                                <li id="marc_{{ article.id }}">
+                                    <a href="#0" onclick="return false" class="marc_{{ article.id }}">
+                                        {% if(app.session.get('_locale')=='en') %} {{ article.titreEn }} {% else %} {{ article.titreFr }} {% endif %}
+                                    </a>
+                                </li>
+                                <style>
+                                .collection-home .menu_collection #marc_{{ article.id }} a:hover, .collection-home .menu_collection li a.active{
+                                    border-bottom:2px solid #{{ article.color }};
+                                }
+                                </style>
+                                {% endfor %}
+                            </ul>
+                        </div> <!-- # end menu collection -->
+                        <div class="content">
+                            {% for article in collections %}
+                                <div class="block block_cassis">
+                                    <a href="#" class="plus" title="Plus"></a>
+                                    <img src="{{ asset('upload/'~article.image) }}" width="167" height="484" alt="" />
+                                    <div class="blockDesc">
+                                        <div class="desc_collections marc_{{ article.id }}_desc">
+                                            <ul class="scroll">
+                                                {% for sm in sousMenu %}
+                                                    {% if(sm.idCollection.id == article.id) %}
+                                                        <li>
+                                                            <a href="{{ path('site_cartron_collection_produit',{id:sm.id}) }}">
+                                                                {% if(app.session.get('_locale')=='en') %} {{ sm.titreEn }} {% else %} {{ sm.titreFr }} {% endif %}
+                                                            </a>
+                                                        </li>
+                                                        <style>
+                                                        .block_cassis .marc_{{ article.id }}_desc li a:hover{
+                                                         color:#{{ article.color }};;
+}
+                                                        </style>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                               <script type="text/javascript">
+                                    $(function() {
+                                        $('a.marc_{{ article.id }}')
+                                             .hover(function(e) {
+                                                 $('.marc_{{ article.id }}_desc').hoverFlow(e.type, {top: '0px'}, 'slow');
+                                             }, function(e) {
+                                                 $('.marc_{{ article.id }}_desc').hoverFlow(e.type, {top: '-483px'}, 'fast');
+                                          });
+                                     });
+                                </script>
+                            {% endfor %}
+                        </div>    
+                    </div>
+                </div>
+{% endblock %}

@@ -1,0 +1,126 @@
+.pix_diapo {
+	height: 575px;
+	overflow: hidden;
+	position: relative;
+	width: 1007px;
+}
+.pix_diapo > div {
+	display: none;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+#pix_prev, #pix_next {
+	cursor: pointer;
+	display: block;
+	height: 70px;
+	position: absolute;
+	top: 255px;
+	width: 23px;
+	z-index: 1001;
+	opacity:1!important;
+}
+#pix_prev {
+	background: url(../images/prev.png) no-repeat;
+	left: 0px;
+}
+#pix_next {
+	background: url(../images/suiv.png) no-repeat;
+	left: auto!important;
+	right: 0px!important;
+}
+#pix_pag {
+	margin: 0 auto;
+	position: relative;
+	width: 1007px;
+	height:44px;
+	z-index: 1002;
+}
+#pix_commands {
+	cursor: pointer;
+	display: block;
+	float: left;
+	height: 26px;
+	margin: 15px 0 0 13px;
+	position: relative;
+	width: 24px;
+	display:none;
+}
+#pix_play {
+	background: url(images/diapo/play.png) center no-repeat;
+	height: 24px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 24px;
+}
+#pix_stop {
+	background: url(images/diapo/pause.png) center no-repeat;
+	height: 24px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 24px;
+}
+#pix_pag_ul {
+	margin: 0;
+	padding: 0;
+}
+#pix_pag_ul > li {
+	cursor: pointer;
+	display: block;
+	.display: inline-block;
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 10px 0;
+	text-align: center;
+	text-indent: -9999px;
+	width: 24px;
+	height:24px;
+}
+#pix_pag_ul > li > span {
+	display: block;
+	height: 24px;
+	width: 24px;
+}
+#pix_pag_ul > li:hover > span > span {
+	background:url(../images/puce.png) no-repeat left top;
+}
+#pix_pag_ul > li > span > span {
+	display: block;
+	float: left;
+	height: 24px;
+	width: 24px;
+	background:url(../images/puce.png) no-repeat left bottom;
+}
+#pix_pag_ul > li.diapocurrent > span > span {
+	background:url(../images/puce.png) no-repeat left top;
+}
+#pix_pag_ul > li > .pix_thumb {
+	height: 125px;
+ 	left: -36px;
+	position: absolute;
+	top: -109px;
+	width: 100px;
+}
+#pix_pag_ul > li > .thumb_arrow {
+	top: 26px;
+	left: 12px;
+	position: absolute;
+}
+.pix_relativize {
+	overflow: hidden;
+	position: relative;
+}
+.imgFake {
+	cursor: pointer;
+}
+.elemHover {
+	position: absolute;
+}
+.ui-loader {
+	display: none;
+}
