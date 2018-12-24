@@ -16,3 +16,5 @@
 # Assets and user uploads
 #/htdocs/bundles/
 #/htdocs/uploads/
+database
+docker/data

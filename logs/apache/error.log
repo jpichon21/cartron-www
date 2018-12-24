@@ -1,0 +1,5 @@
+[Fri Dec 21 15:15:34.026164 2018] [proxy_fcgi:error] [pid 9:tid 139829102769920] [client 192.168.0.1:39004] AH01071: Got error 'Primary script unknown\n'
+[Fri Dec 21 15:15:42.974137 2018] [proxy_fcgi:error] [pid 9:tid 139829077591808] [client 192.168.0.1:39002] AH01071: Got error 'Primary script unknown\n'
+[Fri Dec 21 15:15:51.331186 2018] [proxy_fcgi:error] [pid 10:tid 139829094377216] [client 192.168.0.1:39034] AH01071: Got error 'Primary script unknown\n'
+[Fri Dec 21 15:17:01.713964 2018] [core:info] [pid 9:tid 139829002057472] [client 192.168.0.1:39100] AH00128: File does not exist: /usr/local/apache2/htdocs/htdocs
+[Fri Dec 21 15:17:23.927641 2018] [proxy_fcgi:error] [pid 8:tid 139829018842880] [client 192.168.0.1:39126] AH01071: Got error 'Primary script unknown\n'
