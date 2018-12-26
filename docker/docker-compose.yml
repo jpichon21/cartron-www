@@ -6,6 +6,7 @@ services:
         image: logomotion/httpd
         volumes:
             - ../logs/apache:${APACHE_ROOT_DIR}/logs
+            - ../:/${APACHE_ROOT_DIR}/htdocs
         ports:
             - ${APACHE_EXPOSED_PORT}:80
         networks:
