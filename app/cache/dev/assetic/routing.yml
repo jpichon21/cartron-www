@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: /Users/logomotion/Sites/cartron/app/config/routing_dev.yml
