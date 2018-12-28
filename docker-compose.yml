@@ -1,0 +1,22 @@
+version: "2"
+services:
+    www:
+        container_name: ${COMPOSE_PROJECT_NAME}
+        # args:
+        #     - WEB_USER=${WEB_USER}
+        #     - WEB_GROUP=${WEB_GROUP}
+        #     - WEB_GROUP=${WEB_GROUP}
+        #     - APACHE_ROOT_DIR=${APACHE_ROOT_DIR}
+        environment:
+            - APACHE_EXPOSED_PORT=${APACHE_EXPOSED_PORT}
+            - APACHE_ROOT_DIR=${APACHE_ROOT_DIR}
+            - WEB_USER=${WEB_USER}
+            - WEB_GROUP=${WEB_GROUP}
+        build: .
+        ports: 
+            - ${APACHE_EXPOSED_PORT}:80
+        volumes:
+            - ./:/var/www/html/
+        networks:
+            - default
+    
