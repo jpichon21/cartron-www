@@ -1,10 +1,10 @@
 parameters:
     database_driver:   pdo_mysql
-    database_host:     192.168.10.10
+    database_host:     mysql
     database_port:     ~
-    database_name:     local_cartron
-    database_user:     homestead
-    database_password: secret
+    database_name:     cartron
+    database_user:     root
+    database_password: root
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1

@@ -1,7 +1,7 @@
 version: '3'
  
 services:
-    apache_img:
+    apache:
         container_name: ${COMPOSE_PROJECT_NAME}_apache_con
         image: logomotion/httpd
         volumes:
@@ -19,7 +19,7 @@ services:
             - PHP_APP_DIR=${PHP_APP_DIR}
             - WEB_USER=${WEB_USER}
             - WEB_GROUP=${WEB_GROUP}
-    mysql_img:
+    mysql:
         container_name: ${COMPOSE_PROJECT_NAME}_mysql_con
         build:
             context: ./mysql
@@ -36,7 +36,7 @@ services:
             - MYSQL_CONTAINER_USER=${MYSQL_CONTAINER_USER}
             - MYSQL_CONTAINER_GROUP=${MYSQL_CONTAINER_GROUP}
             - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-    php_img:
+    php:
         container_name: ${COMPOSE_PROJECT_NAME}_php_con
         image: logomotion/php:5.6
         working_dir: ${PHP_APP_DIR}
@@ -44,8 +44,8 @@ services:
             - ..:${PHP_APP_DIR}
             - ../logs/php:${PHP_ROOT_DIR}/logs
         depends_on:
-            - apache_img
-            - mysql_img
+            - apache
+            - mysql
         networks:
             public_net:
                 ipv4_address: ${PHP_IP}
@@ -58,6 +58,17 @@ services:
             - MYSQL_IP=${MYSQL_IP}
             - MYSQL_ROOT_USER=${MYSQL_ROOT_USER}
             - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+        external_links:
+            - mysql-57:db
+    phpmyadmin:
+        container_name: ${COMPOSE_PROJECT_NAME}_phpmyadmin_con
+        image: phpmyadmin/phpmyadmin:latest
+        networks: 
+            - public_net
+        ports:
+            - ${PHPMYADMIN_PORT}:80
+        links:
+            - mysql:db
  
 networks:
     public_net:
