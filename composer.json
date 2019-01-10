@@ -1,0 +1,77 @@
+{
+    "name": "logomotion/cartron-www",
+    "type": "project",
+    "authors": [
+        {
+            "name": "logomotion",
+            "email": "production@logomotion.fr"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "require": {
+        "jdorn/sql-formatter": "v1.2.0",
+        "doctrine/common": "2.3.0",
+        "doctrine/dbal": "2.3.2",
+        "psr/log": "1.0.0",
+        "symfony/symfony": "v2.2.0",
+        "doctrine/doctrine-bundle": "v1.2.0-beta1",
+        "twig/extensions": "v1.0.0-alpha",
+        "doctrine/orm": "2.3.2",
+        "kriswallsmith/assetic": "v1.1.0-alpha3",
+        "symfony/assetic-bundle": "v2.1.2",
+        "symfony/swiftmailer-bundle": "v2.2.0",
+        "monolog/monolog": "1.4.0",
+        "symfony/monolog-bundle": "v2.2.0",
+        "sensio/distribution-bundle": "v2.2.0",
+        "sensio/framework-extra-bundle": "v2.2.0",
+        "sensio/generator-bundle": "v2.2.0",
+        "jms/metadata": "1.2.0-RC",
+        "jms/cg": "1.0.0",
+        "jms/aop-bundle": "1.0.0",
+        "jms/di-extra-bundle": "1.3.0",
+        "phpoption/phpoption": "1.1.0",
+        "jms/parser-lib": "1.0.0",
+        "jms/security-extra-bundle": "1.4.0",
+        "friendsofsymfony/user-bundle": "*",
+        "twig/twig": "1.13.x",
+        "swiftmailer/swiftmailer": "v4.3.1",
+        "stfalcon/tinymce-bundle": "2.1"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "WillemJan\\CheckBundles\\Composer\\CheckBundles::postPackageUpdate",
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreateAndCkeditor",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ],
+        "post-update-cmd": [
+            "WillemJan\\CheckBundles\\Composer\\CheckBundles::postPackageUpdate",
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreateAndCkeditor",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin",
+        "component-dir": "web/assets"
+    },
+    "extra": {
+        "checkbundles-ignore": [
+            "Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle"
+        ],
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web",
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        },
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
