@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+ 
+if ! [[ -d ./app/logs/apache ]]; then
+    mkdir -p ./app/logs/apache
+fi
+ 
+if ! [[ -d ./app/logs/mysql ]]; then
+    mkdir -p ./app/logs/mysql
+fi
+ 
+if ! [[ -d ./app/logs/php ]]; then
+    mkdir -p ./app/logs/php
+fi
+ 
+if ! [[ -d ./database ]]; then
+    mkdir ./database
+fi
+ 
+docker-compose up -d --build
+ 
+docker exec cartron_apache_con chown -R root:www-data /usr/local/apache2/logs
+docker exec cartron_php_con chown -R root:www-data /usr/local/etc/logs

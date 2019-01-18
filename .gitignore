@@ -1,7 +1,6 @@
 # Cache and logs (Symfony2)
 /app/cache/*
 /app/logs/*
-/logs/
 
 # Parameters
 /app/config/parameters.yml
@@ -14,5 +13,4 @@
 /htdocs/uploads/
 /htdocs/1/*
 /web/bundles/
-database
-docker/data
+/database
