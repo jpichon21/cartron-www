@@ -13,7 +13,7 @@ $loader->register(true);
 */
 
 //exec("rm -rf /srv/d_cartro1/www/www.cartron.fr/app/cache/");
-//exec("chmod -R a+rw /srv/d_cartro1/www/www.cartron.fr/htdocs/upload");
+//exec("chmod -R a+rw /srv/d_cartro1/www/www.cartron.fr/web/upload");
 
 require_once __DIR__.'/../app/AppKernel.php';
 //require_once __DIR__.'/../app/AppCache.php';

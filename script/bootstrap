@@ -1,0 +1,33 @@
+#!/bin/bash
+
+set -e
+
+cd "$(dirname $0)/.."
+
+echo "==> Checking prerequisites…"
+exit_code=0
+
+if hash phpcs 2>/dev/null; then
+    echo "PHP_CodeSniffer found: $(phpcs --version)"
+else
+    echo "PHP_CodeSniffer is required to run the project."
+    exit_code=1
+fi
+
+do_update=
+if [[ "$1" == "-u" ]]; then
+    do_update=1
+fi
+
+echo "==> Installing Php dependencies…"
+phprunning=0
+if [ -z `docker ps -q --no-trunc | grep $(docker-compose ps -q php)` ]; then
+    docker-compose up -d --build php
+else
+    phprunning=1
+fi
+docker-compose exec php composer install
+
+if [ $phprunning = 0 ]; then
+    docker-compose down
+fi

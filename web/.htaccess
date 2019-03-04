@@ -11,5 +11,5 @@ SetEnv MAGIC_QUOTES 1
 
     RewriteCond %{REQUEST_FILENAME} !-f
 	#RewriteCond %{REQUEST_URI} !=/
-    RewriteRule ^(.*)$ app.php [QSA,L]
+    RewriteRule ^(.*)$ app_dev.php [QSA,L]
 </IfModule>

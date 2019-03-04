@@ -1,6 +1,7 @@
 # Cache and logs (Symfony2)
 /app/cache/*
 /app/logs/*
+/var/logs/*
 
 # Parameters
 /app/config/parameters.yml
@@ -9,8 +10,9 @@
 /vendor/
 
 # Assets and user uploads
-/htdocs/bundles/
-/htdocs/uploads/
-/htdocs/1/*
+/web/bundles/
+/web/uploads/
+/web/1/*
 /web/bundles/
 /database
+.env

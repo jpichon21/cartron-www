@@ -94,7 +94,7 @@ class DefaultController extends Controller {
                     $name = 'hp_' . time() . '_' . $nameOriginalFile;
                     $homePage->setImage($name);
 
-					$result = $uploadFile->move(__DIR__ . '/../../../../htdocs/upload', $name);
+					$result = $uploadFile->move(__DIR__ . '/../../../../web/upload', $name);
                 }
                 else
                     $homePage->setImage($image);
@@ -176,7 +176,7 @@ class DefaultController extends Controller {
                 if ($uploadFile) {
                     $nameOriginalFile = $uploadFile->getClientOriginalName();
                     $name = 'col_' . time() . '_' . $nameOriginalFile;
-                    $uploadFile->move(__DIR__ . '/../../../../htdocs/upload', $name);
+                    $uploadFile->move(__DIR__ . '/../../../../web/upload', $name);
                     $collection->setImage($name);
                 }
                 else
@@ -284,7 +284,7 @@ class DefaultController extends Controller {
                     $nameOriginalFile = $uploadFile->getClientOriginalName();
                     $name = 'sm_' . time() . '_' . $nameOriginalFile;
 
-                    $uploadFile->move(__DIR__ . '/../../../../htdocs/upload', $name);
+                    $uploadFile->move(__DIR__ . '/../../../../web/upload', $name);
 
                     $sousMenu->setImage($name);
                 }
@@ -296,7 +296,7 @@ class DefaultController extends Controller {
                     $uploadFileIcone = $uploadFile1->getClientOriginalName();
                     $nameIcone = 'sm_' . time() . '_' . $uploadFileIcone;
 
-                    $uploadFile1->move(__DIR__ . '/../../../../htdocs/upload', $nameIcone);
+                    $uploadFile1->move(__DIR__ . '/../../../../web/upload', $nameIcone);
 
                     //$uploadFile1->move(__DIR__ . '/../../../../www/upload', $nameIcone);
                     $sousMenu->setIcone($nameIcone);
@@ -401,7 +401,7 @@ class DefaultController extends Controller {
                     $name = 'sm_' . time() . '_' . $nameOriginalFile;
                     // BIGGERBAND FIX UPLOAD LOCATION
                     // $uploadFile->move(__DIR__ . '/../../../../www/upload', $name);
-		             $uploadFile->move(__DIR__ . '/../../../../htdocs/upload', $name);
+		             $uploadFile->move(__DIR__ . '/../../../../web/upload', $name);
                     $sousMenuDegustation->setImage($name);
                 }
                 else

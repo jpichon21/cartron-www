@@ -315,7 +315,7 @@ class DefaultController extends Controller {
             exit("Impossible d'ouvrir le fichier <$filename>\n");
         }
         if ($demande == 'packshots') {
-            $zip->addFile("M:\zend\Apache2\htdocs\cartron_dev\web\upload\hp_1367321900_Desert.jpg");
+            $zip->addFile("M:\zend\Apache2\web\cartron_dev\web\upload\hp_1367321900_Desert.jpg");
         }
 
         die();

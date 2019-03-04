@@ -94,7 +94,7 @@ class DefaultController extends Controller {
                     $name = 'hp_' . time() . '_' . $nameOriginalFile;
                     $homePage->setImage($name);
 
-					$result = $uploadFile->move(__DIR__ . '/../../../../htdocs/upload', $name);
+					$result = $uploadFile->move(__DIR__ . '/../../../../web/upload', $name);
                 }
                 else
                     $homePage->setImage($image);
@@ -176,7 +176,7 @@ class DefaultController extends Controller {
                 if ($uploadFile) {
                     $nameOriginalFile = $uploadFile->getClientOriginalName();
                     $name = 'col_' . time() . '_' . $nameOriginalFile;
-                    $uploadFile->move(__DIR__ . '/../../../../htdocs/upload', $name);
+                    $uploadFile->move(__DIR__ . '/../../../../web/upload', $name);
                     $collection->setImage($name);
                 }
                 else

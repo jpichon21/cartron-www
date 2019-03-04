@@ -5,61 +5,47 @@ services:
         container_name: ${COMPOSE_PROJECT_NAME}_apache_con
         image: logomotion/httpd
         volumes:
-            - ./app/logs/apache:/usr/local/apache2/logs
-            - .:/usr/local/apache2/htdocs
+            - ./var/logs/apache:/var/log/apache
+            - .:/home/wwwroot
         ports:
             - ${APACHE_EXPOSED_PORT}:80
-        networks:
-            public_net:
-                ipv4_address: ${APACHE_IP}
         environment:
-            - PHP_IP=${PHP_IP}
-            - WEB_USER=${WEB_USER}
-            - WEB_GROUP=${WEB_GROUP}
-    mysql:
+            SERVER_HOST_NAME: ${SERVER_HOST_NAME}
+    db:
         container_name: ${COMPOSE_PROJECT_NAME}_mysql_con
         image: mysql:5.6
         volumes:
-            - ./app/logs/mysql:/var/log/mysql
+            - ./var/logs/mysql:/var/log/mysql
             - ./database:/var/lib/mysql
-        networks:
-            public_net:
-                ipv4_address: ${MYSQL_IP}
         environment:
-            - MYSQL_ROOT_PASSWORD=mysql
+            MYSQL_ROOT_PASSWORD: mysql
+            MYSQL_DATABASE: ${COMPOSE_PROJECT_NAME}
     php:
         container_name: ${COMPOSE_PROJECT_NAME}_php_con
         image: logomotion/php:5.6
-        working_dir: /srv/app
+        working_dir: /home/wwwroot
         volumes:
-            - .:/srv/app
-            - ./app/logs/php:/usr/local/etc/logs
-        depends_on:
-            - apache
-            - mysql
-        networks:
-            public_net:
-                ipv4_address: ${PHP_IP}
+            - .:/home/wwwroot
+            - ./var/logs/php:/usr/local/etc/logs
+            - ./var/cache/composer:/var/www/.composer/cache
+        links:
+          - db:db
+          - smtp:smtp
         environment:
-            - APACHE_IP=${APACHE_IP}
-            - WEB_USER=${WEB_USER}
-            - WEB_GROUP=${WEB_GROUP}
-        external_links:
-            - mysql-57:db
+            ENV: ${ENV}
+        user: ${LOCAL_USER}
     phpmyadmin:
         container_name: ${COMPOSE_PROJECT_NAME}_phpmyadmin_con
         image: phpmyadmin/phpmyadmin:latest
-        networks: 
-            - public_net
         ports:
-            - ${PHPMYADMIN_PORT}:80
+            - ${PHPMYADMIN_EXPOSED_PORT}:80
         links:
-            - mysql:db
- 
-networks:
-    public_net:
-        driver: bridge
-        ipam:
-            driver: default
-            config:
-                - subnet: ${NETWORK_SUBNET}
+            - db:db
+    smtp:
+        container_name: ${COMPOSE_PROJECT_NAME}_smtp_con
+        image: bornholm/fake-smtp
+        ports:
+            -  ${SMTP_EXPOSED_PORT}:2525
+            -  ${FAKETOOLS_EXPOSED_PORT}:8080
+        volumes:
+            - ./var/smtp:/fake-smtp/data/smtp
