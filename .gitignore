@@ -21,3 +21,4 @@
 .jscpd
 .vscode/
 !.vscode/settings.json
+web/site/images/upload

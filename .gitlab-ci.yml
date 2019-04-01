@@ -1,7 +1,65 @@
-cq:
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
+
+test:
+  stage: test
   image: logomotion/code-quality
   script: 
     - phpcs --standard=PSR2 ./src
     - security-checker security:check
     - phpcpd src
     - phpmd src text unusedcode
+
+build:
+  stage: build
+  image: docker:git
+  services:
+  - docker:dind
+  before_script:
+  - apk add --no-cache py-pip
+  - pip install docker-compose
+  script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
+  - docker build -t registry.gitlab.com/logomotion/cartron-www .
+  - docker push registry.gitlab.com/logomotion/cartron-www
+deploy_dev:
+  stage: deploy
+  image: kroniak/ssh-client:3.6
+  environment:
+    name: dev
+    url: https://dev.cartron.fr
+  script:
+    - 'which ssh-agent || ( apk --update add openssh-client )'
+    - eval $(ssh-agent -s)
+    - mkdir ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa
+    - ssh-keyscan -H 'vps625104.ovh.net' >> ~/.ssh/known_hosts
+    - ssh root@vps625104.ovh.net "docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com"
+    - ssh root@vps625104.ovh.net "docker stop cartron_dev" || true
+    - ssh root@vps625104.ovh.net "docker rm cartron_dev" || true
+    - ssh root@vps625104.ovh.net "docker rmi registry.gitlab.com/logomotion/cartron-www" || true
+    - ssh root@vps625104.ovh.net "docker run -d --name cartron_dev --network=web --env-file /home/cartron_dev/.env -v /home/cartron_dev/volumes/logs:/srv/app/var/logs registry.gitlab.com/logomotion/cartron-www"
+    - ssh root@vps625104.ovh.net "docker network connect mysql cartron_dev"
+    - ssh root@vps625104.ovh.net "docker exec cartron_dev php bin/console cache:clear --env=prod --no-debug"
+deploy_staging:
+  stage: deploy
+  image: php:7-cli-alpine
+  before_script:
+    - apk add --update git openssh-client
+    - mkdir -p ~/.ssh && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+  environment:
+    name: staging
+    url: https://staging.cartron.fr
+  script:
+        - curl -L https://deployer.org/releases/v6.4.3/deployer.phar > /usr/local/bin/deployer && chmod +x /usr/local/bin/deployer
+        - deployer -f=deploy/deploy.php deploy

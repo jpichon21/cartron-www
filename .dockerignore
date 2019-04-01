@@ -1,0 +1,18 @@
+app/cache
+**/*.log
+bin/symfony_requirements
+database
+script
+tests
+var/*
+vendor
+# web/upload
+.git*
+gitlab-ci.yml
+.dockerignore
+.env.dist
+docker-compose.yml
+Dockerfile
+phpcs.xml
+phpunit.xml.dist
+settings.json

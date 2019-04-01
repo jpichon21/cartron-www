@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="news-home">
-                <a href="#" class="lanch_news" ><img width="109" height="59" src="{{ asset('upload/'~articles.0.image) }}" alt="" /></a>
+                <a href="#" class="lanch_news" ><img width="109" height="59" src="{{ asset('site/images/upload/'~articles.0.image) }}" alt="" /></a>
                 <div class="txt-video-news-home">
                     <h2><a href="#" class="lanch_news"><span id="s_news">{{ "NEWS" | trans }} /</span> <span id="t_news">{% if(app.session.get('_locale')=='en') %} {{ articles.0.titreEn }} {% else %} {{ articles.0.titleFr }} {% endif %}</span></a></h2>
                     <p>{% if(app.session.get('_locale')=='en') %} {{ articles.0.descEn|striptags|truncate(100, true, '...')|raw }} {% else %} {{ articles.0.descFr|striptags|truncate(100, true, '...')|raw }} {% endif %}</p>
@@ -57,14 +57,14 @@
             <div class="pop-news-content">
                 <a class="close" href="#">{{ "fermer" | trans }}</a>
                 <div id="default_news" style="padding-bottom: 20px; overflow: hidden;">
-                    <img alt="" width="548" src="{{ asset('upload/'~articles.0.image) }}">
+                    <img alt="" width="548" src="{{ asset('site/images/upload/'~articles.0.image) }}">
                    {% if(app.session.get('_locale')=='en') %} {{ articles.0.descEn|raw }} {% else %} {{ articles.0.descFr|raw }} {% endif %}
                     <div class="share"><a class="facebook" href="">facebook</a><a class="twitter" href="">twitter</a><br clear="all"></div>
                 </div>
             </div>
             <ul id="liste-news" class="jcarousel-skin-tango">
                 {% for article in articles %}
-                    <li class="news_hp" id="news_hp_{{ article.id }}" style=" cursor: pointer"><img src="{{ asset('upload/'~article.image) }}"  width="110" height="60" alt="" /><h3>{% if(app.session.get('_locale')=='en') %} {{ article.titreEn|raw }} {% else %} {{ article.titleFr|raw }} {% endif %}</h3></li>
+                    <li class="news_hp" id="news_hp_{{ article.id }}" style=" cursor: pointer"><img src="{{ asset('site/images/upload/'~article.image) }}"  width="110" height="60" alt="" /><h3>{% if(app.session.get('_locale')=='en') %} {{ article.titreEn|raw }} {% else %} {{ article.titleFr|raw }} {% endif %}</h3></li>
                 {% endfor %}
                     </ul>
                 </div>
