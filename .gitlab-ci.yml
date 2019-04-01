@@ -1,0 +1,7 @@
+cq:
+  image: logomotion/code-quality
+  script: 
+    - phpcs --standard=PSR2 ./src
+    - security-checker security:check
+    - phpcpd src
+    - phpmd src text unusedcode

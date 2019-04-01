@@ -1,0 +1,171 @@
+{% extends "layout.html.twig" %}
+{% block title %}JOSEPH CARTRON{% endblock %}
+{% block body %}
+
+<script type="text/javascript" src="{{ asset('site/js/jquery.cycle2.js') }}"></script>
+<script type="text/javascript" src="{{ asset('site/js/jquery.cycle2.carousel.js') }}"></script>
+<script type="text/javascript" src="{{ asset('site/js/jquery.cycle2.tile.js') }}"></script>
+
+<script type="text/javascript">
+	$(function() 
+	{
+  		$('.desconly').jScrollPane({scrollbarWidth: 4, autoReinitialise: true});
+  		$('.subMenu').jScrollPane({scrollbarWidth: 6});
+
+	  	$('.next').hover(function() { $('#degustation .main').stop().animate({backgroundPosition: '45% 0px'}, 2000) }, 
+	  	function() { $('#degustation .main').stop().animate({backgroundPosition: '50% 0'}, 2000) });
+
+		
+	
+		
+		$('.imprimer').click(function(){ window.print() })
+
+	})
+</script>
+
+<style>
+  .desconly{
+  width: 400px;
+  height: 370px;
+  overflow: auto;
+  }
+  .jspDrag{
+  background:#7C8184;
+  }
+  .jspTrack{
+  background:#FFF;
+  }
+  .menu_degustation .jspDrag{
+  background:#FFF !important;
+  }
+</style>
+<div id="degustation-produits">
+  <div class="main">
+    <div class="degustation-home">
+      <div class="menu_degustation">
+        <ul>
+
+          {% for degustation in degustations %}
+          <li class="menuLiWithSubMenu">
+            {% set break = false %}
+                {% for sousMenu in sousMenus if not break %}
+                    {% if(degustation.id == sousMenu.idDegustation.id) %}
+                    <a href="{{ path('tasting_product',{id:sousMenu.id}) }}" >
+                        {% if(app.session.get('_locale')=='en') %} {{ degustation.titreEn|raw }} {% else %} {{ degustation.titreFr|raw }} {% endif %}
+                    </a>
+                    {% set break = true %}
+                    {% endif %}
+                {% endfor %}
+            <div class="scrollMenu">
+              <ul class="subMenu">
+                {% for sousMenu in sousMenus %}
+                {% if(sousMenu.idDegustation.id == degustation.id) %}
+                <li>
+                  <a href="{{ path('tasting_product',{id:sousMenu.id}) }}">
+                    {% if(app.session.get('_locale')=='en') %} {{ sousMenu.titreEn }} {% else %} {{ sousMenu.titreFr }} {% endif %}
+                  </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </li>
+          {% endfor %}
+
+        </ul>
+      </div> <!-- # end menu degustation -->
+      <div class="content">
+
+        <div id="slideshow-1">
+
+          <a href="#" class="cycle-prev"></a>
+          <a href="#" class="cycle-next"></a>
+          
+          <div id="cycle-1" data-cycle-slides=".cycle" data-cycle-fx="scrollHorz"  data-cycle-timeout="0" data-cycle-prev="#slideshow-1 .cycle-prev" data-cycle-next="#slideshow-1 .cycle-next" data-cycle-caption="#slideshow-1 .custom-caption">
+      
+            {% for sousMenuDegustation in sousMenusDegustation %}
+            <div class="article_{{ sousMenuDegustation.id }} cycle {% if(sousMenuDegustation.couleurArrierePlan=='noir') %} {{ "imageNoir" }} {% endif %} {% if sousMenuDegustation.id == app.request.get('id') %}cycle-slide-active{% endif %}">
+              <img src="{{ asset('upload/'~sousMenuDegustation.image) }}" width="977" height="577" alt="" />
+              <a href="javascript:window.history.back()" class="back">{{ "Retour" | trans }}</a>
+              <div class="description">
+                <h3>{% if(app.session.get('_locale')=='en') %} {{ sousMenuDegustation.titreEn }} {% else %} {{ sousMenuDegustation.titreFr }} {% endif %}</h3>
+                <div class="desconly">
+  
+                  <div class="text txtScroll">
+                    {% if(app.session.get('_locale')=='en') %} {{ sousMenuDegustation.descriptionEn|raw }} {% else %} {{ sousMenuDegustation.descriptionFr|raw }} {% endif %}
+                  </div>
+                  <div class="sep"></div>
+          {% if app.session.get('_locale')=='en' and sousMenuDegustation.noteDegustationEn|trim != '' %}
+                  <h4>Tasting Tip</h4>
+                  <div class="text">
+                    {% if(app.session.get('_locale')=='en') %} {{ sousMenuDegustation.noteDegustationEn|raw }} {% else %} {{ sousMenuDegustation.noteDegustationFr|raw }} {% endif %}
+                  </div>
+          {% endif %}
+                  
+          {% if app.session.get('_locale')=='fr' and sousMenuDegustation.noteDegustationFr|trim != '' %}
+                  <h4>Note de Dégustation</h4>
+                  <div class="text">
+                    {% if(app.session.get('_locale')=='en') %} {{ sousMenuDegustation.noteDegustationEn|raw }} {% else %} {{ sousMenuDegustation.noteDegustationFr|raw }} {% endif %}
+                  </div>
+          {% endif %}
+                  
+                </div>
+                <div class="icons">
+                  <a href="http://www.facebook.com/sharer.php?u=http://www.cartron.fr" class="facebook"></a>
+                  <a href="#" class="telecharger"></a>
+                  <a href="javascript:window.print();" class="imprimer"></a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+
+
+          </div>
+        </div>
+
+      </div> <!-- # end content degustation -->          
+    </div>    
+  </div>
+</div>
+<style>
+  .text p {color: #2F383E}
+</style>
+
+<script>
+$(document).ready(function() { 
+	
+	$(".cycle").each(function() {
+		var $links = $(this).find(".text a");
+		var ids = "#";
+		$links.each(function() {
+			ids += $(this).attr("href") + ",";
+		});
+		$links.each(function() {
+			var url = "{{ path('tasting_product', {id: 'id'}) }}";
+			url = url.replace("id", $(this).attr("href"));
+			$(this).attr("href", url + ids);
+		});		
+	});
+
+	if(document.location.hash){
+		var elements = [];
+		var parameters = document.location.hash;
+		parameters = parameters.substring(1,parameters.length);
+		parameters = parameters.split(",");
+		for(var i= 0; i < parameters.length; i++) {
+			elements.push($(".article_"+parameters[i]));
+		}
+		$("#cycle-1").html(elements);
+	} 
+	
+	var position = $('#cycle-1 .cycle').index( $('.article_{{sousMenuDegustationDefault.id}}') );
+	$('#cycle-1').show().cycle({'startingSlide':position, 'log':false});
+});
+
+</script>
+
+
+
+{% endblock %}
+

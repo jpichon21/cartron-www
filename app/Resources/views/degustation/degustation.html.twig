@@ -1,0 +1,77 @@
+{% extends "layout.html.twig" %}
+{% block title %}JOSEPH CARTRON{% endblock %}
+{% block body %}
+
+<script type="text/javascript">
+  $(function() {
+  $('.subMenu').jScrollPane({scrollbarWidth: 6});  
+  new cartron.Degustation({'$container':$('#degustation .main')});
+  new cartron.Responsive({'$container':$('#degustation .content'), 'offset':55});
+  });
+</script>
+<div id="degustation">
+  <div class="main">
+    <div class="degustation-home">
+      <div class="menu_degustation">
+        <div class="center">
+	      <ul>
+	        {% for degustation in degustations %}
+	        <li class="menuLiWithSubMenu">
+                    {% set break = false %}
+                    {% for sousMenu in sousMenus if not break %}
+                        {% if(degustation.id == sousMenu.idDegustation.id) %}
+                        <a class="marc_{{ degustation.id }}" href="{{ path('tasting_product',{id:sousMenu.id}) }}" >
+                            {% if(app.session.get('_locale')=='en') %} {{ degustation.titreEn|raw }} {% else %} {{ degustation.titreFr|raw }} {% endif %}
+                        </a>
+                        {% set break = true %}
+                        {% endif %}
+                    {% endfor %}
+	          <div class="scrollMenu">
+	            <ul class="subMenu">
+	              {% for sousMenu in sousMenus %}
+	              {% if(sousMenu.idDegustation.id == degustation.id) %}
+	              <li>
+	                <a href="{{ path('tasting_product',{id:sousMenu.id}) }}">
+	                  {% if(app.session.get('_locale')=='en') %} {{ sousMenu.titreEn }} {% else %} {{ sousMenu.titreFr }} {% endif %}
+	                </a>
+	              </li>
+	              {% endif %}
+	              {% endfor %}
+	            </ul>
+				<div style="clear:both;"></div>
+	          </div>
+	        </li>
+	        {% endfor %}
+			
+	      </ul>
+        </div>
+      </div> <!-- # end menu degustation -->
+      <div class="content">
+        <div class="parralax">
+          {% for degustation in degustations %}
+
+          <div {% if(loop.index >1) %} class="hd" {% else %} class="sh" {% endif %} id="ar_{{ loop.index }}">
+            <h2><b><span>{{ "sélection" | trans }}</span> {% if(app.session.get('_locale')=='en') %} {{ degustation.titreEn }} {% else %} {{ degustation.titreFr }} {% endif %}</b></h2>                                
+            {% set break = false %}
+            {% for sousMenu in sousMenus if not break %}
+                {% if(degustation.id == sousMenu.idDegustation.id) %}
+                <a href="{{ path('tasting_product',{id:sousMenu.id}) }}" class="entrer">{{ 'Entrez' | trans }}</a>
+                {% set break = true %}
+                {% endif %}
+            {% endfor %}
+          </div>
+          {% endfor %}
+
+          <a href="#0" class="next"></a>
+          <a href="#0" class="prev"></a>
+          <input type="hidden" id="nbr" value="{{ degustations|length }}" />
+        </div> <!-- # end content degustation -->            
+      </div> 
+    </div>    
+  </div>
+</div>
+<style>
+  .hd{display: none}
+  .sh{display: block}
+</style>
+{% endblock %}

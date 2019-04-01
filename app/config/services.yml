@@ -1,0 +1,101 @@
+# Learn more about services, parameters and containers at
+# https://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        # automatically injects dependencies in your services
+        autowire: true
+        # automatically registers your services as commands, event subscribers, etc.
+        autoconfigure: true
+        # this means you cannot fetch services directly from the container via $container->get()
+        # if you need to do this, you can override this setting on individual services
+        public: false
+
+    # makes classes in src/AppBundle available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    AppBundle\:
+        resource: '../../src/AppBundle/*'
+        # you can exclude directories or files
+        # but if a service is unused, it's removed anyway
+        exclude: '../../src/AppBundle/{Entity,Tests}'
+
+    # controllers are imported separately to make sure they're public
+    # and have a tag that allows actions to type-hint services
+    AppBundle\Controller\:
+        resource: '../../src/AppBundle/Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
+    AppBundle\Repository\VideoHpRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\VideoHp
+
+    AppBundle\Repository\HomePageRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\HomePage
+
+    AppBundle\Repository\SousMenuRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\SousMenu
+
+    AppBundle\Repository\DegustationRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\Degustation
+
+    AppBundle\Repository\SousMenuDegustationRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\SousMenuDegustation
+    
+    AppBundle\Repository\CollectionRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\Collection
+
+    AppBundle\Repository\SousMenuProduitsRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\SousMenuProduits
+
+    AppBundle\Repository\DegustationProRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\DegustationPro
+
+    AppBundle\Repository\PageMenuRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\PageMenu
+
+    AppBundle\Repository\ProduitsRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\Produits
+    AppBundle\Repository\PaysRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\Pays
+
+    AppBundle\Repository\UserRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\User
+
+    AppBundle\Listener\ConsentListener:
+        class: AppBundle\Listener\ConsentListener
+        arguments: ['@router.default']
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: checkConsent }
+
+    # Twig\Extension\AbstractExtension
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+           - { name: twig.extension }

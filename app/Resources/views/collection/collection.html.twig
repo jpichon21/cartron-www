@@ -1,0 +1,74 @@
+{% extends "layout.html.twig" %}
+{% block title %}JOSEPH CARTRON{% endblock %}
+{% block body %}
+<script type="text/javascript">
+  $(function() {
+  $('.scroll').jScrollPane({scrollbarWidth: 4});
+  })
+</script>
+<div id="collection">
+  <div class="main">
+    <div class="collection-home">
+      <div class="menu_collection">
+        <ul>                    
+          {% for collection in collections %}
+          <li id="marc_{{ collection.id }}">
+            {% set break = false %}
+            {% for sousMenu in sousMenus if not break %}
+              {% if(collection.id == sousMenu.idCollection.id) %}
+              <a class="marc_{{ collection.id }}" href="{{ path('collection_product',{id:sousMenu.id}) }}" >
+                {% if(app.session.get('_locale')=='en') %} {{ collection.titreEn|raw }} {% else %} {{ collection.titreFr|raw }} {% endif %}
+              </a>
+              {% set break = true %}
+              {% endif %}
+            {% endfor %}
+            </li>
+            <style>
+              .collection-home .menu_collection #marc_{{ collection.id }} a:hover, .collection-home .menu_collection li a.active{
+                border-bottom:2px solid #{{ collection.color }};
+              }
+            </style>
+          {% endfor %}
+        </ul>
+      </div> <!-- # end menu collection -->
+      <div class="content">
+        {% for collection in collections %}
+        <div class="block block_cassis">
+          <a href="#" class="plus" title="Plus"></a>
+          <img src="{{ asset('upload/'~collection.image) }}" width="167" height="484" alt="" />
+          <div class="blockDesc">
+            <div class="desc_collections marc_{{ collection.id }}_desc">
+              <ul class="scroll">
+                {% for sousMenu in sousMenus %}
+                {% if(sousMenu.idCollection.id == collection.id) %}
+                <li>
+                  <a href="{{ path('collection_product',{id:sousMenu.id}) }}">
+                    {% if(app.session.get('_locale')=='en') %} {{ sousMenu.titreEn }} {% else %} {{ sousMenu.titreFr }} {% endif %}
+                  </a>
+                </li>
+                <style>
+                  .block_cassis .marc_{{ collection.id }}_desc li a:hover{
+                  color:#{{ collection.color }};;
+				  }
+                </style>
+                {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">
+          $(function() {
+          $('a.marc_{{ collection.id }}')
+          .hover(function(e) {
+          $('.marc_{{ collection.id }}_desc').hoverFlow(e.type, {top: '0px'}, 'slow');
+          }, function(e) {
+          $('.marc_{{ collection.id }}_desc').hoverFlow(e.type, {top: '-483px'}, 'fast');
+          });
+          });
+        </script>
+        {% endfor %}
+      </div>    
+    </div>
+  </div>
+  {% endblock %}
