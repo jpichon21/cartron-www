@@ -1,0 +1,128 @@
+{% extends "admin/layout.html.twig" %}
+{% block body %}
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+<script>
+    $(function() {
+        $("#tabs").tabs();
+    });
+    </script>
+    <!-- start content -->
+    <div id="content">
+
+
+
+        <!--  start page-heading -->
+        <div id="page-heading">
+            <h1> Sous Menu collection </h1>
+        </div>
+        <!-- end page-heading -->
+
+        <table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+            <tr>
+                <th rowspan="3" class="sized"><img src="{{ asset('admin/images/shared/side_shadowleft.jpg')}}" width="20" height="300" alt="" /></th>
+                <th class="topleft"></th>
+                <td id="tbl-border-top">&nbsp;</td>
+                <th class="topright"></th>
+                <th rowspan="3" class="sized"><img src="{{ asset('admin/images/shared/side_shadowright.jpg')}}" width="20" height="300" alt="" /></th>
+            </tr>
+            <tr>
+                <td id="tbl-border-left"></td>
+                <td>
+                    <!--  start content-table-inner ...................................................................... START -->
+                    <div id="content-table-inner">
+                    {% if sousMenu %}
+                            <div id="tabs">
+                                <ul>
+                                    <li><a href="#tabs-1">Langue FR</a></li>
+                                    <li><a href="#tabs-2">Langue EN</a></li>
+                                </ul>
+                                <div id="tabs-1">
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" id="product-table">
+                                        <tbody>
+                                            <tr>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Collection </a></th>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Image</a>	</th>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Icone</a>	</th>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Degré  </a></th>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Titre</a>	</th>            
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Contenance</a>	</th>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Conserver</a>	</th>
+
+                                                <th class="table-header-options line-left"><a href="#0">Actions</a></th>
+                                            </tr>
+                                       {% for article in sousMenu  %}
+                                            <tr>
+                                                <td>{{ article.idCollection.titreFr }}</td>
+                                                <td align="center"><img width="150" src='{{ asset('upload/'~article.image) }}'  /></td>
+                                                <td align="center"><img width="22" src='{{ asset('upload/'~article.icone) }}'  /></td>
+                                                <td>{{ article.degre }}</td>
+                                                <td>{{ article.titreFr }}</td>
+                                                <td>{{ article.contenanceFR }}</td>
+                                                <td>{{ article.conserverFR }}</td>
+
+                                                <td class="options-width">
+                                                    <a class="icon-1 info-tooltip" href="{{ path('admin_add_sous_menu', { 'id': article.id }) }}"></a>
+                                                    <a class="icon-2 info-tooltip" href="{{ path('delete', { 'id': article.id , 'table':'SousMenu' }) }}"></a>
+                                                </td>
+                                            </tr>
+
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="tabs-2">
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" id="product-table">
+                                        <tbody>
+                                            <tr>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Collection </a></th>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Image</a>	</th>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Icone</a>	</th>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Degré  </a></th>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Titre</a></th>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Contenance</a>	</th>
+                                                <th class="table-header-repeat line-left minwidth-1"><a href="#0">Conserver</a>	</th>
+
+                                                <th class="table-header-options line-left"><a href="#0">Actions</a></th>
+                                            </tr>
+                                       {% for article in sousMenu  %}
+                                            <tr>
+                                                <td>{{ article.idCollection.titreEn }}</td>
+                                                <td align="center"><img width="150" src='{{ asset('upload/'~article.image) }}'  /></td>
+                                                <td align="center"><img width="22" src='{{ asset('upload/'~article.icone) }}'  /></td>
+                                                <td>{{ article.degre }}</td>
+                                                <td>{{ article.titreEN }}</td>
+                                                <td>{{ article.contenanceEn }}</td>
+                                                <td>{{ article.conserverEn }}</td>
+
+                                                <td class="options-width">
+                                                    <a class="icon-1 info-tooltip" href="{{ path('admin_add_sous_menu', { 'id': article.id }) }}"></a>
+                                                    <a class="icon-2 info-tooltip" href="{{ path('delete', { 'id': article.id , 'table':'SousMenu' }) }}"></a>
+                                                </td>
+                                            </tr>
+
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        </div>
+                        <!--  end content-table-inner ............................................END  -->
+                    </td>
+                    <td id="tbl-border-right"></td>
+                </tr>
+                <tr>
+                    <th class="sized bottomleft"></th>
+                    <td id="tbl-border-bottom">&nbsp;</td>
+                    <th class="sized bottomright"></th>
+                </tr>
+            </table>
+            <div class="clear">&nbsp;</div>
+
+        </div>
+        <!--  end content -->
+{% endblock %}

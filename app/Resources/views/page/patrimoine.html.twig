@@ -1,0 +1,63 @@
+<div class="main" id="patrimone">
+	
+    <div id="slide_1" class="patrimoine_slides">
+        <div class="table">
+            <div class="slide">
+              <div class="content">
+                <div class="titre">
+                   <div class="border">
+                       <h2>{{ "L’HISTOIRE"|trans }}</h2>
+                          <span>{{ "Cartron, créateur de saveur depuis"|trans }} 1882</span>
+                    </div>
+                </div>
+                <p><em>{{ "En 1882 Joseph Cartron fonde la maison éponyme à Nuits St Georges" |trans}}...</em></p>
+                <a href="{{ path('static_page',{'page':'histoire'}) }}" class="lire_suite">{{"Lire la suite"|trans }}</a>
+              </div>
+            </div>
+        </div>
+    </div> <!-- # end slide 1 -->
+    
+    <div id="slide_2" class="patrimoine_slides">
+        <div class="table">
+          <div class="slide slides2">
+            <div class="content">
+              <div class="titre">
+                  <div class="border">
+                    <h2>{{ "LA BOURGOGNE"|trans }}</h2>
+                    <span>{{ "En Héritage"|trans }}</span>
+                  </div>
+              </div>
+              <p><em>{{ "La bourgogne fait partie intégrante de l’histoire de la famille Cartron depuis plus de trois siècles"|trans }}.</em></p>
+              <a href="{{ path('static_page',{'page':'la-bourgogne'}) }}" class="lire_suite">{{"Lire la suite"|trans }}</a>
+            </div>
+          </div>
+      </div>
+    </div> <!-- # end slide 2 -->
+    
+    <div id="slide_3" class="patrimoine_slides">
+        <div class="table">
+            <div class="slide">
+              <div class="content">
+                <div class="titre">
+                  <div class="border">
+                      <h2>{{"LES LICORNES"|trans }}</h2>
+                      <span>{{ "L’emblème de la Maison Cartron"|trans }}</span>
+                    </div>
+                </div>
+                <p><em>{{ "Amateur d’art et de littérature, Ami des surréalistes , Armand Cartron a créé au début des années 30"|trans}}</em></p>
+                <a href="{{ path('static_page',{'page':'licornes'}) }}" class="lire_suite">{{"Lire la suite"|trans }}</a>
+              </div>
+          </div>
+        </div>	 <!-- # end slide 3 -->
+    </div>	 <!-- # end slide 3 -->
+  </div>
+  
+  <script>
+    $(document).ready(function() 
+    {
+         $('.patrimoine').addClass("active");
+        
+       new cartron.Responsive({$container: $("#patrimone")});
+       var patrimoine = cartron.Patrimoine({ $container: $("#patrimone")});
+    });
+  </script>
