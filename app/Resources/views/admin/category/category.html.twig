@@ -1,0 +1,82 @@
+{% extends "admin/layout.html.twig" %}
+{% block body %}
+<!-- start content -->
+<div id="content">
+    <!--  start page-heading -->
+    <div id="page-heading">
+        <h1>Liste des catégories </h1>
+    </div>
+    <!-- end page-heading -->
+    <table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+        <tr>
+            <th rowspan="3" class="sized"><img src="{{ asset('admin/images/shared/side_shadowleft.jpg')}}" width="20" height="300" alt="" /></th>
+            <th class="topleft"></th>
+            <td id="tbl-border-top">&nbsp;</td>
+            <th class="topright"></th>
+            <th rowspan="3" class="sized"><img src="{{ asset('admin/images/shared/side_shadowright.jpg')}}" width="20" height="300" alt="" /></th>
+        </tr>
+        <tr>
+            <td id="tbl-border-left"></td>
+            <td>
+                <!--  start content-table-inner ...................................................................... START -->
+                <div id="content-table-inner">
+                    {% if categories %}
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" id="product-table">
+                            <tbody>
+                                <tr>
+                                    <th class="table-header-repeat line-left minwidth-1"><a href="#0">Nom</a></th>
+                                    <th class="table-header-repeat line-left minwidth-1"><a href="#0">Identifiant</a></th>
+                                    <th class="table-header-repeat line-left"><a href="#0">Description</a></th>
+                                    <th class="table-header-repeat line-left minwidth-1"><a href="#0">Ressource</a></th>
+                                    <th class="table-header-options line-left"><a href="#0">Actions</a></th>
+                                </tr>
+                                {% for category in categories %}
+                                    {%  if category.lvl == 0 %}
+                                    <tr>
+                                        <td>{{ category.nom }}</td>
+                                        <td>{{ category.description|raw }}</td>
+                                        <td>{{ category.identifiant }}</td>
+                                        <td align="center"><a href="{{ path('admin_resource', { 'idCategory': category.id }) }}"> Voir les ressources </a></td>
+                                        <td class="options-width">
+                                            <a class="icon-1 info-tooltip" href="{{ path('admin_edit_category', { 'id': category.id, 'locale': app.request.getLocale() }) }}"></a>
+                                            <a class="icon-2 info-tooltip" href="{{ path('delete', { 'id': category.id , 'table':'Category' }) }}"></a>
+                                        </td>
+                                    </tr>
+                                    {% endif %}
+                                    {% for subCategory in categories %}
+                                        {% if subCategory.parent is not null %}
+                                            {%  if subCategory.parent.id == category.id %}
+                                            <tr>
+                                                <td>--- {{ subCategory.nom }}</td>
+                                                <td>{{ subCategory.identifiant }}</td>
+                                                <td>{{ subCategory.description|raw }}</td>
+                                                <td align="center"><a href="{{ path('admin_resource', { 'idCategory': subCategory.id }) }}"> Voir les ressources </a></td>
+                                                <td class="options-width">
+                                                    <a class="icon-1 info-tooltip" href="{{ path('admin_edit_category', { 'id': subCategory.id, 'locale': app.request.getLocale() }) }}"></a>
+                                                    <a class="icon-2 info-tooltip" href="{{ path('delete', { 'id': subCategory.id , 'table':'Category' }) }}"></a>
+                                                </td>
+                                            </tr>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        {% endif %}
+
+                    </div>
+                    <!--  end content-table-inner ............................................END  -->
+                </td>
+                <td id="tbl-border-right"></td>
+            </tr>
+            <tr>
+                <th class="sized bottomleft"></th>
+                <td id="tbl-border-bottom">&nbsp;</td>
+                <th class="sized bottomright"></th>
+            </tr>
+        </table>
+        <div class="clear">&nbsp;</div>
+
+    </div>
+    <!--  end content -->
+{% endblock %}
