@@ -70,6 +70,9 @@ class DefaultAdminController extends Controller
             case 'Pays':
                 return $this->redirectToRoute('liste_pays');
                 break;
+            case 'Category':
+                return $this->redirectToRoute('admin_category');
+                break;
             default:
                 echo 'null';
         }
