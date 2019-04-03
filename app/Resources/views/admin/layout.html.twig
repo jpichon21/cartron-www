@@ -98,7 +98,7 @@
                             </li>
                         </ul>
                         
-                          <div class="nav-divider">&nbsp;</div>
+                        <div class="nav-divider">&nbsp;</div>
 
                         <ul {% if (app.request.get('_route') == 'liste_pays' or app.request.get('_route') == 'add_pays') %} class="current" {% else %} class="select" {% endif %} ><li><a href="{{ path('liste_pays') }}"><b>Pays</b><!--[if IE 7]><!--></a><!--<![endif]-->
                                 <!--[if lte IE 6]><table><tr><td><![endif]-->
@@ -106,6 +106,20 @@
                                     <ul class="sub">
                                         <li {% if (app.request.get('_route') == 'liste_pays')%}class="sub_show"{% endif %}><a href="{{ path('liste_pays') }}">Pays</a></li>
                                         <li {% if (app.request.get('_route') == 'add_pays')  %}class="sub_show"{% endif %}><a href="{{ path('add_pays') }}">Ajouter pays</a></li>
+                                    </ul>
+                                </div>
+                                <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                            </li>
+                        </ul>
+
+                        <div class="nav-divider">&nbsp;</div>
+
+                        <ul {% if (app.request.get('_route') == 'admin_category' or app.request.get('_route') == 'admin_add_category' or app.request.get('_route') == 'admin_edit_category') %} class="current" {% else %} class="select" {% endif %} ><li><a href="{{ path('admin_category') }}"><b>Catégorie</b><!--[if IE 7]><!--></a><!--<![endif]-->
+                                <!--[if lte IE 6]><table><tr><td><![endif]-->
+                                <div class="select_sub show">
+                                    <ul class="sub">
+                                        <li {% if (app.request.get('_route') == 'admin_category')%}class="sub_show"{% endif %}><a href="{{ path('admin_category') }}">Catégorie</a></li>
+                                        <li {% if (app.request.get('_route') == 'admin_add_category')  %}class="sub_show"{% endif %}><a href="{{ path('admin_add_category') }}">Ajouter catégorie</a></li>
                                     </ul>
                                 </div>
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
