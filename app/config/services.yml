@@ -88,6 +88,16 @@ services:
         arguments: 
             - AppBundle\Entity\User
 
+    AppBundle\Repository\CategoryRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\Category
+
+    AppBundle\Repository\ResourceRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\Resource
+
     AppBundle\Listener\ConsentListener:
         class: AppBundle\Listener\ConsentListener
         arguments: ['@router.default']
