@@ -1,0 +1,173 @@
+{% extends "admin/layout.html.twig" %}
+{% block body %}
+<!-- start content -->
+<div id="content">
+
+    <!--  start page-heading -->
+    <div id="page-heading">
+        <h1>Ajouter resource </h1>
+    </div>
+    <!-- end page-heading -->
+
+    <table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+        <tr>
+            <th rowspan="3" class="sized"><img src="{{ asset('admin/images/shared/side_shadowleft.jpg')}}" width="20"
+                    height="300" alt="" /></th>
+            <th class="topleft"></th>
+            <td id="tbl-border-top">&nbsp;</td>
+            <th class="topright"></th>
+            <th rowspan="3" class="sized"><img src="{{ asset('admin/images/shared/side_shadowright.jpg')}}" width="20"
+                    height="300" alt="" /></th>
+        </tr>
+        <tr>
+            <td id="tbl-border-left"></td>
+            <td>
+                <!--  start content-table-inner ...................................................................... START -->
+                <div id="content-table-inner">
+                    {{ form_start(form)}}
+                    <table cellspacing="0" cellpadding="0" border="0" id="id-form">
+                        <tbody>
+                            <tr>
+                                <th valign="top">Categorie:</th>
+                                <td>{% autoescape false %}{{ form_widget(form.category) }}{% endautoescape %}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th valign="top">Titre :</th>
+                                <td>{{ form_widget(form.title) }}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th valign="top">Description:</th>
+                                <td>{% autoescape false %}{{ form_widget(form.description) }}{% endautoescape %}</textarea>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th valign="top">TitreSEO :</th>
+                                <td>{{ form_widget(form.titleSEO) }}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th valign="top">Photo :</th>
+                                <td>{{ form_widget(form.picture) }}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th valign="top">Miniature :</th>
+                                <td>{{ form_widget(form.miniature) }}</td>
+                                <td></td>
+                            </tr>
+                            {% if downloads is defined %}
+                                {% for download in downloads %}
+                                <tr>
+                                    <th valign="top">Titre du fichier :</th>
+                                    <td>{{download.title}}</td>
+                                </tr>
+                                <tr>
+                                    <th valign="top">lien :</th>
+                                    <td><a href="{{ asset('upload/'~download.file)}}">{{ asset('upload/'~download.file)}}</a></td>
+                                </tr>
+                                {% endfor %}
+                            {% endif %}
+                                <td></td>
+                            <tr class="downloads" data-prototype="{{ form_widget(form.downloads.vars.prototype)|e('html_attr') }}">
+                                
+                            </tr>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <td valign="top">
+                                    {{ form_widget(form.submit) }}
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+                <!--  end content-table-inner ............................................END  -->
+            </td>
+            <td id="tbl-border-right"></td>
+        </tr>
+        <tr>
+            <th class="sized bottomleft"></th>
+            <td id="tbl-border-bottom">&nbsp;</td>
+            <th class="sized bottomright"></th>
+        </tr>
+    </table>
+    <div class="clear">&nbsp;</div>
+</div>
+<!--  end content -->
+
+<script type="text/javascript">
+    var $collectionHolder;
+
+    // setup an "add a tag" link
+    var $addTagButton = $('<button type="button" class="add_tag_link">Add a tag</button>');
+    var $newLinkLi = $('<th></th>').after($addTagButton);
+
+    $(document).ready(function () {
+        $('.styledselect_form_1').selectbox({
+            inputClass: "styledselect_form_1"
+        });
+
+        // Get the ul that holds the collection of tags
+        $collectionHolder = $('tr.downloads');
+
+        // add a delete link to all of the existing tag form li elements
+        $collectionHolder.find('li').each(function() {
+            addTagFormDeleteLink($(this));
+        });
+
+        // add the "add a tag" anchor and li to the tags ul
+        $collectionHolder.append($newLinkLi);
+
+        // count the current form inputs we have (e.g. 2), use that as the new
+        // index when inserting a new item (e.g. 2)
+        $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+         $addTagButton.click(function(e) {
+            // add a new tag form (see next code block)
+            addTagForm($collectionHolder, $newLinkLi);
+        });
+    });
+
+    function addTagForm($collectionHolder, $newLinkLi) {
+        // Get the data-prototype explained earlier
+        var prototype = $collectionHolder.attr('data-prototype');
+
+        // get the new index
+        var index = $collectionHolder.data('index');
+
+        var newForm = prototype;
+        // You need this only if you didn't set 'label' => false in your tags field in TaskType
+        // Replace '__name__label__' in the prototype's HTML to
+        // instead be a number based on how many items we have
+        // newForm = newForm.replace(/__name__label__/g, index);
+
+        // Replace '__name__' in the prototype's HTML to
+        // instead be a number based on how many items we have
+        newForm = newForm.replace(/__name__/g, index);
+
+        // increase the index with one for the next item
+        $collectionHolder.data('index', index + 1);
+
+        // Display the form in the page in an li, before the "Add a tag" link li
+        var $newFormLi = $('<th valign="top">Titre du fichier :</th>').after('<td></td>').append(newForm);
+        $addTagButton.before($newFormLi);
+
+        // add a delete link to the new form
+        addTagFormDeleteLink($newFormLi);
+    }
+
+    function addTagFormDeleteLink($tagFormLi) {
+        var $removeFormButton = $('<button type="button">Delete this tag</button>');
+        $tagFormLi.append($removeFormButton);
+
+        $removeFormButton.click(function(e) {
+            // remove the li for the tag form
+            $tagFormLi.remove();
+        });
+    }
+</script>
+{% endblock %}
