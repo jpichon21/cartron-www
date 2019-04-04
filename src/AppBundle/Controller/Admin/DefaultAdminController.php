@@ -28,9 +28,18 @@ class DefaultAdminController extends Controller
      */
     public function deleteAction($table, $id, Request $request)
     {
+        
         $tableBdd = $this->em->find('AppBundle:' . $table . '', $id);
         if (!$tableBdd) {
             throw new NotFoundHttpException($tableBdd . "non trouvé");
+        }
+        if ($table === 'Resource') {
+            foreach ($tableBdd->getDownloads() as $download) {
+                $name = $download->getFile();
+                $dir = $this->getParameter('uploadDirectory').'/';
+                unlink($dir.$name);
+                $this->em->remove($download);
+            }
         }
         $this->em->remove($tableBdd);
         $this->em->flush();
@@ -72,6 +81,9 @@ class DefaultAdminController extends Controller
                 break;
             case 'Category':
                 return $this->redirectToRoute('admin_category');
+                break;
+            case 'Resource':
+                return $this->redirectToRoute('admin_resource');
                 break;
             default:
                 echo 'null';

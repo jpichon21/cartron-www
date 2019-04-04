@@ -5,7 +5,6 @@ namespace AppBundle\Controller\Admin;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Resource;
-use AppBundle\Entity\Download;
 use AppBundle\Repository\ResourceRepository;
 use AppBundle\Form\ResourceType;
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
@@ -46,17 +45,21 @@ class ResourceAdminController extends Controller
     public function indexResourceAction($idCategory)
     {
         if ($idCategory !== null) {
-            $resources = $this->resourceRepository->getBySortableGroupsQuery(
-                ['idCategory' => $idCategory]
-            )->getResult();
+            // $resources = $this->resourceRepository->getBySortableGroupsQuery(
+            //     ['category' => $idCategory]
+            // )->getResult();
+            $resources = $this->resourceRepository->findBy(
+                ['category' => $idCategory]
+            );
+            $isSortable = true;
         } else {
-            // $resources = $this->resourceRepository->getBySortableGroupsQuery()->getResult();
             $resources = $this->resourceRepository->findAll();
+            $isSortable = false;
         }
 
         return $this->render(
             'admin/resource/resource.html.twig',
-            ['resources' => $resources]
+            ['resources' => $resources, 'isSortable' => $isSortable, 'idCategory' => $idCategory]
         );
     }
 
@@ -73,20 +76,16 @@ class ResourceAdminController extends Controller
         $resource = new Resource();
 
         $form = $this->createForm(ResourceType::class, $resource);
-        dump($request);
+
         $form->handleRequest($request);
-        $downloads = new ArrayCollection();
         if ($form->isSubmitted() && $form->isValid()) {
             // $resource->setTranslatableLocale('fr_fr');
             $data = $form->getData();
-            $downloads = $data->getDownloads();
-            
-
             
             $uploadFile = $data->getPicture();
             if ($uploadFile) {
                 $nameOriginalFile = $uploadFile->getClientOriginalName();
-                $name = 'resource' . time() . '_' . $nameOriginalFile;
+                $name = 'resourcePic' . time() . '_' . $nameOriginalFile;
                 $uploadFile->move(
                     $this->getParameter('uploadDirectory'),
                     $name
@@ -97,7 +96,7 @@ class ResourceAdminController extends Controller
             $uploadFile = $data->getMiniature();
             if ($uploadFile) {
                 $nameOriginalFile = $uploadFile->getClientOriginalName();
-                $name = 'resource' . time() . '_' . $nameOriginalFile;
+                $name = 'resourceMin' . time() . '_' . $nameOriginalFile;
                 $uploadFile->move(
                     $this->getParameter('uploadDirectory'),
                     $name
@@ -133,14 +132,14 @@ class ResourceAdminController extends Controller
         // $resource->setLocale($locale);
         // $this->em->refresh($resource);
 
+        $photo = $resource->getPicture();
+        $miniature = $resource->getMiniature();
+
         $originalDownloads = new ArrayCollection();
+
         foreach ($resource->getDownloads() as $download) {
             $originalDownloads->add($download);
         }
-
-        $downloads = $resource->getDownloads();
-        $photo = $resource->getPicture();
-        $miniature = $resource->getMiniature();
 
         $form = $this->createForm(ResourceType::class, $resource);
         $form->handleRequest($request);
@@ -154,14 +153,17 @@ class ResourceAdminController extends Controller
 
             foreach ($originalDownloads as $download) {
                 if (false === $resource->getDownloads()->contains($download)) {
+                    $name = $download->getFile();
+                    $dir = $this->getParameter('uploadDirectory').'/';
+                    unlink($dir.$name);
                     $this->em->remove($download);
                 }
             }
-            
+
             $uploadFile = $data->getPicture();
             if ($uploadFile) {
                 $nameOriginalFile = $uploadFile->getClientOriginalName();
-                $name = 'resource' . time() . '_' . $nameOriginalFile;
+                $name = 'resourcePic' . time() . '_' . $nameOriginalFile;
                 $uploadFile->move(
                     $this->getParameter('uploadDirectory'),
                     $name
@@ -176,7 +178,7 @@ class ResourceAdminController extends Controller
             $uploadFile = $data->getMiniature();
             if ($uploadFile) {
                 $nameOriginalFile = $uploadFile->getClientOriginalName();
-                $name = 'resource' . time() . '_' . $nameOriginalFile;
+                $name = 'resourceMin' . time() . '_' . $nameOriginalFile;
                 $uploadFile->move(
                     $this->getParameter('uploadDirectory'),
                     $name
@@ -195,7 +197,7 @@ class ResourceAdminController extends Controller
 
         return $this->render(
             'admin/resource/manage_resource.html.twig',
-            ['form' => $form->createView(), 'locale' => $locale, 'downloads' => $downloads]
+            ['form' => $form->createView(), 'locale' => $locale]
         );
     }
 
@@ -210,7 +212,7 @@ class ResourceAdminController extends Controller
     public function sortResourceAction($idResource, $upOrDown, $idCategory)
     {
         $resource = $this->resourceRepository->findOneById($idResource);
-        $countResources = count($this->categoryRepository->findAll());
+        $countResources = count($this->resourceRepository->findAll());
         $actualPosition = $resource->getPosition();
         if ($upOrDown === 'down' && $actualPosition !== 0) {
                 $resource->setPosition($actualPosition -1);

@@ -126,6 +126,20 @@
                             </li>
                         </ul>
 
+                        <div class="nav-divider">&nbsp;</div>
+
+                        <ul {% if (app.request.get('_route') == 'admin_resource' or app.request.get('_route') == 'admin_add_resource' or app.request.get('_route') == 'admin_edit_resource') %} class="current" {% else %} class="select" {% endif %} ><li><a href="{{ path('admin_resource') }}"><b>Ressource</b><!--[if IE 7]><!--></a><!--<![endif]-->
+                                <!--[if lte IE 6]><table><tr><td><![endif]-->
+                                <div class="select_sub show">
+                                    <ul class="sub">
+                                        <li {% if (app.request.get('_route') == 'admin_resource')%}class="sub_show"{% endif %}><a href="{{ path('admin_resource') }}">Ressource</a></li>
+                                        <li {% if (app.request.get('_route') == 'admin_add_resource')  %}class="sub_show"{% endif %}><a href="{{ path('admin_add_resource') }}">Ajouter resource</a></li>
+                                    </ul>
+                                </div>
+                                <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                            </li>
+                        </ul>
+
                         <div class="clear"></div>
                     </div>
                     <div class="clear"></div>

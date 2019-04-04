@@ -26,7 +26,7 @@
                                 <tr>
                                     <th class="table-header-repeat line-left minwidth-1"><a href="#0">Titre</a></th>
                                     <th class="table-header-repeat line-left minwidth-1"><a href="#0">Titre SEO</a></th>
-                                    {% if isSortable %}
+                                    {% if isSortable is defined and isSortable %}
                                     <th class="table-header-options line-left"><a href="#0">Ordonner</a></th>
                                     {% endif %}
                                     <th class="table-header-options line-left"><a href="#0">Actions</a></th>
@@ -36,20 +36,24 @@
                                 {% for resource in resources %}
                                 {% set indice = indice + 1 %}
                                 <tr>
-                                    <td>{{ resource.titre }}</td>
-                                    <td>{{ resource.titreSEO }}</td>
-                                    {% if isSortable %}
+                                    <td>{{ resource.title }}</td>
+                                    <td>{{ resource.titleSEO }}</td>
+                                    {% if isSortable is defined and isSortable %}
                                     <td class="options-width">
                                         {% if isFirst == false %}
-                                        <a class="icon-1 info-tooltip" href="{{ path('admin_sort_resource', { 'id': resource.id, 'upOrDown': 'up' }) }}"></a>
+                                            <a href="{{ path('admin_sort_resource', { 'idResource': resource.id, 'upOrDown': 'up', 'idCategory': idCategory }) }}"><img src="{{ asset('admin/images/table/icon-arrow-up.png')}}" /></a>
                                         {% endif %}
                                         {% if resources|length != indice %}
-                                        <a class="icon-2 info-tooltip" href="{{ path('admin_sort_resource', { 'id': resource.id, 'upOrDown': 'down' }) }}"></a>
+                                            {% if isFirst == true %}
+                                                <a style="margin-left: 27px" href="{{ path('admin_sort_resource', { 'idResource': resource.id, 'upOrDown': 'down', 'idCategory': idCategory }) }}"><img src="{{ asset('admin/images/table/icon-arrow-down.png')}}" /></a>
+                                            {% else %}
+                                                <a href="{{ path('admin_sort_resource', { 'idResource': resource.id, 'upOrDown': 'down', 'idCategory': idCategory }) }}"><img src="{{ asset('admin/images/table/icon-arrow-down.png')}}" /></a>
+                                            {% endif %}
                                         {% endif %}
                                     </td>
                                     {% endif %}
                                     <td class="options-width">
-                                        <a class="icon-1 info-tooltip" href="{{ path('admin__add_resource', { 'id': resource.id }) }}"></a>
+                                        <a class="icon-1 info-tooltip" href="{{ path('admin_edit_resource', { 'id': resource.id, 'locale': app.request.getLocale() }) }}"></a>
                                         <a class="icon-2 info-tooltip" href="{{ path('delete', { 'id': resource.id , 'table':'Resource' }) }}"></a>
                                     </td>
                                 </tr>

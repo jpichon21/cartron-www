@@ -87,14 +87,18 @@ class Download implements Translatable
      */
     public function setFile($file)
     {
-        // $nameOriginalFile = $file->getClientOriginalName();
-        // $name = 'resource' . time() . '_' . $nameOriginalFile;
-        // $file->move(
-        //     '%kernel.project_dir%/web/upload',
-        //     $name
-        // );
+        if ($file == null) {
+            return $this;
+        } else {
+            $nameOriginalFile = $file->getClientOriginalName();
+            $name = 'download' . time() . '_' . $nameOriginalFile;
+            $file->move(
+                'upload',
+                $name
+            );
+        }
 
-        $this->file = $file->getClientOriginalName();
+        $this->file = $name;
     
         return $this;
     }
