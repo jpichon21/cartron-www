@@ -29,30 +29,28 @@ a{
     display:none;
 }
 body{
-    background:url(../images/bg-cartron.jpg) repeat-x center top;
-	min-width:1080px;
-	background-color:#35424a;
+    background:#36424a;
 }
 body#agegate{
-    background:url(../images/bg-agegate.jpg) #36424a no-repeat center top;
+    background:url(../../images/bg-agegate.jpg) #36424a no-repeat center top;
 }
 .logo{
-    background:url(../images/logo.png) no-repeat;
+    background:url(../../images/logo.png) no-repeat;
     width:73px;
     height:75px;
     display:block;
     margin: 16px auto;
 }
 .nav-top{
-    background:url(../images/bg-nav-top.png) no-repeat center top;
+    background:url(../../images/bg-nav-top.png) no-repeat center top;
     height:35px;
 }
 .header{
 	padding-top: 1px;
-	background: url('../images/bg-body-head.jpg') no-repeat center
+	background: url('../../images/bg-body-head.jpg') no-repeat center
 }
 .footer{
-	background: url('../images/bg-body-footer.jpg') no-repeat center;
+	background: url('../../images/bg-body-footer.jpg') no-repeat center;
 	overflow: auto;
 }
 .header-content{
@@ -83,7 +81,7 @@ body#agegate{
 }
 
 .menu-top li a:hover, .menu-top li a.active{
-    background:url(../images/bg-lien-degustation.png) no-repeat center 25px;
+    background:url(../../images/bg-lien-degustation.png) no-repeat center 25px;
 }
 .recherche-form{
     position:absolute;
@@ -91,35 +89,52 @@ body#agegate{
     top:4px;
 }
 .recherche-form input{
-    background:url(../images/bg-recherche.png) no-repeat;
+    background:url(../../images/bg-recherche.png) no-repeat;
     height:25px;
     line-height:25px;
     width:112px;
     padding:0 15px 0 25px;
 }
+.espace-pro-header{
+    background:url(../../images/espace-pro-header_03.gif) no-repeat;
+    font-family: 'Source Sans Pro';
+    position:absolute;
+    top:-44px;
+    right:10px;
+    display:block;
+    padding-left:30px;
+    font-size:12px;
+    text-transform:uppercase;
+    text-decoration:none;
+}
+.espace-pro-header strong{ font-family: 'Source Sans Pro'; }
+.main{
+    height:666px;
+    position:relative;
+}
 #home .main{
-    background:url(../images/bg-main-hp.jpg) no-repeat center top;
+    background:url(../../images/bg-main-hp.jpg) no-repeat center top;
     height:100%;
     background-size: cover
 }
 
 #histoire .main{
-    background:url(../images/bg-histoire.jpg) no-repeat center top;
+    background:url(../../images/bg-histoire.jpg) no-repeat center top;
 }
 #licornes .main{
-    background:url(../images/bg-main-licornes.jpg) no-repeat center top;
+    background:url(../../images/bg-main-licornes.jpg) no-repeat center top;
 }
 #bourgogne .main{
-    background:url(../images/bg-bourgogne.jpg) no-repeat center top;
+    background:url(../../images/bg-bourgogne.jpg) no-repeat center top;
 }
 #savoir-faire .main{
-    background:url(../images/bg-savoir-faire-new.jpg) no-repeat center top;
+    background:url(../../images/bg-savoir-faire.jpg) no-repeat center top;
 }
 #collection .main{
-    background:url(../images/bg-collection.jpg) no-repeat center top;
+    background:url(../../images/bg-collection.jpg) no-repeat center top;
 }
 #degustation .main{
-	background:url(../images/bg_degustation.jpg) repeat-x 2% 0;
+	background:url(../../images/bg_degustation.jpg) repeat-x 2% 0;
 	position:relative;
 	overflow:hidden;
 	width:100%;
@@ -127,38 +142,34 @@ body#agegate{
 	background-size: auto 100%
 }
 #collection-produits .main{
-	background:url(../images/bg-collection-produits.jpg) no-repeat center top;
+	background:url(../../images/bg-collection-produits.jpg) no-repeat center top;
 }
 #degustation-produits .main{
-	background:url(../images/bg-degustation-produits.jpg) no-repeat center top;
-	background-color:#FFF;
+	background:url(../../images/bg-degustation-produits.jpg) no-repeat center top;
 }
 #pro .main{
-    background:url(../images/img-fond-pro.jpg) no-repeat center top;
+    background:url(../../images/img-fond-pro.jpg) no-repeat center top;
     background-size: cover;
 }
 #contact .main{
-    background:url(../images/bg-contact.jpg) repeat center top;
+    background:url(../../images/bg-contact.jpg) no-repeat center top;
 }
 .content-histoire{
-    background:url(../images/bg-content-histoire.png) left top;
+    background:url(../../images/bg-content-histoire.png) left top;
+    height:666px;
     width:509px;
     margin:auto;
     overflow:hidden;
     position:relative;
     text-align: center;
-	padding-bottom:20px;
 }
 .caroussel-home{
-    background: url(../images/bg-caroussel-home.jpg) no-repeat center top;
-    height: 80px;
-    position: relative;
-    z-index: 99;
-    bottom: 8px;
+    background:url(../../images/bg-caroussel-home.jpg) no-repeat center top;
+    height:80px;
 }
 .video-news-home{
     width:100%;
-    max-width:1100px;
+    max-width:1020px;
     margin:auto;
     height:80px;
 }
@@ -182,7 +193,7 @@ body#agegate{
 
 
 .txt-video-news-home h2{
-    background:url(../images/bg-titre-home.gif) no-repeat left bottom;
+    background:url(../../images/bg-titre-home.gif) no-repeat left bottom;
     padding-bottom:2px;
     margin-bottom:8px;
     font-weight: normal;
@@ -212,7 +223,7 @@ body#agegate{
 }
 .txt-video-news-home .voir-video{
     display:inline-block;
-    background:url(../images/bg-voir-video.png) no-repeat right center;
+    background:url(../../images/bg-voir-video.png) no-repeat right center;
     padding-right:35px;
     height:22px;
     line-height:22px;
@@ -252,7 +263,7 @@ body#agegate{
     height:22px;
     width:21px;
     text-indent:-9999px;
-    background-image:url(../images/reseaux.gif);
+    background-image:url(../../images/reseaux.gif);
     background-repeat:no-repeat;
     background-position:left top;
     margin:0 0 0 3px;
@@ -266,7 +277,7 @@ body#agegate{
     text-align:center;
 }
 .menu-footer-01{
-    background:url(../images/bg-footer-01.gif) no-repeat center center;
+    background:url(../../images/bg-footer-01.gif) no-repeat center center;
 }
 .menu-footer ul li{
     /*float:left;*/
@@ -302,19 +313,20 @@ body#agegate{
     text-align:center;
     text-transform:uppercase;
     font-size:10px;
+    font-weight:normal;
     margin:10px 0 10px;
     font-family: 'Source Sans Pro';
 }
 .overlay-demande-envoyee,
 .overlay-mentions, .overlay-espace-pro, .overlay-champs, .overlay-format, .overlay-passe-oublie{
     display:none;
-    background:url(../images/bg-overlay.png);
+    background:url(../../images/bg-overlay.png);
     position:fixed;
     left:0px;
     top:0;
     width:100%;
     height:100%;
-    z-index:100;
+    z-index:9999;
 }
 
 .pop-demande-envoyee,
@@ -322,7 +334,7 @@ body#agegate{
     background:#030d13;
     border:solid 1px #232e34;
     width:640px;
-    margin:142px auto 0;
+    margin:5% auto 0;
     padding:57px 40px;
     position:relative;
 }
@@ -383,8 +395,8 @@ body#agegate{
 .pop-demande-envoyee{
     min-height:470px;
 }
-.pop-up-mentions h1{
-    background:url(../images/bg-title-mentions.gif) no-repeat center center;
+.pop-up-mentions h3{
+    background:url(../../images/bg-title-mentions.gif) no-repeat center center;
     color:#FFFFFF;
     font-size:12px;
     text-align:center;
@@ -412,7 +424,7 @@ body#agegate{
     font-size:12px;
 }
 .pop-demande-envoyee a.close, .pop-up-mentions a.close, .popup-espace-pro a.close{
-    background:url(../images/bg-close.png) no-repeat;
+    background:url(../../images/bg-close.png) no-repeat;
     display:block;
     position:absolute;
     right:15px;
@@ -426,7 +438,7 @@ body#agegate{
     left:0px;
     width:795px;
     height:700px;
-    z-index:1000;
+    z-index:1;
     display:none;
 }
 .overlay-videos{
@@ -435,7 +447,7 @@ body#agegate{
     left:0px;
     width:100%;
     height:700px;
-    z-index:1000;
+    z-index:1;
     display:none;
 }
 .pop-up-news, .pop-up-videos{
@@ -502,7 +514,7 @@ body#agegate{
     height:22px;
     width:21px;
     text-indent:-9999px;
-    background-image:url(../images/reseaux.gif);
+    background-image:url(../../images/reseaux.gif);
     background-position:left top;
     background-repeat:no-repeat;
     margin-left:3px;
@@ -524,7 +536,7 @@ body#agegate{
     margin:50px auto 0;
 }
 #agegate .logo{
-    background:url(../images/logo-bis.png) no-repeat;
+    background:url(../../images/logo-bis.png) no-repeat;
     width:364px;
     height:473px;
     margin:111px 0 0;
@@ -535,7 +547,7 @@ body#agegate{
     float:right;
 }
 #agegate .form-lanque{
-    background:url(../images/bg-form-langue.png) no-repeat center center;
+    background:url(../../images/bg-form-langue.png) no-repeat center center;
     height:24px;
     padding-left:218px;
 }
@@ -634,11 +646,11 @@ body#agegate{
 #formAcces a.jqTransformChecked{
     width:8px;
     height:8px;
-    background:url(../images/checkbox.png) no-repeat center center;
+    background:url(../../images/checkbox.png) no-repeat center center;
 }
 .form-visite .bt-content{
     margin:100px 0;
-    background:url(../images/bg-bt.png) no-repeat center center;
+    background:url(../../images/bg-bt.png) no-repeat center center;
     height:30px;
 }
 .form-visite .bt{
@@ -715,7 +727,7 @@ body#agegate{
 }
 .acces-espace-pro .demand-d-acces{
     display:block;
-    background:url(../images/bg-demande-d-acces.gif) no-repeat right center;
+    background:url(../../images/bg-demande-d-acces.gif) no-repeat right center;
     font-size:11px;
     text-transform:uppercase;
     text-decoration:none;
@@ -737,7 +749,7 @@ body#agegate{
     font-size:28px;
     text-transform:uppercase;
     display: inline-block;
-    background: url(../images/bg-titre-patrimoine.png) repeat;
+    background: url(../../images/bg-titre-patrimoine.png) repeat;
 }
 .content-histoire h1 a{
     text-decoration:none;
@@ -751,7 +763,7 @@ body#agegate{
 .content-histoire h1 span{
     display:block;
     color:#cfa75a;
-    font-size:12px;
+    font-size:10px;
     font-family: 'Source Sans Pro';
     letter-spacing:normal;	
     text-transform:none;
@@ -782,10 +794,10 @@ body#agegate{
     margin:0;
     padding:0;
     text-decoration:none;
-    background:url(../images/bg-link-histoire.png) no-repeat left top;
+    background:url(../../images/bg-link-histoire.png) no-repeat left top;
 }
 .content-histoire > ul li a:hover{
-    background:url(../images/bg-link-histoire.png) no-repeat left bottom;
+    background:url(../../images/bg-link-histoire.png) no-repeat left bottom;
 }
 .content-histoire > ul li span.annee{
     display:block;
@@ -817,7 +829,7 @@ body#agegate{
 }
 .content-histoire .desc-histoire{
     width:427px;
-    height:125px;
+    height:195px;
     overflow:hidden;
     margin:auto;
     padding-right:10px;
@@ -841,13 +853,12 @@ body#agegate{
     line-height:18px;
 }
 .menu-bt-histoire{
-    background:url(../images/bg-menu-bt-histoire_03.png) no-repeat top center;
+    background:url(../../images/bg-menu-bt-histoire_03.png) no-repeat top center;
     height:31px;
-    position:static;
+    position:absolute;
     bottom:0;
     left:0px;
     width:100%;
-	margin-top:50px;
 }
 .menu-bt-histoire ul{
     margin:auto;
@@ -865,41 +876,41 @@ body#agegate{
     display:block;
     width:23px;
     height:23px;
-    background:url(../images/bg-bt-link-histoire.png) no-repeat center center;
+    background:url(../../images/bg-bt-link-histoire.png) no-repeat center center;
 }
 .menu-bt-histoire ul li a:hover,
 .menu-bt-histoire ul li a.active{
-    background:url(../images/bg-bt-link-histoire-active.png) no-repeat center center;
+    background:url(../../images/bg-bt-link-histoire-active.png) no-repeat center center;
 }
 .menu-bt-histoire ul li p{
     position:absolute;
     display:none;
-    width:125px;
+    width:110px;
     height:31px;
     top:-38px;
     left:-38px;
 }
 #bourgogne .menu-bt-histoire ul li p{
-    width:330px;
+    width:260px;
     height:31px;
     top:-38px;
-    left:-145px;
+    left:-110px;
     text-align:center;
     text-transform:uppercase;
     font-size:10px;
 }
 .menu-bt-histoire ul li p span{
-   /* display:block;
+    display:block;
     height:31px;
     float:left;
-    width:45px;*/
+    width:45px;
     font-size:19px;
     font-size:10px;
 }
 #bourgogne .menu-bt-histoire ul li p span{
-    /*width:260px;
+    width:260px;
     height:auto;
-    text-align:center;*/
+    text-align:center;
     font-size:10px;
     color:#CFA75A;
 }
@@ -907,7 +918,6 @@ body#agegate{
     margin-left:10px;
     line-height:14px;
     color:#CFA75A;
-	padding-left:5px;
 }
 .menu-bt-histoire ul li p span.annee{
     border-right:1px solid #CFA75A;
@@ -918,12 +928,11 @@ body#agegate{
     font-weight:bold;
     font-size:19px;
     padding-right: 5px;
-	margin-right:5px;
 }
 .overlay{display:none}
 a.close{
     display:block;
-    background:url(../images/close.gif) top left no-repeat;
+    background:url(../../images/close.gif) top left no-repeat;
     width:24px;
     height:24px;
     text-indent:-9999px;
@@ -965,13 +974,13 @@ a.close{
     position:absolute;
     right:10px;
     top:10px;
-    background:url(../images/bg-close.png) no-repeat;
+    background:url(../../images/bg-close.png) no-repeat;
     width:10px;
     height:11px;
     z-index:100;
 }
 .savoir-faire-home .retour, .content-histoire .retour{
-    background:url(../images/bg-close-blanc.png) no-repeat;
+    background:url(../../images/bg-close-blanc.png) no-repeat;
 }
 #bourgogne .content-histoire ul{
     margin-top:10px;
@@ -1003,6 +1012,7 @@ a.close{
 .savoir-faire-home{
     width:870px;
     margin:auto;
+    padding-top:45px;
 }
 .savoir-faire-home ul li{
     width:214px;
@@ -1028,7 +1038,7 @@ a.close{
     display:block;
 }
 .savoir-faire-home ul li .captionShine {
-    background:url(../images/shine.png); 
+    background:url(../../images/shine.png); 
     position:absolute;
     left:-214px;
     top:0; 
@@ -1064,7 +1074,7 @@ a.close{
     -moz-opacity:0.5;   
     -khtml-opacity: 0.5;    
     opacity: 0.5;    */
-    background:url(../images/bg-caption.png);
+    background:url(../../images/bg-caption.png);
 }
 .savoir-faire-home ul li .caption h3{
     margin:20px 0 0 15px;
@@ -1076,7 +1086,7 @@ a.close{
     font-size:22px;
 }
 .savoir-faire-home ul li .caption a{
-    background:url(../images/bg-link-caption.png) no-repeat left center;
+    background:url(../../images/bg-link-caption.png) no-repeat left center;
     padding-left:16px;
     line-height:14px;
     display:block;
@@ -1137,7 +1147,7 @@ a.close{
     font-family: 'Source Sans Pro';
 }
 .savoir-faire-creation .link-creation-bt{
-    background:url(../images/bg-link-creation-bt.png) no-repeat right top;
+    background:url(../../images/bg-link-creation-bt.png) no-repeat right top;
     position:absolute;
     bottom:0px;
     right:0px;
@@ -1146,7 +1156,7 @@ a.close{
     padding-right:33px;
 }
 .savoir-faire-creation .link-creation-bt a{
-    background: url("../images/link-creation-bt.png") no-repeat scroll -1px 1px transparent;
+    background: url("../../images/link-creation-bt.png") no-repeat scroll -1px 1px transparent;
     display: block;
     float: right;
     font-family: 'Garmond';
@@ -1173,7 +1183,7 @@ a.close{
     font-size:12px;
     font-family: 'Source Sans Pro';
     text-transform:uppercase;
-    background:url(../images/puce-lien.png) no-repeat left center;
+    background:url(../../images/puce-lien.png) no-repeat left center;
 }
 .savoir-faire-creation .link-liqueur{
     position:absolute;
@@ -1183,7 +1193,7 @@ a.close{
     font-size:12px;
     font-family: 'Source Sans Pro';
     text-transform:uppercase;
-    background:url(../images/puce-lien.png) no-repeat left center;
+    background:url(../../images/puce-lien.png) no-repeat left center;
 }
 .savoir-faire-creation .link-eau-vie{
     position:absolute;
@@ -1193,7 +1203,7 @@ a.close{
     font-size:12px;
     font-family: 'Source Sans Pro';
     text-transform:uppercase;
-    background:url(../images/puce-lien.png) no-repeat left center;
+    background:url(../../images/puce-lien.png) no-repeat left center;
 }
 
 /*************************************/
@@ -1202,14 +1212,14 @@ a.close{
 
 #patrimone{ overflow: hidden; width: 100% }
 
-#patrimone #slide_1{background:url(../images/first_slide.png) right top no-repeat; background-size: cover; left:0; z-index:10; margin-left: -4%}
+#patrimone #slide_1{background:url(../../images/first_slide.png) right top no-repeat; background-size: cover; left:0; z-index:10; margin-left: -4%}
 
-#patrimone #slide_3{background:url(../images/thirt_slide.png) left top no-repeat; background-size: cover; z-index:10; right:0; margin-right: -4%}
+#patrimone #slide_3{background:url(../../images/thirt_slide.png) left top no-repeat; background-size: cover; z-index:10; right:0; margin-right: -4%}
 
 #patrimone #slide_2{
     z-index:9;
     width:100%;	
-    background:url(../images/second_slide.jpg) center top no-repeat;
+    background:url(../../images/second_slide.jpg) center top no-repeat;
     background-size: cover
 }
 #patrimone #slide_2 .slide{ vertical-align: middle; }
@@ -1233,7 +1243,7 @@ a.close{
     border:1px solid #696d70;
     border:1px solid rgba(255,255,255,0.4);
     border-bottom:0;
-    background:url(../images/bg-titre-patrimoine.png) repeat;
+    background:url(../../images/bg-titre-patrimoine.png) repeat;
 }
 
 
@@ -1270,7 +1280,7 @@ a.close{
     letter-spacing:1px;
     text-decoration:none;
     text-align:right;
-    background:url(../images/bt-lire-la-suite.png) no-repeat right top;
+    background:url(../../images/bt-lire-la-suite.png) no-repeat right top;
 }
 /*************************************/
 /*         Page Collection           */
@@ -1291,7 +1301,7 @@ a.close{
 .collection-home .menu_collection li{
     width:126px;
     height:46px;
-    margin-left:20px;
+    margin-left:41px;
     float:left;
 }
 .collection-home .menu_collection li#marc_2{
@@ -1349,7 +1359,7 @@ a.close{
 }
 
 .collection-home .content .block{
-    width:146px;
+    width:167px;
     float:left;
     height:484px;
     padding-top:35px;
@@ -1357,7 +1367,7 @@ a.close{
 }
 
 .collection-home .content .block .blockDesc{
-    width:146px;
+    width:167px;
     height:445px;
     display:block;
     overflow:hidden;
@@ -1387,7 +1397,7 @@ a.close{
     left:0;
     top:-483px;
     overflow:hidden;
-    background:url(../images/bg-description-collection.png) repeat-y right top;
+    background:url(../../images/bg-description-collection.png) repeat-y right top;
 }
 
 .collection-home .content .block .scroll{
@@ -1452,7 +1462,7 @@ a.close{
     font-family: 'DIN-Bold';
     font-weight:normal;
     padding-bottom:5px;
-    background:url(../images/bg_titre.jpg) no-repeat right bottom;
+    background:url(../../images/bg_titre.jpg) no-repeat right bottom;
 }
 
 #camera_wrap_1 .visuel h2 a{
@@ -1498,7 +1508,8 @@ a.close{
 #camera_wrap_1 .description .link-produits{
     position:absolute;
     right:0px;
-    bottom:140px;
+    bottom:100px;
+
 }
 
 #camera_wrap_1 .description .link-produits a{
@@ -1507,7 +1518,7 @@ a.close{
     font-size:13px;
     font-family: 'Georgia';
     margin-right:2px;
-    background:url(../images/btn-produits.jpg) no-repeat left top;/*
+    background:url(../../images/btn-produits.jpg) no-repeat left top;/*
     background-image:linear-gradient(60deg, #142630, #021620);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#142630',endColorstr='#021620',GradientType=0);*/
 }
@@ -1517,7 +1528,7 @@ a.close{
     height:29px;
     line-height:29px;
     color:#ffffff;
-    background:url(../images/puce-link-produits.png) no-repeat 10px center;
+    background:url(../../images/puce-link-produits.png) no-repeat 10px center;
 }
 
 .note-degustation, .note-elaboration{
@@ -1534,7 +1545,7 @@ a.close{
 }
 
 #degustation .menu_degustation{
-	background: url(../images/degustation_submenu.png) no-repeat center;
+	background: url(../../images/degustation_submenu.png) no-repeat center;
 }
 
 .menu_degustation ul{
@@ -1568,7 +1579,7 @@ a.close{
 }
 
 .menu_degustation li a:hover, .menu_degustation li a.active{
-	background:url(../images/bg-lien-degustation.png) no-repeat center 24px;
+	background:url(../../images/bg-lien-degustation.png) no-repeat center 24px;
 }
 
 .degustation-home .menu_degustation li .scrollMenu{
@@ -1578,9 +1589,9 @@ a.close{
 	top:35px;
 	padding:18px;
 	width:137px;
-	height:auto!important;
+	height:594px;
 	z-index:99999;
-	background:url(../images/bg-ss-menu.png) no-repeat left top;
+	background:url(../../images/bg-ss-menu.png) no-repeat left top;
 }
 
 .degustation-home .menu_degustation li ul.subMenu{
@@ -1606,9 +1617,6 @@ a.close{
 	text-transform:uppercase;
 	text-align:left;
 }
-.degustation,.elaboration{
-    cursor: pointer;
-}
 
 .degustation-home .menu_degustation li ul.subMenu li a:hover{
 	color:#ddd;
@@ -1621,7 +1629,7 @@ background: #fff!important;
 
 #degustation .degustation-home .content{
 	position:relative;
-	background:url(../images/degustation_overlay.png) no-repeat center;
+	background:url(../../images/degustation_overlay.png) no-repeat center;
 }
 
 .degustation-home .content .parralax{
@@ -1685,7 +1693,7 @@ background: #fff!important;
 	color:#ffffff;
 	font-size:12px;
 	font-family: 'Source Sans Pro';
-	background:url(../images/bg-entrer.png) no-repeat right top;
+	background:url(../../images/bg-entrer.png) no-repeat right top;
 }
 
 .degustation-home .content a.next{
@@ -1695,7 +1703,7 @@ background: #fff!important;
 	position:absolute;
 	right:0;
 	top:244px;
-	background:url(../images/bg-next-degustation.png) no-repeat center;
+	background:url(../../images/bg-next-degustation.png) no-repeat center;
 	top: 50%;
 	margin-top: -60px;
 }
@@ -1706,7 +1714,7 @@ background: #fff!important;
 	position:absolute;
 	left:0;
 	top:244px;
-	background:url(../images/bg-prev-degustation.png) no-repeat center;
+	background:url(../../images/bg-prev-degustation.png) no-repeat center;
 	top: 50%;
 	margin-top: -60px;
 	display: none
@@ -1726,7 +1734,7 @@ background: #fff!important;
     width: 116px;
     height: 116px;
     cursor: pointer;
-    background: url(../images/suiv-degustation.png) no-repeat;
+    background: url(../../images/suiv-degustation.png) no-repeat;
 	z-index:12;
 }
 
@@ -1736,7 +1744,7 @@ background: #fff!important;
     left: 0px;
     width: 116px;
     height: 116px;
-    background: url(../images/prev-degustation.png) no-repeat;
+    background: url(../../images/prev-degustation.png) no-repeat;
 	z-index:12;
 }
 
@@ -1831,15 +1839,15 @@ background: #fff!important;
 }
 
 #slideshow-1 .description .icons a.facebook{
-	background-image:url(../images/facebook.png);
+	background-image:url(../../images/facebook.png);
 }
 
 #slideshow-1 .description .icons a.telecharger{
-	background-image:url(../images/telecharger.png); display:none;
+	background-image:url(../../images/telecharger.png); display:none;
 }
 
 #slideshow-1 .description .icons a.imprimer{
-	background-image:url(../images/imprimer.png);
+	background-image:url(../../images/imprimer.png);
 }
 
 
@@ -1859,7 +1867,7 @@ background: #fff!important;
     width: 5px;
     height: 13px;
     cursor: pointer;
-    background: url(../images/suiv2.png) no-repeat;
+    background: url(../../images/suiv2.png) no-repeat;
 	z-index:12;
 }
 
@@ -1869,7 +1877,7 @@ background: #fff!important;
     left: 0px;
     width: 5px;
     height: 13px;
-    background: url(../images/prev2.png) no-repeat;
+    background: url(../../images/prev2.png) no-repeat;
 	z-index:12;
 }
 
@@ -1944,7 +1952,7 @@ background: #fff!important;
     font-family: 'Georgia';
     text-transform:uppercase;
     border:1px solid #53616c;
-    background:url(../images/puce-pro.png) no-repeat 200px center;
+    background:url(../../images/puce-pro.png) no-repeat 200px center;
 }
 
 #nav li a:hover {
@@ -1952,7 +1960,7 @@ background: #fff!important;
 }
 
 #nav li a.ui-state-active, #nav li a.ui-state-focus {
-    background:url(../images/puce-pro-active.png) no-repeat 200px center;
+    background:url(../../images/puce-pro-active.png) no-repeat 200px center;
     color:#ffffff;
 }
 #nav li a.deuxLignes {
@@ -1966,7 +1974,7 @@ background: #fff!important;
     padding:0 4px;
     border:1px solid #53616c;
     background:#171c20;
-    /*background:url(../images/bg-detail-produit.png) repeat;*/
+    /*background:url(../../images/bg-detail-produit.png) repeat;*/
 }
 
 #nav li ul li{
@@ -2064,7 +2072,7 @@ background: #fff!important;
     width:528px;
     padding:0;
     text-align:center;
-    background:url(../images/bg-titre-contact.png) no-repeat;
+    background:url(../../images/bg-titre-contact.png) no-repeat;
 }
 
 .espacePro p{
@@ -2073,7 +2081,7 @@ background: #fff!important;
     font-size:10px;
     color:#9aa6b2;
     line-height:24px;
-    margin-top:20px;
+    margin-top:80px;
     letter-spacing: 1px
 }
 
@@ -2280,8 +2288,8 @@ background: #fff!important;
 #formContact .valider{
     width:528px;
     height:31px;
-    margin-top:34px;
-    background:url(../images/bg-titre-contact.png) no-repeat left center;
+    margin-top:64px;
+    background:url(../../images/bg-titre-contact.png) no-repeat left center;
 }
 
 #formContact .submit{
@@ -2385,7 +2393,7 @@ background: #fff!important;
     font-family: 'Source Sans Pro';
     text-align:center;
     text-transform:uppercase;
-    background:url(../images/bg-detail-produit.png) repeat;
+    background:url(../../images/bg-detail-produit.png) repeat;
 }
 
 .blockTelecharge{
@@ -2393,7 +2401,7 @@ background: #fff!important;
     height:38px;
     margin:60px 0 0 268px;
     text-align:center;
-    background:url(../images/bg-telecharger-pro.png) no-repeat center top;
+    background:url(../../images/bg-telecharger-pro.png) no-repeat center top;
 }
 
 .blockTelecharge a{
@@ -2405,7 +2413,7 @@ background: #fff!important;
     font-family: 'Georgia';
     margin-right:20px;
     padding-left:24px;
-    background:url(../images/bt-telecharger.png) no-repeat left center;
+    background:url(../../images/bt-telecharger.png) no-repeat left center;
 }
 
 .detailVisuel{
@@ -2452,7 +2460,7 @@ background: #fff!important;
     margin-top:10px;
     padding-left:24px;
     display:block;
-    background:url(../images/bt-telecharger.png) no-repeat left center;
+    background:url(../../images/bt-telecharger.png) no-repeat left center;
 }
 
 .detailDescript .sep{
@@ -2497,7 +2505,7 @@ background: #fff!important;
     float:left;
     margin-top:6px;
     padding-right:14px;
-    background:url(../images/bg-langues.gif) no-repeat right top;
+    background:url(../../images/bg-langues.gif) no-repeat right top;
 }
 
 .dropdown{
@@ -2537,7 +2545,7 @@ background: #fff!important;
     color:#ffffff; 
 }
 .dropdown dt a{
-    background:url(../images/puce-langue.jpg) no-repeat center right;
+    background:url(../../images/puce-langue.jpg) no-repeat center right;
     display:block; 
     width:76px;
     font-size:10px;
@@ -2616,116 +2624,4 @@ padding: 0 3px
 
 .degustation-home .jspPane p>a {
 	color:#000;
-}
-
-.back {
-	left: 133px;
-    top: 25px;
-    position: absolute;
-    background: #f4f4f4;
-    width: auto !important;
-    height: auto !important;
-    text-align: center;
-    border-radius: 3px;
-    padding-top: 3px;
-    padding-bottom: 5px;
-    padding-left: 7px;
-    padding-right: 7px;
-    text-transform: uppercase;
-    font-size: 11px;
-    font-family: Arial;
-    font-weight: bold;
-    margin-top: 0px;
-    z-index: 2;
-    color:#232e35;
-}
-
-
-.footer{
-    bottom: 0;
-	position:static;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-}
-.content-histoire{
-
-}
-#bourgogne .main,#histoire .main,#licornes .main,#savoir-faire .main {
-    background-repeat: repeat!important;
-}
-.menu-bt-histoire{
-    bottom: 10px;
-}
-
-#pro h4 { text-align:center; margin-bottom:10px; }
-
-
-@media only screen and (max-height: 800px) 
-{
-	.overlay-videos { top:50px; }
-}
-
-
-.table { display:table; height:100%; width:100%; }
-.td { display:table-cell; vertical-align:middle; padding:15px 0px; }
-
-.collection-home:after {
-	content: " ";
-	clear:both;
-	display:block;
-}
-
-.degustation-home .content .text p { margin-bottom:10px; }
-
-/* Indigen */
-.menu-top-right {
-	position: absolute;
-	top: -67px;
-	right: 19px;
-	font-size: 12px;
-	font-family: 'Source Sans Pro';
-	text-transform: uppercase;
-	text-decoration: none; 
-}
-.contactez-nous { 
-	background: url(../images/espace-pro-header_03.gif) 0px bottom no-repeat;
-	display: block;
-	padding-left: 30px;
-	margin-bottom: 10px;
-}
-.espace-pro-header{
-    background:url(../images/espace-pro-header_03.gif) no-repeat;
-	display: block;
-	padding-left: 30px;
-}
-.espace-pro-header strong{ font-family: 'Source Sans Pro'; }
-.main{
-    /*height:666px;*/
-    position:relative;
-}
-
-@media all and (orientation:portrait) {
-	html, body {
-		-webkit-text-size-adjust: 100%;
-		-ms-text-size-adjust: 100%;
-	}
-	body#agegate {
-		background-position-x: -625px;
-		background-position-y: -110px;
-	}
-}
-
-/*
-@media all and (orientation:portrait) {
-	html > *{ display: none }
-	html { background: url(../images/bg-mobile-portrait.jpg) center no-repeat; background-size: 100% auto; width: 100%; height: 100%}
-}
-*/
-@media only screen 
-and (min-device-width: 768px)
-and (max-device-width: 1024px)
-and (orientation:portrait) {
-	html > *{ display: none }
-	html { background: url(../images/bg-ipad-portrait.jpg) 0px 0px no-repeat; background-size: cover; width: 100%; height: 100%}
 }
