@@ -149,14 +149,14 @@
         {% endif %}
     </div>
 
-    <script type="text/javascript" src="http://www.cartron.fr/pro/wp-includes/js/admin-bar.min.js?ver=3.5.2"></script>
-    <script type="text/javascript" src="http://www.cartron.fr/pro/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.40.0-2013.08.13"></script>
+    <link href="{{ asset('site/js/admin-pro/admin-bar.min.js') }}" type="text/javascript">
+    <link href="{{ asset('site/js/admin-pro/jquery.form.min.js') }}" type="text/javascript">
     <script type="text/javascript">
     /* <![CDATA[ */
     var _wpcf7 = {"loaderUrl":"http:\/\/www.cartron.fr\/pro\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Envoi en cours ..."};
     /* ]]> */
     </script>
-    <script type="text/javascript" src="http://www.cartron.fr/pro/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.5.2"></script>
+    <link href="{{ asset('site/js/admin-pro/scripts.js') }}" type="text/javascript">
     <script type="text/javascript">
         (function() {
             var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
