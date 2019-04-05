@@ -139,7 +139,7 @@ var menu = {
 var form = {
   init:function(){
     form.text();
-    form.checkboxes();
+    // form.checkboxes();
     //form.forgot();
   },
   text:function(){
@@ -164,9 +164,9 @@ var form = {
       });
     });
   },
-  checkboxes:function(){
-    $('input[type="checkbox"]').ezMark();
-  },
+  // checkboxes:function(){
+  //   $('input[type="checkbox"]').ezMark();
+  // },
   forgot:function(){
     $('#form-forgot').hide();
     $('#forgot').on({
