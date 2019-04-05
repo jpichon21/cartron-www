@@ -1,0 +1,32 @@
+{% extends "admin-pro/layout.html.twig" %}
+{% block body %}
+    <div id="contenu-right" class="responsive" style="position: relative; top: 0px;">
+        <h1 id="tax-title">{{ category.nom }}</h1>
+        <div id="slider-liste-pro" style="overflow: hidden; position: relative; height: 200px; width: 700px;">
+            <ul style="display: block; position: relative; width: 9e+06px; margin-top: 0px; margin-left: 0px;">
+                <li style="float: left; list-style: none; display: block; position: relative;">
+                    <ul>
+                        {% for resource in resources %}
+                        <li>
+                            <a href="{{ path('pro_resource', { 'id': resource.id }) }}">
+                                <h4><span>{{ resource.title }}</span></h4>
+                                <div class="image-slide">
+                                    <img src="{{ asset('upload/'~resource.miniature) }}" class="magic_fields">
+                                    <div class="hover-image-list">
+                                        <p>
+                                            En savoir plus </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <span id="controls">
+            <a href="#" class="prevBtn" style="display: none;"> previous</a>
+            <a href="#" class="nextBtn" style="display: none;"> next</a>
+        </span>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "admin-pro/layout.html.twig" %}
+{% block body %}
+    <div id="contenu-right" class="responsive" style="position: relative; top: 0px;">
+        <div id="post-nav">
+            {% if prev != false %}
+                <a href="{{ path('pro_resource', { 'id': resourcePrev.id }) }}" rel="prev"/>
+            {% endif %}
+            {% if next != false %}
+                <a href="{{ path('pro_resource', { 'id': resourceNext.id }) }}" rel="next"/>
+            {% endif %}
+        </div>
+        <div class="image-left">
+            <img src="{{ asset('upload/'~resource.picture) }}" class="magic_fields"> </div>
+        <div id="detail-right" class="paysage">
+            <h1>{{ category.nom }} <span>- {{ resource.title }}</span></h1>
+            <div id="downloads">
+                <ul>
+                    {% for download in resource.downloads %}
+                    <li>
+                        <a target="_blank" download="{{ download.title }}" href="{{ asset('site/images/'~download.file) }}">
+                            {% set title = download.title|split('/') %}
+                            {{ title[0] }} / <span> {{ title[1] }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,38 +1,56 @@
 {% block menu %}
     <div id="menu-left">
         <ul id="menu">
-            {% for category in categories %}
+            {% set index = 1 %}
+            {% for category in categoriesMenu %}
                 {%  if category.lvl == 0 %}
+                {% if index >= 8 %}
+                <li class="last_{{index}}">
+                {% else %}
                 <li>
+                {% endif %}
                     <div class="sub sub-1">
                         <ul>
-                            {% for subCategory in categories %}
-                                {% if subCategory.parent is not null %}
-                                    {%  if subCategory.parent.id == category.id %}
-                                        <li>
-                                            <div class="sub sub-2">
-                                                <ul>
-                                                {% for resource in resources %}
-                                                    {% if resource.category.id == subCategory.id %}
-                                                        <li><a
-                                                                {# href="{{ path('admin_pro_resource', { 'idResource': resource.id }) }}"> #}
-                                                                href="#">
-                                                                {{ resource.title  }}</a></li>
-                                                    {% endif %}
+                            {% for subCategory in categoriesMenu %}
+                                {% if subCategory.parent is not null and subCategory.parent.id == category.id %}
+                                    {% set nomArr = subCategory.nom|split(' ') %}
+                                    {% set length = nomArr|length %}
+                                    <li>
+                                        {# {% if  resources%} #}
+                                        <div class="sub sub-2">
+                                            <ul>
+                                            {% for resource in resourcesMenu %}
+                                                {% if resource.category.id == subCategory.id %}
+                                                    
+                                                    <li>
+                                                        <a href="{{ path('pro_resource', { 'id': resource.id }) }}">
+                                                            {{ resource.title  }}
+                                                        </a>
+                                                    </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                            </ul>
+                                        </div>
+                                        <a href="{{ path('pro_list_resources', { 'id': subCategory.id }) }}">
+                                            {% if length <= 2 %}
+                                                <span>{{ subCategory.nom  }}</span>
+                                            {% else %}
+                                                {% for nom in 0..length - 3 %}
+                                                    {{ nomArr[nom] }}
                                                 {% endfor %}
-                                                </ul>
-                                            </div><a
-                                                {# href="{{ path('admin_pro_resource_category', { 'idCategory': subCategory.id }) }}"> #}
-                                                href="#">
-                                                {{ subCategory.nom  }}</a>
-                                        </li>
-                                    {% endif %}
+                                                    <br>
+                                                    <span>{{ nomArr[length-2] }} {{ nomArr[length-1] }}</span>
+                                            {% endif %}   
+                                            </a>
+                                    </li>
                                 {% endif %}
                             {% endfor %}
                         </ul>
                     </div><a>{{ category.nom }}</a>
                 </li>
+                {% set index = index + 1 %}
                 {% endif %}
+                
             {% endfor %}
         </ul>
     </div>

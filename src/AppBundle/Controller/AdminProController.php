@@ -40,18 +40,62 @@ class AdminProController extends Controller
     }
 
     /**
-     * @Route("/accueilPro", name="accueil_pro")
+     * @Route("/accueilPro", name="pro_accueil")
      *
      * @return View
      */
     public function accueilAction(Request $request)
     {
-        $categories = $this->categoryRepository->findAll();
-        $resources = $this->resourceRepository->findAll();
+        $categoriesMenu = $this->categoryRepository->findAll();
+        $resourcesMenu = $this->resourceRepository->findAll();
 
         return $this->render(
             'admin-pro/accueil.html.twig',
-            ['categories' => $categories, 'resources' => $resources]
+            ['categoriesMenu' => $categoriesMenu, 'resourcesMenu' => $resourcesMenu]
+        );
+    }
+
+    /**
+     * @Route("/espace-pro-liste/{id}", name="pro_list_resources")
+     *
+     * @return View
+     */
+    public function listResourcesAction(Request $request, $id)
+    {
+        $categoriesMenu = $this->categoryRepository->findAll();
+        $resourcesMenu = $this->resourceRepository->findAll();
+
+        $category = $this->categoryRepository->findOneById($id);
+        $resources = $this->resourceRepository->findBy(['category' => $id]);
+        
+        return $this->render(
+            'admin-pro/list_resources.html.twig',
+            ['category' => $category, 'resources' => $resources, 'categoriesMenu' => $categoriesMenu, 'resourcesMenu' => $resourcesMenu]
+        );
+    }
+
+    /**
+     * @Route("/espace-pro/{id}", name="pro_resource")
+     *
+     * @return View
+     */
+    public function resourceAction(Request $request, $id)
+    {
+        $categoriesMenu = $this->categoryRepository->findAll();
+        $resourcesMenu = $this->resourceRepository->findAll();
+
+        $resource = $this->resourceRepository->findOneById($id);
+        $category = $resource->getCategory();
+
+        $position = $resource->getPosition();
+
+        $resourcePrev = $this->resourceRepository->findOneByPosition($position - 1);
+
+        $resourceNext = $this->resourceRepository->findOneByPosition($position + 1);
+
+        return $this->render(
+            'admin-pro/resource.html.twig',
+            ['category' => $category, 'resource' => $resource, 'prev' => $resourcePrev, 'next' => $resourceNext, 'categoriesMenu' => $categoriesMenu, 'resourcesMenu' => $resourcesMenu]
         );
     }
 }
