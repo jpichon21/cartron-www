@@ -10,7 +10,9 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class LoginAdminType extends AbstractType
 {
-
+    /**
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder

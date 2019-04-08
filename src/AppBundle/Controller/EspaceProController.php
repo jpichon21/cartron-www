@@ -3,7 +3,6 @@
 namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Repository\ResourceRepository;
 use AppBundle\Repository\CategoryRepository;
@@ -82,7 +81,7 @@ class EspaceProController extends Controller
      *
      * @return View
      */
-    public function resourceAction(Request $request, $id)
+    public function resourceAction($id)
     {
         $categoriesMenu = $this->generateCategoriesTree();
         $resourcesMenu = $this->resourceRepository->findBy(
