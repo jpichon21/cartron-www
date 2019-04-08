@@ -633,6 +633,30 @@ After graduating from HEC (Ecole des Hautes Etudes Commerciales) and a career of
         <source>Votre message a bien été envoyé</source>
         <target>Your message has been sent</target>
     </trans-unit>
+    <trans-unit id="1532">
+        <source>Bienvenue sur l’espace professionnel</source>
+        <target>Welcome on trade space</target>
+    </trans-unit>
+    <trans-unit id="1533">
+        <source>Vous trouverez ici</source>
+        <target>You will find here</target>
+    </trans-unit>
+    <trans-unit id="1534">
+        <source>toutes les informations et fichiers nécessaires</source>
+        <target>all informations and files needed</target>
+    </trans-unit>
+    <trans-unit id="1535">
+        <source>concernant la Maison Joseph Cartron.</source>
+        <target>on the joseph cartron company</target>
+    </trans-unit>
+    <trans-unit id="1536">
+        <source>Espace professionnel</source>
+        <target>Trade space</target>
+    </trans-unit>
+    <trans-unit id="1537">
+        <source>En savoir plus</source>
+        <target>More</target>
+    </trans-unit>
     </body>
   </file>
 </xliff>

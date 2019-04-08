@@ -635,6 +635,30 @@
         <source>Votre message a bien été envoyé</source>
         <target>Votre message a bien été envoyé</target>
     </trans-unit>
+    <trans-unit id="1532">
+        <source>Bienvenue sur l’espace professionnel</source>
+        <target>Bienvenue sur l’espace professionnel</target>
+    </trans-unit>
+    <trans-unit id="1533">
+        <source>Vous trouverez ici</source>
+        <target>Vous trouverez ici</target>
+    </trans-unit>
+    <trans-unit id="1534">
+        <source>toutes les informations et fichiers nécessaires</source>
+        <target>toutes les informations et fichiers nécessaires</target>
+    </trans-unit>
+    <trans-unit id="1535">
+        <source>concernant la Maison Joseph Cartron.</source>
+        <target>concernant la Maison Joseph Cartron.</target>
+    </trans-unit>
+    <trans-unit id="1536">
+        <source>Espace professionnel</source>
+        <target>Espace professionnel</target>
+    </trans-unit>
+    <trans-unit id="1537">
+        <source>En savoir plus</source>
+        <target>En savoir plus</target>
+    </trans-unit>
     </body>
   </file>
 </xliff>
