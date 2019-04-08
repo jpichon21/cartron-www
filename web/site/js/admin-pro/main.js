@@ -1,5 +1,18 @@
 // JavaScript Document
 $(function() {
+  $(".dropdown img.flag").addClass("flagvisibility");
+
+    $(".dropdown dt a").click(function() {
+        $(".dropdown dd ul").toggle();
+    });
+
+    $(".dropdown dd ul li a").click(function() {
+        var text = $(this).html();
+        $(".dropdown dt a span").html(text);
+        $(".dropdown dd ul").hide();
+        $("#result").html("Selected value is: " + getSelectedValue("sample"));
+    });
+
     //Mentions lÃ©gales
     $('.mentions-legales').click(function() {
         $('.overlay-mentions').height(1200 + 'px');

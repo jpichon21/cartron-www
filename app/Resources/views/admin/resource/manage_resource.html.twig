@@ -6,6 +6,13 @@
     <!--  start page-heading -->
     <div id="page-heading">
         <h1>Ajouter resource </h1>
+        {% if isEdition %}
+            {% if locale == 'fr' %}
+                <a href="{{ path('admin_edit_resource', { 'id': idResource, 'locale': 'en' }) }}">Modifier en anglais</a>
+            {% else %}
+                <a href="{{ path('admin_edit_resource', { 'id': idResource, 'locale': 'fr' }) }}">Modifier en français</a>
+            {% endif %}
+        {% endif %}
     </div>
     <!-- end page-heading -->
 
