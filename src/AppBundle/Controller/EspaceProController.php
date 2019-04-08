@@ -5,13 +5,11 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use AppBundle\Entity\Resource;
 use AppBundle\Repository\ResourceRepository;
-use AppBundle\Entity\Category;
 use AppBundle\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
 
-class AdminProController extends Controller
+class EspaceProController extends Controller
 {
 
     /**
@@ -44,9 +42,9 @@ class AdminProController extends Controller
      *
      * @return View
      */
-    public function accueilAction(Request $request)
+    public function accueilAction()
     {
-        $categoriesMenu = $this->categoryRepository->findAll();
+        $categoriesMenu = $this->generateCategoriesTree();
         $resourcesMenu = $this->resourceRepository->findAll();
 
         return $this->render(
@@ -60,9 +58,9 @@ class AdminProController extends Controller
      *
      * @return View
      */
-    public function listResourcesAction(Request $request, $id)
+    public function listResourcesAction($id)
     {
-        $categoriesMenu = $this->categoryRepository->findAll();
+        $categoriesMenu = $this->generateCategoriesTree();
         $resourcesMenu = $this->resourceRepository->findAll();
 
         $category = $this->categoryRepository->findOneById($id);
@@ -70,7 +68,12 @@ class AdminProController extends Controller
         
         return $this->render(
             'admin-pro/list_resources.html.twig',
-            ['category' => $category, 'resources' => $resources, 'categoriesMenu' => $categoriesMenu, 'resourcesMenu' => $resourcesMenu]
+            [
+                'category' => $category,
+                'resources' => $resources,
+                'categoriesMenu' => $categoriesMenu,
+                'resourcesMenu' => $resourcesMenu
+            ]
         );
     }
 
@@ -81,8 +84,11 @@ class AdminProController extends Controller
      */
     public function resourceAction(Request $request, $id)
     {
-        $categoriesMenu = $this->categoryRepository->findAll();
-        $resourcesMenu = $this->resourceRepository->findAll();
+        $categoriesMenu = $this->generateCategoriesTree();
+        $resourcesMenu = $this->resourceRepository->findBy(
+            [],
+            ['position' => 'ASC']
+        );
 
         $resource = $this->resourceRepository->findOneById($id);
         $category = $resource->getCategory();
@@ -90,12 +96,31 @@ class AdminProController extends Controller
         $position = $resource->getPosition();
 
         $resourcePrev = $this->resourceRepository->findOneByPosition($position - 1);
-
         $resourceNext = $this->resourceRepository->findOneByPosition($position + 1);
-
         return $this->render(
             'admin-pro/resource.html.twig',
-            ['category' => $category, 'resource' => $resource, 'prev' => $resourcePrev, 'next' => $resourceNext, 'categoriesMenu' => $categoriesMenu, 'resourcesMenu' => $resourcesMenu]
+            [
+                'category' => $category,
+                'resource' => $resource,
+                'prev' => $resourcePrev,
+                'next' => $resourceNext,
+                'categoriesMenu' => $categoriesMenu,
+                'resourcesMenu' => $resourcesMenu
+            ]
         );
+    }
+    private function generateCategoriesTree()
+    {
+        $ret = [];
+        $categories = $this->categoryRepository->findBy(['lvl' => 0]);
+        foreach ($categories as $category) {
+            $cat = [];
+            $cat['parent'] = $category;
+            if ($this->categoryRepository->getChildren($category)) {
+                $cat['children'] = $this->categoryRepository->getChildren($category);
+            }
+            array_push($ret, $cat);
+        }
+        return $ret;
     }
 }
