@@ -66,62 +66,75 @@
                                 <td></td>
                             </tr>
                             <tr>
-                                <td><hr></td>
-                                <td><hr></td>
-                                <td><hr></td>
+                                <td>
+                                    <hr>
+                                </td>
+                                <td>
+                                    <hr>
+                                </td>
+                                <td>
+                                    <hr>
+                                </td>
                             </tr>
                             {% for download in form.downloads %}
-                                <tr>
-                                    <th valign="top">Titre du fichier :</th>
-                                    <td>{{ form_widget(download.title) }}</td>
-                                </tr>
-                                <tr class="download">
-                                    <th valign="top">fichier :</th>
-                                    <td>{{ form_widget(download.file) }}</td>
-                                </tr>
-                                <tr>
-                                    <th valign="top">lien :</th>
-                                    <td><a href="{{ asset('upload/'~download.file.vars.data)}}" target="_blank">{{ asset('upload/'~download.file.vars.data)}}</a></td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td><hr></td>
-                                    <td><hr></td>
-                                    <td><hr></td>
-                                </tr>
-                                
-                            {% endfor %}
-                                <td></td>
-                            <tr class="downloads" data-prototype="{{ form_widget(form.downloads.vars.prototype)|e('html_attr') }}">
-                                
+                            <tr>
+                                <th valign="top">Titre du fichier :</th>
+                                <td>{{ form_widget(download.title) }}</td>
+                            </tr>
+                            <tr class="download">
+                                <th valign="top">fichier :</th>
+                                <td>{{ form_widget(download.file) }}</td>
                             </tr>
                             <tr>
-                                <th>&nbsp;</th>
-                                <td valign="top">
-                                    {{ form_widget(form.submit) }}
-                                </td>
-                                <td></td>
+                                <th valign="top">lien :</th>
+                                <td><a href="{{ asset('upload/'~download.file.vars.data)}}"
+                                        target="_blank">{{ asset('upload/'~download.file.vars.data)}}</a></td>
+
                             </tr>
-                        </tbody>
-                    </table>
-                    {{ form_end(form) }}
-                </div>
-                <!--  end content-table-inner ............................................END  -->
-            </td>
-            <td id="tbl-border-right"></td>
+                            <tr>
+                                <td>
+                                    <hr>
+                                </td>
+                                <td>
+                                    <hr>
+                                </td>
+                                <td>
+                                    <hr>
+                                </td>
+                            </tr>
+
+                            {% endfor %}
+            <td></td>
+        <tr class="downloads" data-prototype="{{ form_widget(form.downloads.vars.prototype)|e('html_attr') }}">
+
         </tr>
         <tr>
-            <th class="sized bottomleft"></th>
-            <td id="tbl-border-bottom">&nbsp;</td>
-            <th class="sized bottomright"></th>
+            <th>&nbsp;</th>
+            <td valign="top">
+                {{ form_widget(form.submit) }}
+            </td>
+            <td></td>
         </tr>
+        </tbody>
     </table>
-    <div class="clear">&nbsp;</div>
+    {{ form_end(form) }}
+</div>
+<!--  end content-table-inner ............................................END  -->
+</td>
+<td id="tbl-border-right"></td>
+</tr>
+<tr>
+    <th class="sized bottomleft"></th>
+    <td id="tbl-border-bottom">&nbsp;</td>
+    <th class="sized bottomright"></th>
+</tr>
+</table>
+<div class="clear">&nbsp;</div>
 </div>
 <!--  end content -->
 
 <script type="text/javascript">
-    $('tr.download').each(function() {
+    $('tr.download').each(function () {
         addDownloadFormDeleteLink($(this), true);
     });
 
@@ -132,7 +145,7 @@
     var $newLinkLi = $('').after($addDownloadButton);
     var nbDownload = $('.download').length;
     $(document).ready(function () {
-        
+
         $('.styledselect_form_1').selectbox({
             inputClass: "styledselect_form_1"
         });
@@ -141,7 +154,7 @@
         $collectionHolder = $('tr.downloads');
 
         // add a delete link to all of the existing download form li elements
-        $collectionHolder.find('li').each(function() {
+        $collectionHolder.find('li').each(function () {
             addDownloadFormDeleteLink($(this), false);
         });
 
@@ -152,7 +165,7 @@
         // index when inserting a new item (e.g. 2)
         $collectionHolder.data('index', $collectionHolder.find(':input').length);
 
-         $addDownloadButton.click(function(e) {
+        $addDownloadButton.click(function (e) {
             // add a new download form (see next code block)
             addDownloadForm($collectionHolder, $newLinkLi);
         });
@@ -191,7 +204,7 @@
         var $removeFormButton = $('<button type="button">Supprimer ce fichier</button>');
         $downloadFormLi.append($removeFormButton);
 
-        $removeFormButton.click(function(e) {
+        $removeFormButton.click(function (e) {
             // remove the li for the download form
             if ($canNext) {
                 $downloadFormLi.prev().remove();

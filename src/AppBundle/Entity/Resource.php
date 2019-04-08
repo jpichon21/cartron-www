@@ -5,7 +5,6 @@ namespace AppBundle\Entity;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Translatable\Translatable;
-use Gedmo\Sortable\Sortable;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -14,7 +13,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="resource")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ResourceRepository")
  */
-class Resource implements Translatable, Sortable
+class Resource implements Translatable
 {
     /**
      * @var int
@@ -45,7 +44,7 @@ class Resource implements Translatable, Sortable
      * @var integer
      *
      * @Gedmo\SortablePosition
-     * @ORM\Column(name="position", type="integer", nullable=true)
+     * @ORM\Column(name="position", type="integer")
      */
     private $position;
 
@@ -90,10 +89,15 @@ class Resource implements Translatable, Sortable
     private $miniature;
 
     /**
+     * @Gedmo\Locale
+     */
+    private $locale;
+
+    /**
      * @var Category
      *
      * @Gedmo\SortableGroup
-     * @ORM\ManyToOne(targetEntity="Category")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="id")
      * @ORM\JoinColumn(name="id_category", referencedColumnName="id")
      */
     private $category;
@@ -300,6 +304,16 @@ class Resource implements Translatable, Sortable
     public function getMiniature()
     {
         return $this->miniature;
+    }
+
+    /**
+     * Set locale
+     *
+     * @param string $locale
+     */
+    public function setTranslatableLocale($locale)
+    {
+        $this->locale = $locale;
     }
 
     /**

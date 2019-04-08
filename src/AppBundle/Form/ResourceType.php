@@ -7,10 +7,10 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use AppBundle\Entity\Category;
 use AppBundle\Entity\Resource;
 
@@ -35,7 +35,7 @@ class ResourceType extends AbstractType
             )
             ->add(
                 'description',
-                CKEditorType::class,
+                TextareaType::class,
                 [
                     'label' => false,
                     'required' => true,

@@ -45,11 +45,9 @@ class ResourceAdminController extends Controller
     public function indexResourceAction($idCategory)
     {
         if ($idCategory !== null) {
-            // $resources = $this->resourceRepository->getBySortableGroupsQuery(
-            //     ['category' => $idCategory]
-            // )->getResult();
             $resources = $this->resourceRepository->findBy(
-                ['category' => $idCategory]
+                ['category' => $idCategory],
+                ['position' => 'ASC']
             );
             $isSortable = true;
         } else {
@@ -79,7 +77,6 @@ class ResourceAdminController extends Controller
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            // $resource->setTranslatableLocale('fr_fr');
             $data = $form->getData();
             
             $uploadFile = $data->getPicture();
@@ -112,7 +109,7 @@ class ResourceAdminController extends Controller
 
         return $this->render(
             'admin/resource/manage_resource.html.twig',
-            ['form' => $form->createView(), 'isEdition' => false]
+            ['form' => $form->createView(), 'isEdition' => false, 'idResource' => $resource->getId()]
         );
     }
 
@@ -129,8 +126,8 @@ class ResourceAdminController extends Controller
     {
         $resource = $this->resourceRepository->findOneById($id);
 
-        // $resource->setLocale($locale);
-        // $this->em->refresh($resource);
+        $resource->setTranslatableLocale($locale);
+        $this->em->refresh($resource);
 
         $photo = $resource->getPicture();
         $miniature = $resource->getMiniature();
@@ -145,9 +142,9 @@ class ResourceAdminController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // ($locale === 'fr_fr') ?
-            // $resource->setTranslatableLocale('fr_fr') :
-            // $resource->setTranslatableLocale('en_us');
+            ($locale === 'fr') ?
+            $resource->setTranslatableLocale('fr') :
+            $resource->setTranslatableLocale('en');
 
             $data = $form->getData();
 
@@ -197,7 +194,7 @@ class ResourceAdminController extends Controller
 
         return $this->render(
             'admin/resource/manage_resource.html.twig',
-            ['form' => $form->createView(), 'locale' => $locale]
+            ['form' => $form->createView(), 'locale' => $locale, 'isEdition' => true, 'idResource' => $id]
         );
     }
 
@@ -212,15 +209,20 @@ class ResourceAdminController extends Controller
     public function sortResourceAction($idResource, $upOrDown, $idCategory)
     {
         $resource = $this->resourceRepository->findOneById($idResource);
-        $countResources = count($this->resourceRepository->findAll());
+        $countResources = count($this->resourceRepository->findBy(
+            ['category' => $idCategory]
+        ));
         $actualPosition = $resource->getPosition();
-        if ($upOrDown === 'down' && $actualPosition !== 0) {
+        if ($upOrDown === 'up' && $actualPosition !== 0) {
                 $resource->setPosition($actualPosition -1);
         } else {
-            if ($upOrDown === 'up' && $actualPosition !== $countResources -1) {
+            if ($upOrDown === 'down' && $actualPosition !== $countResources -1) {
                 $resource->setPosition($actualPosition +1);
             }
         }
+
+        $this->em->persist($resource);
+        $this->em->flush();
 
         return $this->redirectToRoute('admin_resource', ['idCategory' => $idCategory]);
     }
