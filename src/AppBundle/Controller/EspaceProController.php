@@ -48,7 +48,7 @@ class EspaceProController extends Controller
         $resourcesMenu = $this->resourceRepository->findAll();
 
         return $this->render(
-            'admin-pro/accueil.html.twig',
+            'espace-pro/accueil.html.twig',
             ['categoriesMenu' => $categoriesMenu, 'resourcesMenu' => $resourcesMenu]
         );
     }
@@ -67,7 +67,7 @@ class EspaceProController extends Controller
         $resources = $this->resourceRepository->findBy(['category' => $id]);
         
         return $this->render(
-            'admin-pro/list_resources.html.twig',
+            'espace-pro/list_resources.html.twig',
             [
                 'category' => $category,
                 'resources' => $resources,
@@ -98,7 +98,7 @@ class EspaceProController extends Controller
         $resourcePrev = $this->resourceRepository->findOneByPosition($position - 1);
         $resourceNext = $this->resourceRepository->findOneByPosition($position + 1);
         return $this->render(
-            'admin-pro/resource.html.twig',
+            'espace-pro/resource.html.twig',
             [
                 'category' => $category,
                 'resource' => $resource,
