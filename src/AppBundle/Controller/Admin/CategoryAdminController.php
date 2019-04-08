@@ -41,6 +41,7 @@ class CategoryAdminController extends Controller
     public function indexCategoryAction()
     {
         $categories = $this->categoryRepository->findAll();
+        
         return $this->render(
             'admin/category/category.html.twig',
             ['categories' => $categories]
@@ -63,7 +64,7 @@ class CategoryAdminController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $category->setTranslatableLocale('fr_fr');
+            $category->setTranslatableLocale('fr');
             $this->em->persist($category);
             $this->em->flush();
             return $this->redirectToRoute('admin_edit_category', ['id' => $category->getId(), 'locale' => 'fr']);
@@ -71,7 +72,7 @@ class CategoryAdminController extends Controller
 
         return $this->render(
             'admin/category/manage_category.html.twig',
-            ['form' => $form->createView()]
+            ['form' => $form->createView(), 'isEdit' => false, 'idCategory' => $category->getId()]
         );
     }
 
@@ -95,9 +96,9 @@ class CategoryAdminController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            ($locale === 'fr_fr') ?
-            $category->setTranslatableLocale('fr_fr') :
-            $category->setTranslatableLocale('en_us');
+            ($locale === 'fr') ?
+            $category->setTranslatableLocale('fr') :
+            $category->setTranslatableLocale('en');
 
             $this->em->persist($category);
             $this->em->flush();
@@ -106,7 +107,7 @@ class CategoryAdminController extends Controller
 
         return $this->render(
             'admin/category/manage_category.html.twig',
-            ['form' => $form->createView(), 'locale' => $locale]
+            ['form' => $form->createView(), 'locale' => $locale, 'isEdit' => true, 'idCategory' => $id]
         );
     }
 }

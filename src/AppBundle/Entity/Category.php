@@ -66,13 +66,6 @@ class Category implements Translatable
     private $rgt;
 
     /**
-     * @Gedmo\TreeRoot
-     * @ORM\ManyToOne(targetEntity="Category")
-     * @ORM\JoinColumn(name="tree_root", referencedColumnName="id", onDelete="CASCADE")
-     */
-    private $root;
-
-    /**
      * @Gedmo\TreeParent
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="children")
      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="CASCADE")
@@ -121,6 +114,19 @@ class Category implements Translatable
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Set identifiant
+     *
+     * @param string $identifiant
+     * @return Category
+     */
+    public function setIdentifiant($identifiant)
+    {
+        $this->identifiant = $identifiant;
+    
+        return $this;
     }
 
     /**

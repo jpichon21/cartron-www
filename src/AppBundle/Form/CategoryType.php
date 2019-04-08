@@ -5,9 +5,9 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use AppBundle\Entity\Category;
 
 class CategoryType extends AbstractType
@@ -31,12 +31,12 @@ class CategoryType extends AbstractType
             )
             ->add(
                 'description',
-                CKEditorType::class,
+                TextareaType::class,
                 [
                     'label' => false,
                     'required' => false,
                     'attr' => [
-                        'class' => 'inp-form',
+                        'class' => 'form-textarea',
                         ]
                 ]
             )
