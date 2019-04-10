@@ -42,11 +42,11 @@
                                             <td>{{ category.nom }}</td>
                                             <td>{{ category.identifiant }}</td>
                                             <td align="center"><a
-                                                    href="{{ path('admin_resource', { 'idCategory': category.id }) }}"> Voir les
+                                                    href="{{ path('admin_resource', { 'category': category.id }) }}"> Voir les
                                                     ressources </a></td>
                                             <td class="options-width">
                                                 <a class="icon-1 info-tooltip"
-                                                    href="{{ path('admin_edit_category', { 'id': category.id, 'locale': 'fr' }) }}"></a>
+                                                    href="{{ path('admin_edit_category', { 'category': category.id, 'locale': 'fr' }) }}"></a>
                                                 <a class="icon-2 info-tooltip"
                                                     href="{{ path('delete', { 'id': category.id , 'table':'Category' }) }}"></a>
                                             </td>
@@ -58,11 +58,11 @@
                                                 <td>--- {{ subCategory.nom }}</td>
                                                 <td>{{ subCategory.identifiant }}</td>
                                                 <td align="center"><a
-                                                        href="{{ path('admin_resource', { 'idCategory': subCategory.id }) }}"> Voir les
+                                                        href="{{ path('admin_resource', { 'category': subCategory.id }) }}"> Voir les
                                                         ressources </a></td>
                                                 <td class="options-width">
                                                     <a class="icon-1 info-tooltip"
-                                                        href="{{ path('admin_edit_category', { 'id': subCategory.id, 'locale': 'fr' }) }}"></a>
+                                                        href="{{ path('admin_edit_category', { 'category': subCategory.id, 'locale': 'fr' }) }}"></a>
                                                     <a class="icon-2 info-tooltip"
                                                         href="{{ path('delete', { 'id': subCategory.id , 'table':'Category' }) }}"></a>
                                                 </td>

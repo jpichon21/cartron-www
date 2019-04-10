@@ -8,9 +8,9 @@
         <h1>Ajouter Catégorie </h1>
         {% if isEdit %}
             {% if locale == 'fr' %}
-                <a href="{{ path('admin_edit_category', { 'id': idCategory, 'locale': 'en' }) }}">Modifier en anglais</a>
+                <a href="{{ path('admin_edit_category', { 'category': category.id, 'locale': 'en' }) }}">Modifier en anglais</a>
             {% else %}
-                <a href="{{ path('admin_edit_category', { 'id': idCategory, 'locale': 'fr' }) }}">Modifier en français</a>
+                <a href="{{ path('admin_edit_category', { 'category': category.id, 'locale': 'fr' }) }}">Modifier en français</a>
             {% endif %}
         {% endif %}
     </div>

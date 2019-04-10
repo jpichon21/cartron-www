@@ -24,3 +24,6 @@ button.downloadRemove {
 .displayNone {
     display: none;
 }
+.hidden {
+    display:none;
+}

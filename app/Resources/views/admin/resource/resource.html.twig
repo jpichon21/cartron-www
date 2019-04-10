@@ -48,16 +48,16 @@
                                         {% if isSortable is defined and isSortable %}
                                             <td class="options-width">
                                                 {% if isFirst == false %}
-                                                    <a href="{{ path('admin_sort_resource', { 'idResource': resource.id, 'upOrDown': 'up', 'idCategory': idCategory }) }}"><img
+                                                    <a href="{{ path('admin_sort_resource', { 'resource': resource.id, 'upOrDown': 'up', 'category': category.id }) }}"><img
                                                             src="{{ asset('admin/images/table/icon-arrow-up.png')}}" /></a>
                                                 {% endif %}
                                                 {% if resources|length != indice %}
                                                     {% if isFirst == true %}
                                                         <a style="margin-left: 27px"
-                                                            href="{{ path('admin_sort_resource', { 'idResource': resource.id, 'upOrDown': 'down', 'idCategory': idCategory }) }}"><img
+                                                            href="{{ path('admin_sort_resource', { 'resource': resource.id, 'upOrDown': 'down', 'category': category.id }) }}"><img
                                                                 src="{{ asset('admin/images/table/icon-arrow-down.png')}}" /></a>
                                                     {% else %}
-                                                        <a href="{{ path('admin_sort_resource', { 'idResource': resource.id, 'upOrDown': 'down', 'idCategory': idCategory }) }}"><img
+                                                        <a href="{{ path('admin_sort_resource', { 'resource': resource.id, 'upOrDown': 'down', 'category': category.id }) }}"><img
                                                                 src="{{ asset('admin/images/table/icon-arrow-down.png')}}" /></a>
                                                     {% endif %}
                                                 {% endif %}
@@ -65,7 +65,7 @@
                                         {% endif %}
                                         <td class="options-width">
                                             <a class="icon-1 info-tooltip"
-                                                href="{{ path('admin_edit_resource', { 'id': resource.id, 'locale': app.request.getLocale() }) }}"></a>
+                                                href="{{ path('admin_edit_resource', { 'resource': resource.id, 'locale': app.request.getLocale() }) }}"></a>
                                             <a class="icon-2 info-tooltip"
                                                 href="{{ path('delete', { 'id': resource.id , 'table':'Resource' }) }}"></a>
                                         </td>

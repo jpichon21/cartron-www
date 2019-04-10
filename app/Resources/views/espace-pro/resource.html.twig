@@ -3,10 +3,10 @@
     <div id="contenu-right">
         <div id="post-nav">
         {% if prev != false %}
-            <a href="{{ path('pro_resource', { 'id': prev.id }) }}" rel="prev"/>
+            <a href="{{ path('pro_resource', { 'resource': prev.id }) }}" rel="prev"/>
         {% endif %}
         {% if next != false %}
-            <a href="{{ path('pro_resource', { 'id': next.id }) }}" rel="next"/>
+            <a href="{{ path('pro_resource', { 'resource': next.id }) }}" rel="next"/>
         {% endif %}
         </div>
         <div class="image-left">

@@ -5,6 +5,7 @@ namespace AppBundle\Controller\Admin;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Resource;
+use AppBundle\Entity\Category;
 use AppBundle\Repository\ResourceRepository;
 use AppBundle\Form\ResourceType;
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
@@ -36,19 +37,16 @@ class ResourceAdminController extends Controller
 
     /**
      * @Route(
-     *  "/resource/{idCategory}", name="admin_resource",
-     *  requirements={"idCategory" = "^\d+"},
-     *  defaults={"idCategory" = null}
+     *  "/resource/{category}", name="admin_resource",
+     *  requirements={"category" = "^\d+"},
+     *  defaults={"category" = null}
      * )
      * @return View
      */
-    public function indexResourceAction($idCategory)
+    public function indexResourceAction(Category $category = null)
     {
-        if ($idCategory !== null) {
-            $resources = $this->resourceRepository->findBy(
-                ['category' => $idCategory],
-                ['position' => 'ASC']
-            );
+        if ($category !== null) {
+            $resources = $category->getResources();
             $isSortable = true;
         } else {
             $resources = $this->resourceRepository->findAll();
@@ -57,7 +55,7 @@ class ResourceAdminController extends Controller
 
         return $this->render(
             'admin/resource/resource.html.twig',
-            ['resources' => $resources, 'isSortable' => $isSortable, 'idCategory' => $idCategory]
+            ['resources' => $resources, 'isSortable' => $isSortable, 'category' => $category]
         );
     }
 
@@ -78,7 +76,10 @@ class ResourceAdminController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
-            
+            $downloads = $data->getDownloads();
+            foreach ($downloads as $download) {
+                $download->setLocale('fr');
+            }
             $uploadFile = $data->getPicture();
             if ($uploadFile) {
                 $nameOriginalFile = $uploadFile->getClientOriginalName();
@@ -104,7 +105,7 @@ class ResourceAdminController extends Controller
             $this->em->persist($resource);
             $this->em->flush();
 
-            return $this->redirectToRoute('admin_edit_resource', ['id' => $resource->getId(), 'locale' => 'fr']);
+            return $this->redirectToRoute('admin_edit_resource', ['resource' => $resource->getId(), 'locale' => 'fr']);
         }
 
         return $this->render(
@@ -115,17 +116,15 @@ class ResourceAdminController extends Controller
 
     /**
      * @Route(
-     *  "/resource/edit/{id}/{locale}",
+     *  "/resource/edit/{resource}/{locale}",
      *  name="admin_edit_resource",
      *  requirements={"id" = "^\d+", "locale" = "fr|en"}
      * )
      *
      * @return View
      */
-    public function editResourceAction(Request $request, $id, $locale)
+    public function editResourceAction(Request $request, Resource $resource, $locale)
     {
-        $resource = $this->resourceRepository->findOneById($id);
-
         $resource->setTranslatableLocale($locale);
         $this->em->refresh($resource);
 
@@ -147,7 +146,13 @@ class ResourceAdminController extends Controller
             $resource->setTranslatableLocale('en');
 
             $data = $form->getData();
-
+            $downloads = $data->getDownloads();
+            foreach ($downloads as $download) {
+                if ($download->getLocale() == null) {
+                    ($locale === 'fr') ? $download->setLocale('fr') : $download->setLocale('en');
+                }
+            }
+            
             foreach ($originalDownloads as $download) {
                 if (false === $resource->getDownloads()->contains($download)) {
                     $name = $download->getFile();
@@ -189,29 +194,26 @@ class ResourceAdminController extends Controller
 
             $this->em->persist($resource);
             $this->em->flush();
-            return $this->redirectToRoute('admin_edit_resource', ['id' => $resource->getId(), 'locale' => $locale]);
+            return $this->redirectToRoute('admin_edit_resource', ['resource' => $resource->getId(), 'locale' => $locale]);
         }
 
         return $this->render(
             'admin/resource/manage_resource.html.twig',
-            ['form' => $form->createView(), 'locale' => $locale, 'isEdition' => true, 'idResource' => $id]
+            ['form' => $form->createView(), 'locale' => $locale, 'isEdition' => true, 'resource' => $resource]
         );
     }
 
     /**
      * @Route(
-     *  "/resource/{idResource}/{upOrDown}/{idCategory}", name="admin_sort_resource",
+     *  "/resource/{resource}/{upOrDown}/{category}", name="admin_sort_resource",
      *  requirements={"idResource" = "^\d+","upOrDown" = "up|down", "idCategory" = "^\d+"},
      *  defaults={"idResource" = null}
      * )
      * @return View
      */
-    public function sortResourceAction($idResource, $upOrDown, $idCategory)
+    public function sortResourceAction(Resource $resource, $upOrDown, Category $category)
     {
-        $resource = $this->resourceRepository->findOneById($idResource);
-        $countResources = count($this->resourceRepository->findBy(
-            ['category' => $idCategory]
-        ));
+        $countResources = count($category->getResources());
         $actualPosition = $resource->getPosition();
         if ($upOrDown === 'up' && $actualPosition !== 0) {
                 $resource->setPosition($actualPosition -1);
@@ -224,6 +226,6 @@ class ResourceAdminController extends Controller
         $this->em->persist($resource);
         $this->em->flush();
 
-        return $this->redirectToRoute('admin_resource', ['idCategory' => $idCategory]);
+        return $this->redirectToRoute('admin_resource', ['category' => $category->getId()]);
     }
 }

@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Translatable\Translatable;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @Gedmo\Tree(type="nested")
@@ -74,9 +75,20 @@ class Category implements Translatable
 
     /**
      * @ORM\OneToMany(targetEntity="Category", mappedBy="parent")
-     * @ORM\OrderBy({"lft" = "ASC"})
      */
     private $children;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Resource", mappedBy="category")
+     * @ORM\OrderBy({"position" = "ASC"})
+     */
+    private $resources;
+    
+    public function __construct()
+    {
+        $this->resources = new ArrayCollection();
+        $this->children = new ArrayCollection();
+    }
 
     /**
      * @Gedmo\Locale
@@ -192,6 +204,11 @@ class Category implements Translatable
     public function getParent()
     {
         return $this->parent;
+    }
+
+    public function getResources()
+    {
+        return $this->resources;
     }
 
     /**

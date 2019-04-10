@@ -97,7 +97,7 @@ class Resource implements Translatable
      * @var Category
      *
      * @Gedmo\SortableGroup
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="id")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="resources")
      * @ORM\JoinColumn(name="id_category", referencedColumnName="id")
      */
     private $category;

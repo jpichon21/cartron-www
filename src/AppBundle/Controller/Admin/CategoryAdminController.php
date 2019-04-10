@@ -67,28 +67,26 @@ class CategoryAdminController extends Controller
             $category->setTranslatableLocale('fr');
             $this->em->persist($category);
             $this->em->flush();
-            return $this->redirectToRoute('admin_edit_category', ['id' => $category->getId(), 'locale' => 'fr']);
+            return $this->redirectToRoute('admin_edit_category', ['category' => $category->getId(), 'locale' => 'fr']);
         }
 
         return $this->render(
             'admin/category/manage_category.html.twig',
-            ['form' => $form->createView(), 'isEdit' => false, 'idCategory' => $category->getId()]
+            ['form' => $form->createView(), 'isEdit' => false, 'category' => $category]
         );
     }
 
     /**
      * @Route(
-     *  "/category/edit/{id}/{locale}",
+     *  "/category/edit/{category}/{locale}",
      *  name="admin_edit_category",
      *  requirements={"id" = "^\d+$", "locale" = "fr|en"}
      * )
      *
      * @return View
      */
-    public function editCategoryAction(Request $request, $id, $locale)
+    public function editCategoryAction(Request $request, Category $category, $locale)
     {
-        $category = $this->categoryRepository->findOneById($id);
-
         $category->setTranslatableLocale($locale);
         $this->em->refresh($category);
 
@@ -96,18 +94,19 @@ class CategoryAdminController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            ($locale === 'fr') ?
-            $category->setTranslatableLocale('fr') :
-            $category->setTranslatableLocale('en');
+            ($locale === 'fr') ? $category->setTranslatableLocale('fr') : $category->setTranslatableLocale('en');
 
             $this->em->persist($category);
             $this->em->flush();
-            return $this->redirectToRoute('admin_edit_category', ['id' => $category->getId(), 'locale' => $locale]);
+            return $this->redirectToRoute(
+                'admin_edit_category',
+                ['category' => $category->getId(), 'locale' => $locale]
+            );
         }
 
         return $this->render(
             'admin/category/manage_category.html.twig',
-            ['form' => $form->createView(), 'locale' => $locale, 'isEdit' => true, 'idCategory' => $id]
+            ['form' => $form->createView(), 'locale' => $locale, 'isEdit' => true, 'category' => $category]
         );
     }
 }

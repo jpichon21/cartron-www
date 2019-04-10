@@ -7,6 +7,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Repository\ResourceRepository;
 use AppBundle\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
+use AppBundle\Entity\Category;
+use AppBundle\Entity\Resource;
 
 class EspaceProController extends Controller
 {
@@ -44,7 +46,10 @@ class EspaceProController extends Controller
     public function accueilAction()
     {
         $categoriesMenu = $this->generateCategoriesTree();
-        $resourcesMenu = $this->resourceRepository->findAll();
+        $resourcesMenu = $this->resourceRepository->findBy(
+            [],
+            ['position' => 'ASC']
+        );
 
         return $this->render(
             'espace-pro/accueil.html.twig',
@@ -53,17 +58,19 @@ class EspaceProController extends Controller
     }
 
     /**
-     * @Route("/espace-pro-liste/{id}", name="pro_list_resources")
+     * @Route("/espace-pro-liste/{category}", name="pro_list_resources")
      *
      * @return View
      */
-    public function listResourcesAction($id)
+    public function listResourcesAction(Category $category)
     {
         $categoriesMenu = $this->generateCategoriesTree();
-        $resourcesMenu = $this->resourceRepository->findAll();
+        $resourcesMenu = $this->resourceRepository->findBy(
+            [],
+            ['position' => 'ASC']
+        );
 
-        $category = $this->categoryRepository->findOneById($id);
-        $resources = $this->resourceRepository->findBy(['category' => $id]);
+        $resources = $category->getResources();
         
         return $this->render(
             'espace-pro/list_resources.html.twig',
@@ -77,11 +84,11 @@ class EspaceProController extends Controller
     }
 
     /**
-     * @Route("/espace-pro/{id}", name="pro_resource")
+     * @Route("/espace-pro/{resource}", name="pro_resource")
      *
      * @return View
      */
-    public function resourceAction($id)
+    public function resourceAction(Resource $resource)
     {
         $categoriesMenu = $this->generateCategoriesTree();
         $resourcesMenu = $this->resourceRepository->findBy(
@@ -89,9 +96,7 @@ class EspaceProController extends Controller
             ['position' => 'ASC']
         );
 
-        $resource = $this->resourceRepository->findOneById($id);
         $category = $resource->getCategory();
-
         $position = $resource->getPosition();
 
         $resourcePrev = $this->resourceRepository->findOneByPosition($position - 1);

@@ -4,7 +4,6 @@ namespace AppBundle\Entity;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Translatable\Translatable;
 
 /**
  * Download
@@ -12,7 +11,7 @@ use Gedmo\Translatable\Translatable;
  * @ORM\Table(name="download")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\DownloadRepository")
  */
-class Download implements Translatable
+class Download
 {
     /**
      * @var int
@@ -38,9 +37,15 @@ class Download implements Translatable
     private $file;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="locale", type="string", length=255, nullable=true)
+     */
+    private $locale;
+
+    /**
      * @var Resource
      *
-     * @Gedmo\Translatable
      * @ORM\ManyToOne(targetEntity="Resource", inversedBy="downloads")
      * @ORM\JoinColumn(name="id_resource", referencedColumnName="id")
      */
@@ -111,6 +116,29 @@ class Download implements Translatable
     public function getFile()
     {
         return $this->file;
+    }
+
+    /**
+     * Set locale
+     *
+     * @param string $locale
+     * @return Download
+     */
+    public function setLocale($locale)
+    {
+        $this->locale = $locale;
+    
+        return $this;
+    }
+
+    /**
+     * Get locale
+     *
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
     }
 
     /**

@@ -36,6 +36,17 @@ class DownloadType extends AbstractType
                     'required' => false,
                     'data_class' => null
                 ]
+            )
+            ->add(
+                'locale',
+                TextType::class,
+                [
+                    'label' => false,
+                    'required' => false,
+                    'attr' => [
+                        'class' => 'hidden',
+                        ]
+                ]
             );
     }
     public function configureOptions(OptionsResolver $resolver)

@@ -17,7 +17,7 @@
                     {% else %}
                         <li>
                     {% endif %}
-                        <a href="{{ path('pro_resource', { 'id': resource.id }) }}">
+                        <a href="{{ path('pro_resource', { 'resource': resource.id }) }}">
                             <h4><span>{{ resource.title }}</span></h4>
                             <div class="image-slide">
                                 <img src="{{ asset('upload/'~resource.miniature) }}" class="magic_fields">

@@ -21,7 +21,7 @@
                                             {% if resource.category.id == subCategory.id %}
                                                 
                                                 <li>
-                                                    <a href="{{ path('pro_resource', { 'id': resource.id }) }}">
+                                                    <a href="{{ path('pro_resource', { 'resource': resource.id }) }}">
                                                         {{ resource.title  }}
                                                     </a>
                                                 </li>
@@ -29,7 +29,7 @@
                                         {% endfor %}
                                         </ul>
                                     </div>
-                                    <a href="{{ path('pro_list_resources', { 'id': subCategory.id }) }}">
+                                    <a href="{{ path('pro_list_resources', { 'category': subCategory.id }) }}">
                                     {% if length <= 2 %}
                                         <span>{{ subCategory.nom  }}</span>
                                     {% else %}
@@ -50,7 +50,7 @@
                         {% for resource in resourcesMenu %}
                             {% if resource.category.id == categoryMenu['parent'].id %}
                                 <li>
-                                    <a href="{{ path('pro_resource', { 'id': resource.id }) }}">
+                                    <a href="{{ path('pro_resource', { 'resource': resource.id }) }}">
                                         {{ resource.title  }}
                                     </a>
                                 </li>

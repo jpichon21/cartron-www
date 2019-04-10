@@ -8,9 +8,9 @@
         <h1>Ajouter resource </h1>
         {% if isEdition %}
             {% if locale == 'fr' %}
-                <a href="{{ path('admin_edit_resource', { 'id': idResource, 'locale': 'en' }) }}">Modifier en anglais</a>
+                <a href="{{ path('admin_edit_resource', { 'resource': resource.id, 'locale': 'en' }) }}">Modifier en anglais</a>
             {% else %}
-                <a href="{{ path('admin_edit_resource', { 'id': idResource, 'locale': 'fr' }) }}">Modifier en français</a>
+                <a href="{{ path('admin_edit_resource', { 'resource': resource.id, 'locale': 'fr' }) }}">Modifier en français</a>
             {% endif %}
         {% endif %}
     </div>
@@ -77,32 +77,73 @@
                                 </td>
                             </tr>
                             {% for download in form.downloads %}
-                            <tr>
-                                <th valign="top">Titre du fichier :</th>
-                                <td>{{ form_widget(download.title) }}</td>
-                            </tr>
-                            <tr class="download">
-                                <th valign="top">fichier :</th>
-                                <td>{{ form_widget(download.file) }}</td>
-                            </tr>
-                            <tr>
-                                <th valign="top">lien :</th>
-                                <td><a href="{{ asset('upload/'~download.file.vars.data)}}"
-                                        target="_blank">{{ asset('upload/'~download.file.vars.data)}}</a></td>
+                                {% if locale == 'en' %}
+                                    {% if download.children['locale'].vars['value'] == 'en' %}
+                                        <tr>
+                                            <th valign="top">Titre du fichier :</th>
+                                            <td>{{ form_widget(download.title) }}</td>
+                                        </tr>
+                                        <tr class="download">
+                                            <th valign="top">fichier :</th>
+                                            <td>{{ form_widget(download.file) }}</td>
+                                            {{ form_widget(download.locale) }}
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">lien :</th>
+                                            <td><a href="{{ asset('upload/'~download.file.vars.data)}}"
+                                                    target="_blank">{{ asset('upload/'~download.file.vars.data)}}</a></td>
 
-                            </tr>
-                            <tr>
-                                <td>
-                                    <hr>
-                                </td>
-                                <td>
-                                    <hr>
-                                </td>
-                                <td>
-                                    <hr>
-                                </td>
-                            </tr>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <hr>
+                                            </td>
+                                            <td>
+                                                <hr>
+                                            </td>
+                                            <td>
+                                                <hr>
+                                            </td>
+                                        </tr>
+                                    {% else %}
+                                        {{ form_widget(download.title, { 'attr': {'class': 'hidden'} }) }}
+                                        {{ form_widget(download.file, { 'attr': {'class': 'hidden'} }) }}
+                                        {{ form_widget(download.locale, { 'attr': {'class': 'hidden'} }) }}
+                                    {% endif %}
+                                {% else %}
+                                    {% if download.children['locale'].vars['value'] == 'fr' %}
+                                        <tr>
+                                            <th valign="top">Titre du fichier :</th>
+                                            <td>{{ form_widget(download.title) }}</td>
+                                        </tr>
+                                        <tr class="download">
+                                            <th valign="top">fichier :</th>
+                                            <td>{{ form_widget(download.file) }}</td>
+                                            {{ form_widget(download.locale) }}
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">lien :</th>
+                                            <td><a href="{{ asset('upload/'~download.file.vars.data)}}"
+                                                    target="_blank">{{ asset('upload/'~download.file.vars.data)}}</a></td>
 
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <hr>
+                                            </td>
+                                            <td>
+                                                <hr>
+                                            </td>
+                                            <td>
+                                                <hr>
+                                            </td>
+                                        </tr>
+                                    {% else %}
+                                        {{ form_widget(download.title, { 'attr': {'class': 'hidden'} }) }}
+                                        {{ form_widget(download.file, { 'attr': {'class': 'hidden'} }) }}
+                                        {{ form_widget(download.locale, { 'attr': {'class': 'hidden'} }) }}
+                                    {% endif %}
+                                {% endif %}
                             {% endfor %}
             <td></td>
         <tr class="downloads" data-prototype="{{ form_widget(form.downloads.vars.prototype)|e('html_attr') }}">
@@ -176,7 +217,7 @@
         var prototype = $collectionHolder.attr('data-prototype');
 
         // get the new index
-        var index = $collectionHolder.data('index') + nbDownload;
+        var index = $collectionHolder.data('index') + nbDownload + 7;
         nbDownload = 0;
 
         var newForm = prototype;
