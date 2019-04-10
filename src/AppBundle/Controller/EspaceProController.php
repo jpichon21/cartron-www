@@ -43,7 +43,7 @@ class EspaceProController extends Controller
      *
      * @return View
      */
-    public function accueilAction()
+    public function indexAction()
     {
         $categoriesMenu = $this->generateCategoriesTree();
         $resourcesMenu = $this->resourceRepository->findBy(

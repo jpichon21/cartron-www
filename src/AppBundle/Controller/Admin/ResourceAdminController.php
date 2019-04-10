@@ -9,7 +9,6 @@ use AppBundle\Entity\Category;
 use AppBundle\Repository\ResourceRepository;
 use AppBundle\Form\ResourceType;
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
-use Doctrine\Common\Collections\ArrayCollection;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**
@@ -128,14 +127,8 @@ class ResourceAdminController extends Controller
         $resource->setTranslatableLocale($locale);
         $this->em->refresh($resource);
 
-        $photo = $resource->getPicture();
+        $picture = $resource->getPicture();
         $miniature = $resource->getMiniature();
-
-        $originalDownloads = new ArrayCollection();
-
-        foreach ($resource->getDownloads() as $download) {
-            $originalDownloads->add($download);
-        }
 
         $form = $this->createForm(ResourceType::class, $resource);
         $form->handleRequest($request);
@@ -152,15 +145,6 @@ class ResourceAdminController extends Controller
                     ($locale === 'fr') ? $download->setLocale('fr') : $download->setLocale('en');
                 }
             }
-            
-            foreach ($originalDownloads as $download) {
-                if (false === $resource->getDownloads()->contains($download)) {
-                    $name = $download->getFile();
-                    $dir = $this->getParameter('uploadDirectory').'/';
-                    unlink($dir.$name);
-                    $this->em->remove($download);
-                }
-            }
 
             $uploadFile = $data->getPicture();
             if ($uploadFile) {
@@ -172,8 +156,8 @@ class ResourceAdminController extends Controller
                 );
                 $resource->setPicture($name);
             } else {
-                if (isset($photo)) {
-                    $resource->setPicture($photo);
+                if (isset($picture)) {
+                    $resource->setPicture($picture);
                 }
             }
 
@@ -217,10 +201,8 @@ class ResourceAdminController extends Controller
         $actualPosition = $resource->getPosition();
         if ($upOrDown === 'up' && $actualPosition !== 0) {
                 $resource->setPosition($actualPosition -1);
-        } else {
-            if ($upOrDown === 'down' && $actualPosition !== $countResources -1) {
+        } elseif ($upOrDown === 'down' && $actualPosition !== $countResources -1) {
                 $resource->setPosition($actualPosition +1);
-            }
         }
 
         $this->em->persist($resource);

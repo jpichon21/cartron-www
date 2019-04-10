@@ -16,12 +16,18 @@
             <div id="downloads">
                 <ul>
                 {% for download in resource.downloads %}
-                    <li>
-                        <a target="_blank" download="{{ download.title }}" href="{{ asset('site/images/'~download.file) }}">
-                            {% set title = download.title|split('/') %}
-                            {{ title[0] }} / <span> {{ title[1] }}</span>
-                        </a>
-                    </li>
+                    {% if download.locale == app.request.locale %}
+                        <li>
+                            <a target="_blank" download="{{ download.title }}" href="{{ asset('site/images/'~download.file) }}">
+                                {% set title = download.title|split('/') %}
+                                {% if title[1] is defined %}
+                                    {{ title[0] }} / <span> {{ title[1] }}</span>
+                                {% else %}
+                                    {{ title[0] }}
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endif %}
                 {% endfor %}
                 </ul>
             </div>

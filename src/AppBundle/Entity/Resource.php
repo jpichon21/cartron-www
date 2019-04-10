@@ -268,6 +268,11 @@ class Resource implements Translatable
      */
     public function setPicture($picture)
     {
+        if ($this->picture != null) {
+            if (file_exists('upload/'.$this->picture)) {
+                unlink('upload/'.$this->picture);
+            }
+        }
         $this->picture = $picture;
     
         return $this;
@@ -291,6 +296,11 @@ class Resource implements Translatable
      */
     public function setMiniature($miniature)
     {
+        if ($this->miniature != null) {
+            if (file_exists('upload/'.$this->miniature)) {
+                unlink('upload/'.$this->miniature);
+            }
+        }
         $this->miniature = $miniature;
     
         return $this;

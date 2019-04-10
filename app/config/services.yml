@@ -98,6 +98,11 @@ services:
         arguments: 
             - AppBundle\Entity\Resource
 
+    AppBundle\Repository\DownloadRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments: 
+            - AppBundle\Entity\Download
+
     AppBundle\Listener\ConsentListener:
         class: AppBundle\Listener\ConsentListener
         arguments: ['@router.default']

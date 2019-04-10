@@ -93,18 +93,21 @@ class Download
     public function setFile($file)
     {
         if ($file == null) {
-            return $this;
+            $this->file = 'download1554360080_colorpicker_hex.png';
         } else {
+            if ($this->file != null) {
+                if (file_exists('upload/'.$this->file)) {
+                    unlink('upload/'.$this->file);
+                }
+            }
             $nameOriginalFile = $file->getClientOriginalName();
             $name = 'download' . time() . '_' . $nameOriginalFile;
             $file->move(
                 'upload',
                 $name
             );
+            $this->file = $name;
         }
-
-        $this->file = $name;
-    
         return $this;
     }
 
