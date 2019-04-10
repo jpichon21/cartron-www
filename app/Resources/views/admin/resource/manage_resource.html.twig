@@ -76,6 +76,22 @@
                                     <hr>
                                 </td>
                             </tr>
+                            <tr>
+                                <th valign="top"></th>
+                                <td><h2>Liste des fichiers</h2></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <hr>
+                                </td>
+                                <td>
+                                    <hr>
+                                </td>
+                                <td>
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
                             {% for download in form.downloads %}
                                 {% if locale == 'en' %}
                                     {% if download.children['locale'].vars['value'] == 'en' %}
@@ -83,13 +99,13 @@
                                             <th valign="top">Titre du fichier :</th>
                                             <td>{{ form_widget(download.title) }}</td>
                                         </tr>
-                                        <tr class="download">
+                                        <tr>
                                             <th valign="top">fichier :</th>
                                             <td>{{ form_widget(download.file) }}</td>
                                             {{ form_widget(download.locale) }}
                                         </tr>
-                                        <tr>
-                                            <th valign="top">lien :</th>
+                                        <tr class="download">
+                                            <th valign="top">voir le fichier :</th>
                                             <td><a href="{{ asset('upload/'~download.file.vars.data)}}"
                                                     target="_blank">{{ asset('upload/'~download.file.vars.data)}}</a></td>
 
@@ -116,13 +132,13 @@
                                             <th valign="top">Titre du fichier :</th>
                                             <td>{{ form_widget(download.title) }}</td>
                                         </tr>
-                                        <tr class="download">
+                                        <tr>
                                             <th valign="top">fichier :</th>
                                             <td>{{ form_widget(download.file) }}</td>
                                             {{ form_widget(download.locale) }}
                                         </tr>
-                                        <tr>
-                                            <th valign="top">lien :</th>
+                                        <tr class="download">
+                                            <th valign="top">voir le fichier :</th>
                                             <td><a href="{{ asset('upload/'~download.file.vars.data)}}"
                                                     target="_blank">{{ asset('upload/'~download.file.vars.data)}}</a></td>
 
@@ -178,7 +194,7 @@
     $('tr.download').each(function () {
         addDownloadFormDeleteLink($(this), true);
     });
-
+    var isClick = false;
     var $collectionHolder;
 
     // setup an "add a download" link
@@ -213,6 +229,7 @@
     });
 
     function addDownloadForm($collectionHolder, $newLinkLi) {
+        isClick = true;
         // Get the data-prototype explained earlier
         var prototype = $collectionHolder.attr('data-prototype');
 
@@ -242,8 +259,14 @@
     }
 
     function addDownloadFormDeleteLink($downloadFormLi, $canNext) {
-        var $removeFormButton = $('<button type="button">Supprimer ce fichier</button>');
-        $downloadFormLi.append($removeFormButton);
+        if (isClick) {
+            var $removeFormButton = $('<button type="button">Supprimer ce fichier</button>');
+            $downloadFormLi.append($removeFormButton);
+        } else {
+            var $removeFormButton = $('<tr><th valign="top"><button type="button">Supprimer ce fichier</button></th></tr>');
+            $downloadFormLi.after($removeFormButton);
+        }
+        
 
         $removeFormButton.click(function (e) {
             // remove the li for the download form
