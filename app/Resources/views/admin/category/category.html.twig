@@ -6,9 +6,11 @@
     <div id="page-heading">
         <h1>Liste des catégories </h1>
         {% if app.request.locale == "en" %}
-            <a href="{{ path('choose_locale', {'locale' : 'fr'}) }}">voir en français</a>
+            <a href="{{ path('choose_locale', {'locale' : 'fr'}) }}"><img class="flag flagOpacity" src="{{ asset('admin/images/shared/flag-france.svg')}}"/></a>
+            <a href="{{ path('choose_locale', {'locale' : 'en'}) }}"><img class="flag" src="{{ asset('admin/images/shared/flag-england.svg')}}"/></a>
         {% else %}
-            <a href="{{ path('choose_locale', {'locale' : 'en'}) }}">voir en anglais</a>
+            <a href="{{ path('choose_locale', {'locale' : 'fr'}) }}"><img class="flag" src="{{ asset('admin/images/shared/flag-france.svg')}}"/></a>
+            <a href="{{ path('choose_locale', {'locale' : 'en'}) }}"><img class="flag flagOpacity" src="{{ asset('admin/images/shared/flag-england.svg')}}"/></a>
         {% endif %}
     </div>
     <!-- end page-heading -->
@@ -47,8 +49,8 @@
                                             <td class="options-width">
                                                 <a class="icon-1 info-tooltip"
                                                     href="{{ path('admin_edit_category', { 'category': category.id, 'locale': 'fr' }) }}"></a>
-                                                <a class="icon-2 info-tooltip"
-                                                    href="{{ path('delete', { 'id': category.id , 'table':'Category' }) }}"></a>
+                                                <a class="icon-2 info-tooltip" onclick = "deleteCategory({{category.id}});">
+                                                </a>
                                             </td>
                                         </tr>
                                     {% endif %}
@@ -63,8 +65,8 @@
                                                 <td class="options-width">
                                                     <a class="icon-1 info-tooltip"
                                                         href="{{ path('admin_edit_category', { 'category': subCategory.id, 'locale': 'fr' }) }}"></a>
-                                                    <a class="icon-2 info-tooltip"
-                                                        href="{{ path('delete', { 'id': subCategory.id , 'table':'Category' }) }}"></a>
+                                                    <a class="icon-2 info-tooltip" onclick = "deleteCategory({{subCategory.id}});">
+                                                    </a>
                                                 </td>
                                             </tr>
                                         {% endif %}

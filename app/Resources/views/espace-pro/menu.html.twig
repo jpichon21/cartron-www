@@ -58,7 +58,7 @@
                         {% endfor %}
                         </ul>
                     </div>
-                    <a>{{ categoryMenu['parent'].nom }}</a>
+                    <a href="{{ path('pro_list_resources', { 'category': categoryMenu['parent'].id }) }}">{{ categoryMenu['parent'].nom }}</a>
                 {% endif %} 
                 </li>
                 {% set index = index + 1 %}

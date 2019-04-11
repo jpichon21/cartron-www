@@ -3,10 +3,10 @@
     <div id="contenu-right">
         <div id="post-nav">
         {% if prev != false %}
-            <a href="{{ path('pro_resource', { 'resource': prev.id }) }}" rel="prev"/>
+            <a href="{{ path('pro_resource', { 'resource': prev.id }) }}" rel="prev"></a>
         {% endif %}
         {% if next != false %}
-            <a href="{{ path('pro_resource', { 'resource': next.id }) }}" rel="next"/>
+            <a href="{{ path('pro_resource', { 'resource': next.id }) }}" rel="next"></a>
         {% endif %}
         </div>
         <div class="image-left">
@@ -18,7 +18,7 @@
                 {% for download in resource.downloads %}
                     {% if download.locale == app.request.locale %}
                         <li>
-                            <a target="_blank" download="{{ download.title }}" href="{{ asset('site/images/'~download.file) }}">
+                            <a target="_blank" download="{{ download.title }}" href="{{ asset('upload/'~download.file) }}">
                                 {% set title = download.title|split('/') %}
                                 {% if title[1] is defined %}
                                     {{ title[0] }} / <span> {{ title[1] }}</span>

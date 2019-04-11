@@ -80,7 +80,8 @@ class CategoryAdminController extends Controller
      * @Route(
      *  "/category/edit/{category}/{locale}",
      *  name="admin_edit_category",
-     *  requirements={"id" = "^\d+$", "locale" = "fr|en"}
+     *  requirements={"id" = "^\d+$", "locale" = "fr|en"},
+     *  defaults={"locale" = "fr"}
      * )
      *
      * @return View

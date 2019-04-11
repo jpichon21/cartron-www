@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @Gedmo\Tree(type="nested")
- * @ORM\Table(name="categories")
+ * @ORM\Table(name="category")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CategoryRepository")
  */
 class Category implements Translatable

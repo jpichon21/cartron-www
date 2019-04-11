@@ -27,3 +27,9 @@ button.downloadRemove {
 .hidden {
     display:none;
 }
+.flagOpacity{
+    opacity: 0.5;
+}
+.flag{
+    width: 25px;
+}

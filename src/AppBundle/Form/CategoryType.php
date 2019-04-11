@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use AppBundle\Entity\Category;
+use Doctrine\ORM\EntityRepository;
 
 class CategoryType extends AbstractType
 {
@@ -49,6 +50,10 @@ class CategoryType extends AbstractType
                     'choice_label' => 'nom',
                     'expanded' => false,
                     'multiple' => false,
+                    'query_builder' => function (EntityRepository $er) {
+                        return $er->createQueryBuilder('u')
+                            ->where('u.lvl = 0');
+                    },
                 ]
             )
             ->add(
