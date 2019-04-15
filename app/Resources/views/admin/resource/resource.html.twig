@@ -40,7 +40,6 @@
                                     {% endif %}
                                     <th class="table-header-options line-left"><a href="#0">Actions</a></th>
                                 </tr>
-                                {% set isFirst = true %}
                                 {% set indice = 0 %}
                                 {% for resource in resources %}
                                     {% set indice = indice + 1 %}
@@ -49,12 +48,12 @@
                                         <td>{{ resource.titleSEO }}</td>
                                         {% if isSortable is defined and isSortable %}
                                             <td class="options-width">
-                                                {% if isFirst == false %}
+                                                {% if loop.first == false %}
                                                     <a href="{{ path('admin_sort_resource', { 'resource': resource.id, 'upOrDown': 'up', 'category': category.id }) }}"><img
                                                             src="{{ asset('admin/images/table/icon-arrow-up.png')}}" /></a>
                                                 {% endif %}
                                                 {% if resources|length != indice %}
-                                                    {% if isFirst == true %}
+                                                    {% if loop.first %}
                                                         <a style="margin-left: 27px"
                                                             href="{{ path('admin_sort_resource', { 'resource': resource.id, 'upOrDown': 'down', 'category': category.id }) }}"><img
                                                                 src="{{ asset('admin/images/table/icon-arrow-down.png')}}" /></a>
@@ -72,7 +71,6 @@
                                                 href="{{ path('delete', { 'id': resource.id , 'table':'Resource' }) }}"></a>
                                         </td>
                                     </tr>
-                                    {% set isFirst = false %}
                                 {% endfor %}
                             </tbody>
                         </table>

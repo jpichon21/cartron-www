@@ -657,6 +657,21 @@ After graduating from HEC (Ecole des Hautes Etudes Commerciales) and a career of
         <source>En savoir plus</source>
         <target>More</target>
     </trans-unit>
+    <trans-unit id="1538">
+        <source>texte mentions légales</source>
+        <target><![CDATA[Website owner: Joseph Cartron<br />
+          Adress : 25, Rue du Docteur Legrand – CS30028<br />
+          21701 nuits-Saint-Georges Cedex - France<br />
+                  Email: cartron@cartron.fr<br />
+          Telephone : +33 (0)3 80 62 00 90<br />
+          Design & Development & technical maintenance: BIGGERBAND<br />
+          Images Credits: Image&Associés and Joseph Cartron <br />
+          Conditions of Use and Property:<br />
+          Any reproduction of this site and its content, in part or in whole by whatsoever means, without prior consent is forbidden and would be considered as an act of counterfeit punishable under articles L335-2 and thereafter of the Code of Intellectual Property. Site users are required to respect the provisions of the Data Processing, Files & Liberties Act, any violation of which would expose the offender to criminal sanctions. Most notably and regarding the nominative information to which they have access, users shall refrain from any collection, unlawful use and, more generally, any act likely to affect the private life or reputation of other persons.<br />
+          Hosting: OVH<br />
+          <a href="https://clients.fr.oleane.com" target="_blank">https://clients.fr.oleane.com</a>]]>
+        </target>
+    </trans-unit>
     </body>
   </file>
 </xliff>

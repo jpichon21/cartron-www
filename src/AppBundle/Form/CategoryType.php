@@ -10,14 +10,21 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use AppBundle\Entity\Category;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CategoryType extends AbstractType
 {
+    /**
+     * @var array
+     */
+    private $options;
+
     /**
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $this->options = $options;
         $builder
             ->add(
                 'nom',
@@ -52,7 +59,7 @@ class CategoryType extends AbstractType
                     'multiple' => false,
                     'query_builder' => function (EntityRepository $er) {
                         return $er->createQueryBuilder('u')
-                            ->where('u.lvl = 0');
+                            ->where('u.lvl = 0 AND u.id != '.$this->options['category']);
                     },
                 ]
             )
@@ -66,5 +73,9 @@ class CategoryType extends AbstractType
                         ]
                 ]
             );
+    }
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(['category' => null]);
     }
 }

@@ -60,7 +60,9 @@ class CategoryAdminController extends Controller
     {
         $category = new Category();
 
-        $form = $this->createForm(CategoryType::class, $category);
+        $form = $this->createForm(CategoryType::class, $category, [
+            'category' => $category->getId()
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -91,7 +93,9 @@ class CategoryAdminController extends Controller
         $category->setTranslatableLocale($locale);
         $this->em->refresh($category);
 
-        $form = $this->createForm(CategoryType::class, $category);
+        $form = $this->createForm(CategoryType::class, $category, [
+            'category' => $category->getId()
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

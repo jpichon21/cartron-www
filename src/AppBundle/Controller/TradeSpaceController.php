@@ -10,7 +10,7 @@ use Doctrine\ORM\EntityManagerInterface as EntityManager;
 use AppBundle\Entity\Category;
 use AppBundle\Entity\Resource;
 
-class EspaceProController extends Controller
+class TradeSpaceController extends Controller
 {
 
     /**

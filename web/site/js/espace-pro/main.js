@@ -1,4 +1,3 @@
-// JavaScript Document
 $(function() {
   $(".dropdown img.flag").addClass("flagvisibility");
 
@@ -177,9 +176,6 @@ var form = {
       });
     });
   },
-  // checkboxes:function(){
-  //   $('input[type="checkbox"]').ezMark();
-  // },
   forgot:function(){
     $('#form-forgot').hide();
     $('#forgot').on({
