@@ -50,14 +50,20 @@ class DefaultAdminController extends Controller
                     foreach ($resource->getDownloads() as $download) {
                         $name = $download->getFile();
                         $dir = $this->getParameter('uploadDirectory').'/';
-                        unlink($dir.$name);
+                        if (file_exists($dir.$name) && $name != "") {
+                            unlink($dir.$name);
+                        }
                         $this->em->remove($download);
                     }
                     $dir = $this->getParameter('uploadDirectory').'/';
                     $picture = $resource->getPicture();
                     $miniature = $resource->getMiniature();
-                    unlink($dir.$picture);
-                    unlink($dir.$miniature);
+                    if (file_exists($dir.$picture) && $picture != "") {
+                        unlink($dir.$picture);
+                    }
+                    if (file_exists($dir.$miniature) && $miniature != "") {
+                        unlink($dir.$miniature);
+                    }
                     $this->em->remove($resource);
                 }
                 $this->em->remove($category);
@@ -66,7 +72,9 @@ class DefaultAdminController extends Controller
             foreach ($tableBdd->getDownloads() as $download) {
                 $name = $download->getFile();
                 $dir = $this->getParameter('uploadDirectory').'/';
-                unlink($dir.$name);
+                if (file_exists($dir.$name) && $name != "") {
+                    unlink($dir.$name);
+                }
                 $this->em->remove($download);
             }
             $this->em->remove($tableBdd);
