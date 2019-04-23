@@ -13,21 +13,23 @@
     set('bin/php', '/usr/local/bin/ea-php71 -c deploy/deploy.ini');
 
     host('staging.cartron.fr')
-        ->stage('dev')
+        ->stage('staging')
         ->user('root')
         ->hostname('ns4.logomotion-serveur.com')
         ->port('2222')
         ->set('account_dir', 'cartron')
-        ->set('branch', 'deploy')
+        ->set('branch', 'staging')
         ->set('deploy_path', '/home/{{account_dir}}/src_staging');
 
-    host('www.DOMAIN.fr')
-        ->stage('prod')
-        ->user('root')
-        ->hostname('DOMAIN.fr')
-        ->port('2222')
-        ->set('account_dir', 'ACCOUNT')
-        ->set('deploy_path', '/home/{{account_dir}}/src_prod');
+    host('dev.cartron.fr')
+    ->stage('dev')
+    ->user('root')
+    ->hostname('ns4.logomotion-serveur.com')
+    ->port('2222')
+    ->set('account_dir', 'cartron')
+    ->set('branch', 'dev')
+    ->set('deploy_path', '/home/{{account_dir}}/src_dev');
+    
 
     task('deploy', [
         'deploy:info',
