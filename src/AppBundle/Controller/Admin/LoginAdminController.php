@@ -69,7 +69,7 @@ class LoginAdminController extends Controller
      * @Route("/logout", name="logout")
      *
     */
-    public function logoutAction(Request $request)
+    public function logoutAction()
     {
         $this->get('session')->set('auth_admin', false);
         $this->get('session')->set('name', false);
