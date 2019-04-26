@@ -1,0 +1,603 @@
+/*
+ *Style Espace pro
+*/
+
+
+/* - Layout - */
+#pro .content {
+    width: 1120px;
+    margin: 0px auto;
+    padding: 50px 0 0 0;
+  }
+  
+  #pro .main {
+    height: 710px;
+  }
+  
+  /* - Menu - */
+  
+  #menu-left {
+    float: left;
+    margin-right: 100px;
+    position: relative;
+    position: relative;
+    z-index: 99;
+    overflow: visible;
+  }
+  
+  #menu-left {
+    
+  }
+  
+  #menu-left #menu li {
+    position: relative;
+    width: 232px;
+  }
+  
+  #menu-left #menu .sub-2 li {
+    width: 180px;
+  }
+  
+  
+  #menu-left #menu > li a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  
+  #menu-left #menu > li > a {
+    font-family:'Georgia';
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #9aa6b2;
+    border: 1px solid #9aa6b2;
+    background: url('../../images/sprite-menu-arrow.png') 210px -10px no-repeat transparent;
+  }
+  
+  #menu-left #menu > li > a:hover,
+  #menu-left #menu > li.hover > a,
+  #menu-left #menu > li.active > a {
+    background-position: 210px 12px;
+    color: #fff;
+  }
+  
+  #menu-left.mini #menu > li > a {
+    padding: 8px 10px;
+    background-position: 210px -12px;
+  }
+  
+  #menu-left.mini #menu > li > a:hover,
+  #menu-left.mini #menu > li.hover > a,
+  #menu-left.mini #menu > li.active > a {
+    background-position: 210px 10px;
+    color: #fff;
+  }
+  
+  #menu-left #menu > li .sub {
+    position: absolute;
+    top: 0px;
+    z-index: 999;
+    left: 232px;
+    display: none;
+  }
+  
+  /* #menu-left #menu > li.last_8 .sub-1 {
+    top: -173px;
+  }
+  
+  #menu-left #menu > li.last_40 .sub-1 {
+    top: -156px;
+  }
+  
+  #menu-left #menu > li.last_9 .sub-2,
+  #menu-left #menu > li.last_41 .sub-2 {
+    top: -117px;
+  }
+  
+  #menu-left #menu > li.last_10 .sub-1,
+  #menu-left #menu > li.last_42 .sub-1 {
+    top: -93px;
+  } */
+  
+  #menu-left #menu > li .sub ul {
+    margin-left: 10px;
+    border: 1px solid #9aa6b2;
+    background: url('../../images/bg-sub-nav.png') repeat 0 0;
+  }
+  
+  #menu-left #menu li.hover > div.sub{
+    display: block;
+  }
+  
+  #menu-left #menu > li ul.sub-1 ul > li {
+    min-height: 35px;
+  }
+  
+  #menu-left #menu > li .sub-1 > ul > li > a {
+    text-align: center;
+    border-bottom: 1px solid #9aa6b2;
+    margin: 0 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+  
+  #menu-left #menu > li .sub-1 > ul > li > a span {
+    font-size: 14px;
+  }
+  
+  #menu-left #menu > li .sub-2 ul {
+    padding: 10px;
+    height: 150px;
+    width: 212px;
+    padding: 10px;
+    overflow: hidden;
+  }
+  
+  #menu-left #menu > li .sub-2 .jspVerticalBar {
+    right: 10px;
+    position: absolute;
+    background: transparent;
+  }
+  
+  #menu-left #menu > li .sub-2 .jspVerticalBar .jspCap
+  {
+      height: 10px;
+    background: transparent;
+    display: block;
+  }
+  
+  #menu-left #menu > li .sub-2 .jspDrag {
+    background: #53616c;
+  }
+  
+  #menu-left #menu > li .sub-2 .jspTrack {
+    background: #b4b6b8;
+  }
+  
+  #menu-left #menu > li .sub-2 ul li > a {
+    font-family: 'Source Sans Pro';
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    padding: 0;
+  }
+  
+  #menu-left #menu > li .sub-2 ul li > a:hover,
+  #menu-left #menu > li .sub-2 ul li.active > a {
+    color: #53616c;
+  }
+  
+  #menu-left #menu > li .sub-1 ul > li.hover > a,
+  #menu-left #menu > li .sub-1 ul > li.active > a,
+  #menu-left #menu > li .sub-1 ul > li.hover > a span,
+  #menu-left #menu > li .sub-1 ul > li.active > a span {
+    color: #53616c;
+  }
+  
+  #menu-left #menu > li .sub-2 ul > li:last-child > a {
+    margin-bottom: 0;
+  }
+  
+  #menu-left #menu > li .sub-2 ul > li > a:hover {
+    color: #53616c;
+  }
+  
+  #menu-left #menu > li .sub-1 ul > li:last-child > a,
+  #menu-left #menu > li > .sub-1 ul > li:last-child > a:hover {
+    border-bottom: none;
+  }
+  
+  #menu-left #menu > li > ul.sub-1 > li > a:hover {
+    border-bottom: 2px solid #9aa6b2;
+  }
+  
+  /* - Page dï¿½tail - */
+  .image-left {
+    float: left;
+    margin-right: 25px;
+  }
+  
+  .image-left img {
+    max-width: 446px;
+    border: 1px solid #535A5E;
+  }
+  
+  #detail-right.portrait {
+    margin-left: 665px;
+  }
+  
+  #detail-right.paysage {
+    margin-left: 804px;
+  }
+  
+  #detail-right h1 {
+    font-size: 16px;
+    font-family: 'Georgia';
+    font-weight: normal;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #505e68;
+    margin-bottom: 20px;
+  }
+  
+  #detail-right h1 span{
+    font-family: 'Source Sans Pro';
+    color: #505e68;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  #downloads ul li a {
+    background: url('../../images/puce-download-pro.png') left center no-repeat transparent;
+    padding-left: 25px;
+    font-family: 'Georgia';
+    font-size: 12px;
+    color: #fff; 
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  #downloads ul li a span {
+    color: #505e68;
+  }
+  
+  #post-nav {
+    position: absolute;
+    top: 275px;
+    left: 50%;
+    margin-left: -310px;
+  }
+  
+  #post-nav a {
+    display: block;
+    width: 55px;
+    height: 10px;
+    text-indent: -9999px;
+    margin: 0;
+  }
+  
+  #post-nav a[rel=next] {
+    background: url(../../images/next-nav-slide.png) no-repeat 0 0;
+    position: absolute;
+    left: 880px;
+    top: 0;
+  }
+  
+  #post-nav a[rel=prev]{
+    background: url(../../images/prev-nav-slide.png) no-repeat 0 0;
+  }
+  
+  
+  /* - Formulaires - */
+  #pro form {
+    width: 326px;
+    margin: auto;
+  }
+  
+  #pro input[type=text],
+  #pro input[type=email],
+  #pro input[type=password],
+  #pro textarea {
+    width: 304px;
+    height: 26px;
+    line-height: 26px;
+    margin-top: 4px;
+    padding: 0 10px;
+    color: #9AA6B2;
+    font-size: 10px;
+    font-family: 'Georgia';
+    border: 1px solid #535A5E;
+    background: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  #pro textarea {
+    height: auto;
+  }
+  
+  #pro input[type=submit] {
+    width: 39px;
+    height: 16px;
+    line-height: 16px;
+    margin: 4px 0 0 6px;
+    float: right;
+    display: block;
+    color: #FFF;
+    font-size: 10px;
+    font-family: 'Georgia';
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    background: #3E4951;
+  }
+  
+  #pro form p {
+    margin: 0;
+    height: 33px;
+    line-height: 0;
+  }
+  
+  #pro form p.messagebas {
+    margin-top: 90px;
+    line-height: 10px;
+    text-align: left;
+    font-style: italic;
+  }
+  
+  #pro form h3 {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #9AA6B2;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  
+  #pro form .profil,
+  #pro form .wpcf7-checkbox {
+    display: block;
+  }
+  
+  #pro form .wpcf7-list-item {
+    display: block;
+    float: left;
+    width: 35%;
+    text-align: left;
+    position: relative;
+  }
+  
+  #pro form .wpcf7-list-item:first-child {
+    width: 20%;
+  }
+  
+  #pro form .wpcf7-list-item .wpcf7-list-item-label {
+    display: block;
+    position: absolute;
+    top: 3px;
+    text-transform: uppercase;
+    left: 18px;
+    color: #9AA6B2;
+    height: 12px;
+    z-index: 9;
+    line-height: 12px;
+  }
+  
+  #pro form .wpcf7-list-item label {
+    width: 100px;
+    display: block;
+  }
+  
+  #pro .wpcf7-validation-errors,
+  #pro .wpcf7-response-output {
+    border: none;
+    margin: 0;
+    position: relative;
+    left: -20px;
+    top: -35px;
+  }
+  
+  #pro .wpcf7-not-valid-tip {
+    border: none;
+    background: transparent;
+    font-size: 10px;
+  }
+  
+  /* - Accueil pro - */
+  .accueil-pro h1{
+    font-family:'Georgia';
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-top: 130px;
+    margin-bottom: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    width: 830px;
+  }
+  
+  .accueil-pro p {
+    font-family:'Georgia';
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    width: 830px;
+  }
+  
+  
+  /* - Page liste pro - */
+  h1#tax-title {
+    font-weight: normal;
+    font-size: 17px;
+    margin-bottom: 20px;
+    margin-left: 370px;
+  }
+  
+  #slider-liste-pro {
+    margin-left: 370px;
+    /*margin-top: -20px;*/
+  }
+  
+  #slider-liste-pro > ul > li {
+    display:none;
+    width: 700px;
+  }
+  
+  #slider-liste-pro ul > li:first-child {
+    display:block;
+  }
+  
+  
+  #slider-liste-pro ul > li ul li {
+    float: left;
+    margin-right: 40px;
+    height: 200px;
+    width: 201px;
+    cursor: pointer;
+  }
+  
+  #slider-liste-pro ul > li ul li.nomargin {
+    margin-right: 0;
+  }
+  
+  #slider-liste-pro ul > li ul li h4 {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin: 0;
+    text-align: left;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  #slider-liste-pro ul > li ul li h4 span {
+    position: absolute;
+    bottom: 0;
+  }
+  
+  #slider-liste-pro ul > li ul li .image-slide {
+    padding: 5px 0;
+    border-bottom: 1px solid #535A5E;
+    border-top: 1px solid #535A5E;
+    margin-top: 5px;
+    position: relative;
+    height: 104px;
+    cursor: pointer;
+  }
+  
+  #slider-liste-pro ul > li ul li .image-slide img {
+    max-width: 204px;
+  }
+  
+  #slider-liste-pro ul > li ul li .hover-image-list {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 201px;
+    height: 104px;
+    z-index: 99;
+    background: url('../../images/bg-hover-liste.png') repeat 0 0;
+    display: none;
+    cursor: pointer;
+  }
+  
+  #slider-liste-pro ul > li ul li .hover-image-list p {
+    font-family: 'Source Sans Pro';
+    text-align: center;
+    line-height: 104px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+  }
+  
+  #controls {
+    position: absolute;
+    top: 325px;
+    left: 50%;
+    margin-left: -280px;
+  }
+  
+  #controls a {
+    display: block;
+    width: 55px;
+    height: 10px;
+    text-indent: -9999px;
+    margin: 0;
+  }
+  
+  #controls a.nextBtn {
+    background: url(../../images/next-nav-slide.png) no-repeat 0 0;
+    position: absolute;
+    left: 800px;
+    top: 0;
+  }
+  
+  #controls a.prevBtn {
+    background: url(../../images/prev-nav-slide.png) no-repeat 0 0;
+  }
+  
+  /* - Language Selector - */
+  
+  #lang_sel_list_cartron {
+    margin-top: 5px;
+  }
+  
+  #lang_sel_list_cartron ul {
+    background: url(../../images/puce-langue.jpg) no-repeat right 8px #364249;
+    cursor: pointer;
+  }
+  
+  #lang_sel_list_cartron ul li {
+    margin-bottom: 5px;
+  }
+  
+  #lang_sel_list_cartron ul li.lang_sel_sel {
+    margin-bottom: 10px;
+  }
+  
+  #lang_sel_list_cartron ul li.lang_sel_other {
+    display: none;
+  }
+  
+  #lang_sel_list_cartron.hover ul li.lang_sel_other {
+    display: block;
+  }
+  
+  #lang_sel_list_cartron ul li a span {
+    font-family: 'Source Sans Pro';
+    text-transform: uppercase;
+    margin-right: 10px;
+    font-size: 10px;
+    position: relative;
+    top: -5px;
+  }
+  
+  /* version fixed */
+  .header,
+  .footer {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+  }
+  
+  .header {
+    top: -3px;
+  }
+  
+  .footer {
+    bottom: 0;
+  }
+  
+  #menu-left {
+    position: fixed;
+    top: 30%;
+    z-index: 989;
+  }
+  
+  #pro .main {
+    margin-bottom: 93px;
+    margin-top: 138px;
+    background-attachment: fixed;
+    min-height: 470px;
+    height: inherit;
+  }
+  
+  .archive #pro .main {
+    min-height: 540px;
+  }
+  
+  .home #pro .main {
+    min-height: 710px;
+  }
+  
+  #contenu-right.accueil-pro {
+    margin-left: 200px;
+  }
+  
+  #contenu-right .image-left {
+    margin-left:330px;
+  }

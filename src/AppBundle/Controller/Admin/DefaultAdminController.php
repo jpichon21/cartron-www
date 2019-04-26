@@ -5,10 +5,15 @@ namespace AppBundle\Controller\Admin;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use AppBundle\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
 
 class DefaultAdminController extends Controller
 {
+    /**
+     * @var CategoryRepository
+     */
+    private $categoryRepository;
 
     /**
      * @var EntityManager
@@ -16,8 +21,10 @@ class DefaultAdminController extends Controller
     private $em;
 
     public function __construct(
+        CategoryRepository $categoryRepository,
         EntityManager $em
     ) {
+        $this->categoryRepository = $categoryRepository;
         $this->em = $em;
     }
 
@@ -28,11 +35,52 @@ class DefaultAdminController extends Controller
      */
     public function deleteAction($table, $id, Request $request)
     {
+        
         $tableBdd = $this->em->find('AppBundle:' . $table . '', $id);
         if (!$tableBdd) {
             throw new NotFoundHttpException($tableBdd . "non trouvé");
+        } elseif ($table === 'Category') {
+            $allCat = [];
+            foreach ($this->categoryRepository->getChildren($tableBdd) as $category) {
+                array_push($allCat, $category);
+            }
+            array_push($allCat, $tableBdd);
+            foreach ($allCat as $category) {
+                foreach ($category->getResources() as $resource) {
+                    foreach ($resource->getDownloads() as $download) {
+                        $name = $download->getFile();
+                        $dir = $this->getParameter('uploadDirectory').'/';
+                        if (file_exists($dir.$name) && $name != "") {
+                            unlink($dir.$name);
+                        }
+                        $this->em->remove($download);
+                    }
+                    $dir = $this->getParameter('uploadDirectory').'/';
+                    $picture = $resource->getPicture();
+                    $miniature = $resource->getMiniature();
+                    if (file_exists($dir.$picture) && $picture != "") {
+                        unlink($dir.$picture);
+                    }
+                    if (file_exists($dir.$miniature) && $miniature != "") {
+                        unlink($dir.$miniature);
+                    }
+                    $this->em->remove($resource);
+                }
+                $this->em->remove($category);
+            }
+        } elseif ($table === 'Resource') {
+            foreach ($tableBdd->getDownloads() as $download) {
+                $name = $download->getFile();
+                $dir = $this->getParameter('uploadDirectory').'/';
+                if (file_exists($dir.$name) && $name != "") {
+                    unlink($dir.$name);
+                }
+                $this->em->remove($download);
+            }
+            $this->em->remove($tableBdd);
+        } else {
+            $this->em->remove($tableBdd);
         }
-        $this->em->remove($tableBdd);
         $this->em->flush();
         switch ($table) {
             case 'HomePage':
@@ -69,6 +117,12 @@ class DefaultAdminController extends Controller
                 break;
             case 'Pays':
                 return $this->redirectToRoute('liste_pays');
+                break;
+            case 'Category':
+                return $this->redirectToRoute('admin_category');
+                break;
+            case 'Resource':
+                return $this->redirectToRoute('admin_resource');
                 break;
             default:
                 echo 'null';

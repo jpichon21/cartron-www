@@ -1,0 +1,42 @@
+{% extends "espace-pro/layout.html.twig" %}
+{% block body %}
+    <div id="contenu-right">
+        <h1 id="tax-title">{{ category.nom }}</h1>
+        <div id="slider-liste-pro">
+            <ul>
+            {% set index = 1 %}
+            {% set nbItems = 0 %}
+            {% for resource in resources %}
+                {% if nbItems == 0 %}
+                    <li>
+                        <ul>
+                {% endif %}
+                    {% if index == 3%}
+                        <li class="nomargin">
+                        {% set index = 0 %}
+                    {% else %}
+                        <li>
+                    {% endif %}
+                        <a href="{{ path('pro_resource', { 'resource': resource.id }) }}">
+                            <h4><span>{{ resource.title }}</span></h4>
+                            <div class="image-slide">
+                                <img src="{{ asset('upload/'~resource.miniature) }}" class="magic_fields">
+                                <div class="hover-image-list">
+                                    <p>
+                                        {{ "En savoir plus" |trans }} </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    {% set index = index + 1 %}
+                    {% set nbItems = nbItems + 1 %}
+                    {% if nbItems == 9 %}
+                        </ul>
+                        </li>
+                    {% set nbItems = 0 %}
+                    {% endif %}
+            {% endfor %}  
+            </ul>
+        </div>
+    </div>
+{% endblock %}

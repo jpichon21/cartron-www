@@ -1,0 +1,198 @@
+{% extends "admin/layout.html.twig" %}
+{% block body %}
+<!-- start content -->
+<div id="content">
+
+    <!--  start page-heading -->
+    <div id="page-heading">
+        
+        {% if isEdition %}
+            <h1>Modifier resource </h1>
+            {% if locale == 'en' %}
+                <a href="{{ path('admin_edit_resource', { 'resource': resource.id, 'locale': 'fr' }) }}"><img class="flag flagOpacity" src="{{ asset('admin/images/shared/flag-france.svg')}}"/></a>
+                <a href="{{ path('admin_edit_resource', { 'resource': resource.id, 'locale': 'en' }) }}"><img class="flag" src="{{ asset('admin/images/shared/flag-england.svg')}}"/></a>
+            {% else %}
+                <a href="{{ path('admin_edit_resource', { 'resource': resource.id, 'locale': 'fr' }) }}"><img class="flag" src="{{ asset('admin/images/shared/flag-france.svg')}}"/></a>
+                <a href="{{ path('admin_edit_resource', { 'resource': resource.id, 'locale': 'en' }) }}"><img class="flag flagOpacity" src="{{ asset('admin/images/shared/flag-england.svg')}}"/></a>
+            {% endif %}
+        {% else %}
+            <h1>Ajouter resource </h1>
+        {% endif %}
+    </div>
+    <!-- end page-heading -->
+
+    <table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+        <tr>
+            <th rowspan="3" class="sized"><img src="{{ asset('admin/images/shared/side_shadowleft.jpg')}}" width="20"
+                    height="300" alt="" /></th>
+            <th class="topleft"></th>
+            <td id="tbl-border-top">&nbsp;</td>
+            <th class="topright"></th>
+            <th rowspan="3" class="sized"><img src="{{ asset('admin/images/shared/side_shadowright.jpg')}}" width="20"
+                    height="300" alt="" /></th>
+        </tr>
+        <tr>
+            <td id="tbl-border-left"></td>
+            <td>
+                <!--  start content-table-inner ...................................................................... START -->
+                <div id="content-table-inner">
+                    {{ form_start(form)}}
+                    <table cellspacing="0" cellpadding="0" border="0" id="id-form">
+                        <tbody>
+                            <tr>
+                                <th valign="top">Categorie:</th>
+                                <td>{% autoescape false %}{{ form_widget(form.category) }}{% endautoescape %}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th valign="top">Titre :</th>
+                                <td>{{ form_widget(form.title) }}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th valign="top">Description:</th>
+                                <td>{% autoescape false %}{{ form_widget(form.description) }}{% endautoescape %}</textarea>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th valign="top">TitreSEO :</th>
+                                <td>{{ form_widget(form.titleSEO) }}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th valign="top">Photo :</th>
+                                <td>{{ form_widget(form.picture) }}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th valign="top">Miniature :</th>
+                                <td>{{ form_widget(form.miniature) }}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <hr>
+                                </td>
+                                <td>
+                                    <hr>
+                                </td>
+                                <td>
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th valign="top"></th>
+                                <td><h2>Liste des fichiers</h2></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <hr>
+                                </td>
+                                <td>
+                                    <hr>
+                                </td>
+                                <td>
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                            {% for download in form.downloads %}
+                                {% if locale == 'en' %}
+                                    {% if download.children['locale'].vars['value'] == 'en' %}
+                                        <tr>
+                                            <th valign="top">Titre du fichier :</th>
+                                            <td>{{ form_widget(download.title) }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">fichier :</th>
+                                            <td>{{ form_widget(download.file) }}</td>
+                                            {{ form_widget(download.locale) }}
+                                        </tr>
+                                        <tr class="download">
+                                            <th valign="top">voir le fichier :</th>
+                                            <td><a href="{{ asset('upload/'~download.file.vars.data)}}"
+                                                    target="_blank">{{ asset('upload/'~download.file.vars.data)}}</a></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <hr>
+                                            </td>
+                                            <td>
+                                                <hr>
+                                            </td>
+                                            <td>
+                                                <hr>
+                                            </td>
+                                        </tr>
+                                    {% else %}
+                                        {{ form_widget(download.title, { 'attr': {'class': 'hidden'} }) }}
+                                        {{ form_widget(download.file, { 'attr': {'class': 'hidden'} }) }}
+                                        {{ form_widget(download.locale, { 'attr': {'class': 'hidden'} }) }}
+                                    {% endif %}
+                                {% else %}
+                                    {% if download.children['locale'].vars['value'] == 'fr' %}
+                                        <tr>
+                                            <th valign="top">Titre du fichier :</th>
+                                            <td>{{ form_widget(download.title) }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">fichier :</th>
+                                            <td>{{ form_widget(download.file) }}</td>
+                                            {{ form_widget(download.locale) }}
+                                        </tr>
+                                        <tr class="download">
+                                            <th valign="top">voir le fichier :</th>
+                                            <td><a href="{{ asset('upload/'~download.file.vars.data)}}"
+                                                    target="_blank">{{ asset('upload/'~download.file.vars.data)}}</a></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <hr>
+                                            </td>
+                                            <td>
+                                                <hr>
+                                            </td>
+                                            <td>
+                                                <hr>
+                                            </td>
+                                        </tr>
+                                    {% else %}
+                                        {{ form_widget(download.title, { 'attr': {'class': 'hidden'} }) }}
+                                        {{ form_widget(download.file, { 'attr': {'class': 'hidden'} }) }}
+                                        {{ form_widget(download.locale, { 'attr': {'class': 'hidden'} }) }}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+            <td></td>
+        <tr class="downloads" data-prototype="{{ form_widget(form.downloads.vars.prototype)|e('html_attr') }}">
+
+        </tr>
+        <tr>
+            <th>&nbsp;</th>
+            <td valign="top">
+                {{ form_widget(form.submit) }}
+            </td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+    {{ form_end(form) }}
+</div>
+<!--  end content-table-inner ............................................END  -->
+</td>
+<td id="tbl-border-right"></td>
+</tr>
+<tr>
+    <th class="sized bottomleft"></th>
+    <td id="tbl-border-bottom">&nbsp;</td>
+    <th class="sized bottomright"></th>
+</tr>
+</table>
+<div class="clear">&nbsp;</div>
+</div>
+<!--  end content -->
+
+{% endblock %}

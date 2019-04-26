@@ -635,6 +635,45 @@
         <source>Votre message a bien été envoyé</source>
         <target>Votre message a bien été envoyé</target>
     </trans-unit>
+    <trans-unit id="1532">
+        <source>Bienvenue sur l’espace professionnel</source>
+        <target>Bienvenue sur l’espace professionnel</target>
+    </trans-unit>
+    <trans-unit id="1533">
+        <source>Vous trouverez ici</source>
+        <target>Vous trouverez ici</target>
+    </trans-unit>
+    <trans-unit id="1534">
+        <source>toutes les informations et fichiers nécessaires</source>
+        <target>toutes les informations et fichiers nécessaires</target>
+    </trans-unit>
+    <trans-unit id="1535">
+        <source>concernant la Maison Joseph Cartron.</source>
+        <target>concernant la Maison Joseph Cartron.</target>
+    </trans-unit>
+    <trans-unit id="1536">
+        <source>Espace professionnel</source>
+        <target>Espace professionnel</target>
+    </trans-unit>
+    <trans-unit id="1537">
+        <source>En savoir plus</source>
+        <target>En savoir plus</target>
+    </trans-unit>
+    <trans-unit id="1538">
+        <source>texte mentions légales</source>
+        <target><![CDATA[Propriétaire du Site Internet: Joseph Cartron<br />
+          Adresse: 25, Rue du Docteur Legrand – BP 28<br />
+          21701 nuits-Saint-Georges Cedex - France<br />
+                  Email: cartron@cartron.fr<br />
+          Telephone : +33 (0)3 80 62 00 90<br />
+          Design & Développement & maintenance technique: BIGGERBAND<br />
+          Crédits Images: Joseph Cartron <br />
+          Conditions d'utilisation et propriétés:<br />
+          Toute représentation totale ou partielle de ce site et de son contenu, par quelques procédés que ce soient, sans autorisation préalable est interdite et constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont la violation est passible de sanctions pénales. Ils doivent notamment s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de toute collecte, de toute utilisation détournée, et d'une manière générale, de tout acte susceptible de porter atteinte à la vie privée ou à la réputation des personnes.<br />
+          Hébergeur: Oleane<br />
+          <a href="https://clients.fr.oleane.com" target="_blank">https://clients.fr.oleane.com</a>]]>
+        </target>
+    </trans-unit>
     </body>
   </file>
 </xliff>

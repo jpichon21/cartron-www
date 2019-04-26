@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Accueil connecté » cartron pro</title>
+    <link href="{{ asset('site/css/espace-pro/language-selector.css') }}" type="text/css" rel="stylesheet" media="all">
+    <meta name="robots" content="noindex,nofollow">
+    
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Accueil connecté - cartron pro">
+    <meta property="og:description" content="Bienvenue sur l’espace professionnel Vous trouverez ici toutes les informations et fichiers nécessaires concernant la Maison Joseph Cartron.">
+    <meta property="og:url" content="http://www.cartron.fr/pro/accueil-connecte/">
+    <meta property="og:site_name" content="cartron pro">
+
+    <link rel="alternate" type="application/rss+xml" title="cartron pro » Accueil connecté Flux des commentaires" href="http://www.cartron.fr/pro/accueil-connecte/feed/">
+    <link href="{{ asset('site/css/espace-pro/includes/admin-bar.min.css') }}" type="text/css" rel="stylesheet" media="all" id="admin-bar-css">
+    <link href="{{ asset('site/css/espace-pro/includes/styles.css') }}" type="text/css" rel="stylesheet" media="all" id="contact-form-7-css">
+    <link href="{{ asset('site/css/espace-pro/includes/adminbar.css') }}" type="text/css" rel="stylesheet" media="all" id="boxes-css">
+    <script src="https://code.jquery.com/jquery-1.8.3.min.js" integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">var icl_lang = 'fr';var icl_home = 'http://www.cartron.fr/pro/';</script>
+    <script src="{{ asset('site/js/espace-pro/sitepress.js') }}" type="text/javascript"></script>
+
+    <style type="text/css" media="print">#wpadminbar { display:none; }</style>
+    <style type="text/css" media="screen">
+        html { margin-top: 28px !important; }
+        * html body { margin-top: 28px !important; }
+    </style>
+    
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href="{{ asset('site/css/espace-pro/main.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('site/css/espace-pro/jScrollSpane.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('site/css/espace-pro/style.css') }}" type="text/css" rel="stylesheet">
+
+    <script src="{{ asset('site/js/espace-pro/jquery-migrate.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('site/js/espace-pro/jquery-ui.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('site/js/espace-pro/jquery.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('site/js/espace-pro/jquery.jscrollpane.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('site/js/espace-pro/jquery.mousewheel.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('site/js/espace-pro/jquery.sudoSlider.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('site/js/espace-pro/main.js') }}" type="text/javascript"></script>
+    
+    <meta property="og:image" content="http://www.cartron.fr/bundles/sitecartron/images/logo-facebook.png" />
+    <meta id="viewport" name="viewport" />
+</head>
+
+<body class="page page-id-7 page-template-default logged-in admin-bar  customize-support">
+    <div class="site">
+        <div class="header">
+            <a href="{{ path('homepage') }}" class="logo dn"><span>JOSEPH CARTRON</span></a>
+            <div class="nav-top">
+                <div class="header-content">
+                    <ul class="menu-top">
+                        <li><a class="patrimoine"
+                                href="{{ path('pro_accueil') }}">{{ "Espace professionnel" |trans }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="pro">
+            <div class="main">
+                <div class="content">
+                    {% include 'espace-pro/menu.html.twig' %}
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        <div class="overlay-passe-oublie">
+            <div class="pop-up-passe-oublie">
+                <a href="" class="close dn"><span>Fermer</span></a>
+                <label>Votre Email</label>
+                <input type="text" name="emailenvoie" id="mop" class="input toggleval" value="">
+                <input type="submit" id="ok_mop" name="ok" value="OK" class="submit">
+            </div>
+        </div>
+        {% include 'espace-pro/footer.html.twig' %}
+        {% if app.request.locale == "fr" %}
+        <div class="overlay-mentions">
+            <div class="pop-up-mentions">
+                <a href="" class="close dn"><span>Fermer</span></a>
+                <h1>mentions légales</h1>
+                <div class="scrollMention">
+                    <p><strong>Propriétaire du Site Internet: </strong>Joseph Cartron<br />
+                        <strong>Adresse: </strong>25, Rue du Docteur Legrand – CS 30028<br />
+                        21701 nuits-Saint-Georges Cedex - France<br />
+                        <strong>Email: </strong>cartron@cartron.fr<br />
+                        <strong>Téléphone&nbsp;:</strong> +33 (0)3 80 62 00 90<u><br />
+                        </u><strong>Design &amp; Développement &amp; maintenance technique: </strong>BIGGERBAND<br />
+                        <strong>Crédits Images</strong>: Joseph Cartron <br />
+                        <strong>Conditions d'utilisation et propriétés:<br />
+                        </strong>Toute représentation totale ou partielle de ce site et de son contenu, par quelques
+                        procédés que ce
+                        soient, sans autorisation préalable est interdite et constituerait une contrefaçon sanctionnée
+                        par les
+                        articles L335-2 et suivants du Code de la Propriété Intellectuelle. Les utilisateurs du site
+                        sont tenus de
+                        respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont la violation est
+                        passible de
+                        sanctions pénales. Ils doivent notamment s'abstenir, s'agissant des informations nominatives
+                        auxquelles ils
+                        accèdent, de toute collecte, de toute utilisation détournée, et d'une manière générale, de tout
+                        acte
+                        susceptible de porter atteinte à la vie privée ou à la réputation des personnes.<br />
+                        L&rsquo;abus d&rsquo;alcool est dangereux pour la santé. Consommer avec modération.<br />
+                        <strong>Hébergeur: </strong>OVH<br />
+                        <a href="http://www.ovh.com" target="_blank">www.ovh.com</a></p>
+                </div>
+            </div>
+        
+        {% else %}
+        <div class="overlay-mentions">
+            <div class="pop-up-mentions">
+                <a href="" class="close dn"><span>Fermer</span></a>
+                <h1>legal terms</h1>
+                <div class="scrollMention">
+                    <p><strong>Website owner: </strong>Joseph Cartron<br />
+                        <strong>Address: </strong>25, Rue du Docteur Legrand – CS 30028<br />
+                        21701 nuits-Saint-Georges Cedex - France<br />
+                        <strong>Email: </strong>cartron@cartron.fr<br />
+                        <strong>Telephone&nbsp;:</strong> +33 (0)3 80 62 00 90<u><br />
+                        </u><strong>Design & Development & technical maintenance:: </strong>BIGGERBAND<br />
+                        <strong>Image Credits:</strong>: Joseph Cartron <br />
+                        <strong>Conditions of Use & Property:<br />
+                        </strong>Any reproduction of this site and its content, in part or in whole by whatsoever means,
+                        without
+                        prior consent is forbidden and would be considered as an act of counterfeit punishable under
+                        articles L335-2
+                        and thereafter of the Code of Intellectual Property. Site users are required to respect the
+                        provisions of
+                        the Data Processing, Files & Liberties Act, any violation of which would expose the offender to
+                        criminal
+                        sanctions. Most notably and regarding the nominative information to which they have access,
+                        users shall
+                        refrain from any collection, unlawful use and, more generally, any act likely to affect the
+                        private life or
+                        reputation of other persons.<br />
+                        This website is reserved exclusively for persons of a legal age to drink alcoholic beverages in
+                        their
+                        country of residence. Please, drink responsibly.<br />
+                        <strong>Host: </strong>OVH<br />
+                        <a href="http://www.ovh.com" target="_blank">www.ovh.com</a></p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="{{ asset('site/js/espace-pro/admin-bar.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('site/js/espace-pro/jquery.form.min.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var _wpcf7 = {"loaderUrl":"http:\/\/www.cartron.fr\/pro\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Envoi en cours ..."};
+    /* ]]> */
+    </script>
+    <script src="{{ asset('site/js/espace-pro/scripts.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+        (function() {
+            var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+            request = true;
+
+            b[c] = b[c].replace( rcs, ' ' );
+            b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+        }());
+    </script>
+
+</body>
+
+</html>

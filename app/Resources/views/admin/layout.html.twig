@@ -7,6 +7,7 @@
         <script src="{{ asset('admin/js/jquery/jquery-1.4.1.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('admin/js/jquery/jquery.selectbox-0.5.js') }}" type="text/javascript"></script>
         <script src="{{ asset('admin/js/jquery/jquery.selectbox-0.5_style_2.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('admin/js/main.js') }}" type="text/javascript"></script>
 
         <!--[if IE]>
         <link rel="stylesheet" media="all" type="text/css" href="css/pro_dropline_ie.css" />
@@ -98,7 +99,7 @@
                             </li>
                         </ul>
                         
-                          <div class="nav-divider">&nbsp;</div>
+                        <div class="nav-divider">&nbsp;</div>
 
                         <ul {% if (app.request.get('_route') == 'liste_pays' or app.request.get('_route') == 'add_pays') %} class="current" {% else %} class="select" {% endif %} ><li><a href="{{ path('liste_pays') }}"><b>Pays</b><!--[if IE 7]><!--></a><!--<![endif]-->
                                 <!--[if lte IE 6]><table><tr><td><![endif]-->
@@ -106,6 +107,34 @@
                                     <ul class="sub">
                                         <li {% if (app.request.get('_route') == 'liste_pays')%}class="sub_show"{% endif %}><a href="{{ path('liste_pays') }}">Pays</a></li>
                                         <li {% if (app.request.get('_route') == 'add_pays')  %}class="sub_show"{% endif %}><a href="{{ path('add_pays') }}">Ajouter pays</a></li>
+                                    </ul>
+                                </div>
+                                <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                            </li>
+                        </ul>
+
+                        <div class="nav-divider">&nbsp;</div>
+
+                        <ul {% if (app.request.get('_route') == 'admin_category' or app.request.get('_route') == 'admin_add_category' or app.request.get('_route') == 'admin_edit_category') %} class="current" {% else %} class="select" {% endif %} ><li><a href="{{ path('admin_category') }}"><b>Catégorie</b><!--[if IE 7]><!--></a><!--<![endif]-->
+                                <!--[if lte IE 6]><table><tr><td><![endif]-->
+                                <div class="select_sub show">
+                                    <ul class="sub">
+                                        <li {% if (app.request.get('_route') == 'admin_category')%}class="sub_show"{% endif %}><a href="{{ path('admin_category') }}">Catégorie</a></li>
+                                        <li {% if (app.request.get('_route') == 'admin_add_category')  %}class="sub_show"{% endif %}><a href="{{ path('admin_add_category') }}">Ajouter catégorie</a></li>
+                                    </ul>
+                                </div>
+                                <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                            </li>
+                        </ul>
+
+                        <div class="nav-divider">&nbsp;</div>
+
+                        <ul {% if (app.request.get('_route') == 'admin_resource' or app.request.get('_route') == 'admin_add_resource' or app.request.get('_route') == 'admin_edit_resource') %} class="current" {% else %} class="select" {% endif %} ><li><a href="{{ path('admin_resource') }}"><b>Ressource</b><!--[if IE 7]><!--></a><!--<![endif]-->
+                                <!--[if lte IE 6]><table><tr><td><![endif]-->
+                                <div class="select_sub show">
+                                    <ul class="sub">
+                                        <li {% if (app.request.get('_route') == 'admin_resource')%}class="sub_show"{% endif %}><a href="{{ path('admin_resource') }}">Ressource</a></li>
+                                        <li {% if (app.request.get('_route') == 'admin_add_resource')  %}class="sub_show"{% endif %}><a href="{{ path('admin_add_resource') }}">Ajouter resource</a></li>
                                     </ul>
                                 </div>
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
