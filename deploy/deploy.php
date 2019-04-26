@@ -9,8 +9,8 @@
     set('git_tty', false);
     set('default_stage', 'dev');
     set('shared_files', ['web/.htaccess', 'web/robots.txt', 'app/config/parameters.yml']);
-    set('shared_dirs', ['web/uploads', 'web/cache', 'app/logs', 'vendor']);
-    set('bin/php', '/usr/local/bin/ea-php71 -c deploy/deploy.ini');
+    set('shared_dirs', ['web/uploads', 'web/cache', 'var/logs', 'vendor', 'web/images']);
+    set('bin/php', '/usr/local/bin/ea-php72 -c deploy/deploy.ini');
 
     host('staging.cartron.fr')
         ->stage('staging')
@@ -60,7 +60,7 @@
         run('cd {{release_path}} && curl -sS https://getcomposer.org/installer | {{bin/php}}');
         run('export SYMFONY_ENV=prod');
         run('cd {{release_path}} && {{bin/php}} composer.phar install --optimize-autoloader --no-scripts');
-        run('cd {{release_path}} && {{bin/php}} bin/console cache:clear');
+        run('cd {{release_path}} && {{bin/php}} bin/console cache:clear --env=prod');
     });
 
     task('permissions', function () {
