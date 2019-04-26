@@ -9,25 +9,27 @@
     set('git_tty', false);
     set('default_stage', 'dev');
     set('shared_files', ['web/.htaccess', 'web/robots.txt', 'app/config/parameters.yml']);
-    set('shared_dirs', ['web/uploads', 'web/cache', 'app/logs', 'vendor']);
-    set('bin/php', '/usr/local/bin/ea-php71 -c deploy/deploy.ini');
+    set('shared_dirs', ['web/uploads', 'web/cache', 'var/logs', 'vendor', 'web/images']);
+    set('bin/php', '/usr/local/bin/ea-php72 -c deploy/deploy.ini');
 
     host('staging.cartron.fr')
-        ->stage('dev')
+        ->stage('staging')
         ->user('root')
         ->hostname('ns4.logomotion-serveur.com')
         ->port('2222')
         ->set('account_dir', 'cartron')
-        ->set('branch', 'deploy')
+        ->set('branch', 'staging')
         ->set('deploy_path', '/home/{{account_dir}}/src_staging');
 
-    host('www.DOMAIN.fr')
-        ->stage('prod')
-        ->user('root')
-        ->hostname('DOMAIN.fr')
-        ->port('2222')
-        ->set('account_dir', 'ACCOUNT')
-        ->set('deploy_path', '/home/{{account_dir}}/src_prod');
+    host('dev.cartron.fr')
+    ->stage('dev')
+    ->user('root')
+    ->hostname('ns4.logomotion-serveur.com')
+    ->port('2222')
+    ->set('account_dir', 'cartron')
+    ->set('branch', 'dev')
+    ->set('deploy_path', '/home/{{account_dir}}/src_dev');
+    
 
     task('deploy', [
         'deploy:info',
@@ -54,10 +56,11 @@
     });
 
     task('install', function () {
+        // run('cd {{release_path}} && cp deploy/parameters.yml app/config/parameters.yml');
         run('cd {{release_path}} && curl -sS https://getcomposer.org/installer | {{bin/php}}');
         run('export SYMFONY_ENV=prod');
         run('cd {{release_path}} && {{bin/php}} composer.phar install --optimize-autoloader --no-scripts');
-        run('cd {{release_path}} && {{bin/php}} bin/console cache:clear');
+        run('cd {{release_path}} && {{bin/php}} bin/console cache:clear --env=prod');
     });
 
     task('permissions', function () {

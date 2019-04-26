@@ -64,4 +64,15 @@ class LoginAdminController extends Controller
             ['error' => $error, 'form' => $form->createView()]
         );
     }
+
+    /**
+     * @Route("/logout", name="logout")
+     *
+    */
+    public function logoutAction()
+    {
+        $this->get('session')->set('auth_admin', false);
+        $this->get('session')->set('name', false);
+        return $this->redirect($this->generateUrl('login'));
+    }
 }
