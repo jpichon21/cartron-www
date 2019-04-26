@@ -61,6 +61,7 @@
         run('export SYMFONY_ENV=prod');
         run('cd {{release_path}} && {{bin/php}} composer.phar install --optimize-autoloader --no-scripts');
         run('cd {{release_path}} && {{bin/php}} bin/console cache:clear --env=prod');
+        run('cd {{release_path}} && {{bin/php}} bin/console assets:install');
     });
 
     task('permissions', function () {
