@@ -9,7 +9,7 @@
     set('git_tty', false);
     set('default_stage', 'dev');
     set('shared_files', ['web/.htaccess', 'web/robots.txt', 'app/config/parameters.yml']);
-    set('shared_dirs', ['web/uploads', 'web/cache', 'var/logs', 'vendor', 'web/images']);
+    set('shared_dirs', ['web/upload', 'web/cache', 'var/logs', 'vendor', 'web/site']);
     set('bin/php', '/usr/local/bin/ea-php72 -c deploy/deploy.ini');
 
     host('staging.cartron.fr')
