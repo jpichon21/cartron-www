@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "include-media": "^1.4.9",
+    "sass": "^1.20.1"
+  },
+  "scripts": {
+    "sass-build": "./node_modules/.bin/sass sass/app.scss web/site/css/style.css",
+    "sass-watch": "./node_modules/.bin/sass --watch sass/app.scss web/site/css/style.css"
+  }
+}
