@@ -672,6 +672,10 @@ After graduating from HEC (Ecole des Hautes Etudes Commerciales) and a career of
           <a href="https://clients.fr.oleane.com" target="_blank">https://clients.fr.oleane.com</a>]]>
         </target>
     </trans-unit>
+    <trans-unit id="1539">
+        <source>Espace pro</source>
+        <target><![CDATA[Trade<br> space]]></target>
+    </trans-unit>
     </body>
   </file>
 </xliff>

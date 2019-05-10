@@ -1,0 +1,155 @@
+@import '../node_modules/include-media/dist/include-media';
+@import './settings';
+
+.header {
+    position: relative;
+    background: url('../images/bg-body-head.jpg') no-repeat center;
+    @include media('>=medium') {
+        padding-bottom: 35px;
+    }
+    .toggle,
+    .facebook {
+        position: absolute;
+        @include media('>=medium') {
+            display: none;
+        }
+        svg {
+            fill: #ffffff;
+        }
+    }
+    .toggle {
+        cursor: pointer;
+        bottom: 20px;
+        right: 20px;
+    }
+    .facebook {
+        top: 20px;
+        left: 20px;
+    }
+    .nav-top {
+        @include media('<medium') {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+    .logo {
+        display: block;
+        width: 75px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+}
+#home {
+    .main {
+        height: 100%;
+        background-image: url(../images/bg-main-hp.jpg);
+        background-position: center;
+        background-size: cover;
+        @include media('<medium') {
+            background-image: url(../images/bg-main-hp-mobile.png);
+        }
+    }
+}
+.menu-top {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: url(../images/bg-nav-top.png) no-repeat center top;
+    z-index: 1;
+    @include media('<medium') {
+        display: none;
+        flex-direction: column;
+        top: 100%;
+        bottom: auto;
+        padding-top: 10px;
+        background: #263742;
+        &.active {
+            display: flex;
+        }
+    }
+    a {
+        display: inline-block;
+        margin: 0 25px;
+        line-height: 35px;
+        font-size: 11px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: 'Georgia';
+        letter-spacing: 1px;
+        @include media('<medium') {
+            line-height: 30px;
+        }
+        &:hover,
+        &.active {
+            background: url(../images/bg-lien-degustation.png) no-repeat center 25px;
+        }
+    }
+    .menu-plus {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        padding: 10px 0;
+        background: #1d2a33;
+        @include media('>=medium') {
+            display: none;
+        }
+    }
+}
+.menu-top-right {
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+    font-size: 12px;
+    font-family: 'Source Sans Pro';
+    text-transform: uppercase;
+    text-decoration: none;
+    @include media('<medium') {
+        display: none;
+    }
+}
+.menu-lang {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    @include media('>=medium') {
+        display: none;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        right: -22px;
+        width: 12px;
+        height: 6px;
+        background-image: url(../images/arrow-down.png);
+        background-size: 100%;
+    }
+}
+.menu-pro {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: right;
+    white-space: nowrap;
+    @include media('>=medium') {
+        display: none;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 1px;
+        left: -16px;
+        width: 6px;
+        height: 12px;
+        background-image: url(../images/arrow-right.png);
+        background-size: 100%;
+    }
+}

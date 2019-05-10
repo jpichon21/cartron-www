@@ -1,107 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>{% block title %}Cartron{% endblock %}</title>
-	<meta name="description" content="Maison Joseph Cartron Crèmes de Fruits – Liqueurs – Eaux-de-Vie. Maison familiale fondée en 1882 à Nuits-Saint-Georges."/>
-    <link href="{{ asset('site/css/style.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('site/css/skin.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('site/css/camera.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('site/css/jScrollPane.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('site/css/jqtransform.css') }}" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="{{ asset('site/js/jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/jquery-ui.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/jquery.toggleval.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/jquery.jcarousel.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/jquery.jqtransform.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/jquery.easing.1.3.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/camera.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/jquery.jscrollpane.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/jquery.mousewheel.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/jquery.hoverflow.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/jquery.hoverIntent.minified.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/jquery.backgroundpos.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/main.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('site/js/main1.js') }}"></script>
-	<meta property="og:image" content="http://www.cartron.fr/bundles/sitecartron/images/logo-facebook.png" />
-	<meta id="viewport" name="viewport" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	  <meta name="description" content="Maison Joseph Cartron Crèmes de Fruits – Liqueurs – Eaux-de-Vie. Maison familiale fondée en 1882 à Nuits-Saint-Georges." />
+    <title>{% block title %}Joseph Cartron{% endblock %}</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <link rel="stylesheet" href="{{ asset('site/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('site/css/skin.css') }}" />
+    <link rel="stylesheet" href="{{ asset('site/css/camera.css') }}" />
+    <link rel="stylesheet" href="{{ asset('site/css/jScrollPane.css') }}" />
+    <link rel="stylesheet" href="{{ asset('site/css/jqtransform.css') }}" />
+    <script src="{{ asset('site/js/jquery.js') }}"></script>
+    <script src="{{ asset('site/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('site/js/jquery.toggleval.js') }}"></script>
+    <script src="{{ asset('site/js/jquery.jcarousel.min.js') }}"></script>
+    <script src="{{ asset('site/js/jquery.jqtransform.js') }}"></script>
+    <script src="{{ asset('site/js/jquery.easing.1.3.js') }}"></script>
+    <script src="{{ asset('site/js/camera.min.js') }}"></script>
+    <script src="{{ asset('site/js/jquery.jscrollpane.js') }}"></script>
+    <script src="{{ asset('site/js/jquery.mousewheel.js') }}"></script>
+    <script src="{{ asset('site/js/jquery.hoverflow.js') }}"></script>
+    <script src="{{ asset('site/js/jquery.hoverIntent.minified.js') }}"></script>
+    <script src="{{ asset('site/js/jquery.backgroundpos.min.js') }}"></script>
+    <script src="{{ asset('site/js/main.js') }}"></script>
+    <script src="{{ asset('site/js/main1.js') }}"></script>
   </head>
   <body>
     <div class="site">
       <div class="header">
-        <a href="{{ path('homepage') }}" class="logo dn"><span>JOSEPH CARTRON</span></a>
-        <div class="nav-top">
-          <div class="header-content">
-            <ul class="menu-top">
-              <li><a class="patrimoine" href="{{ path('static_page',{'page':'Patrimoine'}) }}">{{ "Patrimoine" |trans }}</a></li>
-              <li><a class="savoir-faire" href="{{ path('static_page',{'page':'Savoir-faire'}) }}">{{ "Savoir-faire"| trans }}</a></li>
-              <li><a {% if app.request.get('_route') == 'collection' or  app.request.get('_route') == 'collection_produit' %}class="active"{% endif %} href="{{ path('collection') }}">{{ "Collection"| trans }}</a></li>
-              <li><a {% if app.request.get('_route') == 'degustation' or app.request.get('_route') == 'degustation_produit' %}class="active"{% endif %} href="{{ path('tasting') }}">{{ "Dégustation" | trans }}</a></li>
-            </ul>
-			<div class="menu-top-right">
-              <a href="{{ path('contact') }}" class="contactez-nous">{{ "Contactez-nous" | trans }}</a>
-			  
-              <a href="/pro{% if(app.session.get('_locale')=='en') %}/en{%endif %}" class="espace-pro-header">{{ "Espace" | trans }}<br /><strong>{{ "professionnel" | trans }}</strong></a>
-			</div>
+        <a class="facebook" href="https://www.facebook.com/jcartron">
+          <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+        </a>
+        <span class="toggle">
+          <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 18v1h-24v-1h24zm0-6v1h-24v-1h24zm0-6v1h-24v-1h24z" fill="#1040e2"/><path d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z"/></svg>
+        </span>
+        <a class="logo" href="{{ path('homepage') }}">
+          <img src="{{ asset('site/images/logo.png') }}" alt="Joseph Cartron" />
+        </a>
+        <a class="menu-lang" href="{{ path('choose_locale', {'locale' : app.request.locale == 'fr' ? 'en' : 'fr'}) }}">
+          {{ app.request.locale }}
+        </a>
+        <a class="menu-pro" href="/pro{% if (app.session.get('_locale') == 'en') %}/en{% endif %}">
+          {{ 'Espace pro' | trans | raw }}
+        </a>
+        <div class="menu-top">
+          <a class="patrimoine" href="{{ path('static_page',{'page':'Patrimoine'}) }}">{{ "Patrimoine" |trans }}</a>
+          <a class="savoir-faire" href="{{ path('static_page',{'page':'Savoir-faire'}) }}">{{ "Savoir-faire"| trans }}</a>
+          <a {% if app.request.get('_route') == 'collection' or  app.request.get('_route') == 'collection_produit' %}class="active"{% endif %} href="{{ path('collection') }}">{{ "Collection"| trans }}</a>
+          <a {% if app.request.get('_route') == 'degustation' or app.request.get('_route') == 'degustation_produit' %}class="active"{% endif %} href="{{ path('tasting') }}">{{ "Dégustation" | trans }}</a>
+          <div class="menu-plus">
+            <a href="{{ path('contact') }}">{{ "Contactez-nous" | trans }}</a>
+            <a href="#mentions-legales" class="mentions-legales">{{ "Mentions légales" | trans }}</a>
           </div>
+        </div>
+        <div class="menu-top-right">
+          <a href="{{ path('contact') }}" class="contactez-nous">{{ "Contactez-nous" | trans }}</a>
+          <a href="/pro{% if(app.session.get('_locale')=='en') %}/en{%endif %}" class="espace-pro-header">{{ "Espace" | trans }}<br /><strong>{{ "professionnel" | trans }}</strong></a>
         </div>
       </div>
       {% block body %}{% endblock %}
       {% include 'footer.html.twig'  %} 
-
-	  {% if app.request.locale == "fr" %} 
-      <div class="overlay-mentions">
-        <div class="pop-up-mentions">
-          <a href="" class="close dn"><span>Fermer</span></a>
-          <h1>mentions légales</h1>
-          <div class="scrollMention">
+      {% if app.request.locale == "fr" %} 
+        <div class="overlay-mentions">
+          <div class="pop-up-mentions">
+            <a href="" class="close dn"><span>Fermer</span></a>
+            <h1>mentions légales</h1>
+            <div class="scrollMention">
             <p><strong>Propriétaire du Site Internet: </strong>Joseph Cartron<br />
-			  <strong>Adresse: </strong>25, Rue du Docteur  Legrand – CS 30028<br />
-			  21701 nuits-Saint-Georges Cedex - France<br />
-			  <strong>Email: </strong>cartron@cartron.fr<br />
-			  <strong>Téléphone&nbsp;:</strong> +33 (0)3 80 62 00 90<u><br />
-			  </u><strong>Design &amp; Développement &amp; maintenance technique: </strong>BIGGERBAND<br />
-			  <strong>Crédits Images</strong>: Joseph Cartron <br />
-			  <strong>Conditions d'utilisation et  propriétés:<br />
-			  </strong>Toute  représentation totale ou partielle de ce site et de son contenu, par quelques  procédés que ce soient, sans autorisation préalable est interdite et  constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants  du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de  respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont  la violation est passible de sanctions pénales. Ils doivent notamment  s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de  toute collecte, de toute utilisation détournée, et d'une manière générale, de  tout acte susceptible de porter atteinte à la vie privée ou à la réputation des  personnes.<br />
-			  L&rsquo;abus  d&rsquo;alcool est dangereux pour la santé. Consommer avec modération.<br />
-			  <strong>Hébergeur: </strong>OVH<br />
-			  <a href="http://www.ovh.com" target="_blank">www.ovh.com</a></p></div>
+            <strong>Adresse: </strong>25, Rue du Docteur  Legrand – CS 30028<br />
+            21701 nuits-Saint-Georges Cedex - France<br />
+            <strong>Email: </strong>cartron@cartron.fr<br />
+            <strong>Téléphone&nbsp;:</strong> +33 (0)3 80 62 00 90<u><br />
+            </u><strong>Design &amp; Développement &amp; maintenance technique: </strong>BIGGERBAND<br />
+            <strong>Crédits Images</strong>: Joseph Cartron <br />
+            <strong>Conditions d'utilisation et  propriétés:<br />
+            </strong>Toute  représentation totale ou partielle de ce site et de son contenu, par quelques  procédés que ce soient, sans autorisation préalable est interdite et  constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants  du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de  respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont  la violation est passible de sanctions pénales. Ils doivent notamment  s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de  toute collecte, de toute utilisation détournée, et d'une manière générale, de  tout acte susceptible de porter atteinte à la vie privée ou à la réputation des  personnes.<br />
+            L&rsquo;abus  d&rsquo;alcool est dangereux pour la santé. Consommer avec modération.<br />
+            <strong>Hébergeur: </strong>OVH<br />
+            <a href="http://www.ovh.com" target="_blank">www.ovh.com</a></p></div>
+          </div>
         </div>
-      </div>
-	  {% else %}
-      <div class="overlay-mentions">
-        <div class="pop-up-mentions">
-          <a href="" class="close dn"><span>Fermer</span></a>
-          <h1>legal terms</h1>
-          <div class="scrollMention">
+      {% else %}
+        <div class="overlay-mentions">
+          <div class="pop-up-mentions">
+            <a href="" class="close dn"><span>Fermer</span></a>
+            <h1>legal terms</h1>
+            <div class="scrollMention">
             <p><strong>Website owner: </strong>Joseph Cartron<br />
-			  <strong>Address: </strong>25, Rue du Docteur  Legrand – CS 30028<br />
-			  21701 nuits-Saint-Georges Cedex - France<br />
-			  <strong>Email: </strong>cartron@cartron.fr<br />
-			  <strong>Telephone&nbsp;:</strong> +33 (0)3 80 62 00 90<u><br />
-			  </u><strong>Design & Development & technical maintenance:: </strong>BIGGERBAND<br />
-			  <strong>Image Credits:</strong>: Joseph Cartron <br />
-			  <strong>Conditions of Use & Property:<br />
-			  </strong>Any reproduction of this site and its content, in part or in whole by whatsoever means, without prior consent is forbidden and would be considered as an act of counterfeit punishable under articles L335-2 and thereafter of the Code of Intellectual Property. Site users are required to respect the provisions of the Data Processing, Files & Liberties Act, any violation of which would expose the offender to criminal sanctions. Most notably and regarding the nominative information to which they have access, users shall refrain from any collection, unlawful use and, more generally, any act likely to affect the private life or reputation of other persons.<br />
-			  This website is reserved exclusively for persons of a legal age to drink alcoholic beverages in their country of residence. Please, drink responsibly.<br />
-			  <strong>Host: </strong>OVH<br />
-			  <a href="http://www.ovh.com" target="_blank">www.ovh.com</a></p></div>
+            <strong>Address: </strong>25, Rue du Docteur  Legrand – CS 30028<br />
+            21701 nuits-Saint-Georges Cedex - France<br />
+            <strong>Email: </strong>cartron@cartron.fr<br />
+            <strong>Telephone&nbsp;:</strong> +33 (0)3 80 62 00 90<u><br />
+            </u><strong>Design & Development & technical maintenance:: </strong>BIGGERBAND<br />
+            <strong>Image Credits:</strong>: Joseph Cartron <br />
+            <strong>Conditions of Use & Property:<br />
+            </strong>Any reproduction of this site and its content, in part or in whole by whatsoever means, without prior consent is forbidden and would be considered as an act of counterfeit punishable under articles L335-2 and thereafter of the Code of Intellectual Property. Site users are required to respect the provisions of the Data Processing, Files & Liberties Act, any violation of which would expose the offender to criminal sanctions. Most notably and regarding the nominative information to which they have access, users shall refrain from any collection, unlawful use and, more generally, any act likely to affect the private life or reputation of other persons.<br />
+            This website is reserved exclusively for persons of a legal age to drink alcoholic beverages in their country of residence. Please, drink responsibly.<br />
+            <strong>Host: </strong>OVH<br />
+            <a href="http://www.ovh.com" target="_blank">www.ovh.com</a></p></div>
+          </div>
         </div>
-      </div>
-	  {% endif %}
+      {% endif %}
     </div>
- 
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	  
-	  ga('create', 'UA-44915246-1', 'cartron.fr');
-	  ga('send', 'pageview');  
-	</script>
-	
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-44915246-1', 'cartron.fr');
+      ga('send', 'pageview');  
+    </script>
+    <script src="{{ asset('site/js/app.js') }}"></script>
   </body>
 </html>

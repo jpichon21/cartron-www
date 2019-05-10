@@ -674,6 +674,10 @@
           <a href="https://clients.fr.oleane.com" target="_blank">https://clients.fr.oleane.com</a>]]>
         </target>
     </trans-unit>
+    <trans-unit id="1539">
+        <source>Espace pro</source>
+        <target><![CDATA[Espace<br> pro]]></target>
+    </trans-unit>
     </body>
   </file>
 </xliff>
