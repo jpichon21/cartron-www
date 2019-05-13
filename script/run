@@ -1,4 +1,5 @@
 #!/bin/bash
 set -e
  
-docker-compose up --build
+docker-compose up --build &
+yarn run sass-watch
