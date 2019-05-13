@@ -34,18 +34,17 @@
             <div class="video-home">
                 <a href="#0" class="voir-video lanch_video" onclick="return false"><img  src="{{ asset('site/images/img-video-home.jpg') }}" alt="" /></a>
                 <div class="txt-video-news-home">
-                    <h2><a href="#" class="lanch_video"><span id="s_vd">{{ "Vidéo" | trans }} /</span> <span id="t_vd">{% if(app.session.get('_locale')=='en') %} {{ video.0.titreEn  }} {% else %} {{ video.0.titreFr }} {% endif %}</span></a></h2>
+                    <h2><a href="#" class="lanch_video"><span id="s_vd">{{ "Vidéo" | trans }} / </span>{% if(app.session.get('_locale')=='en') %} {{ video.0.titreEn  }} {% else %} {{ video.0.titreFr }} {% endif %}</a></h2>
                     <a href="#" class="voir-video lanch_video">{{ "voir la vidéo" | trans }}</a>
                 </div>
             </div>
             <div class="news-home">
                 <a href="#" class="lanch_news" ><img width="109" height="59" src="{{ asset('upload/'~articles.0.image) }}" alt="" /></a>
                 <div class="txt-video-news-home">
-                    <h2><a href="#" class="lanch_news"><span id="s_news">{{ "NEWS" | trans }} /</span> <span id="t_news">{% if(app.session.get('_locale')=='en') %} {{ articles.0.titreEn }} {% else %} {{ articles.0.titleFr }} {% endif %}</span></a></h2>
+                    <h2><a href="#" class="lanch_news"><span id="s_news">{{ "NEWS" | trans }} / </span>{% if(app.session.get('_locale')=='en') %} {{ articles.0.titreEn }} {% else %} {{ articles.0.titleFr }} {% endif %}</a></h2>
                     <p>{% if(app.session.get('_locale')=='en') %} {{ articles.0.descEn|striptags|truncate(100, true, '...')|raw }} {% else %} {{ articles.0.descFr|striptags|truncate(100, true, '...')|raw }} {% endif %}</p>
                 </div>
             </div>
-            <br clear="all" />
         </div>
     </div>
 
