@@ -42,12 +42,17 @@ class FirstConnectionType extends AbstractType
                 ]
             )
             ->add(
-                'sesouvenir',
+                'sesevenire',
                 CheckboxType::class,
                 [
                     'label' => 'Se souvenir',
                     'required' => false,
                 ]
             );
+    }
+
+    public function getBlockPrefix()
+    {
+        return 'form';
     }
 }

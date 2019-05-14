@@ -29,7 +29,7 @@
 <div class="site">
 
   <div class="form-visite-content">
-      {{ form_start(form, {'attr': {'class': 'jqtransform'}}) }}
+      {{ form_start(form, {'attr': { 'class': 'form-visite jqtransform'} }) }}
       <div class="form-lanque">
         <a href="{{ path('choose_locale', {'locale' : 'fr'}) }}" {% if(app.session.get('_locale')=='fr') %} class="active" {% endif %}>FR</a>
         <a href="{{ path('choose_locale', {'locale' : 'en'}) }}" {% if(app.session.get('_locale')=='en') %} class="active" {% endif %}>EN</a>
@@ -45,9 +45,9 @@
         {{ form_widget(form.dateNaissance) }}
         <br clear="all" />
         <div class="se-souvenir">
-          {{ form_widget(form.sesouvenir) }}
+          {{ form_widget(form.sesevenire) }}
           <span>
-            {{ form_label(form.sesouvenir) }}
+            {{ form_label(form.sesevenire) }}
           </span><br clear="all" /></div>
       </div>
       <div class="bt-content">
