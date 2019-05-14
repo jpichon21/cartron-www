@@ -1,15 +1,38 @@
 {% extends "layout.html.twig" %}
 {% block title %}JOSEPH CARTRON{% endblock %}
 {% block body %}
-
-
 <script type="text/javascript">
     $(function() 
     {
     	
     	new cartron.Responsive({'$container':$('#home'), 'offset':102})
     	
-        $('#liste-news').jcarousel({ scroll: 2 });
+        $('#liste-news').owlCarousel({
+            items: 2,
+            margin: 20,
+            nav: true,
+            dots: false,
+            autoHeight: true
+        });
+
+        $('#liste-news li').click(function() {
+            var index = $('#liste-news li').index(this);
+            $('#liste-news-full').trigger('to.owl.carousel', index);
+        });
+
+        $('#liste-news-full').owlCarousel({
+            items: 1,
+            dots: false,
+            autoHeight: true,
+            navText: [
+                '<div class="owl-prev"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',
+                '<div class="owl-next"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
+            ],
+            responsive: {
+                0: { nav: true },
+                768: { nav: false }
+            }
+        });
 
         var myPlayer = _V_("example_video_1");
 
@@ -28,7 +51,6 @@
 
         </div>
     </div>
-
     <div class="caroussel-home">
         <div class="video-news-home">
             <div class="video-home">
@@ -47,52 +69,44 @@
             </div>
         </div>
     </div>
-
-
-
     <div class="overlay-news overlay">
-        <div class="pop-up-news">
-
-            <div class="pop-news-content">
-                <a class="close" href="#">{{ "fermer" | trans }}</a>
-                <div id="default_news" style="padding-bottom: 20px; overflow: hidden;">
-                    <img alt="" width="548" src="{{ asset('upload/'~articles.0.image) }}">
-                   {% if(app.session.get('_locale')=='en') %} {{ articles.0.descEn|raw }} {% else %} {{ articles.0.descFr|raw }} {% endif %}
-                    <div class="share"><a class="facebook" href="">facebook</a><a class="twitter" href="">twitter</a><br clear="all"></div>
-                </div>
-            </div>
-            <ul id="liste-news" class="jcarousel-skin-tango">
+        <div class="pop-news-content">
+            <span class="close"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg></span>
+            <ul id="liste-news-full" class="owl-carousel">
                 {% for article in articles %}
-                    <li class="news_hp" id="news_hp_{{ article.id }}" style=" cursor: pointer"><img src="{{ asset('upload/'~article.image) }}"  width="110" height="60" alt="" /><h3>{% if(app.session.get('_locale')=='en') %} {{ article.titreEn|raw }} {% else %} {{ article.titleFr|raw }} {% endif %}</h3></li>
+                    <li>
+                        <img src="{{ asset('upload/'~article.image) }}" />
+                        {% if(app.session.get('_locale')=='en') %} {{ article.descEn|raw }} {% else %} {{ article.descFr|raw }} {% endif %}
+                        <div class="share"><a class="facebook" href="">facebook</a><a class="twitter" href="">twitter</a><br clear="all"></div>
+                    </li>
                 {% endfor %}
-                    </ul>
-                </div>
-            </div>
-
-            <div class="overlay-videos overlay">
-                <div class="pop-up-videos">
-                    <div class="pop-videos-content">
-                        <a href="#" class="close">fermer</a>
-
-                        <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="739" height="486"
-                               poster="{{ asset('site/images/video-home.jpg') }}"
-                               data-setup="{}">
-                            {% if(app.session.get('_locale')=='fr') %}
-                            <source src="{{ asset('upload/video_hp/cartron_fr.mp4')  }}" type='video/mp4' />
-                            <source src="{{ asset('upload/video_hp/cartron_fr.webm')  }}" type='video/webm' />
-                            <source src="{{ asset('upload/video_hp/cartron_fr.ogv')  }}" type='video/ogg' />
-                            <track kind="captions" src="demo.captions.vtt" srclang="en" label="English" />
-                            {% else %}
-                            <source src="{{ asset('upload/video_hp/cartron_en.mp4')  }}" type='video/mp4' />
-                            <source src="{{ asset('upload/video_hp/cartron_en.webm')  }}" type='video/webm' />
-                            <source src="{{ asset('upload/video_hp/cartron_en.ogv')  }}" type='video/ogg' />
-                            <track kind="captions" src="demo.captions.vtt" srclang="en" label="English" />
-                            {% endif %}
-
-                        </video>
-
-                    </div>
-                </div>
-            </div>
-            <input type="hidden" value="{{ path('get_news') }}" id="path_news_hp" />
+            </ul>
+        </div>
+        <ul id="liste-news" class="owl-carousel">
+            {% for article in articles %}
+                <li class="news_hp" id="news_hp_{{ article.id }}" style=" cursor: pointer">
+                    <img src="{{ asset('upload/'~article.image) }}" />
+                    <h3>{% if(app.session.get('_locale')=='en') %} {{ article.titreEn|raw }} {% else %} {{ article.titleFr|raw }} {% endif %}</h3>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="overlay-videos overlay">
+        <div class="pop-videos-content">
+            <span class="close"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg></span>
+            <video controls preload="none" poster="{{ asset('site/images/video-home.jpg') }}">
+                {% if(app.session.get('_locale')=='fr') %}
+                <source src="{{ asset('upload/video_hp/cartron_fr.mp4')  }}" type='video/mp4' />
+                <source src="{{ asset('upload/video_hp/cartron_fr.webm')  }}" type='video/webm' />
+                <source src="{{ asset('upload/video_hp/cartron_fr.ogv')  }}" type='video/ogg' />
+                <track kind="captions" src="demo.captions.vtt" srclang="en" label="English" />
+                {% else %}
+                <source src="{{ asset('upload/video_hp/cartron_en.mp4')  }}" type='video/mp4' />
+                <source src="{{ asset('upload/video_hp/cartron_en.webm')  }}" type='video/webm' />
+                <source src="{{ asset('upload/video_hp/cartron_en.ogv')  }}" type='video/ogg' />
+                <track kind="captions" src="demo.captions.vtt" srclang="en" label="English" />
+                {% endif %}
+            </video>
+        </div>
+    </div>
 {% endblock %}

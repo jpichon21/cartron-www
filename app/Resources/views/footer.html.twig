@@ -48,11 +48,14 @@
         </div>
 
         <p class="mention">
-		  {{ "L’abus d’alcool est dangereux pour la santé. Consommer avec modération" | trans }}.
-		  {% if app.request.locale == 'fr' %}
-		  <a target="_blank" href="http://www.2340.fr"><img style="margin-left:5px;" src="{{ asset('site/images/logo_2340.png') }}"/></a> 
-		  {% endif %}
+		  {{ "L’abus d’alcool est dangereux pour la santé. Consommer avec modération." | trans | raw }}
 		</p>
+
+        <div class="links">
+            <a href="http://info-calories-alcool.org/">info-calories-alcool.org</a> - 
+            <a href="http://www.spiritueux.fr/">spiritueux.fr</a>
+        </div>
+
         <div class="overlay-mentions">
             <div class="pop-up-mentions">
                 <a href="" class="close dn"><span>{{ "Fermer" | trans }}</span></a>

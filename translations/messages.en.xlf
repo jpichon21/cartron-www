@@ -119,8 +119,8 @@
         <target>Legal Terms</target>
       </trans-unit>
       <trans-unit id="30">
-        <source>L’abus d’alcool est dangereux pour la santé. Consommer avec modération</source>
-        <target>Alcohol abuse is detrimental to your health. Drink responsibly</target>
+        <source>L’abus d’alcool est dangereux pour la santé. Consommer avec modération.</source>
+        <target><![CDATA[Alcohol abuse is detrimental to your health. <br>Drink responsibly.]]></target>
       </trans-unit>
       <trans-unit id="31">
         <source>Fermer</source>

@@ -123,8 +123,8 @@
         <target>Mentions légales</target>
       </trans-unit>
       <trans-unit id="30">
-        <source>L’abus d’alcool est dangereux pour la santé. Consommer avec modération</source>
-        <target>L’abus d’alcool est dangereux pour la santé. A consommer avec modération</target>
+        <source>L’abus d’alcool est dangereux pour la santé. Consommer avec modération.</source>
+        <target><![CDATA[L’abus d’alcool est dangereux pour la santé. <br>A consommer avec modération.]]></target>
       </trans-unit>
       <trans-unit id="31">
         <source>Fermer</source>

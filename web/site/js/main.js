@@ -85,12 +85,11 @@ $(function() {
     });
 
     $('a.lanch_news').click(function() {
-        $('.overlay-news').css('left', (($(window).width()- 795)/2 )+'px')
         $('.overlay-news').fadeIn();
         return false;
     });
 
-    $('a.close').click(function() {
+    $('.overlay .close').click(function() {
         $('.overlay').fadeOut();
         return false;
     });
@@ -298,23 +297,6 @@ $(function() {
 
     $("#flagSwitcher").click(function() {
         $(".dropdown img.flag").toggleClass("flagvisibility");
-    });
-    $('.news_hp').click(function() {
-        var elemId = $(this).attr('id');
-        var tabElemId = elemId.split('_');
-        var id = tabElemId['2'];
-        $.ajax({
-            type: "POST",
-            url: $('#path_news_hp').val(),
-            data: {
-                id: id
-            },
-            cache: false,
-            success: function(data) {
-                $('#default_news').html('');
-                $('#default_news').html(data);
-            }
-        });
     });
     
     /*
