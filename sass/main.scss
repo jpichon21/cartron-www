@@ -193,10 +193,14 @@
     flex-direction: column;
     justify-content: center;
     h2 {
-        background: url(../images/bg-titre-home.gif) no-repeat left bottom;
-        padding-bottom: 2px;
         margin-bottom: 8px;
+        padding-bottom: 2px;
         font-weight: normal;
+        background: url(../images/bg-titre-home.gif) no-repeat left bottom;
+        @include media('<large') {
+            padding-bottom: 0;
+            background: none;
+        }
         a {
             display: block;
             font-family: 'Georgia';
@@ -225,6 +229,13 @@
         font-weight: bold;
         font-family: 'Georgia';
         text-transform: uppercase;
+        @include media('<large') {
+            font-family: "Source Sans Pro";
+            font-size: 11px;
+            font-style: italic;
+            font-weight: normal;
+            text-transform: capitalize;
+        }
         &:after {
             content: '';
             display: inline-block;
@@ -233,6 +244,9 @@
             height: 22px;
             vertical-align: middle;
             background: url(../images/bg-voir-video.png) no-repeat right center;
+            @include media('<large') {
+                content: none;
+            }
         }
     }
 }
