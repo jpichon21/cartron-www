@@ -50,8 +50,8 @@ function resizeMain() {
 	var $table = $main.find(".table");
 	var mainHeight = $(window).height() - ($header.height() + $footer.height()) - 25;
 	var height = Math.max(mainHeight, $table.height());
-	$main.css({ height:height });
-	$main.find(".table").css( { minHeight:height });
+	// $main.css({ height:height });
+	// $main.find(".table").css( { minHeight:height });
 }
 
 function resize() {
@@ -61,8 +61,8 @@ function resize() {
 	var $table = $main.find(".table");
 	var mainHeight = $(window).height() - ($header.height() + $footer.height()) - 71;
 	var height = Math.max(mainHeight, $table.height());
-	$main.css({ height:height });
-	$main.find(".table").css( { minHeight:height });
+	// $main.css({ height:height });
+	// $main.find(".table").css( { minHeight:height });
 }
 
 window.addEventListener('orientationchange', doOnOrientationChange);

@@ -1,0 +1,197 @@
+.content-histoire {
+    background: url(../images/bg-content-histoire.png) left top;
+    width: 509px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    padding-bottom: 20px;
+    @include media('<medium') {
+        width: auto;
+        padding-bottom: 0;
+        background: none;
+    }
+    h1 {
+        border-bottom: solid 2px #FFFFFF;
+        margin: 40px auto 36px;
+        text-align: center;
+        font-family: 'Georgia';
+        letter-spacing: 4px;
+        font-size: 28px;
+        text-transform: uppercase;
+        display: inline-block;
+        background: url(../images/bg-titre-patrimoine.png) repeat;
+        a {
+            text-decoration: none;
+            height: 58px;
+            padding: 5px 20px;
+            display: block;
+            border: 1px solid #696d70;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 0;
+        }
+        span {
+            display: block;
+            color: #cfa75a;
+            font-size: 12px;
+            font-family: 'Source Sans Pro';
+            letter-spacing: normal;
+            text-transform: none;
+        }
+    }
+    p.intro {
+        width: 272px;
+        margin: 0 auto 45px;
+        text-align: center;
+        font-size: 16px;
+        font-family: 'Source Sans Pro';
+        font-style: italic;
+        @include media('<medium') {
+            width: 80%;
+        }
+        em {
+            font-family: 'Source Sans Pro';
+        }
+    }
+    > ul {
+        width: 507px;
+        margin: auto;
+        @include media('>=medium') {
+            &.similar {
+                display: none;
+            }
+        }
+        @include media('<medium') {
+            width: auto;
+        }
+        li {
+            height: 78px;
+            list-style: none;
+            padding: 0;
+            a {
+                position: relative;
+                display: block;
+                justify-content: center;
+                height: 78px;
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+                background: url(../images/bg-link-histoire.png) left top;
+                @include media('<medium') {
+                    display: flex;
+                }
+                &:hover {
+                    background: url(../images/bg-link-histoire.png) left bottom;
+                }
+                svg {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: -12px;
+                    margin-left: -150px;
+                    fill: #ffffff;
+                    @include media('>=medium') {
+                        display: none;
+                    }
+                }
+                span {
+                    &.annee {
+                        display: block;
+                        width: 230px;
+                        float: left;
+                        border-right: solid 1px #cfa75a;
+                        height: 60px;
+                        line-height: 60px;
+                        font-size: 30px;
+                        text-align: right;
+                        padding-right: 20px;
+                        font-weight: bold;
+                        margin-top: 7px;
+                        @include media('<medium') {
+                            width: auto;
+                        }
+                    }
+                    &.nom {
+                        display: block;
+                        float: left;
+                        font-size: 18px;
+                        text-align: left;
+                        margin-top: 7px;
+                        margin-left: 20px;
+                        color: #cfa75a;
+                        line-height: 24px;
+                        margin-top: 13px;
+                    }
+                }
+            }
+        }
+    }
+    img {
+        display: block;
+        margin: 25px auto;
+        @include media('<medium') {
+            width: 100%;
+            margin: 0;
+        }
+    }
+    .desc-histoire {
+        width: 427px;
+        height: 125px;
+        overflow: hidden;
+        margin: auto;
+        padding-right: 10px;
+        @include media('<medium') {
+            width: auto;
+            height: auto;
+            padding: 20px 20px 5px;
+            background-color: #36424a;
+        }
+    }
+    .desc-licornes {
+        width: 427px;
+        height: 350px;
+        overflow: hidden;
+        margin: auto;
+        padding-right: 10px;
+        @include media('<medium') {
+            width: auto;
+        }
+        p {
+            font-size: 11px;
+            line-height: 18px;
+            margin-bottom: 15px;
+        }
+    }
+    .desc-histoire {
+        p {
+            font-size: 11px;
+            line-height: 18px;
+            margin-bottom: 15px;
+        }
+        li {
+            text-align: left;
+            font-size: 11px;
+            line-height: 18px;
+        }
+    }
+}
+#bourgogne .content-histoire ul {
+    &.titre-bourgogne {
+        margin-top: 26px;
+    }
+    a {
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 16px;
+        padding-top: 12px;
+        height: 66px;
+        line-height: 26px;
+        &:hover {
+            opacity: 0.7;
+        }
+        span {
+            color: #cfa75a;
+        }
+    }
+}

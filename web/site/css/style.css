@@ -92,16 +92,6 @@ a {
   background: url(../images/bg-contact.jpg) repeat center top;
 }
 
-.content-histoire {
-  background: url(../images/bg-content-histoire.png) left top;
-  width: 509px;
-  margin: auto;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  padding-bottom: 20px;
-}
-
 .langues-reseaux {
   width: 95%;
   max-width: 1000px;
@@ -433,123 +423,6 @@ a {
   margin-top: 4px;
 }
 
-.content-histoire h1 {
-  border-bottom: solid 2px #FFFFFF;
-  margin: 40px auto 36px;
-  text-align: center;
-  font-family: "Georgia";
-  letter-spacing: 4px;
-  font-size: 28px;
-  text-transform: uppercase;
-  display: inline-block;
-  background: url(../images/bg-titre-patrimoine.png) repeat;
-}
-.content-histoire h1 a {
-  text-decoration: none;
-  height: 58px;
-  padding: 5px 20px;
-  display: block;
-  border: 1px solid #696d70;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-bottom: 0;
-}
-.content-histoire h1 span {
-  display: block;
-  color: #cfa75a;
-  font-size: 12px;
-  font-family: "Source Sans Pro";
-  letter-spacing: normal;
-  text-transform: none;
-}
-.content-histoire p.intro {
-  width: 272px;
-  margin: 0 auto 45px;
-  text-align: center;
-  font-size: 16px;
-  font-family: "Source Sans Pro";
-  font-style: italic;
-}
-.content-histoire p.intro em {
-  font-family: "Source Sans Pro";
-}
-.content-histoire > ul {
-  width: 507px;
-  margin: auto;
-}
-.content-histoire > ul li {
-  height: 78px;
-  list-style: none;
-  padding: 0;
-}
-.content-histoire > ul li a {
-  height: 78px;
-  display: block;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  background: url(../images/bg-link-histoire.png) no-repeat left top;
-}
-.content-histoire > ul li a:hover {
-  background: url(../images/bg-link-histoire.png) no-repeat left bottom;
-}
-.content-histoire > ul li span.annee {
-  display: block;
-  width: 230px;
-  float: left;
-  border-right: solid 1px #cfa75a;
-  height: 60px;
-  line-height: 60px;
-  font-size: 30px;
-  text-align: right;
-  padding-right: 20px;
-  font-weight: bold;
-  margin-top: 7px;
-}
-.content-histoire > ul li span.nom {
-  display: block;
-  float: left;
-  font-size: 18px;
-  text-align: left;
-  margin-top: 7px;
-  margin-left: 20px;
-  color: #cfa75a;
-  line-height: 24px;
-  margin-top: 13px;
-}
-.content-histoire img {
-  display: block;
-  margin: 25px auto;
-}
-.content-histoire .desc-histoire {
-  width: 427px;
-  height: 125px;
-  overflow: hidden;
-  margin: auto;
-  padding-right: 10px;
-}
-.content-histoire .desc-licornes {
-  width: 427px;
-  height: 350px;
-  overflow: hidden;
-  margin: auto;
-  padding-right: 10px;
-}
-.content-histoire .desc-licornes p {
-  font-size: 11px;
-  line-height: 18px;
-  margin-bottom: 15px;
-}
-.content-histoire .desc-histoire p {
-  font-size: 11px;
-  line-height: 18px;
-  margin-bottom: 15px;
-}
-.content-histoire .desc-histoire li {
-  text-align: left;
-  font-size: 11px;
-  line-height: 18px;
-}
-
 .menu-bt-histoire {
   background: url(../images/bg-menu-bt-histoire_03.png) no-repeat top center;
   height: 31px;
@@ -558,6 +431,11 @@ a {
   left: 0px;
   width: 100%;
   margin-top: 50px;
+}
+@media (max-width: 767px) {
+  .menu-bt-histoire {
+    display: none;
+  }
 }
 .menu-bt-histoire ul {
   margin: auto;
@@ -601,9 +479,9 @@ a {
 
 .menu-bt-histoire ul li p span {
   /* display:block;
-   height:31px;
-   float:left;
-   width:45px;*/
+  height:31px;
+  float:left;
+  width:45px;*/
   font-size: 19px;
   font-size: 10px;
 }
@@ -642,49 +520,34 @@ a {
   right: -30px;
 }
 
-#licornes .content-histoire h1 {
-  font-size: 28px;
-}
-
-#bourgogne .content-histoire h1 {
-  font-size: 26px;
-}
-
 .retour {
   display: block;
   position: absolute;
   right: 10px;
   top: 10px;
-  background: url(../images/bg-close.png) no-repeat;
   width: 10px;
   height: 11px;
   z-index: 100;
 }
-
-.savoir-faire-home .retour, .content-histoire .retour {
-  background: url(../images/bg-close-blanc.png) no-repeat;
+@media (min-width: 768px) {
+  .retour {
+    background: url(../images/bg-close.png) no-repeat;
+  }
+  .retour svg {
+    display: none;
+  }
 }
-
-#bourgogne .content-histoire ul {
-  margin-top: 10px;
-}
-#bourgogne .content-histoire ul.titre-bourgogne {
-  margin-top: 26px;
-}
-#bourgogne .content-histoire ul a {
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 16px;
-  padding-top: 12px;
-  height: 66px;
-  line-height: 26px;
-}
-#bourgogne .content-histoire ul a:hover {
-  opacity: 0.7;
-}
-#bourgogne .content-histoire ul a span {
-  color: #cfa75a;
+@media (max-width: 767px) {
+  .retour {
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background: none;
+  }
+  .retour svg {
+    fill: #ffffff;
+  }
 }
 
 .desc-histoire ul li {
@@ -2227,18 +2090,6 @@ a {
     top: 50px;
   }
 }
-.table {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-
-.td {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 15px 0px;
-}
-
 .collection-home:after {
   content: " ";
   clear: both;
@@ -2279,6 +2130,7 @@ a {
   background-image: url("../images/bg-body-head.jpg");
   background-position: center;
   background-size: cover;
+  z-index: 101;
 }
 @media (min-width: 768px) {
   .header {
@@ -2469,6 +2321,22 @@ a {
 .footer .links a {
   margin: 0 10px;
   font-size: 11px;
+}
+
+.table {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.table .td {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 15px 0px;
+}
+@media (max-width: 767px) {
+  .table .td {
+    padding: 0;
+  }
 }
 
 #home .main {
@@ -2911,6 +2779,217 @@ a {
     background: none;
     margin-left: 0;
   }
+}
+
+.content-histoire {
+  background: url(../images/bg-content-histoire.png) left top;
+  width: 509px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  padding-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .content-histoire {
+    width: auto;
+    padding-bottom: 0;
+    background: none;
+  }
+}
+.content-histoire h1 {
+  border-bottom: solid 2px #FFFFFF;
+  margin: 40px auto 36px;
+  text-align: center;
+  font-family: "Georgia";
+  letter-spacing: 4px;
+  font-size: 28px;
+  text-transform: uppercase;
+  display: inline-block;
+  background: url(../images/bg-titre-patrimoine.png) repeat;
+}
+.content-histoire h1 a {
+  text-decoration: none;
+  height: 58px;
+  padding: 5px 20px;
+  display: block;
+  border: 1px solid #696d70;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 0;
+}
+.content-histoire h1 span {
+  display: block;
+  color: #cfa75a;
+  font-size: 12px;
+  font-family: "Source Sans Pro";
+  letter-spacing: normal;
+  text-transform: none;
+}
+.content-histoire p.intro {
+  width: 272px;
+  margin: 0 auto 45px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Source Sans Pro";
+  font-style: italic;
+}
+@media (max-width: 767px) {
+  .content-histoire p.intro {
+    width: 80%;
+  }
+}
+.content-histoire p.intro em {
+  font-family: "Source Sans Pro";
+}
+.content-histoire > ul {
+  width: 507px;
+  margin: auto;
+}
+@media (min-width: 768px) {
+  .content-histoire > ul.similar {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .content-histoire > ul {
+    width: auto;
+  }
+}
+.content-histoire > ul li {
+  height: 78px;
+  list-style: none;
+  padding: 0;
+}
+.content-histoire > ul li a {
+  position: relative;
+  display: block;
+  justify-content: center;
+  height: 78px;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  background: url(../images/bg-link-histoire.png) left top;
+}
+@media (max-width: 767px) {
+  .content-histoire > ul li a {
+    display: flex;
+  }
+}
+.content-histoire > ul li a:hover {
+  background: url(../images/bg-link-histoire.png) left bottom;
+}
+.content-histoire > ul li a svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -12px;
+  margin-left: -150px;
+  fill: #ffffff;
+}
+@media (min-width: 768px) {
+  .content-histoire > ul li a svg {
+    display: none;
+  }
+}
+.content-histoire > ul li a span.annee {
+  display: block;
+  width: 230px;
+  float: left;
+  border-right: solid 1px #cfa75a;
+  height: 60px;
+  line-height: 60px;
+  font-size: 30px;
+  text-align: right;
+  padding-right: 20px;
+  font-weight: bold;
+  margin-top: 7px;
+}
+@media (max-width: 767px) {
+  .content-histoire > ul li a span.annee {
+    width: auto;
+  }
+}
+.content-histoire > ul li a span.nom {
+  display: block;
+  float: left;
+  font-size: 18px;
+  text-align: left;
+  margin-top: 7px;
+  margin-left: 20px;
+  color: #cfa75a;
+  line-height: 24px;
+  margin-top: 13px;
+}
+.content-histoire img {
+  display: block;
+  margin: 25px auto;
+}
+@media (max-width: 767px) {
+  .content-histoire img {
+    width: 100%;
+    margin: 0;
+  }
+}
+.content-histoire .desc-histoire {
+  width: 427px;
+  height: 125px;
+  overflow: hidden;
+  margin: auto;
+  padding-right: 10px;
+}
+@media (max-width: 767px) {
+  .content-histoire .desc-histoire {
+    width: auto;
+    height: auto;
+    padding: 20px 20px 5px;
+    background-color: #36424a;
+  }
+}
+.content-histoire .desc-licornes {
+  width: 427px;
+  height: 350px;
+  overflow: hidden;
+  margin: auto;
+  padding-right: 10px;
+}
+@media (max-width: 767px) {
+  .content-histoire .desc-licornes {
+    width: auto;
+  }
+}
+.content-histoire .desc-licornes p {
+  font-size: 11px;
+  line-height: 18px;
+  margin-bottom: 15px;
+}
+.content-histoire .desc-histoire p {
+  font-size: 11px;
+  line-height: 18px;
+  margin-bottom: 15px;
+}
+.content-histoire .desc-histoire li {
+  text-align: left;
+  font-size: 11px;
+  line-height: 18px;
+}
+
+#bourgogne .content-histoire ul.titre-bourgogne {
+  margin-top: 26px;
+}
+#bourgogne .content-histoire ul a {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding-top: 12px;
+  height: 66px;
+  line-height: 26px;
+}
+#bourgogne .content-histoire ul a:hover {
+  opacity: 0.7;
+}
+#bourgogne .content-histoire ul a span {
+  color: #cfa75a;
 }
 
 /*# sourceMappingURL=style.css.map */

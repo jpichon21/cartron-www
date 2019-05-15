@@ -8,6 +8,7 @@
     background-image: url('../images/bg-body-head.jpg');
     background-position: center;
     background-size: cover;
+    z-index: 101;
     @include media('>=medium') {
         padding-bottom: 55px;
     }
@@ -176,6 +177,19 @@
         a {
             margin: 0 10px;
             font-size: 11px;
+        }
+    }
+}
+.table {
+    display: table;
+    height: 100%;
+    width: 100%;
+    .td {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 15px 0px;
+        @include media('<medium') {
+            padding: 0;
         }
     }
 }
