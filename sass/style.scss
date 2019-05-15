@@ -32,13 +32,6 @@ a {
   display: none;
 }
 
-body {
-  background-color: #35424a;
-  &#agegate {
-    background: url(../images/bg-agegate.jpg) #36424a no-repeat center top;
-  }
-}
-
 .recherche-form {
   position: absolute;
   right: 10px;
@@ -341,56 +334,6 @@ body {
   }
 }
 
-#agegate {
-  .site {
-    max-width: 1050px;
-    margin: 50px auto 0;
-  }
-  .logo {
-    background: url(../images/logo-bis.png) no-repeat;
-    width: 364px;
-    height: 473px;
-    margin: 111px 0 0;
-    float: left;
-  }
-  .form-visite-content {
-    width: 574px;
-    float: right;
-  }
-  .form-lanque {
-    background: url(../images/bg-form-langue.png) no-repeat center center;
-    height: 24px;
-    padding-left: 218px;
-    a {
-      display: block;
-      float: left;
-      width: 61px;
-      height: 22px;
-      text-align: center;
-      line-height: 22px;
-      font-size: 16px;
-      text-decoration: none;
-      background: #171d20;
-      margin-right: 13px;
-      border: solid 1px #FFFFFF;
-      &.active, &:hover {
-        width: 63px;
-        height: 24px;
-        line-height: 24px;
-        background: #3c474f;
-        border: none;
-      }
-    }
-  }
-}
-
-.pour-visiter {
-  text-align: center;
-  font-size: 11px;
-  margin: 65px 0;
-  line-height: 18px;
-}
-
 .label {
   display: block;
   margin-bottom: 10px;
@@ -495,105 +438,9 @@ body {
   background: url(../images/checkbox.png) no-repeat center center;
 }
 
-.form-visite {
-  .bt-content {
-    margin: 100px 0;
-    background: url(../images/bg-bt.png) no-repeat center center;
-    height: 30px;
-  }
-  .bt {
-    width: 144px;
-    height: 28px;
-    text-align: center;
-    margin: auto;
-    display: block;
-    border: 1px solid #858c91;
-    background: #3e4951;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 10px;
-  }
-}
-
-.acces-espace-pro {
-  width: 320px;
-  margin: auto;
-  .acces-direct {
-    font-size: 11px;
-    span {
-      background: #3e4951;
-      display: inline-block;
-      padding: 1px 20px;
-      font-size: 11px;
-      letter-spacing: 1px;
-      margin-left: 5px;
-    }
-  }
-}
-
 .identifiant {
   position: relative;
   margin-top: 4px;
-}
-
-.acces-espace-pro {
-  p label {
-    position: absolute;
-    left: 0;
-    top: 1px;
-    padding-left: 5px;
-    font-size: 12px;
-    color: #cccccc;
-    height: 25px;
-    line-height: 25px;
-    margin: 0 !important;
-  }
-  input {
-    &[type=text], &[type=password] {
-      background: none repeat scroll 0 0 transparent;
-      border: 1px solid #515658;
-      height: 25px;
-      line-height: 25px;
-      padding: 0 5px;
-      width: 308px;
-    }
-  }
-  .submit-form {
-    margin: 10px 0 30px;
-    overflow: hidden;
-    input {
-      float: right;
-      width: 49px;
-      height: 17px;
-      background: #3e4951;
-      cursor: pointer;
-      line-height: 18px;
-      font-size: 11px;
-    }
-    a {
-      float: right;
-      margin-right: 6px;
-      font-size: 10px;
-      color: #737d84;
-      text-decoration: none;
-      line-height: 18px;
-    }
-  }
-  .demand-d-acces {
-    display: block;
-    background: url(../images/bg-demande-d-acces.gif) no-repeat right center;
-    font-size: 11px;
-    text-transform: uppercase;
-    text-decoration: none;
-    float: none !important;
-    color: #ffffff !important;
-  }
-  .mention {
-    margin: 60px 0;
-    color: #ababab;
-    font-size: 10px;
-    line-height: 18px;
-  }
 }
 
 .content-histoire {
@@ -2612,19 +2459,4 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#142630',endCol
 .main {
   /*height:666px;*/
   position: relative;
-}
-
-@media all and (orientation: portrait) {
-  html {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-  }
-  body {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    &#agegate {
-      background-position-x: -625px;
-      background-position-y: -110px;
-    }
-  }
 }

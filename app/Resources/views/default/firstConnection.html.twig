@@ -27,10 +27,10 @@
 </script>
 
 <div class="site">
-
+  <img class="logo" src="{{ asset('site/images/logo-bis.png') }}" alt="Joseph Cartron" />
   <div class="form-visite-content">
       {{ form_start(form, {'attr': { 'class': 'form-visite jqtransform'} }) }}
-      <div class="form-lanque">
+      <div class="form-langue">
         <a href="{{ path('choose_locale', {'locale' : 'fr'}) }}" {% if(app.session.get('_locale')=='fr') %} class="active" {% endif %}>FR</a>
         <a href="{{ path('choose_locale', {'locale' : 'en'}) }}" {% if(app.session.get('_locale')=='en') %} class="active" {% endif %}>EN</a>
       </div>
@@ -38,7 +38,7 @@
         <p class="pour-visiter">{{ "Pour visiter"|trans }} <strong>CARTRON.FR</strong><br />
           {{ "vous devez avoir l’âge légal dans votre pays" | trans }}.</p>
 
-        {{ form_widget(form.pays, { 'attr': {'style': 'width:278px;'} }) }}
+        {{ form_widget(form.pays) }}
         <span class="label" style="margin-left:8px">
           {{ "premier_connexion.datenaissance"|trans }} :
         </span>
@@ -66,8 +66,9 @@
         <input type="button" id="ok_login" name="ok" value="OK" class="submit" onclick="$('#formIdentification').submit(); return false;"/>
       </p>
       <a href="#0" id="demand-d-acces_p" class="demand-d-acces">{{ "Demande d’accès à l’espace professionnel"|trans }}</a>
-      <p class="mention">{{ "L’abus d’alcool est dangereux pour la santé"|trans }},<br />
-        {{ "à consommer avec modération"|trans }}</p>
+      <p class="mention">
+        {{ "L’abus d’alcool est dangereux pour la santé. Consommer avec modération." | trans | raw }}
+      </p>
 	  <input type="hidden" name="redirect_to" value="http://www.cartron.fr/pro">
     </form>
   </div>

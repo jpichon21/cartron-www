@@ -408,3 +408,156 @@
         width: 100%;
     }
 }
+#agegate {
+    background-color: #36424a;
+    @include media('>=large') {
+        background-image: url(../images/bg-agegate.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .logo {
+        display: block;
+        max-width: 150px;
+        margin: 0 auto 50px;
+        @include media('>=large') {
+            display: none;
+        }
+    }
+    .site {
+        max-width: 1050px;
+        margin: 50px auto 0;
+    }
+    .form-visite-content {
+        @include media('>=large') {
+            width: 574px;
+            float: right;
+        }
+    }
+    .form-langue {
+        display: flex;
+        justify-content: center;
+        background: url(../images/bg-form-langue.png) no-repeat center center;
+        a {
+            display: block;
+            float: left;
+            width: 61px;
+            height: 22px;
+            text-align: center;
+            line-height: 22px;
+            font-size: 16px;
+            text-decoration: none;
+            background: #171d20;
+            margin: 0 5px;
+            border: solid 1px #FFFFFF;
+            &.active, &:hover {
+                width: 63px;
+                height: 24px;
+                line-height: 24px;
+                background: #3c474f;
+                border: none;
+            }
+        }
+    }
+    .pour-visiter {
+        text-align: center;
+        font-size: 11px;
+        margin: 65px 0;
+        line-height: 18px;
+        @include media('<large') {
+            margin: 50px 0;
+        }
+    }
+    .form-visite {
+        .bt-content {
+            margin: 100px 0;
+            background: url(../images/bg-bt.png) no-repeat center center;
+            height: 30px;
+            @include media('<large') {
+                margin: 50px 0;
+            }
+        }
+        .bt {
+            width: 144px;
+            height: 28px;
+            text-align: center;
+            margin: auto;
+            display: block;
+            border: 1px solid #858c91;
+            background: #3e4951;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+    }
+}
+.acces-espace-pro {
+    .acces-direct {
+        font-size: 11px;
+        span {
+            background: #3e4951;
+            display: inline-block;
+            padding: 1px 20px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            margin-left: 5px;
+        }
+    }
+    p label {
+        position: absolute;
+        left: 0;
+        top: 1px;
+        padding-left: 5px;
+        font-size: 12px;
+        color: #cccccc;
+        height: 25px;
+        line-height: 25px;
+        margin: 0 !important;
+    }
+    input {
+        &[type=text], &[type=password] {
+            width: 100%;
+            height: 25px;
+            padding: 0 5px;
+            line-height: 25px;
+            background: none;
+            border: 1px solid #515658;
+        }
+    }
+    .submit-form {
+        margin: 10px 0 30px;
+        overflow: hidden;
+        input {
+            float: right;
+            width: 49px;
+            height: 17px;
+            font-size: 11px;
+            line-height: 18px;
+            background: #3e4951;
+            cursor: pointer;
+        }
+        a {
+            float: right;
+            margin-right: 6px;
+            font-size: 10px;
+            color: #737d84;
+            text-decoration: none;
+            line-height: 18px;
+        }
+    }
+    .demand-d-acces {
+        display: block;
+        background: url(../images/bg-demande-d-acces.gif) no-repeat right center;
+        font-size: 11px;
+        text-transform: uppercase;
+        text-decoration: none;
+        float: none !important;
+        color: #ffffff !important;
+    }
+    .mention {
+        margin: 50px 0;
+        color: #ababab;
+        font-size: 10px;
+        line-height: 18px;
+    }
+}
