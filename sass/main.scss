@@ -2,9 +2,14 @@
 
 .header {
     position: relative;
-    background: url('../images/bg-body-head.jpg') no-repeat center;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-image: url('../images/bg-body-head.jpg');
+    background-position: center;
+    background-size: cover;
     @include media('>=medium') {
-        padding-bottom: 35px;
+        padding-bottom: 55px;
     }
     .toggle,
     .facebook {
@@ -18,7 +23,7 @@
     }
     .toggle {
         cursor: pointer;
-        bottom: 20px;
+        bottom: 15px;
         right: 20px;
     }
     .facebook {
@@ -34,10 +39,10 @@
         }
     }
     .logo {
-        display: block;
-        width: 75px;
-        margin: 0 auto;
-        padding: 15px;
+        img {
+            display: block;
+            height: 75px;
+        }
     }
 }
 .menu-top {
@@ -104,6 +109,7 @@
     left: 20px;
     bottom: 20px;
     font-size: 12px;
+    line-height: 100%;
     text-transform: uppercase;
     @include media('>=medium') {
         display: none;

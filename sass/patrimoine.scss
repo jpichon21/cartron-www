@@ -1,0 +1,110 @@
+#patrimoine {
+    overflow: hidden;
+    width: 100%;
+    @include media('<large') {
+        height: auto!important;
+        background-image: url(../images/thirt_slide.png);
+        background-position: right;
+        background-size: cover;
+    }
+    #slide_1,
+    #slide_2,
+    #slide_3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        box-sizing: border-box;
+        @include media('<large') {
+            position: relative;
+            width: 100%;
+            height: auto;
+            left: 0!important;
+        }
+        .content {
+            max-width: 280px;
+            text-align: center;
+            .border {
+                height: 60px;
+                padding-top: 4px;
+                text-align: center;
+                background: url(../images/bg-titre-patrimoine.png) repeat;
+                border: 1px solid #696d70;
+                border-bottom: 2px solid #ffffff;
+                h2 {
+                    font-size: 22px;
+                    font-family: 'Georgia';
+                    letter-spacing: 2px;
+                }
+                span {
+                    font-size: 12px;
+                    color: #cfa75a;
+                    font-family: 'Source Sans Pro';
+                }
+            }
+            p {
+                display: block;
+                margin-top: 16px;
+                font-size: 13px;
+                color: #ffffff;
+                font-family: 'Source Sans Pro';
+                line-height: 14px;
+                em {
+                    font-family: 'Source Sans Pro';
+                }
+            }
+            .lire_suite {
+                height: 22px;
+                line-height: 22px;
+                display: inline-block;
+                margin: 15px auto 0 auto;
+                padding-right: 29px;
+                font-size: 12px;
+                color: #cfa75a;
+                font-family: 'Source Sans Pro';
+                letter-spacing: 1px;
+                text-decoration: none;
+                text-align: right;
+                background: url(../images/bt-lire-la-suite.png) no-repeat right top;
+            }
+        }
+    }
+    #slide_1 {
+        justify-content: flex-start;
+        left: 0;
+        margin-left: -7%;
+        padding-top: 50px;
+        background: url(../images/first_slide.png) right top no-repeat;
+        z-index: 10;
+        @include media('<large') {
+            background: none;
+            margin-left: 0;
+        }
+    }
+    #slide_2 {
+        justify-content: center;
+        width: 100%;
+        background: url(../images/second_slide.jpg) center top no-repeat;
+        z-index: 9;
+        @include media('<large') {
+            background: none;
+            padding: 50px 0;
+            margin-left: 0;
+        }
+    }
+    #slide_3 {
+        justify-content: flex-end;
+        right: 0;
+        margin-right: -7%;
+        padding-bottom: 50px;
+        background: url(../images/thirt_slide.png) left top no-repeat;
+        z-index: 10;
+        @include media('<large') {
+            background: none;
+            margin-left: 0;
+        }
+    }
+}

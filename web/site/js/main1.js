@@ -49,11 +49,13 @@ cartron.Patrimoine = function(config)
 		
 		that.config.$container.mousemove(function(e)
 		{
-			var offset = ((e.pageX/that.screen_width - 0.5) * 2 *coef);
- 
-			$slide_1.css({'left': offset+'%'});
-			$slide_2.css({'left': -offset+'%'});
-			$slide_3.css({'right': -offset+'%'});
+			if (that.screen_width >= 1024) {
+				var offset = ((e.pageX/that.screen_width - 0.5) * 2 *coef);
+	 
+				$slide_1.css({'left': offset+'%'});
+				$slide_2.css({'left': -offset+'%'});
+				$slide_3.css({'right': -offset+'%'});
+			}
 			
 		});
 		

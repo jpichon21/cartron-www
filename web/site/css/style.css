@@ -642,27 +642,6 @@ a {
   right: -30px;
 }
 
-#home #patrimone {
-  background: #36424a;
-  position: relative;
-}
-
-#patrimone .patrimoine_slides {
-  height: 100%;
-  width: 47%;
-  position: absolute;
-  top: 0;
-}
-#patrimone .patrimoine_slides .table {
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-#patrimone .patrimoine_slides .slide {
-  height: 100%;
-  display: table-cell;
-}
-
 #licornes .content-histoire h1 {
   font-size: 28px;
 }
@@ -909,107 +888,6 @@ a {
   font-family: "Source Sans Pro";
   text-transform: uppercase;
   background: url(../images/puce-lien.png) no-repeat left center;
-}
-
-/*************************************/
-/*         Page Patrimoine           */
-/*************************************/
-#patrimone {
-  overflow: hidden;
-  width: 100%;
-}
-#patrimone #slide_1 {
-  background: url(../images/first_slide.png) right top no-repeat;
-  background-size: cover;
-  left: 0;
-  z-index: 10;
-  margin-left: -4%;
-}
-#patrimone #slide_3 {
-  background: url(../images/thirt_slide.png) left top no-repeat;
-  background-size: cover;
-  z-index: 10;
-  right: 0;
-  margin-right: -4%;
-}
-#patrimone #slide_2 {
-  z-index: 9;
-  width: 100%;
-  background: url(../images/second_slide.jpg) center top no-repeat;
-  background-size: cover;
-}
-#patrimone #slide_2 .slide {
-  vertical-align: middle;
-}
-#patrimone #slide_3 .slide {
-  vertical-align: bottom;
-}
-#patrimone .content {
-  text-align: center;
-}
-#patrimone #slide_1 .content {
-  width: 239px;
-  margin: auto;
-  margin-top: 6%;
-}
-#patrimone #slide_2 .content {
-  width: 271px;
-  margin: auto;
-}
-#patrimone #slide_3 .content {
-  width: 239px;
-  margin: auto;
-  margin-bottom: 6%;
-}
-#patrimone .content .titre {
-  min-width: 240px;
-  border-bottom: 2px solid #ffffff;
-}
-#patrimone .content .border {
-  height: 60px;
-  padding: 4px 0 0 0;
-  text-align: center;
-  border: 1px solid #696d70;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-bottom: 0;
-  background: url(../images/bg-titre-patrimoine.png) repeat;
-}
-#patrimone .content .titre h2 {
-  font-size: 22px;
-  font-family: "Georgia";
-  letter-spacing: 2px;
-}
-#patrimone .content .titre span {
-  font-size: 12px;
-  color: #cfa75a;
-  font-family: "Source Sans Pro";
-}
-
-.patrimoine_slides .content p {
-  display: block;
-  margin-top: 16px;
-  font-size: 13px;
-  color: #ffffff;
-  font-family: "Source Sans Pro";
-  line-height: 14px;
-}
-.patrimoine_slides .content p em {
-  font-family: "Source Sans Pro";
-}
-
-#patrimone .content a.lire_suite {
-  height: 22px;
-  line-height: 22px;
-  display: inline-block;
-  margin: 15px auto 0 auto;
-  padding-right: 29px;
-  font-size: 12px;
-  color: #cfa75a;
-  font-family: "Source Sans Pro";
-  letter-spacing: 1px;
-  text-decoration: none;
-  text-align: right;
-  background: url(../images/bt-lire-la-suite.png) no-repeat right top;
 }
 
 /*************************************/
@@ -2395,11 +2273,16 @@ a {
 
 .header {
   position: relative;
-  background: url("../images/bg-body-head.jpg") no-repeat center;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-image: url("../images/bg-body-head.jpg");
+  background-position: center;
+  background-size: cover;
 }
 @media (min-width: 768px) {
   .header {
-    padding-bottom: 35px;
+    padding-bottom: 55px;
   }
 }
 .header .toggle,
@@ -2418,7 +2301,7 @@ a {
 }
 .header .toggle {
   cursor: pointer;
-  bottom: 20px;
+  bottom: 15px;
   right: 20px;
 }
 .header .facebook {
@@ -2433,11 +2316,9 @@ a {
     display: block;
   }
 }
-.header .logo {
+.header .logo img {
   display: block;
-  width: 75px;
-  margin: 0 auto;
-  padding: 15px;
+  height: 75px;
 }
 
 .menu-top {
@@ -2513,6 +2394,7 @@ a {
   left: 20px;
   bottom: 20px;
   font-size: 12px;
+  line-height: 100%;
   text-transform: uppercase;
 }
 @media (min-width: 768px) {
@@ -2892,6 +2774,143 @@ a {
 
 .pop-videos-content video {
   width: 100%;
+}
+
+#patrimoine {
+  overflow: hidden;
+  width: 100%;
+}
+@media (max-width: 1023px) {
+  #patrimoine {
+    height: auto !important;
+    background-image: url(../images/thirt_slide.png);
+    background-position: right;
+    background-size: cover;
+  }
+}
+#patrimoine #slide_1,
+#patrimoine #slide_2,
+#patrimoine #slide_3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 1023px) {
+  #patrimoine #slide_1,
+#patrimoine #slide_2,
+#patrimoine #slide_3 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: 0 !important;
+  }
+}
+#patrimoine #slide_1 .content,
+#patrimoine #slide_2 .content,
+#patrimoine #slide_3 .content {
+  max-width: 280px;
+  text-align: center;
+}
+#patrimoine #slide_1 .content .border,
+#patrimoine #slide_2 .content .border,
+#patrimoine #slide_3 .content .border {
+  height: 60px;
+  padding-top: 4px;
+  text-align: center;
+  background: url(../images/bg-titre-patrimoine.png) repeat;
+  border: 1px solid #696d70;
+  border-bottom: 2px solid #ffffff;
+}
+#patrimoine #slide_1 .content .border h2,
+#patrimoine #slide_2 .content .border h2,
+#patrimoine #slide_3 .content .border h2 {
+  font-size: 22px;
+  font-family: "Georgia";
+  letter-spacing: 2px;
+}
+#patrimoine #slide_1 .content .border span,
+#patrimoine #slide_2 .content .border span,
+#patrimoine #slide_3 .content .border span {
+  font-size: 12px;
+  color: #cfa75a;
+  font-family: "Source Sans Pro";
+}
+#patrimoine #slide_1 .content p,
+#patrimoine #slide_2 .content p,
+#patrimoine #slide_3 .content p {
+  display: block;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #ffffff;
+  font-family: "Source Sans Pro";
+  line-height: 14px;
+}
+#patrimoine #slide_1 .content p em,
+#patrimoine #slide_2 .content p em,
+#patrimoine #slide_3 .content p em {
+  font-family: "Source Sans Pro";
+}
+#patrimoine #slide_1 .content .lire_suite,
+#patrimoine #slide_2 .content .lire_suite,
+#patrimoine #slide_3 .content .lire_suite {
+  height: 22px;
+  line-height: 22px;
+  display: inline-block;
+  margin: 15px auto 0 auto;
+  padding-right: 29px;
+  font-size: 12px;
+  color: #cfa75a;
+  font-family: "Source Sans Pro";
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-align: right;
+  background: url(../images/bt-lire-la-suite.png) no-repeat right top;
+}
+#patrimoine #slide_1 {
+  justify-content: flex-start;
+  left: 0;
+  margin-left: -7%;
+  padding-top: 50px;
+  background: url(../images/first_slide.png) right top no-repeat;
+  z-index: 10;
+}
+@media (max-width: 1023px) {
+  #patrimoine #slide_1 {
+    background: none;
+    margin-left: 0;
+  }
+}
+#patrimoine #slide_2 {
+  justify-content: center;
+  width: 100%;
+  background: url(../images/second_slide.jpg) center top no-repeat;
+  z-index: 9;
+}
+@media (max-width: 1023px) {
+  #patrimoine #slide_2 {
+    background: none;
+    padding: 50px 0;
+    margin-left: 0;
+  }
+}
+#patrimoine #slide_3 {
+  justify-content: flex-end;
+  right: 0;
+  margin-right: -7%;
+  padding-bottom: 50px;
+  background: url(../images/thirt_slide.png) left top no-repeat;
+  z-index: 10;
+}
+@media (max-width: 1023px) {
+  #patrimoine #slide_3 {
+    background: none;
+    margin-left: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

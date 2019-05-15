@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	if ( $("#home").length )
 		return;
-	if ( $("#patrimone").length )
+	if ( $("#patrimoine").length )
 		return;
 
 	if ( $("#collection-produits").length ) {		
