@@ -1,2 +1,6 @@
-@import './style';
+@import '../node_modules/include-media/dist/include-media';
+@import './settings';
+
 @import './main';
+@import './disclaimer';
+@import './home';

@@ -2440,18 +2440,6 @@ a {
   padding: 15px;
 }
 
-#home .main {
-  height: 100%;
-  background-image: url(../images/bg-main-hp.jpg);
-  background-position: center;
-  background-size: cover;
-}
-@media (max-width: 767px) {
-  #home .main {
-    background-image: url(../images/bg-main-hp-mobile.png);
-  }
-}
-
 .menu-top {
   position: absolute;
   left: 0;
@@ -2568,6 +2556,51 @@ a {
   background-size: 100%;
 }
 
+.footer {
+  padding: 20px;
+  box-sizing: border-box;
+  background-image: url("../images/bg-body-footer.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.footer .menu-footer {
+  text-align: center;
+}
+.footer .menu-footer-02 {
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .footer .menu-footer,
+.footer .langues-reseaux {
+    display: none;
+  }
+}
+.footer .mention {
+  margin: 0 0 20px;
+}
+.footer .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer .links a {
+  margin: 0 10px;
+  font-size: 11px;
+}
+
+#home .main {
+  height: 100%;
+  background-image: url(../images/bg-main-hp.jpg);
+  background-position: center;
+  background-size: cover;
+}
+@media (max-width: 767px) {
+  #home .main {
+    background-image: url(../images/bg-main-hp-mobile.png);
+  }
+}
+
 .caroussel-home {
   background: url(../images/bg-caroussel-home.jpg);
   background-size: cover;
@@ -2680,39 +2713,6 @@ a {
   .txt-video-news-home .voir-video:after {
     content: none;
   }
-}
-
-.footer {
-  padding: 20px;
-  box-sizing: border-box;
-  background-image: url("../images/bg-body-footer.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center top;
-}
-.footer .menu-footer {
-  text-align: center;
-}
-.footer .menu-footer-02 {
-  margin-bottom: 20px;
-}
-@media (max-width: 767px) {
-  .footer .menu-footer,
-.footer .langues-reseaux {
-    display: none;
-  }
-}
-.footer .mention {
-  margin: 0 0 20px;
-}
-.footer .links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.footer .links a {
-  margin: 0 10px;
-  font-size: 11px;
 }
 
 #liste-news {
@@ -2892,163 +2892,6 @@ a {
 
 .pop-videos-content video {
   width: 100%;
-}
-
-#agegate {
-  background-color: #36424a;
-}
-@media (min-width: 1024px) {
-  #agegate {
-    background-image: url(../images/bg-agegate.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-}
-#agegate .logo {
-  display: block;
-  max-width: 150px;
-  margin: 0 auto 50px;
-}
-@media (min-width: 1024px) {
-  #agegate .logo {
-    display: none;
-  }
-}
-#agegate .site {
-  max-width: 1050px;
-  margin: 50px auto 0;
-}
-@media (min-width: 1024px) {
-  #agegate .form-visite-content {
-    width: 574px;
-    float: right;
-  }
-}
-#agegate .form-langue {
-  display: flex;
-  justify-content: center;
-  background: url(../images/bg-form-langue.png) no-repeat center center;
-}
-#agegate .form-langue a {
-  display: block;
-  float: left;
-  width: 61px;
-  height: 22px;
-  text-align: center;
-  line-height: 22px;
-  font-size: 16px;
-  text-decoration: none;
-  background: #171d20;
-  margin: 0 5px;
-  border: solid 1px #FFFFFF;
-}
-#agegate .form-langue a.active, #agegate .form-langue a:hover {
-  width: 63px;
-  height: 24px;
-  line-height: 24px;
-  background: #3c474f;
-  border: none;
-}
-#agegate .pour-visiter {
-  text-align: center;
-  font-size: 11px;
-  margin: 65px 0;
-  line-height: 18px;
-}
-@media (max-width: 1023px) {
-  #agegate .pour-visiter {
-    margin: 50px 0;
-  }
-}
-#agegate .form-visite .bt-content {
-  margin: 100px 0;
-  background: url(../images/bg-bt.png) no-repeat center center;
-  height: 30px;
-}
-@media (max-width: 1023px) {
-  #agegate .form-visite .bt-content {
-    margin: 50px 0;
-  }
-}
-#agegate .form-visite .bt {
-  width: 144px;
-  height: 28px;
-  text-align: center;
-  margin: auto;
-  display: block;
-  border: 1px solid #858c91;
-  background: #3e4951;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-size: 10px;
-}
-
-.acces-espace-pro .acces-direct {
-  font-size: 11px;
-}
-.acces-espace-pro .acces-direct span {
-  background: #3e4951;
-  display: inline-block;
-  padding: 1px 20px;
-  font-size: 11px;
-  letter-spacing: 1px;
-  margin-left: 5px;
-}
-.acces-espace-pro p label {
-  position: absolute;
-  left: 0;
-  top: 1px;
-  padding-left: 5px;
-  font-size: 12px;
-  color: #cccccc;
-  height: 25px;
-  line-height: 25px;
-  margin: 0 !important;
-}
-.acces-espace-pro input[type=text], .acces-espace-pro input[type=password] {
-  width: 100%;
-  height: 25px;
-  padding: 0 5px;
-  line-height: 25px;
-  background: none;
-  border: 1px solid #515658;
-}
-.acces-espace-pro .submit-form {
-  margin: 10px 0 30px;
-  overflow: hidden;
-}
-.acces-espace-pro .submit-form input {
-  float: right;
-  width: 49px;
-  height: 17px;
-  font-size: 11px;
-  line-height: 18px;
-  background: #3e4951;
-  cursor: pointer;
-}
-.acces-espace-pro .submit-form a {
-  float: right;
-  margin-right: 6px;
-  font-size: 10px;
-  color: #737d84;
-  text-decoration: none;
-  line-height: 18px;
-}
-.acces-espace-pro .demand-d-acces {
-  display: block;
-  background: url(../images/bg-demande-d-acces.gif) no-repeat right center;
-  font-size: 11px;
-  text-transform: uppercase;
-  text-decoration: none;
-  float: none !important;
-  color: #ffffff !important;
-}
-.acces-espace-pro .mention {
-  margin: 50px 0;
-  color: #ababab;
-  font-size: 10px;
-  line-height: 18px;
 }
 
 /*# sourceMappingURL=style.css.map */
