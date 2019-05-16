@@ -1,0 +1,71 @@
+.savoir-faire-creation {
+    .desc-creation, .desc-creation-noScroll {
+        position: absolute;
+        top: 102px;
+        left: 47px;
+        width: 394px;
+        height: 330px;
+        padding-right: 20px;
+    }
+    .desc-creation p {
+        font-family: 'Source Sans Pro';
+    }
+    .link-creation-bt {
+        background: url(../images/bg-link-creation-bt.png) no-repeat right top;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        height: 42px;
+        width: 666px;
+        padding-right: 33px;
+        a {
+            background: url("../images/link-creation-bt.png") no-repeat scroll -1px 1px transparent;
+            display: block;
+            float: right;
+            font-family: 'Garmond';
+            font-size: 16px;
+            height: 32px;
+            line-height: 24px;
+            margin: 5px 0 0 3px;
+            padding: 0 17px 0 24px;
+            text-decoration: none;
+            text-transform: uppercase;
+            span {
+                font-size: 12px;
+                line-height: 12px;
+                display: block;
+                font-family: 'Source Sans Pro';
+            }
+        }
+    }
+    .link-eau-vie-home {
+        position: absolute;
+        top: 269px;
+        left: 47px;
+        padding-left: 18px;
+        font-size: 12px;
+        font-family: 'Source Sans Pro';
+        text-transform: uppercase;
+        background: url(../images/puce-lien.png) no-repeat left center;
+    }
+    .link-liqueur {
+        position: absolute;
+        top: 239px;
+        left: 47px;
+        padding-left: 18px;
+        font-size: 12px;
+        font-family: 'Source Sans Pro';
+        text-transform: uppercase;
+        background: url(../images/puce-lien.png) no-repeat left center;
+    }
+    .link-eau-vie {
+        position: absolute;
+        bottom: 49px;
+        left: 47px;
+        padding-left: 18px;
+        font-size: 12px;
+        font-family: 'Source Sans Pro';
+        text-transform: uppercase;
+        background: url(../images/puce-lien.png) no-repeat left center;
+    }
+}

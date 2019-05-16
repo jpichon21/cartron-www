@@ -557,200 +557,11 @@ a {
   line-height: 18px;
 }
 
-.savoir-faire-home {
-  width: 870px;
-  margin: auto;
-}
-.savoir-faire-home ul li {
-  width: 214px;
-  height: 140px;
-  margin: 0 3px 3px 0;
-  float: left;
-  list-style: none;
-  position: relative;
-  overflow: hidden;
-  width: 214px;
-  height: 140px;
-  margin: 0 3px 3px 0;
-  float: left;
-  list-style: none;
-  position: relative;
-  overflow: hidden;
-}
-.savoir-faire-home ul li a {
-  width: 214px;
-  height: 140px;
-  display: block;
-}
-.savoir-faire-home ul li .captionShine {
-  background: url(../images/shine.png);
-  position: absolute;
-  left: -214px;
-  top: 0;
-  width: 214px;
-  height: 140px;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  z-index: 14;
-  opacity: 0.1;
-}
-.savoir-faire-home ul li .anime {
-  width: 2px;
-  height: 140px;
-  background: #fff;
-  position: absolute;
-  left: -2px;
-  top: 0;
-}
-.savoir-faire-home ul li .caption {
-  width: 214px;
-  height: 140px;
-  background: #000;
-  color: #fff;
-  font-weight: bold;
-  /* fix it at the bottom */
-  position: absolute;
-  left: 0;
-  top: 0px;
-  /* hide it by default */
-  display: none;
-  /* opacity setting */
-  /*filter:alpha(opacity=50); 
-  -moz-opacity:0.5;   
-  -khtml-opacity: 0.5;    
-  opacity: 0.5;    */
-  background: url(../images/bg-caption.png);
-}
-.savoir-faire-home ul li .caption h3 {
-  margin: 20px 0 0 15px;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-family: "Source Sans Pro";
-}
-.savoir-faire-home ul li .caption h3 span {
-  font-size: 22px;
-}
-.savoir-faire-home ul li .caption a {
-  background: url(../images/bg-link-caption.png) no-repeat left center;
-  padding-left: 16px;
-  line-height: 14px;
-  display: block;
-  position: absolute;
-  bottom: 8px;
-  right: 10px;
-  text-transform: uppercase;
-  font-size: 10px;
-  font-family: "Source Sans Pro";
-  text-decoration: none;
-}
-
-.savoir-faire-videos {
-  position: relative;
-  width: 865px;
-  margin: auto;
-}
-
-.savoir-faire-creation {
-  position: relative;
-  width: 865px;
-  height: 568px;
-  overflow: hidden;
-  margin: auto;
-}
-.savoir-faire-creation h2 {
-  position: absolute;
-  top: 35px;
-  left: 47px;
-  font-size: 22px;
-  text-transform: uppercase;
-}
-.savoir-faire-creation h2 span {
-  display: block;
-  font-size: 12px;
-  font-family: "Source Sans Pro";
-  font-weight: normal;
-}
-.savoir-faire-creation h3 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  font-family: "Source Sans Pro";
-}
-
 .main p {
   font-size: 12px;
   line-height: 15px;
   margin-bottom: 15px;
   text-align: justify;
-}
-
-.savoir-faire-creation .desc-creation, .savoir-faire-creation .desc-creation-noScroll {
-  position: absolute;
-  top: 102px;
-  left: 47px;
-  width: 394px;
-  height: 330px;
-  padding-right: 20px;
-}
-.savoir-faire-creation .desc-creation p {
-  font-family: "Source Sans Pro";
-}
-.savoir-faire-creation .link-creation-bt {
-  background: url(../images/bg-link-creation-bt.png) no-repeat right top;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  height: 42px;
-  width: 666px;
-  padding-right: 33px;
-}
-.savoir-faire-creation .link-creation-bt a {
-  background: url("../images/link-creation-bt.png") no-repeat scroll -1px 1px transparent;
-  display: block;
-  float: right;
-  font-family: "Garmond";
-  font-size: 16px;
-  height: 32px;
-  line-height: 24px;
-  margin: 5px 0 0 3px;
-  padding: 0 17px 0 24px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-.savoir-faire-creation .link-creation-bt a span {
-  font-size: 12px;
-  line-height: 12px;
-  display: block;
-  font-family: "Source Sans Pro";
-}
-.savoir-faire-creation .link-eau-vie-home {
-  position: absolute;
-  top: 269px;
-  left: 47px;
-  padding-left: 18px;
-  font-size: 12px;
-  font-family: "Source Sans Pro";
-  text-transform: uppercase;
-  background: url(../images/puce-lien.png) no-repeat left center;
-}
-.savoir-faire-creation .link-liqueur {
-  position: absolute;
-  top: 239px;
-  left: 47px;
-  padding-left: 18px;
-  font-size: 12px;
-  font-family: "Source Sans Pro";
-  text-transform: uppercase;
-  background: url(../images/puce-lien.png) no-repeat left center;
-}
-.savoir-faire-creation .link-eau-vie {
-  position: absolute;
-  bottom: 49px;
-  left: 47px;
-  padding-left: 18px;
-  font-size: 12px;
-  font-family: "Source Sans Pro";
-  text-transform: uppercase;
-  background: url(../images/puce-lien.png) no-repeat left center;
 }
 
 /*************************************/
@@ -2339,6 +2150,163 @@ a {
   }
 }
 
+#agegate {
+  background-color: #36424a;
+}
+@media (min-width: 1024px) {
+  #agegate {
+    background-image: url(../images/bg-agegate.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+#agegate .logo {
+  display: block;
+  max-width: 150px;
+  margin: 0 auto 50px;
+}
+@media (min-width: 1024px) {
+  #agegate .logo {
+    display: none;
+  }
+}
+#agegate .site {
+  max-width: 1050px;
+  margin: 50px auto 0;
+}
+@media (min-width: 1024px) {
+  #agegate .form-visite-content {
+    width: 574px;
+    float: right;
+  }
+}
+#agegate .form-langue {
+  display: flex;
+  justify-content: center;
+  background: url(../images/bg-form-langue.png) no-repeat center center;
+}
+#agegate .form-langue a {
+  display: block;
+  float: left;
+  width: 61px;
+  height: 22px;
+  text-align: center;
+  line-height: 22px;
+  font-size: 16px;
+  text-decoration: none;
+  background: #171d20;
+  margin: 0 5px;
+  border: solid 1px #FFFFFF;
+}
+#agegate .form-langue a.active, #agegate .form-langue a:hover {
+  width: 63px;
+  height: 24px;
+  line-height: 24px;
+  background: #3c474f;
+  border: none;
+}
+#agegate .pour-visiter {
+  text-align: center;
+  font-size: 11px;
+  margin: 65px 0;
+  line-height: 18px;
+}
+@media (max-width: 1023px) {
+  #agegate .pour-visiter {
+    margin: 50px 0;
+  }
+}
+#agegate .form-visite .bt-content {
+  margin: 100px 0;
+  background: url(../images/bg-bt.png) no-repeat center center;
+  height: 30px;
+}
+@media (max-width: 1023px) {
+  #agegate .form-visite .bt-content {
+    margin: 50px 0;
+  }
+}
+#agegate .form-visite .bt {
+  width: 144px;
+  height: 28px;
+  text-align: center;
+  margin: auto;
+  display: block;
+  border: 1px solid #858c91;
+  background: #3e4951;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.acces-espace-pro .acces-direct {
+  font-size: 11px;
+}
+.acces-espace-pro .acces-direct span {
+  background: #3e4951;
+  display: inline-block;
+  padding: 1px 20px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-left: 5px;
+}
+.acces-espace-pro p label {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  padding-left: 5px;
+  font-size: 12px;
+  color: #cccccc;
+  height: 25px;
+  line-height: 25px;
+  margin: 0 !important;
+}
+.acces-espace-pro input[type=text], .acces-espace-pro input[type=password] {
+  width: 100%;
+  height: 25px;
+  padding: 0 5px;
+  line-height: 25px;
+  background: none;
+  border: 1px solid #515658;
+}
+.acces-espace-pro .submit-form {
+  margin: 10px 0 30px;
+  overflow: hidden;
+}
+.acces-espace-pro .submit-form input {
+  float: right;
+  width: 49px;
+  height: 17px;
+  font-size: 11px;
+  line-height: 18px;
+  background: #3e4951;
+  cursor: pointer;
+}
+.acces-espace-pro .submit-form a {
+  float: right;
+  margin-right: 6px;
+  font-size: 10px;
+  color: #737d84;
+  text-decoration: none;
+  line-height: 18px;
+}
+.acces-espace-pro .demand-d-acces {
+  display: block;
+  background: url(../images/bg-demande-d-acces.gif) no-repeat right center;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-decoration: none;
+  float: none !important;
+  color: #ffffff !important;
+}
+.acces-espace-pro .mention {
+  margin: 50px 0;
+  color: #ababab;
+  font-size: 10px;
+  line-height: 18px;
+}
+
 #home .main {
   height: 100%;
   background-image: url(../images/bg-main-hp.jpg);
@@ -2978,6 +2946,499 @@ a {
 }
 #bourgogne .content-histoire ul a span {
   color: #cfa75a;
+}
+
+.savoir-faire-home ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  .savoir-faire-home ul {
+    width: 865px;
+  }
+}
+@media (max-width: 1023px) {
+  .savoir-faire-home ul {
+    width: 648px;
+  }
+}
+@media (max-width: 767px) {
+  .savoir-faire-home ul {
+    width: 431px;
+  }
+}
+@media screen and (max-width: 437px) {
+  .savoir-faire-home ul {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+  }
+}
+.savoir-faire-home ul li {
+  position: relative;
+  width: 214px;
+  height: 140px;
+  margin: 0 3px 3px 0;
+  overflow: hidden;
+}
+@media (min-width: 1024px) {
+  .savoir-faire-home ul li:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .savoir-faire-home ul li:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+@media (max-width: 767px) {
+  .savoir-faire-home ul li:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 437px) {
+  .savoir-faire-home ul li {
+    width: calc(50% - 2px);
+    height: auto;
+  }
+  .savoir-faire-home ul li img {
+    display: block;
+    width: 100%;
+  }
+}
+.savoir-faire-home ul li .captionShine {
+  background: url(../images/shine.png);
+  position: absolute;
+  left: -214px;
+  top: 0;
+  width: 214px;
+  height: 140px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  z-index: 14;
+  opacity: 0.1;
+}
+.savoir-faire-home ul li .anime {
+  width: 2px;
+  height: 140px;
+  background: #fff;
+  position: absolute;
+  left: -2px;
+  top: 0;
+}
+.savoir-faire-home ul li .caption {
+  width: 214px;
+  height: 140px;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  /* fix it at the bottom */
+  position: absolute;
+  left: 0;
+  top: 0px;
+  /* hide it by default */
+  display: none;
+  /* opacity setting */
+  /*filter:alpha(opacity=50); 
+  -moz-opacity:0.5;   
+  -khtml-opacity: 0.5;    
+  opacity: 0.5;    */
+  background: url(../images/bg-caption.png);
+}
+.savoir-faire-home ul li .caption h3 {
+  margin: 20px 0 0 15px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: "Source Sans Pro";
+}
+.savoir-faire-home ul li .caption h3 span {
+  font-size: 22px;
+}
+.savoir-faire-home ul li .caption a {
+  background: url(../images/bg-link-caption.png) no-repeat left center;
+  padding-left: 16px;
+  line-height: 14px;
+  display: block;
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-family: "Source Sans Pro";
+  text-decoration: none;
+}
+
+.savoir-faire-creation {
+  position: relative;
+  width: 865px;
+  height: 568px;
+  overflow: hidden;
+  margin: auto;
+}
+.savoir-faire-creation h2 {
+  position: absolute;
+  top: 35px;
+  left: 47px;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+.savoir-faire-creation h2 span {
+  display: block;
+  font-size: 12px;
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+}
+.savoir-faire-creation h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-family: "Source Sans Pro";
+}
+
+.savoir-faire-videos {
+  position: relative;
+  width: 865px;
+  margin: auto;
+}
+
+@media (min-width: 1024px) {
+  .item-1 {
+    order: 1;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-1 {
+    order: 12;
+    margin-right: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .item-1 {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-2 {
+    order: 2;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-2 {
+    order: 1;
+  }
+}
+@media (max-width: 767px) {
+  .item-2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-3 {
+    order: 3;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-3 {
+    order: 5;
+    margin-right: 3px !important;
+  }
+}
+@media (max-width: 767px) {
+  .item-3 {
+    order: 4;
+    margin-right: 0 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-4 {
+    order: 4;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-4 {
+    order: 3;
+    margin-right: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .item-4 {
+    order: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-5 {
+    order: 5;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-5 {
+    order: 8;
+  }
+}
+@media (max-width: 767px) {
+  .item-5 {
+    order: 5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-6 {
+    order: 6;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-6 {
+    order: 4;
+    margin-right: 3px !important;
+  }
+}
+@media (max-width: 767px) {
+  .item-6 {
+    order: 3;
+    margin-right: 3px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-7 {
+    order: 7;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-7 {
+    order: 9;
+    margin-right: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .item-7 {
+    order: 6;
+    margin-right: 0 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-8 {
+    order: 8;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-8 {
+    order: 2;
+  }
+}
+@media (max-width: 767px) {
+  .item-8 {
+    order: 1;
+    margin-right: 3px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-9 {
+    order: 9;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-9 {
+    order: 7;
+    margin-right: 3px !important;
+  }
+}
+@media (max-width: 767px) {
+  .item-9 {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-10 {
+    order: 10;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-10 {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .item-10 {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-11 {
+    order: 11;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-11 {
+    order: 6;
+    margin-right: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .item-11 {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-12 {
+    order: 12;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-12 {
+    order: 13;
+    margin-right: 3px !important;
+  }
+}
+@media (max-width: 767px) {
+  .item-12 {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-13 {
+    order: 13;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-13 {
+    order: 10;
+  }
+}
+@media (max-width: 767px) {
+  .item-13 {
+    order: 7;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-14 {
+    order: 14;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-14 {
+    order: 11;
+  }
+}
+@media (max-width: 767px) {
+  .item-14 {
+    order: 8;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-15 {
+    order: 15;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-15 {
+    order: 14;
+    margin-right: 3px !important;
+  }
+}
+@media (max-width: 767px) {
+  .item-15 {
+    order: 9;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-16 {
+    order: 16;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-16 {
+    order: 15;
+    margin-right: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .item-16 {
+    order: 10;
+  }
+}
+
+.savoir-faire-creation .desc-creation, .savoir-faire-creation .desc-creation-noScroll {
+  position: absolute;
+  top: 102px;
+  left: 47px;
+  width: 394px;
+  height: 330px;
+  padding-right: 20px;
+}
+.savoir-faire-creation .desc-creation p {
+  font-family: "Source Sans Pro";
+}
+.savoir-faire-creation .link-creation-bt {
+  background: url(../images/bg-link-creation-bt.png) no-repeat right top;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 42px;
+  width: 666px;
+  padding-right: 33px;
+}
+.savoir-faire-creation .link-creation-bt a {
+  background: url("../images/link-creation-bt.png") no-repeat scroll -1px 1px transparent;
+  display: block;
+  float: right;
+  font-family: "Garmond";
+  font-size: 16px;
+  height: 32px;
+  line-height: 24px;
+  margin: 5px 0 0 3px;
+  padding: 0 17px 0 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.savoir-faire-creation .link-creation-bt a span {
+  font-size: 12px;
+  line-height: 12px;
+  display: block;
+  font-family: "Source Sans Pro";
+}
+.savoir-faire-creation .link-eau-vie-home {
+  position: absolute;
+  top: 269px;
+  left: 47px;
+  padding-left: 18px;
+  font-size: 12px;
+  font-family: "Source Sans Pro";
+  text-transform: uppercase;
+  background: url(../images/puce-lien.png) no-repeat left center;
+}
+.savoir-faire-creation .link-liqueur {
+  position: absolute;
+  top: 239px;
+  left: 47px;
+  padding-left: 18px;
+  font-size: 12px;
+  font-family: "Source Sans Pro";
+  text-transform: uppercase;
+  background: url(../images/puce-lien.png) no-repeat left center;
+}
+.savoir-faire-creation .link-eau-vie {
+  position: absolute;
+  bottom: 49px;
+  left: 47px;
+  padding-left: 18px;
+  font-size: 12px;
+  font-family: "Source Sans Pro";
+  text-transform: uppercase;
+  background: url(../images/puce-lien.png) no-repeat left center;
 }
 
 /*# sourceMappingURL=style.css.map */
