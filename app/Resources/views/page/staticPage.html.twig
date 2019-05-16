@@ -99,18 +99,14 @@
           <div class="captionShine"></div>  
         </li>
       </ul>
-	  <div style="clear:both;"></div>	  
     </div>    
   </div>
 </div>
 <div class="overlay-videos overlay">
   <div class="pop-up-videos">
     <div class="pop-videos-content">
-      <a href="#" class="close">fermer</a>
-
-      <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="739" height="486"
-             poster="{{ asset('site/images/video-home.jpg') }}"
-             data-setup="{}">
+      <span class="close"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg></span>
+      <video controls preload="none" poster="{{ asset('site/images/video-home.jpg') }}">
         {% if(app.session.get('_locale')=='fr') %}
         <source src="{{ asset('upload/video_hp/cartron_fr.mp4')  }}" type='video/mp4' />
         <source src="{{ asset('upload/video_hp/cartron_fr.webm')  }}" type='video/webm' />
@@ -122,9 +118,7 @@
         <source src="{{ asset('upload/video_hp/cartron_en.ogv')  }}" type='video/ogg' />
         <track kind="captions" src="demo.captions.vtt" srclang="en" label="English" />
         {% endif %}
-
-      </video>
-
+      </video>  
     </div>
   </div>
 </div>
