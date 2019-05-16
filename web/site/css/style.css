@@ -2782,13 +2782,14 @@ a {
 }
 
 .content-histoire {
-  background: url(../images/bg-content-histoire.png) left top;
   width: 509px;
   margin: auto;
   overflow: hidden;
   position: relative;
   text-align: center;
   padding-bottom: 20px;
+  background-image: url(../images/bg-content-histoire.png);
+  background-size: 100% 100%;
 }
 @media (max-width: 767px) {
   .content-histoire {
@@ -2930,47 +2931,37 @@ a {
     margin: 0;
   }
 }
-.content-histoire .desc-histoire {
+.content-histoire .desc-content {
   width: 427px;
-  height: 125px;
   overflow: hidden;
   margin: auto;
   padding-right: 10px;
 }
 @media (max-width: 767px) {
-  .content-histoire .desc-histoire {
+  .content-histoire .desc-content {
     width: auto;
     height: auto;
     padding: 20px 20px 5px;
     background-color: #36424a;
   }
 }
-.content-histoire .desc-licornes {
-  width: 427px;
-  height: 350px;
-  overflow: hidden;
-  margin: auto;
-  padding-right: 10px;
+.content-histoire .desc-content.hist {
+  height: 125px;
 }
 @media (max-width: 767px) {
-  .content-histoire .desc-licornes {
-    width: auto;
+  .content-histoire .desc-content.hist {
+    height: auto;
   }
 }
-.content-histoire .desc-licornes p {
+.content-histoire .desc-content p {
   font-size: 11px;
   line-height: 18px;
   margin-bottom: 15px;
 }
-.content-histoire .desc-histoire p {
-  font-size: 11px;
-  line-height: 18px;
+.content-histoire .desc-content ul {
   margin-bottom: 15px;
 }
-.content-histoire .desc-histoire ul {
-  margin-bottom: 15px;
-}
-.content-histoire .desc-histoire ul li {
+.content-histoire .desc-content ul li {
   text-align: left;
   font-size: 11px;
   line-height: 18px;

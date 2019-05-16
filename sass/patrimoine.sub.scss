@@ -1,11 +1,12 @@
 .content-histoire {
-    background: url(../images/bg-content-histoire.png) left top;
     width: 509px;
     margin: auto;
     overflow: hidden;
     position: relative;
     text-align: center;
     padding-bottom: 20px;
+    background-image: url(../images/bg-content-histoire.png);
+    background-size: 100% 100%;
     @include media('<medium') {
         width: auto;
         padding-bottom: 0;
@@ -134,9 +135,8 @@
             margin: 0;
         }
     }
-    .desc-histoire {
+    .desc-content {
         width: 427px;
-        height: 125px;
         overflow: hidden;
         margin: auto;
         padding-right: 10px;
@@ -146,23 +146,12 @@
             padding: 20px 20px 5px;
             background-color: #36424a;
         }
-    }
-    .desc-licornes {
-        width: 427px;
-        height: 350px;
-        overflow: hidden;
-        margin: auto;
-        padding-right: 10px;
-        @include media('<medium') {
-            width: auto;
+        &.hist {
+            height: 125px;
+            @include media('<medium') {
+                height: auto;
+            }
         }
-        p {
-            font-size: 11px;
-            line-height: 18px;
-            margin-bottom: 15px;
-        }
-    }
-    .desc-histoire {
         p {
             font-size: 11px;
             line-height: 18px;
@@ -178,17 +167,21 @@
         }
     }
 }
-#bourgogne .content-histoire ul {
-    a {
-        display: block;
-        padding: 10px 20px;
-        line-height: 26px;
-        text-transform: uppercase;
-        &:hover {
-            opacity: 0.7;
-        }
-        span {
-            color: #cfa75a;
+#bourgogne {
+    .content-histoire {
+        ul {
+            a {
+                display: block;
+                padding: 10px 20px;
+                line-height: 26px;
+                text-transform: uppercase;
+                &:hover {
+                    opacity: 0.7;
+                }
+                span {
+                    color: #cfa75a;
+                }
+            }
         }
     }
 }
