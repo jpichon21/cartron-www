@@ -9,7 +9,6 @@
   $('.close').click(function() {  
       myPlayer.pause();
   });
-  $('.desc-licornes').jScrollPane({scrollbarWidth: 4});
 
   $('.savoir-faire-home li a')
   .hover(function(e) {
@@ -132,8 +131,7 @@
 {% elseif page== "savoir-faire-elaboration-creme" %}
 <script type="text/javascript">
   $(function() {
-  $('.desc-creation').jScrollPane({scrollbarWidth: 4});
-  $('.savoir-faire').addClass("active");
+    $('.savoir-faire').addClass("active");
   })
 </script>
 <div id="savoir-faire">
@@ -177,7 +175,6 @@
 {% elseif page== "savoir-faire-elaboration-eau" %}
 <script type="text/javascript">
   $(function() {
-  $('.desc-creation').jScrollPane({scrollbarWidth: 4});
   })
 </script>
 <div id="savoir-faire">
@@ -266,8 +263,7 @@
 {% elseif page== "Savoir-faire-creation" %}
 <script type="text/javascript">
   $(function() {
-  $('.desc-creation').jScrollPane({scrollbarWidth: 4});
-  $('.savoir-faire').addClass("active");
+    $('.savoir-faire').addClass("active");
   })
 </script>
 <div id="savoir-faire">
@@ -299,8 +295,7 @@
 {% elseif page== "Savoir-faire-fruits" %}
 <script type="text/javascript">
   $(function() {
-  $('.desc-creation').jScrollPane({scrollbarWidth: 4});
-  $('.savoir-faire').addClass("active");
+    $('.savoir-faire').addClass("active");
   })
 </script>
 <div id="savoir-faire">
@@ -335,8 +330,7 @@
 {% elseif page== "Savoir-faire-fruits" %}
 <script type="text/javascript">
   $(function() {
-  $('.desc-creation').jScrollPane({scrollbarWidth: 4});
-  $('.savoir-faire').addClass("active");
+    $('.savoir-faire').addClass("active");
   })
 </script>
 <div id="savoir-faire">
@@ -374,8 +368,7 @@
 {% elseif page== "Savoir-faire-esprit" %}
 <script type="text/javascript">
   $(function() {
-  $('.desc-creation').jScrollPane({scrollbarWidth: 4});
-  $('.savoir-faire').addClass("active");
+    $('.savoir-faire').addClass("active");
   })
 </script>
 <div id="savoir-faire">
@@ -485,7 +478,7 @@
       </a>
       <h1><a href="{{ path('static_page',{'page':'Patrimoine'}) }}">{{ 'les licornes' | trans }}<span> {{ 'L’emblème de la maison Cartron' | trans }}</span></a></h1>
       <img src="{{ asset('site/images/img-licornes.jpg') }}" alt="" />
-      <div class="desc-licornes">
+      <div class="desc-content">
         <p>{{ 'Les Licornes, Emblème de la Maison Joseph Cartron.' | trans | raw }}</p>
 
         <p style="line-height:16px;">{{ 'Amateur d’art et de littérature' | trans | raw }}</p>
@@ -496,9 +489,6 @@
 {% elseif page== "joseph-cartron" %}
 <script type="text/javascript">
   $(function() {
-    if ($(window).width() >= 768) {
-      $('.desc-histoire').jScrollPane({scrollbarWidth: 4});
-    }
   })
 </script>
 <div id="histoire">
@@ -518,7 +508,7 @@
         </li>
       </ul>
       <img src="{{ asset('site/images/img-joseph-cartron.jpg') }}" alt="" />
-      <div class="desc-histoire">
+      <div class="desc-content hist">
         <p>{{ "En 1882 Joseph Cartron fonde la maison éponyme à Nuits St Georges, fournissant les débits de boissons, la jeune société distribuait les incontournables limonades et eau de Seltz et fabriquait en outre des liqueurs d’anthologie comme la Prunelle, le Marasquin, le Cacao, le Kummel , l’Idéal Bourguignon ou encore la Bisette" |trans}}.</p>
 
         <p>{{ "Mais ce qui distingua dés le départ cette petite entreprise familiale , c’est la création de la crème de cassis Double crème appelée à l’époque «Double crème de cassis Cartron» comme une reconnaissance naturelle de l’authenticité et de l’originalité de ce produit dans le berceau même de la crème de cassis" |trans}}.</p>
@@ -562,9 +552,6 @@
 {% elseif page== "armand-cartron" %}
 <script type="text/javascript">
   $(function() {
-    if ($(window).width() >= 768) {
-      $('.desc-histoire').jScrollPane({scrollbarWidth: 4});
-    }
   })
 </script>
 <div id="histoire">
@@ -593,7 +580,7 @@
         </li>
       </ul>
       <img src="{{ asset('site/images/img-armand-cartron.jpg') }}" alt="" />
-      <div class="desc-histoire">
+      <div class="desc-content hist">
 		{% if app.request.locale == 'fr' %}
         <p>C’est Armand, le fils d’Henri, entré  dans la société  dans les années 30, qui va diriger l’entreprise de 1940 à 1985 et la marquer de son empreinte. En effet, il cesse l’activité de grossiste -et donc la fabrication de limonade- pour se consacrer au développement de ses produits à forte valeur ajoutée, sur le marché français bien sûr, mais aussi à l’international.</p>
 		<p>En visionnaire, il implante sa marque dans la grande distribution alors qu’elle n’en est qu’à ses balbutiements en France. Il développe l’entreprise au Canada, au Japon, au Luxembourg, en Belgique, en Allemagne, en Italie et aux Etats­-Unis. Il voyage beaucoup et sa maison ne désemplit pas de clients amis qui viennent déguster ses produits.</p>
@@ -640,9 +627,6 @@
 {% elseif page== "xavier-cartron" %}
 <script type="text/javascript">
   $(function() {
-    if ($(window).width() >= 768) {
-      $('.desc-histoire').jScrollPane({scrollbarWidth: 4});
-    }
   })
 </script>
 <div id="histoire">
@@ -678,7 +662,7 @@
         </li>
       </ul>
       <img src="{{ asset('site/images/img-xavier-cartron.jpg') }}" alt="" />
-      <div class="desc-histoire">
+      <div class="desc-content hist">
 		{% if app.request.locale == 'fr' %}
 		<p>En 1990, succédant à son père, Xavier Cartron prend la direction de la société familiale. Après HEC et une carriére de 22 années dans la finance, c'est un nouveau regard qu'il pose sur la Maison, mais toujours avec le souci de faire fructifier ce patrimoine.</p>
 		<p>Il va définir une stratégie claire quant au positionnement haut de gamme de ses produits, lancer un vaste programme de modernisation de l'outil de production et développer une stratégie de distribution sélective offensive en France et à l'international.</p>
@@ -714,9 +698,6 @@
 {% elseif page== "judith-cartron" %}
 <script type="text/javascript">
   $(function() {
-    if ($(window).width() >= 768) {
-      $('.desc-histoire').jScrollPane({scrollbarWidth: 4});
-    }
   })
 </script>
 <div id="histoire">
@@ -759,7 +740,7 @@
         </li>
       </ul>
       <img src="{{ asset('site/images/img-judith-cartron.jpg') }}" alt="" />
-      <div class="desc-histoire">
+      <div class="desc-content hist">
         <p>{{ "A l’âge de 38 ans, Judith Cartron prend un virage important : Elle quitte une carrière professionnelle bien tracée et Paris pour rejoindre l’entreprise familiale"|trans}}.</p> 
 
         <p>{{ "Judith Cartron a pris progressivement les rênes de l’entreprise aux côtés de son père qui pendant 3 ans lui transmet les valeurs et le savoir-faire de l’entreprise"|trans}}.</p>
@@ -797,12 +778,9 @@
       <img src="{{ asset('site/images/img-bourgogne-histoire.jpg') }}" alt="" />
       <script type="text/javascript">
         $(function() {
-    if ($(window).width() >= 768) {
-      $('.desc-histoire').jScrollPane({scrollbarWidth: 4});
-    }
         })
       </script>
-      <div class="desc-histoire">
+      <div class="desc-content hist">
         <p>{{ "La Bourgogne fait partie intégrante de l’histoire de la famille Cartron depuis plus de trois siècles"|trans}}.<br /><br />
           {{ "En effet, Jean Cartron quitte l’ouest de la France, et plus précisément la Vendée, au moment de la Révolution Française pour venir s’installer en Bourgogne, à Argilly, à quelques kilomètres de Nuits-Saint-Georges. Il devient rapidement propriétaire terrien grâce à son mariage avec une Bourguignonne"|trans}}.</p>
 
@@ -824,9 +802,6 @@
 {% elseif page== "la-bourgogne-et-le-coeur" %}
 <script type="text/javascript">
   $(function() {
-    if ($(window).width() >= 768) {
-      $('.desc-histoire').jScrollPane({scrollbarWidth: 4});
-    }
   })
 </script>
 <div id="bourgogne">
@@ -841,7 +816,7 @@
             {{ "et l’inspiration de la maison joseph cartron"|trans}}</a></li>
       </ul>
       <img src="{{ asset('site/images/img-la-bourgogne-et-le-coeur.jpg') }}" alt="" />
-      <div class="desc-histoire">
+      <div class="desc-content hist">
         <p>{{ "La Bourgogne est le coeur et l’inspiration de la Maison Joseph Cartron."|trans}}</p>
         <p>
           {{ "Les produits Joseph Cartron s'inscrivent dans la tradition des produits bourguignons : les liens étroits et durables créés avec les producteurs et distillateurs du terroir depuis plusieurs générations ont permis à la Maison Joseph Cartron de construire de véritables partenariats, d'acquérir une connaissance intime du fruit et de travailler ses créations avec les variétés de fruits les plus aromatiques, dans le respect des recettes originales"|trans}}.</p>
@@ -868,12 +843,40 @@
   </div>
 </div>
 {% endif %}
+<script type="text/javascript">
 
+  var api = null;
+  var up = false;
 
-<style>
-  .footer {
-      position:static;
+  function initjScrollPane() {
+    var element = $('.desc-content, .desc-creation');
+    if (element.length) {
+      var desc = element.jScrollPane({scrollbarWidth: 4});
+      api = desc.data().jsp;
+      return true;
+    } else {
+      return false;
+    }
   }
-</style>
 
+  var width = $(window).width();
+
+  if (width >= 768) {
+    up = initjScrollPane();
+  }
+ 
+  $(window).resize(function() {
+  
+    width = $(window).width();
+  
+    if (width >= 768 && !up) {
+      up = initjScrollPane();
+    } else if (width < 768 && up) {
+      api.destroy();
+      up = false;
+    }
+  
+  });
+
+</script>
 {% endblock %}
