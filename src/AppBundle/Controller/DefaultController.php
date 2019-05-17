@@ -69,7 +69,7 @@ class DefaultController extends Controller
         if ($form->isSubmitted()) {
             $data = $form->getData();
             $pays = $data['pays'];
-            $seSouvenir = $data['sesouvenir'];
+            $seSouvenir = $data['sesevenire'];
             $age = date_diff(new \DateTime(), $data['dateNaissance'], false)->y;
             $session = new Session();
             if ($age >= 18 && $pays) {
