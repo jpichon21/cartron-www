@@ -5,8 +5,6 @@
     $(function() 
     {
     	
-    	new cartron.Responsive({'$container':$('#home'), 'offset':102})
-    	
         $('#liste-news').owlCarousel({
             items: 2,
             margin: 20,
@@ -34,18 +32,8 @@
             }
         });
 
-        var myPlayer = _V_("example_video_1");
-
-        $('.pop-videos-content .close').click(function(){ myPlayer.pause() });
-
-        var w = $(window).width();
-        if (w > 1280)
-            $('#home .main').css('background-image', 'url({{ asset('site/images/bg-main-hp2.jpg') }})');
-
     });
     </script>
-    <link href="{{ asset('site/css/video-js.css') }}" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="{{ asset('site/js/video.js') }}"></script>
     <div id="home">
         <div class="main">
 

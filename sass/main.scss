@@ -181,6 +181,7 @@
     }
 }
 .main {
+    min-height: 500px;
     padding: 15px 0px;
     @include media('<medium') {
         min-height: calc(100vh - #{$heightHeadFoot});

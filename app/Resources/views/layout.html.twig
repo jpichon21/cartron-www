@@ -39,6 +39,9 @@
         <span class="toggle">
           <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 18v1h-24v-1h24zm0-6v1h-24v-1h24zm0-6v1h-24v-1h24z" fill="#1040e2"/><path d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z"/></svg>
         </span>
+        <script>
+          $('.header .toggle').on('click', function() { $('.header .menu-top').toggleClass('active'); });
+        </script>
         <a class="logo" href="{{ path('homepage') }}">
           <img src="{{ asset('site/images/logo-header.png') }}" alt="Joseph Cartron" />
         </a>
@@ -116,6 +119,5 @@
       ga('create', 'UA-44915246-1', 'cartron.fr');
       ga('send', 'pageview');  
     </script>
-    <script src="{{ asset('site/js/app.js') }}"></script>
   </body>
 </html>

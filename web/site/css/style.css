@@ -2098,6 +2098,7 @@ a {
 }
 
 .main {
+  min-height: 500px;
   padding: 15px 0px;
 }
 @media (max-width: 767px) {
