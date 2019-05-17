@@ -1,7 +1,7 @@
 
 // JavaScript Document
 $(function() {
-	$.getScript("/site/js/indigen.js");
+	// $.getScript("/site/js/indigen.js");
 
     resizeMain();
     function resizeMain(){

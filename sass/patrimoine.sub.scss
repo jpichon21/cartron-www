@@ -109,7 +109,7 @@
                         font-weight: bold;
                         margin-top: 7px;
                         @include media('<medium') {
-                            width: auto;
+                            width: 80px;
                         }
                     }
                     &.nom {
@@ -148,7 +148,7 @@
         }
         &.hist {
             height: 125px;
-            @include media('<medium') {
+            @include media('<large') {
                 height: auto;
             }
         }

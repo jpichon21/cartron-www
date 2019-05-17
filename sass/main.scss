@@ -180,16 +180,35 @@
         }
     }
 }
-.table {
-    display: table;
-    height: 100%;
-    width: 100%;
-    .td {
-        display: table-cell;
-        vertical-align: middle;
-        padding: 15px 0px;
-        @include media('<medium') {
-            padding: 0;
+.main {
+    padding: 15px 0px;
+    @include media('<medium') {
+        min-height: calc(100vh - #{$heightHeadFoot});
+        padding: 0;
+    }        
+}
+.retour {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 10px;
+    height: 11px;
+    z-index: 100;
+    @include media('>=medium') {
+        background: url(../images/bg-close-blanc.png) no-repeat;
+        svg {
+            display: none;
+        }
+    }
+    @include media('<medium') {
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        background: none;
+        svg {
+            fill: #ffffff;
         }
     }
 }

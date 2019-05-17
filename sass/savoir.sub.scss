@@ -1,14 +1,70 @@
 .savoir-faire-creation {
-    .desc-creation, .desc-creation-noScroll {
+    position: relative;
+    width: 865px;
+    height: 568px;
+    overflow: hidden;
+    margin: auto;
+    @include media('<large') {
+        width: 738px;
+    }
+    @include media('<medium') {
+        width: 100%;
+        height: 100%;
+        min-height: calc(100vh - #{$heightHeadFoot});
+        overflow: hidden;
+    }
+    h2 {
+        position: absolute;
+        top: 35px;
+        left: 47px;
+        font-size: 22px;
+        text-transform: uppercase;
+        @include media('<medium') {
+            position: relative;
+            top: auto;
+            left: auto;
+            margin: 20px 0;
+            padding: 0 20px;
+        }
+        span {
+            display: block;
+            font-size: 12px;
+            font-family: 'Source Sans Pro';
+            font-weight: normal;
+        }
+    }
+    h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        font-family: 'Source Sans Pro';
+    }
+    img {
+        @include media('<medium') {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+        }
+    }
+    .desc-creation,
+    .desc-creation-noScroll {
         position: absolute;
         top: 102px;
         left: 47px;
         width: 394px;
         height: 330px;
         padding-right: 20px;
-    }
-    .desc-creation p {
-        font-family: 'Source Sans Pro';
+        @include media('<medium') {
+            position: relative;
+            top: auto;
+            left: auto;
+            width: auto;
+            height: auto;
+            padding: 0 20px 65px;
+        }
+        p {
+            font-family: 'Source Sans Pro';
+        }
     }
     .link-creation-bt {
         background: url(../images/bg-link-creation-bt.png) no-repeat right top;
@@ -18,6 +74,12 @@
         height: 42px;
         width: 666px;
         padding-right: 33px;
+        @include media('<medium') {
+            width: 100%;
+            height: 40px;
+            padding: 10px 0;
+            background-size: 100% 100%;
+        }
         a {
             background: url("../images/link-creation-bt.png") no-repeat scroll -1px 1px transparent;
             display: block;
@@ -38,34 +100,24 @@
             }
         }
     }
+    .link-eau-vie,
+    .link-liqueur,
     .link-eau-vie-home {
         position: absolute;
-        top: 269px;
         left: 47px;
         padding-left: 18px;
         font-size: 12px;
         font-family: 'Source Sans Pro';
         text-transform: uppercase;
         background: url(../images/puce-lien.png) no-repeat left center;
+    }
+    .link-eau-vie-home {
+        top: 269px;
     }
     .link-liqueur {
-        position: absolute;
         top: 239px;
-        left: 47px;
-        padding-left: 18px;
-        font-size: 12px;
-        font-family: 'Source Sans Pro';
-        text-transform: uppercase;
-        background: url(../images/puce-lien.png) no-repeat left center;
     }
     .link-eau-vie {
-        position: absolute;
         bottom: 49px;
-        left: 47px;
-        padding-left: 18px;
-        font-size: 12px;
-        font-family: 'Source Sans Pro';
-        text-transform: uppercase;
-        background: url(../images/puce-lien.png) no-repeat left center;
     }
 }
