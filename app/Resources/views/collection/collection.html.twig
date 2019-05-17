@@ -57,16 +57,6 @@
             </div>
           </div>
         </div>
-        <script type="text/javascript">
-          $(function() {
-          $('a.marc_{{ collection.id }}')
-          .hover(function(e) {
-          $('.marc_{{ collection.id }}_desc').hoverFlow(e.type, {top: '0px'}, 'slow');
-          }, function(e) {
-          $('.marc_{{ collection.id }}_desc').hoverFlow(e.type, {top: '-483px'}, 'fast');
-          });
-          });
-        </script>
         {% endfor %}
       </div>    
     </div>

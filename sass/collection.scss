@@ -1,0 +1,142 @@
+.collection-home {
+    width: 1170px;
+    margin: 0 auto;
+    .menu_collection {
+        width: 1170px;
+        height: 46px;
+        margin: auto;
+        li {
+            width: 126px;
+            height: 46px;
+            margin-left: 20px;
+            float: left;
+            &#marc_2 {
+                margin-left: 20px !important;
+            }
+            a {
+                width: 126px;
+                height: 28px;
+                text-align: center;
+                display: block;
+                font-size: 9px;
+                font-family: 'Source Sans Pro';
+                text-transform: uppercase;
+                line-height: 11px;
+                border-bottom: 2px solid transparent;
+                span {
+                    font-size: 11px;
+                    display: block;
+                    font-family: 'Georgia';
+                }
+                &.creme_cassis:hover, &.activeCassis {
+                    border-bottom: 2px solid #700129;
+                }
+                &.creme_fruits:hover, &.activeFruits {
+                    border-bottom: 2px solid #ff474c;
+                }
+                &.aperitifs_tradition:hover, &.activeAperitifs {
+                    border-bottom: 2px solid #d61523;
+                }
+                &.eau_vie_tradition:hover, &.activeEau {
+                    border-bottom: 2px solid #acacac;
+                }
+                &.marc_fine_bourgone:hover, &.activeMarc {
+                    border-bottom: 2px solid #d9af5e;
+                }
+            }
+        }
+    }
+    .content {
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+}
+
+.degustation-home .content {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+#collection .collection-home .content {
+    padding-top: 0px;
+    /*margin-left:23px;*/
+}
+
+.collection-home .content .block {
+    width: 146px;
+    float: left;
+    height: 484px;
+    padding-top: 35px;
+    position: relative;
+    .blockDesc {
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        &:hover {
+            .desc_collections {
+                bottom: 0;
+            }
+        }
+    }
+    img {
+        cursor: pointer;
+    }
+    a.plus {
+        width: 39px;
+        height: 39px;
+        display: block;
+        position: absolute;
+        left: 66px;
+        bottom: 0;
+    }
+    .desc_collections {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        position: absolute;
+        left: 0;
+        bottom: 100%;
+        overflow: hidden;
+        background: url(../images/bg-description-collection.png) repeat-y right top;
+        transition: 0.5s;
+    }
+    .scroll {
+        width: 129px;
+        height: 389px;
+        overflow: hidden;
+    }
+}
+
+.desc_collections li {
+    display: block;
+    font-size: 11.5px;
+    padding: 5px 0;
+    text-transform: uppercase;
+    a {
+        color: #ffffff;
+        font-family: 'Source Sans Pro';
+        &:hover {
+            color: #ffab21;
+        }
+    }
+}
+
+.block_fruits .desc_collections li a:hover {
+    color: #ff474c;
+}
+
+.block_aperitifs .desc_collections li a:hover {
+    color: #d61523;
+}
+
+.block_eau .desc_collections li a:hover {
+    color: #acacac;
+}
+
+.block_marc .desc_collections li a:hover {
+    color: #d9af5e;
+}

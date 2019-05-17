@@ -528,232 +528,6 @@ a {
 }
 
 /*************************************/
-/*         Page Collection           */
-/*************************************/
-#collection .collection-home {
-  width: 1170px;
-  margin: 0 auto;
-}
-
-.collection-home .menu_collection {
-  width: 1170px;
-  height: 46px;
-  margin: auto;
-}
-.collection-home .menu_collection li {
-  width: 126px;
-  height: 46px;
-  margin-left: 20px;
-  float: left;
-}
-.collection-home .menu_collection li#marc_2 {
-  margin-left: 20px !important;
-}
-.collection-home .menu_collection li a {
-  width: 126px;
-  height: 28px;
-  padding-top: 16px;
-  text-align: center;
-  display: block;
-  font-size: 9px;
-  font-family: "Source Sans Pro";
-  text-transform: uppercase;
-  line-height: 11px;
-  border-bottom: 2px solid transparent;
-}
-.collection-home .menu_collection li a span {
-  font-size: 11px;
-  display: block;
-  font-family: "Georgia";
-}
-.collection-home .menu_collection li a.creme_cassis:hover, .collection-home .menu_collection li a.activeCassis {
-  border-bottom: 2px solid #700129;
-}
-.collection-home .menu_collection li a.creme_fruits:hover, .collection-home .menu_collection li a.activeFruits {
-  border-bottom: 2px solid #ff474c;
-}
-.collection-home .menu_collection li a.aperitifs_tradition:hover, .collection-home .menu_collection li a.activeAperitifs {
-  border-bottom: 2px solid #d61523;
-}
-.collection-home .menu_collection li a.eau_vie_tradition:hover, .collection-home .menu_collection li a.activeEau {
-  border-bottom: 2px solid #acacac;
-}
-.collection-home .menu_collection li a.marc_fine_bourgone:hover, .collection-home .menu_collection li a.activeMarc {
-  border-bottom: 2px solid #d9af5e;
-}
-.collection-home .content {
-  max-width: 1170px;
-  margin: 0 auto;
-}
-
-.degustation-home .content {
-  max-width: 1170px;
-  margin: 0 auto;
-}
-
-#collection .collection-home .content {
-  padding-top: 0px;
-  /*margin-left:23px;*/
-}
-
-.collection-home .content .block {
-  width: 146px;
-  float: left;
-  height: 484px;
-  padding-top: 35px;
-  position: relative;
-}
-.collection-home .content .block .blockDesc {
-  width: 146px;
-  height: 445px;
-  display: block;
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  top: 32px;
-}
-.collection-home .content .block img {
-  cursor: pointer;
-}
-.collection-home .content .block a.plus {
-  width: 39px;
-  height: 39px;
-  display: block;
-  position: absolute;
-  left: 66px;
-  bottom: 0;
-}
-.collection-home .content .block .desc_collections {
-  width: 129px;
-  height: 445px;
-  padding: 19px;
-  position: absolute;
-  left: 0;
-  top: -483px;
-  overflow: hidden;
-  background: url(../images/bg-description-collection.png) repeat-y right top;
-}
-.collection-home .content .block .scroll {
-  width: 129px;
-  height: 389px;
-  overflow: hidden;
-}
-
-.desc_collections li {
-  display: block;
-  font-size: 11.5px;
-  padding: 5px 0;
-  text-transform: uppercase;
-}
-.desc_collections li a {
-  color: #ffffff;
-  font-family: "Source Sans Pro";
-}
-.desc_collections li a:hover {
-  color: #ffab21;
-}
-
-.block_fruits .desc_collections li a:hover {
-  color: #ff474c;
-}
-
-.block_aperitifs .desc_collections li a:hover {
-  color: #d61523;
-}
-
-.block_eau .desc_collections li a:hover {
-  color: #acacac;
-}
-
-.block_marc .desc_collections li a:hover {
-  color: #d9af5e;
-}
-
-/*************************************/
-/*      Page Collection Produits     */
-/*************************************/
-#camera_wrap_1 .visuel {
-  width: 422px;
-  height: 575px;
-  float: left;
-  position: relative;
-}
-#camera_wrap_1 .visuel h2 {
-  width: 201px;
-  text-align: right;
-  position: absolute;
-  top: 133px;
-  left: 95px;
-  font-size: 24px;
-  color: #dd7012;
-  font-family: "DIN-Bold";
-  font-weight: normal;
-  padding-bottom: 5px;
-  background: url(../images/bg_titre.jpg) no-repeat right bottom;
-}
-#camera_wrap_1 .visuel h2 a {
-  color: #dd7012;
-}
-#camera_wrap_1 .description {
-  width: 422px;
-  height: 495px;
-  float: left;
-  position: relative;
-  padding: 80px 0 0 34px;
-}
-#camera_wrap_1 .description p {
-  width: 410px;
-  font-size: 11px;
-  color: #ffffff;
-  text-align: justify;
-  font-family: "Georgia";
-  line-height: 18px;
-}
-#camera_wrap_1 .description p.marge9 {
-  margin-bottom: 9px;
-}
-#camera_wrap_1 .description p span {
-  color: #dd7012;
-  font-weight: bold;
-}
-#camera_wrap_1 .description h3 {
-  color: #dd7012;
-  font-size: 16px;
-  margin-bottom: 17px;
-  padding-bottom: 17px;
-  text-transform: uppercase;
-  font-family: "Georgia";
-  border-bottom: 1px solid #ffffff;
-}
-#camera_wrap_1 .description .link-produits {
-  position: absolute;
-  right: 0px;
-  bottom: 140px;
-}
-#camera_wrap_1 .description .link-produits a {
-  height: 29px;
-  float: left;
-  font-size: 13px;
-  font-family: "Georgia";
-  margin-right: 2px;
-  background: url(../images/btn-produits.jpg) no-repeat left top;
-  /*
-  background-image:linear-gradient(60deg, #142630, #021620);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#142630',endColorstr='#021620',GradientType=0);*/
-}
-#camera_wrap_1 .description .link-produits a span {
-  padding: 0 10px 0 20px;
-  height: 29px;
-  line-height: 29px;
-  color: #ffffff;
-  background: url(../images/puce-link-produits.png) no-repeat 10px center;
-}
-
-.note-degustation, .note-elaboration {
-  display: none;
-}
-
-/*************************************/
 /*         Page Degustation          */
 /*************************************/
 .menu_degustation {
@@ -3467,6 +3241,228 @@ a {
 }
 .savoir-faire-creation .link-eau-vie {
   bottom: 49px;
+}
+
+.collection-home {
+  width: 1170px;
+  margin: 0 auto;
+}
+.collection-home .menu_collection {
+  width: 1170px;
+  height: 46px;
+  margin: auto;
+}
+.collection-home .menu_collection li {
+  width: 126px;
+  height: 46px;
+  margin-left: 20px;
+  float: left;
+}
+.collection-home .menu_collection li#marc_2 {
+  margin-left: 20px !important;
+}
+.collection-home .menu_collection li a {
+  width: 126px;
+  height: 28px;
+  text-align: center;
+  display: block;
+  font-size: 9px;
+  font-family: "Source Sans Pro";
+  text-transform: uppercase;
+  line-height: 11px;
+  border-bottom: 2px solid transparent;
+}
+.collection-home .menu_collection li a span {
+  font-size: 11px;
+  display: block;
+  font-family: "Georgia";
+}
+.collection-home .menu_collection li a.creme_cassis:hover, .collection-home .menu_collection li a.activeCassis {
+  border-bottom: 2px solid #700129;
+}
+.collection-home .menu_collection li a.creme_fruits:hover, .collection-home .menu_collection li a.activeFruits {
+  border-bottom: 2px solid #ff474c;
+}
+.collection-home .menu_collection li a.aperitifs_tradition:hover, .collection-home .menu_collection li a.activeAperitifs {
+  border-bottom: 2px solid #d61523;
+}
+.collection-home .menu_collection li a.eau_vie_tradition:hover, .collection-home .menu_collection li a.activeEau {
+  border-bottom: 2px solid #acacac;
+}
+.collection-home .menu_collection li a.marc_fine_bourgone:hover, .collection-home .menu_collection li a.activeMarc {
+  border-bottom: 2px solid #d9af5e;
+}
+.collection-home .content {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.degustation-home .content {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+#collection .collection-home .content {
+  padding-top: 0px;
+  /*margin-left:23px;*/
+}
+
+.collection-home .content .block {
+  width: 146px;
+  float: left;
+  height: 484px;
+  padding-top: 35px;
+  position: relative;
+}
+.collection-home .content .block .blockDesc {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.collection-home .content .block .blockDesc:hover .desc_collections {
+  bottom: 0;
+}
+.collection-home .content .block img {
+  cursor: pointer;
+}
+.collection-home .content .block a.plus {
+  width: 39px;
+  height: 39px;
+  display: block;
+  position: absolute;
+  left: 66px;
+  bottom: 0;
+}
+.collection-home .content .block .desc_collections {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  overflow: hidden;
+  background: url(../images/bg-description-collection.png) repeat-y right top;
+  transition: 0.5s;
+}
+.collection-home .content .block .scroll {
+  width: 129px;
+  height: 389px;
+  overflow: hidden;
+}
+
+.desc_collections li {
+  display: block;
+  font-size: 11.5px;
+  padding: 5px 0;
+  text-transform: uppercase;
+}
+.desc_collections li a {
+  color: #ffffff;
+  font-family: "Source Sans Pro";
+}
+.desc_collections li a:hover {
+  color: #ffab21;
+}
+
+.block_fruits .desc_collections li a:hover {
+  color: #ff474c;
+}
+
+.block_aperitifs .desc_collections li a:hover {
+  color: #d61523;
+}
+
+.block_eau .desc_collections li a:hover {
+  color: #acacac;
+}
+
+.block_marc .desc_collections li a:hover {
+  color: #d9af5e;
+}
+
+#camera_wrap_1 .visuel {
+  width: 422px;
+  height: 575px;
+  float: left;
+  position: relative;
+}
+#camera_wrap_1 .visuel h2 {
+  width: 201px;
+  text-align: right;
+  position: absolute;
+  top: 133px;
+  left: 95px;
+  font-size: 24px;
+  color: #dd7012;
+  font-family: "DIN-Bold";
+  font-weight: normal;
+  padding-bottom: 5px;
+  background: url(../images/bg_titre.jpg) no-repeat right bottom;
+}
+#camera_wrap_1 .visuel h2 a {
+  color: #dd7012;
+}
+#camera_wrap_1 .description {
+  width: 422px;
+  height: 495px;
+  float: left;
+  position: relative;
+  padding: 80px 0 0 34px;
+}
+#camera_wrap_1 .description p {
+  width: 410px;
+  font-size: 11px;
+  color: #ffffff;
+  text-align: justify;
+  font-family: "Georgia";
+  line-height: 18px;
+}
+#camera_wrap_1 .description p.marge9 {
+  margin-bottom: 9px;
+}
+#camera_wrap_1 .description p span {
+  color: #dd7012;
+  font-weight: bold;
+}
+#camera_wrap_1 .description h3 {
+  color: #dd7012;
+  font-size: 16px;
+  margin-bottom: 17px;
+  padding-bottom: 17px;
+  text-transform: uppercase;
+  font-family: "Georgia";
+  border-bottom: 1px solid #ffffff;
+}
+#camera_wrap_1 .description .link-produits {
+  position: absolute;
+  right: 0px;
+  bottom: 140px;
+}
+#camera_wrap_1 .description .link-produits a {
+  height: 29px;
+  float: left;
+  font-size: 13px;
+  font-family: "Georgia";
+  margin-right: 2px;
+  background: url(../images/btn-produits.jpg) no-repeat left top;
+  /*
+  background-image:linear-gradient(60deg, #142630, #021620);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#142630',endColorstr='#021620',GradientType=0);*/
+}
+#camera_wrap_1 .description .link-produits a span {
+  padding: 0 10px 0 20px;
+  height: 29px;
+  line-height: 29px;
+  color: #ffffff;
+  background: url(../images/puce-link-produits.png) no-repeat 10px center;
+}
+
+.note-degustation, .note-elaboration {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

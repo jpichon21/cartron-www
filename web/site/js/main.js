@@ -103,12 +103,6 @@ $(function() {
     /************************************************************************************************************************/
     /************************************************************************************************************************/
 
-    $('.collection-home .content .block').hover(function() {
-        $(".desc_collections", this).stop().animate({top: '0px', left: '0px'}, {queue: false, duration: 'slow'});
-    }, function() {
-        $(".desc_collections", this).stop().animate({top: '-483px', left: '0px'}, {queue: false, duration: 'fast'});
-    });
-
     $('.block_cassis').hover(function() {
         $('a.creme_cassis').addClass('activeCassis');
     });
