@@ -61,10 +61,6 @@ a {
     background: url(../images/bg-savoir-faire-new.jpg) no-repeat center top;
 }
 
-#collection .main {
-    background: url(../images/bg-collection.jpg) no-repeat center top;
-}
-
 #degustation .main {
     background: url(../images/bg_degustation.jpg) repeat-x 2% 0;
     position: relative;
@@ -1681,12 +1677,6 @@ a {
     .overlay-videos {
         top: 50px;
     }
-}
-
-.collection-home:after {
-    content: " ";
-    clear: both;
-    display: block;
 }
 
 .degustation-home .content .text p {

@@ -61,10 +61,6 @@ a {
   background: url(../images/bg-savoir-faire-new.jpg) no-repeat center top;
 }
 
-#collection .main {
-  background: url(../images/bg-collection.jpg) no-repeat center top;
-}
-
 #degustation .main {
   background: url(../images/bg_degustation.jpg) repeat-x 2% 0;
   position: relative;
@@ -1638,12 +1634,6 @@ a {
     top: 50px;
   }
 }
-.collection-home:after {
-  content: " ";
-  clear: both;
-  display: block;
-}
-
 .degustation-home .content .text p {
   margin-bottom: 10px;
 }
@@ -3243,145 +3233,120 @@ a {
   bottom: 49px;
 }
 
-.collection-home {
-  width: 1170px;
-  margin: 0 auto;
+#collection {
+  background-color: #11252d;
 }
-.collection-home .menu_collection {
-  width: 1170px;
-  height: 46px;
-  margin: auto;
+@media (min-width: 1440px) {
+  #collection {
+    background-image: url(../images/bg-collection.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
 }
-.collection-home .menu_collection li {
-  width: 126px;
-  height: 46px;
-  margin-left: 20px;
-  float: left;
+#collection .main {
+  padding: 0;
 }
-.collection-home .menu_collection li#marc_2 {
-  margin-left: 20px !important;
+
+@media (min-width: 1440px) {
+  .collection-home {
+    width: 1280px;
+    margin: 0 auto;
+  }
 }
-.collection-home .menu_collection li a {
-  width: 126px;
-  height: 28px;
-  text-align: center;
-  display: block;
+.collection-home .collection {
+  position: relative;
+}
+@media (min-width: 1440px) {
+  .collection-home .collection .blockDesc {
+    transition: 0.5s;
+  }
+  .collection-home .collection:hover .title {
+    margin-bottom: 0;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+  }
+  .collection-home .collection:hover .block .blockDesc {
+    bottom: 0;
+  }
+}
+.collection-home .collection .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 9px;
   font-family: "Source Sans Pro";
-  text-transform: uppercase;
   line-height: 11px;
-  border-bottom: 2px solid transparent;
+  text-transform: uppercase;
+  text-align: center;
 }
-.collection-home .menu_collection li a span {
+@media (min-width: 1440px) {
+  .collection-home .collection .title {
+    margin-bottom: 2px;
+    height: 44px;
+  }
+}
+@media (max-width: 1439px) {
+  .collection-home .collection .title {
+    padding: 20px 0;
+  }
+}
+.collection-home .collection .title span {
   font-size: 11px;
   display: block;
   font-family: "Georgia";
 }
-.collection-home .menu_collection li a.creme_cassis:hover, .collection-home .menu_collection li a.activeCassis {
-  border-bottom: 2px solid #700129;
-}
-.collection-home .menu_collection li a.creme_fruits:hover, .collection-home .menu_collection li a.activeFruits {
-  border-bottom: 2px solid #ff474c;
-}
-.collection-home .menu_collection li a.aperitifs_tradition:hover, .collection-home .menu_collection li a.activeAperitifs {
-  border-bottom: 2px solid #d61523;
-}
-.collection-home .menu_collection li a.eau_vie_tradition:hover, .collection-home .menu_collection li a.activeEau {
-  border-bottom: 2px solid #acacac;
-}
-.collection-home .menu_collection li a.marc_fine_bourgone:hover, .collection-home .menu_collection li a.activeMarc {
-  border-bottom: 2px solid #d9af5e;
-}
-.collection-home .content {
-  max-width: 1170px;
-  margin: 0 auto;
-}
-
-.degustation-home .content {
-  max-width: 1170px;
-  margin: 0 auto;
-}
-
-#collection .collection-home .content {
-  padding-top: 0px;
-  /*margin-left:23px;*/
-}
-
-.collection-home .content .block {
-  width: 146px;
-  float: left;
-  height: 484px;
-  padding-top: 35px;
+.collection-home .collection .block {
   position: relative;
-}
-.collection-home .content .block .blockDesc {
-  width: 100%;
-  height: 100%;
-  display: block;
+  padding: 20px 0;
   overflow: hidden;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
-.collection-home .content .block .blockDesc:hover .desc_collections {
-  bottom: 0;
-}
-.collection-home .content .block img {
-  cursor: pointer;
-}
-.collection-home .content .block a.plus {
-  width: 39px;
-  height: 39px;
+.collection-home .collection .block img {
   display: block;
-  position: absolute;
-  left: 66px;
-  bottom: 0;
+  width: auto;
+  max-height: 500px;
 }
-.collection-home .content .block .desc_collections {
+.collection-home .collection .block .blockDesc {
   width: 100%;
   height: 100%;
   padding: 20px;
   position: absolute;
   left: 0;
   bottom: 100%;
-  overflow: hidden;
-  background: url(../images/bg-description-collection.png) repeat-y right top;
-  transition: 0.5s;
+  background-image: url(../images/bg-description-collection.png);
+  box-sizing: border-box;
 }
-.collection-home .content .block .scroll {
-  width: 129px;
-  height: 389px;
-  overflow: hidden;
-}
-
-.desc_collections li {
+.collection-home .collection .block .blockDesc li {
   display: block;
   font-size: 11.5px;
   padding: 5px 0;
   text-transform: uppercase;
 }
-.desc_collections li a {
+.collection-home .collection .block .blockDesc li a {
   color: #ffffff;
   font-family: "Source Sans Pro";
 }
-.desc_collections li a:hover {
-  color: #ffab21;
-}
 
-.block_fruits .desc_collections li a:hover {
-  color: #ff474c;
+.owl-carousel {
+  display: flex;
+  justify-content: center;
 }
-
-.block_aperitifs .desc_collections li a:hover {
-  color: #d61523;
+@media (max-width: 1439px) {
+  .owl-carousel .owl-item {
+    opacity: 0.2;
+    transition: opacity 0.5s;
+  }
+  .owl-carousel .owl-item.active.center {
+    cursor: pointer;
+    opacity: 1;
+  }
 }
-
-.block_eau .desc_collections li a:hover {
-  color: #acacac;
-}
-
-.block_marc .desc_collections li a:hover {
-  color: #d9af5e;
+@media (min-width: 1440px) {
+  .owl-carousel .owl-item.active.center .title {
+    margin-bottom: 0;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+  }
 }
 
 #camera_wrap_1 .visuel {
