@@ -11,10 +11,7 @@
 }
 
 .collection-home {
-    @include media('>=xxlarge') {
-        width: 1280px;
-        margin: 0 auto;
-    }
+    position: relative;
     .collection {
         position: relative;
         @include media('>=xxlarge') {
@@ -34,6 +31,36 @@
                 }
             }
         }
+        @include media('<xxlarge') {
+            &.hover {
+                .close {
+                    display: block;
+                }
+                .block {
+                    overflow: visible;
+                    .blockDesc {
+                        left: 50%;
+                        bottom: 0;
+                        width: 100vw;
+                        margin-left: -50vw;
+                        text-align: center;
+                        background-image: none;
+                    }
+                }
+            }
+        }
+        .close {
+            display: none;
+            position: absolute;
+            padding: 20px;
+            top: 0;
+            left: 50%;
+            margin-left: calc(50vw - 60px);
+            z-index: 1;
+            svg {
+                fill: #ffffff;
+            }
+        }
         .title {
             display: flex;
             flex-direction: column;
@@ -44,6 +71,7 @@
             line-height: 11px;
             text-transform: uppercase;
             text-align: center;
+            z-index: 0;
             @include media('>=xxlarge') {
                 margin-bottom: 2px;
                 height: 44px;
@@ -93,17 +121,50 @@
 .owl-carousel {
     display: flex;
     justify-content: center;
+    &.hover {
+        .owl-prev,
+        .owl-next {
+            opacity: 0.1;
+        }
+        .owl-item {
+            opacity: 0.1;
+            &.center {
+                opacity: 1;
+                img {
+                    opacity: 0.1;
+                }
+            }
+        }
+    }
+    .owl-prev,
+    .owl-next {
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        padding: 20px;
+        svg {
+            fill: #ffffff;
+        }
+    }
+    .owl-prev {
+        left: 0;
+    }
+    .owl-next {
+        right: 0;
+    }
     .owl-item {
+        z-index: 0;
         @include media('<xxlarge') {
             opacity: 0.2;
             transition: opacity 0.5s;
-            &.active.center {
+        }
+        &.center {
+            z-index: 1;
+            @include media('<xxlarge') {
                 cursor: pointer;
                 opacity: 1;
             }
-        }
-        @include media('>=xxlarge') {
-            &.active.center {
+            @include media('>=xxlarge') {
                 .title {
                     margin-bottom: 0;
                     border-bottom-width: 2px;

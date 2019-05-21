@@ -3247,11 +3247,8 @@ a {
   padding: 0;
 }
 
-@media (min-width: 1440px) {
-  .collection-home {
-    width: 1280px;
-    margin: 0 auto;
-  }
+.collection-home {
+  position: relative;
 }
 .collection-home .collection {
   position: relative;
@@ -3269,6 +3266,34 @@ a {
     bottom: 0;
   }
 }
+@media (max-width: 1439px) {
+  .collection-home .collection.hover .close {
+    display: block;
+  }
+  .collection-home .collection.hover .block {
+    overflow: visible;
+  }
+  .collection-home .collection.hover .block .blockDesc {
+    left: 50%;
+    bottom: 0;
+    width: 100vw;
+    margin-left: -50vw;
+    text-align: center;
+    background-image: none;
+  }
+}
+.collection-home .collection .close {
+  display: none;
+  position: absolute;
+  padding: 20px;
+  top: 0;
+  left: 50%;
+  margin-left: calc(50vw - 60px);
+  z-index: 1;
+}
+.collection-home .collection .close svg {
+  fill: #ffffff;
+}
 .collection-home .collection .title {
   display: flex;
   flex-direction: column;
@@ -3279,6 +3304,7 @@ a {
   line-height: 11px;
   text-transform: uppercase;
   text-align: center;
+  z-index: 0;
 }
 @media (min-width: 1440px) {
   .collection-home .collection .title {
@@ -3331,18 +3357,56 @@ a {
   display: flex;
   justify-content: center;
 }
+.owl-carousel.hover .owl-prev,
+.owl-carousel.hover .owl-next {
+  opacity: 0.1;
+}
+.owl-carousel.hover .owl-item {
+  opacity: 0.1;
+}
+.owl-carousel.hover .owl-item.center {
+  opacity: 1;
+}
+.owl-carousel.hover .owl-item.center img {
+  opacity: 0.1;
+}
+.owl-carousel .owl-prev,
+.owl-carousel .owl-next {
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  padding: 20px;
+}
+.owl-carousel .owl-prev svg,
+.owl-carousel .owl-next svg {
+  fill: #ffffff;
+}
+.owl-carousel .owl-prev {
+  left: 0;
+}
+.owl-carousel .owl-next {
+  right: 0;
+}
+.owl-carousel .owl-item {
+  z-index: 0;
+}
 @media (max-width: 1439px) {
   .owl-carousel .owl-item {
     opacity: 0.2;
     transition: opacity 0.5s;
   }
-  .owl-carousel .owl-item.active.center {
+}
+.owl-carousel .owl-item.center {
+  z-index: 1;
+}
+@media (max-width: 1439px) {
+  .owl-carousel .owl-item.center {
     cursor: pointer;
     opacity: 1;
   }
 }
 @media (min-width: 1440px) {
-  .owl-carousel .owl-item.active.center .title {
+  .owl-carousel .owl-item.center .title {
     margin-bottom: 0;
     border-bottom-width: 2px;
     border-bottom-style: solid;
