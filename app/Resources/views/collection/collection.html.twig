@@ -40,9 +40,6 @@
               color: #{{ collection.color }};
             }
           </style>
-          <script>
-            new SimpleBar(document.querySelector('#marc_{{ collection.id }} .blockDesc'), { autoHide: false });
-          </script>
         </div>
         {% endfor %}
       </div>
@@ -50,80 +47,79 @@
   </div>
   <script type="text/javascript">
 
-    $(function() {
+    var elementsToSimplyBar = document.querySelectorAll('.blockDesc');
+    elementsToSimplyBar.forEach(function(elementToSimplyBar) { new SimpleBar(elementToSimplyBar, { autoHide: false }); })
 
-      var owl = null;
-      var up = false;
-      var options = {
-        startPosition: 1,
-        nav: true,
-        dots: false,
-        autoWidth: true,
-        center: true,
-        loop: true,
-        navText: [
-          '<div class="owl-prev"><svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',
-          '<div class="owl-next"><svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
-        ]
-      };
+    var owl = null;
+    var up = false;
+    var options = {
+      startPosition: 1,
+      nav: true,
+      dots: false,
+      autoWidth: true,
+      center: true,
+      loop: true,
+      navText: [
+        '<div class="owl-prev"><svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',
+        '<div class="owl-next"><svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
+      ]
+    };
 
-      function initOwlCarousel() {
-        owl = $('.owl-carousel').owlCarousel(options);
-        up = true;
-      }
+    function initOwlCarousel() {
+      owl = $('.owl-carousel').owlCarousel(options);
+      up = true;
+    }
 
-      var width = $(window).width();
+    var width = $(window).width();
 
-      if (width < 1440) {
+    if (width < 1440) {
+      initOwlCarousel();
+      up = true;
+    }
+  
+    $(window).resize(function() {
+    
+      width = $(window).width();
+    
+      if (width < 1440 && !up) {
         initOwlCarousel();
         up = true;
+      } else if (width >= 1440 && up) {
+        owl.trigger('destroy.owl.carousel');
+        up = false;
       }
     
-      $(window).resize(function() {
-      
-        width = $(window).width();
-      
-        if (width < 1440 && !up) {
-          initOwlCarousel();
-          up = true;
-        } else if (width >= 1440 && up) {
-          owl.trigger('destroy.owl.carousel');
-          up = false;
-        }
-      
-      });
+    });
 
-      function hoverOn() {
-        $('.center .collection', owl).addClass('hover');
-        owl.addClass('hover');
+    function hoverOn() {
+      $('.center .collection', owl).addClass('hover');
+      owl.addClass('hover');
+    }
+
+    function hoverOff() {
+      $('.collection').removeClass('hover');
+      owl.removeClass('hover');
+    }
+
+    owl.on('changed.owl.carousel', function() {
+      hoverOff()
+    });
+
+    $('.collection').on('click', 'img', function() {
+      if ($(this).get(0) === $('.center img', owl).get(0)) {
+        hoverOn()
       }
+    });
 
-      function hoverOff() {
-        $('.collection').removeClass('hover');
-        owl.removeClass('hover');
-      }
+    $('.collection').on('click', '.close', function() {
+      hoverOff()
+    });
 
-      owl.on('changed.owl.carousel', function() {
-        hoverOff()
-      });
-
-      $('.collection').on('click', 'img', function() {
-        if ($(this).get(0) === $('.center img', owl).get(0)) {
-          hoverOn()
-        }
-      });
-
-      $('.collection').on('click', '.close', function() {
-        hoverOff()
-      });
-
-      $(document).keyup(function(event) {
-        if (event.key === 'Escape') hoverOff();
-        if (event.key === 'ArrowRight') owl.trigger('next.owl.carousel');
-        if (event.key === 'ArrowLeft') owl.trigger('prev.owl.carousel');
-        if (event.key === 'Enter') hoverOn();
-      });
-
+    $(document).keyup(function(event) {
+      if (event.key === 'Escape') hoverOff();
+      if (event.key === 'ArrowRight') owl.trigger('next.owl.carousel');
+      if (event.key === 'ArrowLeft') owl.trigger('prev.owl.carousel');
+      if (event.key === 'Enter') hoverOn();
     });
 
   </script>
