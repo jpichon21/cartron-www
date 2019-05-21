@@ -1,146 +1,125 @@
 {% extends "layout.html.twig" %}
 {% block title %}JOSEPH CARTRON{% endblock %}
 {% block body %}
-<script type="text/javascript">
-  $(function() {
-    var slideshow = $('#camera_wrap_1').html();
-    function get_parameters(hash){
-        var elementFocusHash = hash;
-        elementFocusHash = elementFocusHash.substring(1,elementFocusHash.length);
-        return elementFocusHash; 
-    }
-    startCamera(window.location.hash);
-    function startCamera(hash){
-      $('#camera_wrap_1').html(slideshow);
-      if(hash == ""){
-        var item = $(".current-load").attr("class");
-        item = item.split(" ");
-        item = item[1];
-      } else {
-          var item = get_parameters(hash);
-      }
-      $('#camera_wrap_1').camera({
-              thumbnails: true,
-              barDirection: 'rightToLeft',
-              fx: 'scrollHorz',
-              autoAdvance: false,
-              startSlide: item,
-              height: '575px',
-              onEndTransition: function(){
-                  $elements = $('#camera_wrap_1').find('.cameraCont .cameraSlide').length-3;
-                  var ind = $('#camera_wrap_1').find('.camera_target .cameraSlide.cameracurrent').index();
-                  if(ind == $elements) $('.camera_next').hide(); else $('.camera_next').show();
-                  if(ind == 0) $('.camera_prev').hide(); else $('.camera_prev').show();
-                  window.location.hash = ind+1;
-              }
-        });
-      }
-  $('.scroll').jScrollPane({scrollbarWidth: 4});
-  $('.accueil-produits, .note-degustation, .note-elaboration').jScrollPane({scrollbarWidth: 4, autoReinitialise: true});
-  })
-</script>
-
-
-
 <div id="collection-produits" class="test2">
-  <style>
-    .collection-home .menu_collection #marc_{{ idCollection }} a{
-    border-bottom:2px solid #{{ defaultColor }};
-    }
-    #camera_wrap_1 .visuel h2 a, #camera_wrap_1 .description p span, .description .note-degustation h3, .description .note-elaboration h3{
-    color:#{{ defaultColor }} !important;
-    }
-    #camera_wrap_1 .description .link-produits a span{
-    position:relative;
-    background:none !important;
-    color: #FFFFFF;
-    height: 29px;
-    line-height: 29px;
-    padding: 0 10px 0 25px;
-    }
-    #camera_wrap_1 .description .link-produits a span b{
-    color:#{{ defaultColor }} !important; font-size:20px; position:absolute; top:-9px; left:11px;
-    }
-    .accueil-produits, .note-degustation, .note-elaboration{
-    width: 422px;
-    height: 300px;
-    overflow: auto;
-    }
-
-    .jspTrack{
-    background:#FFF;
-    }
-    .accueil-produits .jspDrag, .note-degustation .jspDrag, .note-elaboration .jspDrag{
-    background:#{{ defaultColor }} !important;
-    }
-  </style>
   <div class="main">
     <div class="collection-home">
       <div class="menu_collection">
-        <ul>                    
-            {% for collection in collections %}
-            <li id="marc_{{ collection.id }}">
-                {% set break = false %}
-                {% for sousMenu in sousMenus if not break %}
-                    {% if(collection.id == sousMenu.idCollection.id) %}
-                    <a class="marc_{{ collection.id }}" href="{{ path('collection_product',{id:sousMenu.id}) }}" >
-                        {% if(app.session.get('_locale')=='en') %} {{ collection.titreEn|raw }} {% else %} {{ collection.titreFr|raw }} {% endif %}
-                    </a>
-                    {% set break = true %}
-                    {% endif %}
-                {% endfor %}
-                </li>
-                <style>
-                .collection-home .menu_collection #marc_{{ collection.id }} a:hover, .collection-home .menu_collection li a.active{
-                    border-bottom:2px solid #{{ collection.color }};
-                }
-                </style>
-            {% endfor %}
-        </ul>
-      </div> <!-- # end menu collection -->   
-
-  
-      <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
+        {% for collection in collections %}
+          {% set break = false %}
+          {% for sousMenu in sousMenus if not break %}
+            {% if (collection.id == sousMenu.idCollection.id) %}
+              <a class="title {% if sousMenu.idCollection.id == idCollection %}active{% endif %}" href="{{ path('collection_product', { id: sousMenu.id }) }}" style="border-color: #{{ collection.color }};">
+                {% if (app.session.get('_locale') == 'en') %}{{ collection.titreEn | raw }}{% else %}{{ collection.titreFr | raw }}{% endif %}
+              </a>
+              {% set break = true %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+      <div class="owl-carousel">
         {% for sousMenu in sousMenusCollection %}
             {% if sousMenu.idCollection.id == idCollection %}
-            <div  data-thumb="{{ asset('upload/'~sousMenu.icone) }}" data-src="{{ asset('site/images/trans.png') }}">
-            <div class="camera_effected">
-                <div class="visuel">
-                <h2><a href="#0" onclick="return false" class="acc-produit">{% if(app.session.get('_locale')=='en') %} {{ sousMenu.titreEn }} {% else %} {{ sousMenu.titreFr }} {% endif %}</a></h2>
-                <img src="{{ asset('upload/'~sousMenu.image) }}" alt="">
-                </div>
-                <div class="description">
-                {% if sousMenu.id == articleDefault.id %}
-                <div class="current-load {{ loop.index }} accueil-produits">
-                {% else %}
-                <div class="accueil-produits {{ loop.index }}">
-                {% endif %}
-                    {% if(app.session.get('_locale')=='en') %} {{ sousMenu.descriptionEn|raw }} {% else %} {{ sousMenu.descriptionFr|raw }} {% endif %}
-                    <p class="marge9"><span>{{ "Degré" | trans }} :</span> {{ sousMenu.degre }}%</p>
-                    <p class="marge9"><span>{{ "Contenance" | trans }} :</span>{% if(app.session.get('_locale')=='en') %} {{ sousMenu.contenanceEn }} {% else %} {{ sousMenu.contenanceFr }} {% endif %}</p>
-                    <p class="marge9"><span>{{ "Conserver" | trans }}</span>{% if(app.session.get('_locale')=='en') %} {{ sousMenu.conserverEn }} {% else %} {{ sousMenu.conserverFr }} {% endif %}</p>
+            <div class="sousMenu">
+              <div class="visuel">
+                <h2>{% if app.session.get('_locale') == 'en' %}{{ sousMenu.titreEn }}{% else %}{{ sousMenu.titreFr }}{% endif %}</h2>
+                <img src="{{ asset('upload/'~sousMenu.image) }}" alt="{{ sousMenu.titreFr }}">
+              </div>
+              <div class="description">
+                <div class="accueil-produits">
+                  {% if app.session.get('_locale') == 'en' %}{{ sousMenu.descriptionEn | raw }}{% else %}{{ sousMenu.descriptionFr | raw }}{% endif %}
+                  <p class="marge9"><span>{{ "Degré" | trans }} :</span> {{ sousMenu.degre }}%</p>
+                  <p class="marge9"><span>{{ "Contenance" | trans }} :</span> {% if app.session.get('_locale') == 'en' %}{{ sousMenu.contenanceEn }}{% else %}{{ sousMenu.contenanceFr }}{% endif %}</p>
+                  <p class="marge9"><span>{{ "Conserver" | trans }}</span> {% if app.session.get('_locale') == 'en' %}{{ sousMenu.conserverEn }}{% else %}{{ sousMenu.conserverFr }}{% endif %}</p>
                 </div>
                 <div class="note-degustation">
-                    <h3>{{ "Note de dégustation" | trans }}</h3>
-                    {% if(app.session.get('_locale')=='en') %} {{ sousMenu.noteDegustationEn|raw }} {% else %} {{ sousMenu.noteDegustationFr|raw }} {% endif %}
+                  <h3>{{ "Note de dégustation" | trans }}</h3>
+                  {% if app.session.get('_locale') == 'en' %}{{ sousMenu.noteDegustationEn | raw }}{% else %}{{ sousMenu.noteDegustationFr | raw }}{% endif %}
                 </div>
                 <div class="note-elaboration">
-                    <h3>{{ "Elaboration" | trans }}</h3>
-                    {% if(app.session.get('_locale')=='en') %} {{ sousMenu.elaborationEn|raw }} {% else %} {{ sousMenu.elaborationFr|raw }} {% endif %}
+                  <h3>{{ "Elaboration" | trans }}</h3>
+                  {% if app.session.get('_locale') == 'en' %}{{ sousMenu.elaborationEn | raw }}{% else %}{{ sousMenu.elaborationFr | raw }}{% endif %}
                 </div>
                 <div class="link-produits">
-                    <a href="{% if(app.session.get('_locale')=='en') %} {{ sousMenu.recetteEn }} {% else %} {{ sousMenu.recetteFr }} {% endif %}"><span><b>&rsaquo;</b>{{ "Recettes" | trans }}</span></a>
-                    <a class="degustation"><span><b>&rsaquo;</b>{{ "Note de dégustation" | trans }}</span></a>
-                    <a class="elaboration"><span><b>&rsaquo;</b>{{ "Elaboration" | trans }}</span></a>
+                  <a href="{% if app.session.get('_locale') == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}"><span><b>&rsaquo;</b>{{ "Recettes" | trans }}</span></a>
+                  <a class="degustation"><span><b>&rsaquo;</b>{{ "Note de dégustation" | trans }}</span></a>
+                  <a class="elaboration"><span><b>&rsaquo;</b>{{ "Elaboration" | trans }}</span></a>
                 </div>
-                </div>
-            </div>
+              </div>
             </div>
             {% endif %} 
         {% endfor %}
-
       </div>
     </div>    
   </div>
 </div>
+<script type="text/javascript">
+
+  var elementsToSimplyBar = document.querySelectorAll('.accueil-produits, .note-degustation, .note-elaboration');
+  elementsToSimplyBar.forEach(function(elementToSimplyBar) { new SimpleBar(elementToSimplyBar, { autoHide: false }); })
+
+  $('.owl-carousel').owlCarousel({
+    items: 1,
+    nav: true,
+    loop: true,
+    navText: [
+      '<div class="owl-prev"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',  
+      '<div class="owl-next"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
+    ]
+  });
+
+</script>
+<style>
+    .simplebar-scrollbar:before {
+      background: #{{ defaultColor }};
+    }
+    .simplebar-scrollbar,
+    .simplebar-track.simplebar-vertical,
+    .simplebar-track.simplebar-horizontal {
+      width: 6px;
+    }
+    .simplebar-track.simplebar-vertical,
+    .simplebar-track.simplebar-horizontal {
+      background-color: #ffffff;
+    }
+    .collection-home .menu_collection #marc_{{ idCollection }} a {
+      border-bottom: 2px solid #{{ defaultColor }};
+    }
+    .sousMenu .visuel h2,
+    .sousMenu .description p span,
+    .sousMenu .description .note-degustation h3,
+    .sousMenu .description .note-elaboration h3 {
+      color: #{{ defaultColor }} !important;
+    }
+    .sousMenu .description .link-produits a span {
+      position: relative;
+      padding: 0 10px 0 25px;
+      height: 29px;
+      line-height: 29px;
+      color: #FFFFFF;
+      background: none !important;
+    }
+    .sousMenu .description .link-produits a span b {
+      position: absolute;
+      top: -9px;
+      left: 11px;
+      font-size: 20px;
+      color: #{{ defaultColor }} !important;
+    }
+    .accueil-produits,
+    .note-degustation,
+    .note-elaboration {
+      width: 422px;
+      height: 300px;
+      overflow: auto;
+    }
+    .jspTrack {
+      background: #ffffff;
+    }
+    .accueil-produits .jspDrag,
+    .note-degustation .jspDrag,
+    .note-elaboration .jspDrag {
+      background: #{{ defaultColor }} !important;
+    }
+  </style>
 {% endblock %}

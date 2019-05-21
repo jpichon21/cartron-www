@@ -1,83 +1,164 @@
-
-#camera_wrap_1 {
-    .visuel {
-        width: 422px;
-        height: 575px;
-        float: left;
-        position: relative;
-        h2 {
-            width: 201px;
-            text-align: right;
-            position: absolute;
-            top: 133px;
-            left: 95px;
-            font-size: 24px;
-            color: #dd7012;
-            font-family: 'DIN-Bold';
-            font-weight: normal;
-            padding-bottom: 5px;
-            background: url(../images/bg_titre.jpg) no-repeat right bottom;
-            a {
-                color: #dd7012;
+#collection-produits {
+    .main {
+        padding: 0;
+    }
+    .menu_collection {
+        display: flex;
+        justify-content: center;
+        .title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 167px;
+            font-size: 9px;
+            font-family: 'Source Sans Pro';
+            line-height: 11px;
+            text-transform: uppercase;
+            text-align: center;
+            z-index: 0;
+            &:hover,
+            &.active {
+                margin-bottom: 0;
+                border-bottom-width: 2px;
+                border-bottom-style: solid;
+            }
+            span {
+                font-size: 11px;
+                display: block;
+                font-family: 'Georgia';
+            }
+            @include media('>=xxlarge') {
+                margin-bottom: 2px;
+                height: 44px;
+            }
+            @include media('<xxlarge') {
+                padding: 20px 0;
             }
         }
     }
-    .description {
-        width: 422px;
-        height: 495px;
-        float: left;
-        position: relative;
-        padding: 80px 0 0 34px;
-        p {
-            width: 410px;
-            font-size: 11px;
-            color: #ffffff;
-            text-align: justify;
-            font-family: 'Georgia';
-            line-height: 18px;
-            &.marge9 {
-                margin-bottom: 9px;
-            }
-            span {
+    .sousMenu {
+        .visuel {
+            width: 422px;
+            height: 575px;
+            float: left;
+            position: relative;
+            h2 {
+                width: 201px;
+                text-align: right;
+                position: absolute;
+                top: 133px;
+                left: 95px;
+                font-size: 24px;
                 color: #dd7012;
-                font-weight: bold;
+                font-family: 'DIN-Bold';
+                font-weight: normal;
+                padding-bottom: 5px;
+                background: url(../images/bg_titre.jpg) no-repeat right bottom;
+                a {
+                    color: #dd7012;
+                }
             }
         }
-        h3 {
-            color: #dd7012;
-            font-size: 16px;
-            margin-bottom: 17px;
-            padding-bottom: 17px;
-            text-transform: uppercase;
-            font-family: 'Georgia';
-            border-bottom: 1px solid #ffffff;
-        }
-        .link-produits {
-            position: absolute;
-            right: 0px;
-            bottom: 140px;
-            a {
-                height: 29px;
-                float: left;
-                font-size: 13px;
+        .description {
+            width: 422px;
+            height: 495px;
+            float: left;
+            position: relative;
+            padding: 80px 0 0 34px;
+            p {
+                width: 410px;
+                font-size: 11px;
+                color: #ffffff;
+                text-align: justify;
                 font-family: 'Georgia';
-                margin-right: 2px;
-                background: url(../images/btn-produits.jpg) no-repeat left top;
-                /*
-                background-image:linear-gradient(60deg, #142630, #021620);
-                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#142630',endColorstr='#021620',GradientType=0);*/
+                line-height: 18px;
+                &.marge9 {
+                    margin-bottom: 9px;
+                }
                 span {
-                    padding: 0 10px 0 20px;
+                    color: #dd7012;
+                    font-weight: bold;
+                }
+            }
+            h3 {
+                color: #dd7012;
+                font-size: 16px;
+                margin-bottom: 17px;
+                padding-bottom: 17px;
+                text-transform: uppercase;
+                font-family: 'Georgia';
+                border-bottom: 1px solid #ffffff;
+            }
+            .link-produits {
+                position: absolute;
+                right: 0px;
+                bottom: 140px;
+                a {
                     height: 29px;
-                    line-height: 29px;
-                    color: #ffffff;
-                    background: url(../images/puce-link-produits.png) no-repeat 10px center;
+                    float: left;
+                    font-size: 13px;
+                    font-family: 'Georgia';
+                    margin-right: 2px;
+                    background: url(../images/btn-produits.jpg) no-repeat left top;
+                    /*
+                    background-image:linear-gradient(60deg, #142630, #021620);
+                    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#142630',endColorstr='#021620',GradientType=0);*/
+                    span {
+                        padding: 0 10px 0 20px;
+                        height: 29px;
+                        line-height: 29px;
+                        color: #ffffff;
+                        background: url(../images/puce-link-produits.png) no-repeat 10px center;
+                    }
                 }
             }
         }
     }
-}
-
-.note-degustation, .note-elaboration {
-    display: none;
+    .note-degustation,
+    .note-elaboration {
+        display: none;
+    }
+    .owl-carousel {
+        max-width: 1024px;
+        margin: 0 auto;
+        .owl-nav {
+            .owl-prev,
+            .owl-next {
+                position: absolute;
+                top: 50%;
+                margin-top: -35px;
+                padding: 20px;
+                svg {
+                    fill: #303030;
+                }
+            }
+            .owl-prev {
+                left: 0;
+            }
+            .owl-next {
+                right: 0;
+            }
+        }
+        .owl-dots {
+            text-align: center;
+            margin-top: -30px;
+            padding-bottom: 20px;
+            .owl-dot {
+                position: relative;
+                width: 3px;
+                height: 3px;
+                margin: 7px;
+                border-radius: 100%;
+                background-color: #303030;
+                border: 4px #303030 solid;
+                box-sizing: content-box;
+                &.active {
+                    background-color: #ffffff;
+                    border-color: #36424a;
+                    box-shadow: 0 0 0 7px #0f222d;
+                }
+            }
+        }
+    }
 }

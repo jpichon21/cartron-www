@@ -8,167 +8,165 @@
     .main {
         padding: 0;
     }
-}
-
-.collection-home {
-    position: relative;
-    .collection {
+    .collection-home {
         position: relative;
-        @include media('>=xxlarge') {
-            .blockDesc {
-                transition: 0.5s;
-            }
-            &:hover {
-                .title {
-                    margin-bottom: 0;
-                    border-bottom-width: 2px;
-                    border-bottom-style: solid;
+        .collection {
+            position: relative;
+            @include media('>=xxlarge') {
+                .blockDesc {
+                    transition: 0.5s;
                 }
-                .block {
-                    .blockDesc {
-                        bottom: 0;
+                &:hover {
+                    .title {
+                        margin-bottom: 0;
+                        border-bottom-width: 2px;
+                        border-bottom-style: solid;
+                    }
+                    .block {
+                        .blockDesc {
+                            bottom: 0;
+                        }
                     }
                 }
             }
-        }
-        @include media('<xxlarge') {
-            &.hover {
-                .close {
+            @include media('<xxlarge') {
+                &.hover {
+                    .close {
+                        display: block;
+                    }
+                    .block {
+                        overflow: visible;
+                        .blockDesc {
+                            left: 50%;
+                            bottom: 0;
+                            width: 100vw;
+                            margin-left: -50vw;
+                            text-align: center;
+                            background-image: none;
+                        }
+                    }
+                }
+            }
+            .close {
+                display: none;
+                position: absolute;
+                padding: 20px;
+                top: 0;
+                left: 50%;
+                margin-left: calc(50vw - 60px);
+                z-index: 1;
+                svg {
+                    fill: #ffffff;
+                }
+            }
+            .title {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 9px;
+                font-family: 'Source Sans Pro';
+                line-height: 11px;
+                text-transform: uppercase;
+                text-align: center;
+                z-index: 0;
+                @include media('>=xxlarge') {
+                    margin-bottom: 2px;
+                    height: 44px;
+                }
+                @include media('<xxlarge') {
+                    padding: 20px 0;
+                }
+                span {
+                    font-size: 11px;
                     display: block;
+                    font-family: 'Georgia';
                 }
-                .block {
-                    overflow: visible;
-                    .blockDesc {
-                        left: 50%;
-                        bottom: 0;
-                        width: 100vw;
-                        margin-left: -50vw;
-                        text-align: center;
-                        background-image: none;
+            }
+            .block {
+                position: relative;
+                padding: 20px 0;
+                overflow: hidden;
+                img {
+                    display: block;
+                    width: auto;
+                    max-height: 500px;
+                }
+                .blockDesc {
+                    width: 100%;
+                    height: 100%;
+                    padding: 20px;
+                    position: absolute;
+                    left: 0;
+                    bottom: 100%;
+                    background-image: url(../images/bg-description-collection.png);
+                    box-sizing: border-box;
+                    li {
+                        display: block;
+                        font-size: 11.5px;
+                        padding: 5px 0;
+                        text-transform: uppercase;
+                        a {
+                            color: #ffffff;
+                            font-family: 'Source Sans Pro';
+                        }
                     }
                 }
             }
         }
-        .close {
-            display: none;
+    }
+    .owl-carousel {
+        display: flex;
+        justify-content: center;
+        &.hover {
+            .owl-prev,
+            .owl-next {
+                opacity: 0.1;
+            }
+            .owl-item {
+                opacity: 0.1;
+                &.center {
+                    opacity: 1;
+                    img {
+                        opacity: 0.1;
+                    }
+                }
+            }
+        }
+        .owl-prev,
+        .owl-next {
             position: absolute;
+            top: 50%;
+            margin-top: -20px;
             padding: 20px;
-            top: 0;
-            left: 50%;
-            margin-left: calc(50vw - 60px);
-            z-index: 1;
             svg {
                 fill: #ffffff;
             }
         }
-        .title {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 9px;
-            font-family: 'Source Sans Pro';
-            line-height: 11px;
-            text-transform: uppercase;
-            text-align: center;
-            z-index: 0;
-            @include media('>=xxlarge') {
-                margin-bottom: 2px;
-                height: 44px;
-            }
-            @include media('<xxlarge') {
-                padding: 20px 0;
-            }
-            span {
-                font-size: 11px;
-                display: block;
-                font-family: 'Georgia';
-            }
+        .owl-prev {
+            left: 0;
         }
-        .block {
-            position: relative;
-            padding: 20px 0;
-            overflow: hidden;
-            img {
-                display: block;
-                width: auto;
-                max-height: 500px;
-            }
-            .blockDesc {
-                width: 100%;
-                height: 100%;
-                padding: 20px;
-                position: absolute;
-                left: 0;
-                bottom: 100%;
-                background-image: url(../images/bg-description-collection.png);
-                box-sizing: border-box;
-                li {
-                    display: block;
-                    font-size: 11.5px;
-                    padding: 5px 0;
-                    text-transform: uppercase;
-                    a {
-                        color: #ffffff;
-                        font-family: 'Source Sans Pro';
-                    }
-                }
-            }
-        }
-    }
-}
-
-.owl-carousel {
-    display: flex;
-    justify-content: center;
-    &.hover {
-        .owl-prev,
         .owl-next {
-            opacity: 0.1;
+            right: 0;
         }
         .owl-item {
-            opacity: 0.1;
-            &.center {
-                opacity: 1;
-                img {
-                    opacity: 0.1;
-                }
-            }
-        }
-    }
-    .owl-prev,
-    .owl-next {
-        position: absolute;
-        top: 50%;
-        margin-top: -20px;
-        padding: 20px;
-        svg {
-            fill: #ffffff;
-        }
-    }
-    .owl-prev {
-        left: 0;
-    }
-    .owl-next {
-        right: 0;
-    }
-    .owl-item {
-        z-index: 0;
-        @include media('<xxlarge') {
-            opacity: 0.2;
-            transition: opacity 0.5s;
-        }
-        &.center {
-            z-index: 1;
+            z-index: 0;
             @include media('<xxlarge') {
-                cursor: pointer;
-                opacity: 1;
+                opacity: 0.2;
+                transition: opacity 0.5s;
             }
-            @include media('>=xxlarge') {
-                .title {
-                    margin-bottom: 0;
-                    border-bottom-width: 2px;
-                    border-bottom-style: solid;
+            &.center {
+                z-index: 1;
+                @include media('<xxlarge') {
+                    cursor: pointer;
+                    opacity: 1;
+                }
+                @include media('>=xxlarge') {
+                    .title {
+                        margin-bottom: 0;
+                        border-bottom-width: 2px;
+                        border-bottom-style: solid;
+                    }
                 }
             }
         }
