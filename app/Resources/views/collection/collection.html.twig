@@ -50,7 +50,7 @@
     var elementsToSimplyBar = document.querySelectorAll('.blockDesc');
     elementsToSimplyBar.forEach(function(elementToSimplyBar) { new SimpleBar(elementToSimplyBar, { autoHide: false }); })
 
-    var owl = null;
+    var owl = $('.owl-carousel');
     var up = false;
     var options = {
       startPosition: 1,
@@ -66,7 +66,7 @@
     };
 
     function initOwlCarousel() {
-      owl = $('.owl-carousel').owlCarousel(options);
+      owl.owlCarousel(options);
       up = true;
     }
 
