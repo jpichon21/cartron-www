@@ -70,10 +70,6 @@ a {
   background-size: auto 100%;
 }
 
-#collection-produits .main {
-  background: url(../images/bg-collection-produits.jpg) no-repeat center top;
-}
-
 #degustation-produits .main {
   background: url(../images/bg-degustation-produits.jpg) no-repeat center top;
   background-color: #FFF;
@@ -3413,17 +3409,57 @@ a {
 
 #collection-produits .main {
   padding: 0;
+  background-image: url(../images/bg-collection-produits.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #11252d;
 }
-#collection-produits .menu_collection {
-  display: flex;
-  justify-content: center;
+@media (max-width: 1023px) {
+  #collection-produits .main {
+    background-image: none;
+  }
 }
-#collection-produits .menu_collection .title {
+#collection-produits .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+}
+@media (min-width: 1024px) {
+  #collection-produits .close {
+    display: none;
+  }
+}
+#collection-produits .close svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+@media (min-width: 1280px) {
+  #collection-produits .menus {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 1023px) {
+  #collection-produits .menus {
+    display: none;
+  }
+}
+#collection-produits .menus .owl-item {
+  opacity: 0.2;
+}
+#collection-produits .menus .owl-item.center {
+  opacity: 1;
+}
+#collection-produits .menus .menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 167px;
+  height: 44px;
+  margin-bottom: 2px;
   font-size: 9px;
   font-family: "Source Sans Pro";
   line-height: 11px;
@@ -3431,57 +3467,75 @@ a {
   text-align: center;
   z-index: 0;
 }
-#collection-produits .menu_collection .title:hover, #collection-produits .menu_collection .title.active {
+#collection-produits .menus .menu:hover, #collection-produits .menus .menu.active {
   margin-bottom: 0;
   border-bottom-width: 2px;
   border-bottom-style: solid;
 }
-#collection-produits .menu_collection .title span {
-  font-size: 11px;
+#collection-produits .menus .menu span {
   display: block;
+  font-size: 11px;
   font-family: "Georgia";
 }
-@media (min-width: 1440px) {
-  #collection-produits .menu_collection .title {
-    margin-bottom: 2px;
-    height: 44px;
+#collection-produits .sousMenus {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+@media (max-width: 1023px) {
+  #collection-produits .sousMenus .sousMenu {
+    display: flex;
+    padding: 40px 20px;
   }
 }
-@media (max-width: 1439px) {
-  #collection-produits .menu_collection .title {
-    padding: 20px 0;
-  }
-}
-#collection-produits .sousMenu .visuel {
-  width: 422px;
-  height: 575px;
-  float: left;
+#collection-produits .sousMenus .sousMenu .visuel {
   position: relative;
 }
-#collection-produits .sousMenu .visuel h2 {
-  width: 201px;
-  text-align: right;
-  position: absolute;
-  top: 133px;
-  left: 95px;
+@media (min-width: 1024px) {
+  #collection-produits .sousMenus .sousMenu .visuel {
+    float: left;
+    width: 422px;
+    height: 575px;
+  }
+}
+#collection-produits .sousMenus .sousMenu .description {
+  position: relative;
+}
+@media (min-width: 1024px) {
+  #collection-produits .sousMenus .sousMenu .description {
+    float: left;
+    width: 422px;
+    height: 495px;
+    padding: 80px 0 0 34px;
+  }
+}
+#collection-produits .sousMenus .sousMenu .description h2 {
+  padding-bottom: 5px;
   font-size: 24px;
-  color: #dd7012;
   font-family: "DIN-Bold";
   font-weight: normal;
-  padding-bottom: 5px;
+  color: #dd7012;
   background: url(../images/bg_titre.jpg) no-repeat right bottom;
 }
-#collection-produits .sousMenu .visuel h2 a {
+@media (min-width: 1024px) {
+  #collection-produits .sousMenus .sousMenu .description h2 {
+    position: absolute;
+    top: 133px;
+    left: -325px;
+    width: 201px;
+    text-align: right;
+  }
+}
+@media (max-width: 1023px) {
+  #collection-produits .sousMenus .sousMenu .description h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-position: left bottom;
+  }
+}
+#collection-produits .sousMenus .sousMenu .description h2 a {
   color: #dd7012;
 }
-#collection-produits .sousMenu .description {
-  width: 422px;
-  height: 495px;
-  float: left;
-  position: relative;
-  padding: 80px 0 0 34px;
-}
-#collection-produits .sousMenu .description p {
+#collection-produits .sousMenus .sousMenu .description p {
   width: 410px;
   font-size: 11px;
   color: #ffffff;
@@ -3489,14 +3543,14 @@ a {
   font-family: "Georgia";
   line-height: 18px;
 }
-#collection-produits .sousMenu .description p.marge9 {
+#collection-produits .sousMenus .sousMenu .description p.marge9 {
   margin-bottom: 9px;
 }
-#collection-produits .sousMenu .description p span {
+#collection-produits .sousMenus .sousMenu .description p span {
   color: #dd7012;
   font-weight: bold;
 }
-#collection-produits .sousMenu .description h3 {
+#collection-produits .sousMenus .sousMenu .description h3 {
   color: #dd7012;
   font-size: 16px;
   margin-bottom: 17px;
@@ -3505,23 +3559,30 @@ a {
   font-family: "Georgia";
   border-bottom: 1px solid #ffffff;
 }
-#collection-produits .sousMenu .description .link-produits {
+@media (min-width: 1024px) {
+  #collection-produits .sousMenus .sousMenu .description .accueil-produits,
+#collection-produits .sousMenus .sousMenu .description .note-degustation,
+#collection-produits .sousMenus .sousMenu .description .note-elaboration {
+    width: 430px;
+    height: 300px;
+  }
+}
+#collection-produits .sousMenus .sousMenu .description .link-produits {
   position: absolute;
   right: 0px;
   bottom: 140px;
 }
-#collection-produits .sousMenu .description .link-produits a {
+#collection-produits .sousMenus .sousMenu .description .link-produits a {
   height: 29px;
   float: left;
   font-size: 13px;
   font-family: "Georgia";
   margin-right: 2px;
-  background: url(../images/btn-produits.jpg) no-repeat left top;
-  /*
-  background-image:linear-gradient(60deg, #142630, #021620);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#142630',endColorstr='#021620',GradientType=0);*/
+  background-image: url(../images/btn-produits.jpg);
+  background-repeat: no-repeat;
+  background-position: left top;
 }
-#collection-produits .sousMenu .description .link-produits a span {
+#collection-produits .sousMenus .sousMenu .description .link-produits a span {
   padding: 0 10px 0 20px;
   height: 29px;
   line-height: 29px;
@@ -3531,10 +3592,6 @@ a {
 #collection-produits .note-degustation,
 #collection-produits .note-elaboration {
   display: none;
-}
-#collection-produits .owl-carousel {
-  max-width: 1024px;
-  margin: 0 auto;
 }
 #collection-produits .owl-carousel .owl-nav .owl-prev,
 #collection-produits .owl-carousel .owl-nav .owl-next {
@@ -3547,6 +3604,14 @@ a {
 #collection-produits .owl-carousel .owl-nav .owl-next svg {
   fill: #303030;
 }
+@media (max-width: 1023px) {
+  #collection-produits .owl-carousel .owl-nav .owl-prev svg,
+#collection-produits .owl-carousel .owl-nav .owl-next svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+  }
+}
 #collection-produits .owl-carousel .owl-nav .owl-prev {
   left: 0;
 }
@@ -3557,6 +3622,11 @@ a {
   text-align: center;
   margin-top: -30px;
   padding-bottom: 20px;
+}
+@media (max-width: 1023px) {
+  #collection-produits .owl-carousel .owl-dots {
+    display: none;
+  }
 }
 #collection-produits .owl-carousel .owl-dots .owl-dot {
   position: relative;

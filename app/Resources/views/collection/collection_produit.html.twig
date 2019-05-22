@@ -4,12 +4,13 @@
 <div id="collection-produits" class="test2">
   <div class="main">
     <div class="collection-home">
-      <div class="menu_collection">
+      <span class="close"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg></span>
+      <div class="menus owl-carousel">
         {% for collection in collections %}
           {% set break = false %}
           {% for sousMenu in sousMenus if not break %}
             {% if (collection.id == sousMenu.idCollection.id) %}
-              <a class="title {% if sousMenu.idCollection.id == idCollection %}active{% endif %}" href="{{ path('collection_product', { id: sousMenu.id }) }}" style="border-color: #{{ collection.color }};">
+              <a class="menu {% if sousMenu.idCollection.id == idCollection %}active{% endif %}" href="{{ path('collection_product', { id: sousMenu.id }) }}" style="border-color: #{{ collection.color }};">
                 {% if (app.session.get('_locale') == 'en') %}{{ collection.titreEn | raw }}{% else %}{{ collection.titreFr | raw }}{% endif %}
               </a>
               {% set break = true %}
@@ -17,15 +18,15 @@
           {% endfor %}
         {% endfor %}
       </div>
-      <div class="owl-carousel">
+      <div class="sousMenus owl-carousel">
         {% for sousMenu in sousMenusCollection %}
             {% if sousMenu.idCollection.id == idCollection %}
-            <div class="sousMenu">
+            <div class="sousMenu" data-hash="{{ loop.index }}">
               <div class="visuel">
-                <h2>{% if app.session.get('_locale') == 'en' %}{{ sousMenu.titreEn }}{% else %}{{ sousMenu.titreFr }}{% endif %}</h2>
                 <img src="{{ asset('upload/'~sousMenu.image) }}" alt="{{ sousMenu.titreFr }}">
               </div>
               <div class="description">
+                <h2>{% if app.session.get('_locale') == 'en' %}{{ sousMenu.titreEn }}{% else %}{{ sousMenu.titreFr }}{% endif %}</h2>
                 <div class="accueil-produits">
                   {% if app.session.get('_locale') == 'en' %}{{ sousMenu.descriptionEn | raw }}{% else %}{{ sousMenu.descriptionFr | raw }}{% endif %}
                   <p class="marge9"><span>{{ "Degré" | trans }} :</span> {{ sousMenu.degre }}%</p>
@@ -55,18 +56,86 @@
 </div>
 <script type="text/javascript">
 
-  var elementsToSimplyBar = document.querySelectorAll('.accueil-produits, .note-degustation, .note-elaboration');
-  elementsToSimplyBar.forEach(function(elementToSimplyBar) { new SimpleBar(elementToSimplyBar, { autoHide: false }); })
-
-  $('.owl-carousel').owlCarousel({
+  $('.sousMenus').owlCarousel({
     items: 1,
     nav: true,
     loop: true,
+    URLhashListener: true,
+    startPosition: 'URLHash',
     navText: [
       '<div class="owl-prev"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',  
       '<div class="owl-next"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
     ]
   });
+
+  var owl = $('.menus');
+  var barsElements = [];
+  var barsObjects = [];
+
+  var owlUp = false;
+  var barsUp = false;
+
+  var options = {
+    startPosition: 3,
+    dots: false,
+    autoWidth: true,
+    center: true,
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false
+  };
+
+  function initOwlMenu() {
+    owl.owlCarousel(options);
+    owlUp = true;
+  }
+
+  function initSimpleBars() {
+    barsElements = document.querySelectorAll('.accueil-produits, .note-degustation, .note-elaboration');
+    barsElements.forEach(function(barsElement) { barsObjects.push(new SimpleBar(barsElement, { autoHide: false })); });
+    barsUp = true;
+  }
+  
+  function removeSimpleBars() {
+    barsObjects.forEach(function(barObject, index) {
+      var content = barObject.getContentElement();
+      var element = barsElements[index];
+      barObject.unMount();
+      element.removeAttribute('data-simplebar');
+      element.innerHTML = content.innerHTML;
+    });
+    barsObjects = [];
+    barsUp = false;
+  }
+
+  var width = window.innerWidth;
+
+  if (width < 1440) {
+    initOwlMenu();
+  }
+
+  if (width >= 1024) {
+    initSimpleBars();
+  }
+
+  window.onresize = function() {
+  
+    width = window.innerWidth;
+  
+    if (width < 1440 && !owlUp) {
+      initOwlMenu();
+    } else if (width >= 1440 && owlUp) {
+      owl.trigger('destroy.owl.carousel');
+      owlUp = false;
+    }
+  
+    if (width >= 1024 && !barsUp) {
+      initSimpleBars();
+    } else if (width < 1024 && barsUp) {
+      removeSimpleBars();
+    }
+  
+  };
 
 </script>
 <style>
@@ -82,10 +151,10 @@
     .simplebar-track.simplebar-horizontal {
       background-color: #ffffff;
     }
-    .collection-home .menu_collection #marc_{{ idCollection }} a {
+    .collection-home .menus #marc_{{ idCollection }} a {
       border-bottom: 2px solid #{{ defaultColor }};
     }
-    .sousMenu .visuel h2,
+    .sousMenu .description h2,
     .sousMenu .description p span,
     .sousMenu .description .note-degustation h3,
     .sousMenu .description .note-elaboration h3 {
@@ -105,21 +174,6 @@
       left: 11px;
       font-size: 20px;
       color: #{{ defaultColor }} !important;
-    }
-    .accueil-produits,
-    .note-degustation,
-    .note-elaboration {
-      width: 422px;
-      height: 300px;
-      overflow: auto;
-    }
-    .jspTrack {
-      background: #ffffff;
-    }
-    .accueil-produits .jspDrag,
-    .note-degustation .jspDrag,
-    .note-elaboration .jspDrag {
-      background: #{{ defaultColor }} !important;
     }
   </style>
 {% endblock %}

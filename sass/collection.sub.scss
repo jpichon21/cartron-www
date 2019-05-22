@@ -1,16 +1,50 @@
 #collection-produits {
     .main {
         padding: 0;
+        background-image: url(../images/bg-collection-produits.jpg);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-color: $color-secondary;
+        @include media('<large') {
+            background-image: none;
+        }
     }
-    .menu_collection {
-        display: flex;
-        justify-content: center;
-        .title {
+    .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px;
+        @include media('>=large') {
+            display: none;
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffffff;
+        }
+    }
+    .menus {
+        @include media('>=xlarge') {
+            display: flex;
+            justify-content: center;
+        }
+        @include media('<large') {
+            display: none;
+        }
+        .owl-item {
+            opacity: 0.2;
+            &.center {
+                opacity: 1;
+            }
+        }
+        .menu {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 167px;
+            height: 44px;
+            margin-bottom: 2px;
             font-size: 9px;
             font-family: 'Source Sans Pro';
             line-height: 11px;
@@ -24,92 +58,111 @@
                 border-bottom-style: solid;
             }
             span {
-                font-size: 11px;
                 display: block;
+                font-size: 11px;
                 font-family: 'Georgia';
-            }
-            @include media('>=xxlarge') {
-                margin-bottom: 2px;
-                height: 44px;
-            }
-            @include media('<xxlarge') {
-                padding: 20px 0;
             }
         }
     }
-    .sousMenu {
-        .visuel {
-            width: 422px;
-            height: 575px;
-            float: left;
-            position: relative;
-            h2 {
-                width: 201px;
-                text-align: right;
-                position: absolute;
-                top: 133px;
-                left: 95px;
-                font-size: 24px;
-                color: #dd7012;
-                font-family: 'DIN-Bold';
-                font-weight: normal;
-                padding-bottom: 5px;
-                background: url(../images/bg_titre.jpg) no-repeat right bottom;
-                a {
-                    color: #dd7012;
-                }
+    .sousMenus {
+        max-width: 1024px;
+        margin: 0 auto;
+        .sousMenu {
+            @include media('<large') {
+                display: flex;
+                padding: 40px 20px;
             }
-        }
-        .description {
-            width: 422px;
-            height: 495px;
-            float: left;
-            position: relative;
-            padding: 80px 0 0 34px;
-            p {
-                width: 410px;
-                font-size: 11px;
-                color: #ffffff;
-                text-align: justify;
-                font-family: 'Georgia';
-                line-height: 18px;
-                &.marge9 {
-                    margin-bottom: 9px;
-                }
-                span {
-                    color: #dd7012;
-                    font-weight: bold;
-                }
-            }
-            h3 {
-                color: #dd7012;
-                font-size: 16px;
-                margin-bottom: 17px;
-                padding-bottom: 17px;
-                text-transform: uppercase;
-                font-family: 'Georgia';
-                border-bottom: 1px solid #ffffff;
-            }
-            .link-produits {
-                position: absolute;
-                right: 0px;
-                bottom: 140px;
-                a {
-                    height: 29px;
+            .visuel {
+                position: relative;
+                @include media('>=large') {
                     float: left;
-                    font-size: 13px;
+                    width: 422px;
+                    height: 575px;
+                }
+            }
+            .description {
+                position: relative;
+                @include media('>=large') {
+                    float: left;
+                    width: 422px;
+                    height: 495px;
+                    padding: 80px 0 0 34px;
+                }
+                h2 {
+                    padding-bottom: 5px;
+                    font-size: 24px;
+                    font-family: 'DIN-Bold';
+                    font-weight: normal;
+                    color: #dd7012;
+                    background: url(../images/bg_titre.jpg) no-repeat right bottom;
+                    @include media('>=large') {
+                        position: absolute;
+                        top: 133px;
+                        left: -325px;
+                        width: 201px;                        
+                        text-align: right;
+                    }
+                    @include media('<large') {
+                        font-size: 20px;
+                        margin-bottom: 20px;
+                        background-position: left bottom;
+                    }
+                    a {
+                        color: #dd7012;
+                    }
+                }
+                p {
+                    width: 410px;
+                    font-size: 11px;
+                    color: #ffffff;
+                    text-align: justify;
                     font-family: 'Georgia';
-                    margin-right: 2px;
-                    background: url(../images/btn-produits.jpg) no-repeat left top;
-                    /*
-                    background-image:linear-gradient(60deg, #142630, #021620);
-                    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#142630',endColorstr='#021620',GradientType=0);*/
+                    line-height: 18px;
+                    &.marge9 {
+                        margin-bottom: 9px;
+                    }
                     span {
-                        padding: 0 10px 0 20px;
+                        color: #dd7012;
+                        font-weight: bold;
+                    }
+                }
+                h3 {
+                    color: #dd7012;
+                    font-size: 16px;
+                    margin-bottom: 17px;
+                    padding-bottom: 17px;
+                    text-transform: uppercase;
+                    font-family: 'Georgia';
+                    border-bottom: 1px solid #ffffff;
+                }
+                .accueil-produits,
+                .note-degustation,
+                .note-elaboration {
+                    @include media('>=large') {
+                        width: 430px;
+                        height: 300px;
+                    }
+                }
+                .link-produits {
+                    position: absolute;
+                    right: 0px;
+                    bottom: 140px;
+                    a {
                         height: 29px;
-                        line-height: 29px;
-                        color: #ffffff;
-                        background: url(../images/puce-link-produits.png) no-repeat 10px center;
+                        float: left;
+                        font-size: 13px;
+                        font-family: 'Georgia';
+                        margin-right: 2px;
+                        background-image: url(../images/btn-produits.jpg);
+                        background-repeat: no-repeat;
+                        background-position: left top;
+                        span {
+                            padding: 0 10px 0 20px;
+                            height: 29px;
+                            line-height: 29px;
+                            color: #ffffff;
+                            background: url(../images/puce-link-produits.png) no-repeat 10px center;
+                        }
                     }
                 }
             }
@@ -120,8 +173,6 @@
         display: none;
     }
     .owl-carousel {
-        max-width: 1024px;
-        margin: 0 auto;
         .owl-nav {
             .owl-prev,
             .owl-next {
@@ -131,6 +182,11 @@
                 padding: 20px;
                 svg {
                     fill: #303030;
+                    @include media('<large') {
+                        width: 20px;
+                        height: 20px;
+                        fill: #ffffff;
+                    }
                 }
             }
             .owl-prev {
@@ -144,6 +200,9 @@
             text-align: center;
             margin-top: -30px;
             padding-bottom: 20px;
+            @include media('<large') {
+                display: none;
+            }
             .owl-dot {
                 position: relative;
                 width: 3px;
