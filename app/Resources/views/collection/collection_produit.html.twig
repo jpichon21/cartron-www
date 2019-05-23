@@ -75,8 +75,10 @@
   var owlUp = false;
   var barsUp = false;
 
+  var indexPosition = $('.menu.active', owl).index();
+
   var options = {
-    startPosition: 3,
+    startPosition: indexPosition,
     dots: false,
     autoWidth: true,
     center: true,
