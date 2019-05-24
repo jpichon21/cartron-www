@@ -1469,8 +1469,7 @@ a {
   padding-right: 14px;
   background: url(../images/bg-langues.gif) no-repeat right top;
 }
-
-.dropdown {
+.langues .dropdown {
   width: 76px;
   line-height: 24px;
   height: 24px;
@@ -1482,40 +1481,40 @@ a {
   text-decoration: none;
   position: relative;
 }
-.dropdown dd, .dropdown dt, .dropdown ul {
+.langues .dropdown dd, .langues .dropdown dt, .langues .dropdown ul {
   margin: 0px;
   padding: 0px;
 }
-.dropdown dt {
+.langues .dropdown dt {
   width: 76px;
   height: 24px;
 }
-.dropdown dd {
+.langues .dropdown dd {
   position: relative;
 }
-.dropdown a {
+.langues .dropdown a {
   color: #ffffff;
   text-decoration: none;
   outline: none;
 }
-.dropdown a:visited {
+.langues .dropdown a:visited {
   color: #ffffff;
   text-decoration: none;
   outline: none;
 }
-.dropdown a:hover {
+.langues .dropdown a:hover {
   color: #ffffff;
 }
-.dropdown dt a {
+.langues .dropdown dt a {
   background: url(../images/puce-langue.jpg) no-repeat center right;
   display: block;
   width: 76px;
   font-size: 10px;
 }
-.dropdown dt a:hover {
+.langues .dropdown dt a:hover {
   color: #ffffff;
 }
-.dropdown dt a span {
+.langues .dropdown dt a span {
   width: 76px;
   height: 24px;
   line-height: 24px;
@@ -1524,7 +1523,7 @@ a {
   color: #FFF;
   font-family: "Source Sans Pro";
 }
-.dropdown dd ul {
+.langues .dropdown dd ul {
   color: #ffffff;
   display: none;
   left: 0px;
@@ -1536,16 +1535,16 @@ a {
   font-size: 11px;
   background: #364249;
 }
-.dropdown span.value {
+.langues .dropdown span.value {
   display: none;
 }
-.dropdown dd ul li a {
+.langues .dropdown dd ul li a {
   display: block;
   font-family: arial;
   font-size: 10px;
   padding: 5px 0 5px 2px;
 }
-.dropdown img.flag {
+.langues .dropdown img.flag {
   border: none;
   vertical-align: middle;
   margin-left: 12px;
@@ -3484,7 +3483,9 @@ a {
 @media (max-width: 1023px) {
   #collection-produits .sousMenus .sousMenu {
     display: flex;
-    padding: 40px 20px;
+    padding: 40px 20px 0;
+    min-height: 500px;
+    overflow: hidden;
   }
 }
 #collection-produits .sousMenus .sousMenu .visuel {
@@ -3497,6 +3498,14 @@ a {
     height: 575px;
   }
 }
+@media (max-width: 1023px) {
+  #collection-produits .sousMenus .sousMenu .visuel img {
+    position: absolute;
+    top: -75px;
+    right: -75px;
+    width: auto;
+  }
+}
 #collection-produits .sousMenus .sousMenu .description {
   position: relative;
 }
@@ -3505,10 +3514,21 @@ a {
     float: left;
     width: 422px;
     height: 495px;
-    padding: 80px 0 0 34px;
+    padding: 80px 0 0 35px;
   }
 }
-#collection-produits .sousMenus .sousMenu .description h2 {
+@media (max-width: 1023px) {
+  #collection-produits .sousMenus .sousMenu .description .first_part {
+    padding-left: 75px;
+  }
+}
+@media (max-width: 767px) {
+  #collection-produits .sousMenus .sousMenu .description .first_part {
+    height: calc(100vh - 205px);
+    overflow: auto;
+  }
+}
+#collection-produits .sousMenus .sousMenu .description .first_part h2 {
   padding-bottom: 5px;
   font-size: 24px;
   font-family: "DIN-Bold";
@@ -3517,7 +3537,7 @@ a {
   background: url(../images/bg_titre.jpg) no-repeat right bottom;
 }
 @media (min-width: 1024px) {
-  #collection-produits .sousMenus .sousMenu .description h2 {
+  #collection-produits .sousMenus .sousMenu .description .first_part h2 {
     position: absolute;
     top: 133px;
     left: -325px;
@@ -3526,31 +3546,38 @@ a {
   }
 }
 @media (max-width: 1023px) {
-  #collection-produits .sousMenus .sousMenu .description h2 {
+  #collection-produits .sousMenus .sousMenu .description .first_part h2 {
     font-size: 20px;
     margin-bottom: 20px;
+    padding-right: 50px;
     background-position: left bottom;
   }
 }
-#collection-produits .sousMenus .sousMenu .description h2 a {
-  color: #dd7012;
-}
-#collection-produits .sousMenus .sousMenu .description p {
-  width: 410px;
-  font-size: 11px;
+#collection-produits .sousMenus .sousMenu .description .first_part p {
   color: #ffffff;
-  text-align: justify;
+  font-size: 11px;
   font-family: "Georgia";
   line-height: 18px;
+  text-align: justify;
 }
-#collection-produits .sousMenus .sousMenu .description p.marge9 {
+@media (min-width: 1024px) {
+  #collection-produits .sousMenus .sousMenu .description .first_part p {
+    width: 410px;
+  }
+}
+#collection-produits .sousMenus .sousMenu .description .first_part p.marge9 {
   margin-bottom: 9px;
 }
-#collection-produits .sousMenus .sousMenu .description p span {
+#collection-produits .sousMenus .sousMenu .description .first_part p span {
   color: #dd7012;
   font-weight: bold;
 }
-#collection-produits .sousMenus .sousMenu .description h3 {
+@media (max-width: 1023px) and (min-width: 768px) {
+  #collection-produits .sousMenus .sousMenu .description .second_part {
+    padding-left: 75px;
+  }
+}
+#collection-produits .sousMenus .sousMenu .description .second_part h3 {
   color: #dd7012;
   font-size: 16px;
   margin-bottom: 17px;
@@ -3558,6 +3585,31 @@ a {
   text-transform: uppercase;
   font-family: "Georgia";
   border-bottom: 1px solid #ffffff;
+}
+#collection-produits .sousMenus .sousMenu .description .second_part h3.active + .dropdown {
+  display: block;
+}
+@media (max-width: 767px) {
+  #collection-produits .sousMenus .sousMenu .description .second_part h3 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+}
+#collection-produits .sousMenus .sousMenu .description .second_part .recette {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 20px;
+  margin: 0 -20px 20px;
+  background: #36424a;
+  font-size: 16px;
+  font-family: "Georgia";
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  #collection-produits .sousMenus .sousMenu .description .second_part .recette {
+    display: none;
+  }
 }
 @media (min-width: 1024px) {
   #collection-produits .sousMenus .sousMenu .description .accueil-produits,
@@ -3567,10 +3619,32 @@ a {
     height: 300px;
   }
 }
+@media (max-width: 767px) {
+  #collection-produits .sousMenus .sousMenu .description .accueil-produits,
+#collection-produits .sousMenus .sousMenu .description .note-degustation,
+#collection-produits .sousMenus .sousMenu .description .note-elaboration {
+    display: block !important;
+  }
+}
+@media (min-width: 1024px) {
+  #collection-produits .sousMenus .sousMenu .description .note-degustation,
+#collection-produits .sousMenus .sousMenu .description .note-elaboration {
+    display: none;
+  }
+}
+#collection-produits .sousMenus .sousMenu .description .note-degustation .dropdown,
+#collection-produits .sousMenus .sousMenu .description .note-elaboration .dropdown {
+  display: none;
+}
 #collection-produits .sousMenus .sousMenu .description .link-produits {
   position: absolute;
   right: 0px;
   bottom: 140px;
+}
+@media (max-width: 1023px) {
+  #collection-produits .sousMenus .sousMenu .description .link-produits {
+    display: none;
+  }
 }
 #collection-produits .sousMenus .sousMenu .description .link-produits a {
   height: 29px;
@@ -3589,16 +3663,24 @@ a {
   color: #ffffff;
   background: url(../images/puce-link-produits.png) no-repeat 10px center;
 }
-#collection-produits .note-degustation,
-#collection-produits .note-elaboration {
-  display: none;
-}
 #collection-produits .owl-carousel .owl-nav .owl-prev,
 #collection-produits .owl-carousel .owl-nav .owl-next {
   position: absolute;
   top: 50%;
   margin-top: -35px;
-  padding: 20px;
+  padding: 20px 20px 20px 15px;
+}
+@media (max-width: 1023px) {
+  #collection-produits .owl-carousel .owl-nav .owl-prev,
+#collection-produits .owl-carousel .owl-nav .owl-next {
+    background-color: rgba(17, 37, 45, 0.8);
+  }
+}
+@media (max-width: 767px) {
+  #collection-produits .owl-carousel .owl-nav .owl-prev,
+#collection-produits .owl-carousel .owl-nav .owl-next {
+    top: 175px;
+  }
 }
 #collection-produits .owl-carousel .owl-nav .owl-prev svg,
 #collection-produits .owl-carousel .owl-nav .owl-next svg {

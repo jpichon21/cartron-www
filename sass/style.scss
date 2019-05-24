@@ -1512,86 +1512,85 @@ a {
     margin-top: 6px;
     padding-right: 14px;
     background: url(../images/bg-langues.gif) no-repeat right top;
-}
-
-.dropdown {
-    width: 76px;
-    line-height: 24px;
-    height: 24px;
-    margin: 0;
-    padding: 0;
-    display: block;
-    font: 13px Arial, Helvetica, sans-serif;
-    color: #fff;
-    text-decoration: none;
-    position: relative;
-    dd, dt, ul {
-        margin: 0px;
-        padding: 0px;
-    }
-    dt {
+    .dropdown {
         width: 76px;
+        line-height: 24px;
         height: 24px;
-    }
-    dd {
-        position: relative;
-    }
-    a {
-        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        display: block;
+        font: 13px Arial, Helvetica, sans-serif;
+        color: #fff;
         text-decoration: none;
-        outline: none;
-        &:visited {
+        position: relative;
+        dd, dt, ul {
+            margin: 0px;
+            padding: 0px;
+        }
+        dt {
+            width: 76px;
+            height: 24px;
+        }
+        dd {
+            position: relative;
+        }
+        a {
             color: #ffffff;
             text-decoration: none;
             outline: none;
+            &:visited {
+                color: #ffffff;
+                text-decoration: none;
+                outline: none;
+            }
+            &:hover {
+                color: #ffffff;
+            }
         }
-        &:hover {
-            color: #ffffff;
-        }
-    }
-    dt a {
-        &:hover {
-            color: #ffffff;
-        }
-        background: url(../images/puce-langue.jpg) no-repeat center right;
-        display: block;
-        width: 76px;
-        font-size: 10px;
-        span {
-            width: 76px;
-            height: 24px;
-            line-height: 24px;
-            cursor: pointer;
+        dt a {
+            &:hover {
+                color: #ffffff;
+            }
+            background: url(../images/puce-langue.jpg) no-repeat center right;
             display: block;
-            color: #FFF;
-            font-family: 'Source Sans Pro';
+            width: 76px;
+            font-size: 10px;
+            span {
+                width: 76px;
+                height: 24px;
+                line-height: 24px;
+                cursor: pointer;
+                display: block;
+                color: #FFF;
+                font-family: 'Source Sans Pro';
+            }
         }
-    }
-    dd ul {
-        color: #ffffff;
-        display: none;
-        left: 0px;
-        padding: 5px 0px;
-        position: absolute;
-        top: 2px;
-        width: 76px;
-        list-style: none;
-        font-size: 11px;
-        background: #364249;
-    }
-    span.value {
-        display: none;
-    }
-    dd ul li a {
-        display: block;
-        font-family: arial;
-        font-size: 10px;
-        padding: 5px 0 5px 2px;
-    }
-    img.flag {
-        border: none;
-        vertical-align: middle;
-        margin-left: 12px;
+        dd ul {
+            color: #ffffff;
+            display: none;
+            left: 0px;
+            padding: 5px 0px;
+            position: absolute;
+            top: 2px;
+            width: 76px;
+            list-style: none;
+            font-size: 11px;
+            background: #364249;
+        }
+        span.value {
+            display: none;
+        }
+        dd ul li a {
+            display: block;
+            font-family: arial;
+            font-size: 10px;
+            padding: 5px 0 5px 2px;
+        }
+        img.flag {
+            border: none;
+            vertical-align: middle;
+            margin-left: 12px;
+        }
     }
 }
 

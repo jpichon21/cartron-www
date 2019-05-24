@@ -26,25 +26,34 @@
                 <img src="{{ asset('upload/'~sousMenu.image) }}" alt="{{ sousMenu.titreFr }}">
               </div>
               <div class="description">
-                <h2>{% if app.session.get('_locale') == 'en' %}{{ sousMenu.titreEn }}{% else %}{{ sousMenu.titreFr }}{% endif %}</h2>
-                <div class="accueil-produits">
-                  {% if app.session.get('_locale') == 'en' %}{{ sousMenu.descriptionEn | raw }}{% else %}{{ sousMenu.descriptionFr | raw }}{% endif %}
-                  <p class="marge9"><span>{{ "Degré" | trans }} :</span> {{ sousMenu.degre }}%</p>
-                  <p class="marge9"><span>{{ "Contenance" | trans }} :</span> {% if app.session.get('_locale') == 'en' %}{{ sousMenu.contenanceEn }}{% else %}{{ sousMenu.contenanceFr }}{% endif %}</p>
-                  <p class="marge9"><span>{{ "Conserver" | trans }}</span> {% if app.session.get('_locale') == 'en' %}{{ sousMenu.conserverEn }}{% else %}{{ sousMenu.conserverFr }}{% endif %}</p>
+                <div class="first_part">
+                  <h2>{% if app.session.get('_locale') == 'en' %}{{ sousMenu.titreEn }}{% else %}{{ sousMenu.titreFr }}{% endif %}</h2>
+                  <div class="accueil-produits">
+                    {% if app.session.get('_locale') == 'en' %}{{ sousMenu.descriptionEn | raw }}{% else %}{{ sousMenu.descriptionFr | raw }}{% endif %}
+                    <p class="marge9"><span>{{ "Degré" | trans }} :</span> {{ sousMenu.degre }}%</p>
+                    <p class="marge9"><span>{{ "Contenance" | trans }} :</span> {% if app.session.get('_locale') == 'en' %}{{ sousMenu.contenanceEn }}{% else %}{{ sousMenu.contenanceFr }}{% endif %}</p>
+                    <p class="marge9"><span>{{ "Conserver" | trans }}</span> {% if app.session.get('_locale') == 'en' %}{{ sousMenu.conserverEn }}{% else %}{{ sousMenu.conserverFr }}{% endif %}</p>
+                  </div>
                 </div>
-                <div class="note-degustation">
-                  <h3>{{ "Note de dégustation" | trans }}</h3>
-                  {% if app.session.get('_locale') == 'en' %}{{ sousMenu.noteDegustationEn | raw }}{% else %}{{ sousMenu.noteDegustationFr | raw }}{% endif %}
-                </div>
-                <div class="note-elaboration">
-                  <h3>{{ "Elaboration" | trans }}</h3>
-                  {% if app.session.get('_locale') == 'en' %}{{ sousMenu.elaborationEn | raw }}{% else %}{{ sousMenu.elaborationFr | raw }}{% endif %}
-                </div>
-                <div class="link-produits">
-                  <a href="{% if app.session.get('_locale') == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}"><span><b>&rsaquo;</b>{{ "Recettes" | trans }}</span></a>
-                  <a class="degustation"><span><b>&rsaquo;</b>{{ "Note de dégustation" | trans }}</span></a>
-                  <a class="elaboration"><span><b>&rsaquo;</b>{{ "Elaboration" | trans }}</span></a>
+                <div class="second_part">
+                  <a class="recette" href="{% if app.session.get('_locale') == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}">{{ "Recettes" | trans }}</a>
+                  <div class="note-degustation">
+                    <h3>{{ "Note de dégustation" | trans }}</h3>
+                    <div class="dropdown">
+                      {% if app.session.get('_locale') == 'en' %}{{ sousMenu.noteDegustationEn | raw }}{% else %}{{ sousMenu.noteDegustationFr | raw }}{% endif %}
+                    </div>
+                  </div>
+                  <div class="note-elaboration">
+                    <h3>{{ "Elaboration" | trans }}</h3>
+                    <div class="dropdown">
+                      {% if app.session.get('_locale') == 'en' %}{{ sousMenu.elaborationEn | raw }}{% else %}{{ sousMenu.elaborationFr | raw }}{% endif %}
+                    </div>
+                  </div>
+                  <div class="link-produits">
+                    <a href="{% if app.session.get('_locale') == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}"><span><b>&rsaquo;</b>{{ "Recettes" | trans }}</span></a>
+                    <a class="degustation"><span><b>&rsaquo;</b>{{ "Note de dégustation" | trans }}</span></a>
+                    <a class="elaboration"><span><b>&rsaquo;</b>{{ "Elaboration" | trans }}</span></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -139,6 +148,10 @@
   
   };
 
+  $('.second_part').on('click', 'h3', function() {
+    $(this).toggleClass('active');
+  });
+
 </script>
 <style>
     .simplebar-scrollbar:before {
@@ -158,6 +171,7 @@
     }
     .sousMenu .description h2,
     .sousMenu .description p span,
+    .sousMenu .description .recette,
     .sousMenu .description .note-degustation h3,
     .sousMenu .description .note-elaboration h3 {
       color: #{{ defaultColor }} !important;
