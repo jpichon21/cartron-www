@@ -61,120 +61,9 @@ a {
   background: url(../images/bg-savoir-faire-new.jpg) no-repeat center top;
 }
 
-#degustation .main {
-  background: url(../images/bg_degustation.jpg) repeat-x 2% 0;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-  background-size: auto 100%;
-}
-
-#degustation-produits .main {
-  background: url(../images/bg-degustation-produits.jpg) no-repeat center top;
-  background-color: #FFF;
-}
-
 #pro .main {
   background: url(../images/img-fond-pro.jpg) no-repeat center top;
   background-size: cover;
-}
-
-#contact .main {
-  background: url(../images/bg-contact.jpg) repeat center top;
-}
-
-.langues-reseaux {
-  width: 95%;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.reseaux {
-  float: right;
-  margin: 6px 15px 0 0;
-}
-.reseaux li {
-  float: left;
-  list-style: none;
-  height: 22px;
-}
-.reseaux li a {
-  display: block;
-  height: 18px;
-  padding-top: 6px;
-  text-decoration: none;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-family: "Source Sans Pro";
-  margin-right: 10px;
-}
-.reseaux li a.facebook {
-  display: block;
-  height: 22px;
-  width: 21px;
-  text-indent: -9999px;
-  background-image: url(../images/reseaux.gif);
-  background-repeat: no-repeat;
-  background-position: left top;
-  margin: 0 0 0 3px;
-  padding: 0;
-}
-.reseaux li a.twitter {
-  display: block;
-  height: 22px;
-  width: 21px;
-  text-indent: -9999px;
-  background-image: url(../images/reseaux.gif);
-  background-repeat: no-repeat;
-  background-position: left top;
-  margin: 0 0 0 3px;
-  padding: 0;
-  background-position: right top;
-}
-
-.menu-footer-01 {
-  background: url(../images/bg-footer-01.gif) no-repeat center center;
-}
-
-.menu-footer ul li {
-  /*float:left;*/
-  list-style: none;
-  margin: 0 12px;
-  display: inline;
-}
-.menu-footer ul li a {
-  display: inline-block;
-  font-family: "Source Sans Pro";
-  font-size: 10px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-.menu-footer ul li a:hover {
-  color: #cccccc;
-  text-decoration: underline;
-}
-
-.menu-footer-01 ul {
-  width: 350px;
-  margin: auto;
-  overflow: hidden;
-  text-align: center;
-}
-
-.menu-footer-02 ul {
-  width: 100%;
-  margin: auto;
-  overflow: hidden;
-  text-align: center;
-}
-
-.mention {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 10px;
-  margin: 10px 0 10px;
-  font-family: "Source Sans Pro";
 }
 
 .overlay-demande-envoyee, .overlay-mentions, .overlay-espace-pro, .overlay-champs, .overlay-format, .overlay-passe-oublie {
@@ -517,366 +406,6 @@ a {
   line-height: 15px;
   margin-bottom: 15px;
   text-align: justify;
-}
-
-/*************************************/
-/*         Page Degustation          */
-/*************************************/
-.menu_degustation {
-  width: 100%;
-  height: 35px;
-}
-
-#degustation .menu_degustation {
-  background: url(../images/degustation_submenu.png) no-repeat center;
-}
-
-.menu_degustation ul {
-  width: 100%;
-  height: 35px;
-  text-align: center;
-  margin: auto;
-}
-
-.scrollMenu ul {
-  margin-left: 0;
-}
-
-.icons a.telecharger {
-  display: none;
-}
-
-.menu_degustation li {
-  /*height:35px;*/
-  display: inline;
-  position: relative;
-  padding: 5px 0;
-}
-.menu_degustation li a {
-  height: 25px;
-  padding: 10px 10px 0 10px;
-  display: inline-block;
-  font-size: 11px;
-  font-family: "Georgia";
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: left;
-}
-.menu_degustation li a:hover, .menu_degustation li a.active {
-  background: url(../images/bg-lien-degustation.png) no-repeat center 24px;
-}
-
-.degustation-home .menu_degustation li .scrollMenu {
-  position: absolute;
-  right: -33px;
-  display: none;
-  top: 35px;
-  padding: 18px;
-  width: 137px;
-  height: auto !important;
-  z-index: 99999;
-  background: url(../images/bg-ss-menu.png) no-repeat left top;
-}
-.degustation-home .menu_degustation li ul.subMenu {
-  width: 137px;
-  height: 594px;
-  overflow: auto;
-}
-.degustation-home .menu_degustation li ul.subMenu li {
-  display: block;
-  /*margin:5px 0;
-  height:20px;*/
-  text-align: left;
-}
-.degustation-home .menu_degustation li ul.subMenu li a {
-  /*display:block;*/
-  padding: 0;
-  height: inherit;
-  font-size: 11px;
-  font-family: "Source Sans Pro";
-  font-weight: normal;
-  text-transform: uppercase;
-  text-align: left;
-}
-
-.degustation, .elaboration {
-  cursor: pointer;
-}
-
-.degustation-home .menu_degustation li ul.subMenu li a:hover {
-  color: #ddd;
-  background: none;
-}
-
-.menu_degustation .jspDrag {
-  background: #fff !important;
-}
-
-#degustation .degustation-home .content {
-  position: relative;
-  background: url(../images/degustation_overlay.png) no-repeat center;
-}
-
-.degustation-home .content .parralax {
-  position: relative;
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-.degustation-home .content .sh {
-  display: table-cell;
-  text-align: center;
-  height: 100%;
-  vertical-align: middle;
-}
-
-#degustation-produits .content {
-  padding-top: 0;
-  width: 1094px;
-  height: 630px;
-  margin: auto;
-}
-#degustation-produits .degustation-home {
-  width: 1170px;
-  margin: 0 auto;
-}
-
-.degustation-home .content h2 {
-  text-align: center;
-  font-size: 56px;
-  color: #ffffff;
-  font-weight: bold;
-  font-family: "Georgia";
-  text-transform: uppercase;
-  margin-bottom: 10%;
-  position: relative;
-  height: 92px;
-}
-.degustation-home .content h2 b {
-  position: absolute;
-  top: 0;
-  left: 0%;
-  width: 100%;
-}
-.degustation-home .content h2 span {
-  display: block;
-  font-size: 14px;
-  font-weight: normal;
-  margin-bottom: 10px;
-}
-.degustation-home .content a.entrer {
-  width: 30px;
-  display: inline-block;
-  padding: 0 36px 0 0;
-  height: 22px;
-  line-height: 22px;
-  color: #ffffff;
-  font-size: 12px;
-  font-family: "Source Sans Pro";
-  background: url(../images/bg-entrer.png) no-repeat right top;
-}
-.degustation-home .content a.next {
-  width: 116px;
-  height: 116px;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 244px;
-  background: url(../images/bg-next-degustation.png) no-repeat center;
-  top: 50%;
-  margin-top: -60px;
-}
-.degustation-home .content a.prev {
-  width: 116px;
-  height: 116px;
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 244px;
-  background: url(../images/bg-prev-degustation.png) no-repeat center;
-  top: 50%;
-  margin-top: -60px;
-  display: none;
-}
-
-#slideshow-1 {
-  position: relative;
-  width: 977px;
-  height: 577px;
-  padding: 0px 58px;
-}
-#slideshow-1 .cycle-next {
-  position: absolute;
-  top: 243px;
-  right: 0px;
-  width: 116px;
-  height: 116px;
-  cursor: pointer;
-  background: url(../images/suiv-degustation.png) no-repeat;
-  z-index: 12;
-}
-#slideshow-1 .cycle-prev {
-  position: absolute;
-  top: 243px;
-  left: 0px;
-  width: 116px;
-  height: 116px;
-  background: url(../images/prev-degustation.png) no-repeat;
-  z-index: 12;
-}
-
-#cycle-1 {
-  z-index: 1;
-  display: none;
-}
-#cycle-1 .cycle-slide {
-  display: none;
-  background-color: #fff;
-}
-
-#slideshow-1 img {
-  position: relative;
-  z-index: 1;
-}
-#slideshow-1 .description {
-  width: 430px;
-  position: absolute;
-  left: 131px;
-  top: 82px;
-  z-index: 10;
-}
-#slideshow-1 .description h3 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #2f383e;
-  font-family: "Georgia";
-}
-#slideshow-1 .imageNoir .description h3 {
-  color: #ffffff;
-}
-#slideshow-1 .description .text {
-  font-size: 13px;
-  color: #2f383e;
-  font-family: "Georgia";
-  padding-top: 20px;
-  line-height: 20px;
-}
-#slideshow-1 .description .text span {
-  font-weight: bold;
-  color: #2f383e;
-}
-#slideshow-1 .imageNoir .description .text {
-  color: #ffffff !important;
-}
-#slideshow-1 .imageNoir .description .text span {
-  color: #ffffff !important;
-}
-#slideshow-1 .imageNoir .desconly .text {
-  color: #ffffff !important;
-}
-#slideshow-1 .imageNoir .description .text p, #slideshow-1 .imageNoir .description .text span {
-  color: #ffffff !important;
-}
-#slideshow-1 .imageNoir .desconly .text .p1, #slideshow-1 .imageNoir .description .text .p2 {
-  color: #ffffff !important;
-}
-#slideshow-1 .description .sep {
-  width: 274px;
-  height: 1px;
-  display: block;
-  margin-top: 25px;
-  background: #e2e3e4;
-}
-#slideshow-1 .description h4 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #2f383e;
-  font-family: "Georgia";
-  margin-top: 25px;
-}
-#slideshow-1 .imageNoir .description h4 {
-  color: #ffffff;
-}
-#slideshow-1 .description .icons {
-  padding-top: 20px;
-}
-#slideshow-1 .description .icons a {
-  width: 22px;
-  height: 22px;
-  display: block;
-  float: left;
-  margin-left: 7px;
-  background-position: left top;
-}
-#slideshow-1 .imageNoir .description .icons a {
-  background-position: left bottom;
-}
-#slideshow-1 .description .icons a.facebook {
-  background-image: url(../images/facebook.png);
-}
-#slideshow-1 .description .icons a.telecharger {
-  background-image: url(../images/telecharger.png);
-  display: none;
-}
-#slideshow-1 .description .icons a.imprimer {
-  background-image: url(../images/imprimer.png);
-}
-
-#slideshow-2 {
-  position: relative;
-  width: 711px;
-  height: 37px;
-  padding: 0 22px;
-  margin: 0 auto;
-}
-#slideshow-2 .cycle-next {
-  position: absolute;
-  top: 14px;
-  right: 0px;
-  width: 5px;
-  height: 13px;
-  cursor: pointer;
-  background: url(../images/suiv2.png) no-repeat;
-  z-index: 12;
-}
-#slideshow-2 .cycle-prev {
-  position: absolute;
-  top: 14px;
-  left: 0px;
-  width: 5px;
-  height: 13px;
-  background: url(../images/prev2.png) no-repeat;
-  z-index: 12;
-}
-
-#cycle-2 {
-  z-index: 1;
-  height: 37px;
-}
-#cycle-2 .cycle-slide {
-  width: auto !important;
-  margin-right: 5px;
-}
-#cycle-2 .cycle-slide img {
-  border: 1px solid #cccccc;
-  width: 72px;
-  height: 27px;
-}
-#cycle-2 .cycle-slide-active img {
-  width: 72px;
-  height: 35px;
-  margin-top: 0;
-}
-
-.caroubas {
-  width: 977px;
-  height: 41px;
-  margin: 2px auto 0 auto;
-  padding: 5px 0;
-}
-
-.carouNoir {
-  background: #000000;
 }
 
 /*************************************/
@@ -1461,95 +990,6 @@ a {
   overflow: auto;
 }
 
-.langues {
-  height: 24px;
-  width: 76px;
-  float: left;
-  margin-top: 6px;
-  padding-right: 14px;
-  background: url(../images/bg-langues.gif) no-repeat right top;
-}
-.langues .dropdown {
-  width: 76px;
-  line-height: 24px;
-  height: 24px;
-  margin: 0;
-  padding: 0;
-  display: block;
-  font: 13px Arial, Helvetica, sans-serif;
-  color: #fff;
-  text-decoration: none;
-  position: relative;
-}
-.langues .dropdown dd, .langues .dropdown dt, .langues .dropdown ul {
-  margin: 0px;
-  padding: 0px;
-}
-.langues .dropdown dt {
-  width: 76px;
-  height: 24px;
-}
-.langues .dropdown dd {
-  position: relative;
-}
-.langues .dropdown a {
-  color: #ffffff;
-  text-decoration: none;
-  outline: none;
-}
-.langues .dropdown a:visited {
-  color: #ffffff;
-  text-decoration: none;
-  outline: none;
-}
-.langues .dropdown a:hover {
-  color: #ffffff;
-}
-.langues .dropdown dt a {
-  background: url(../images/puce-langue.jpg) no-repeat center right;
-  display: block;
-  width: 76px;
-  font-size: 10px;
-}
-.langues .dropdown dt a:hover {
-  color: #ffffff;
-}
-.langues .dropdown dt a span {
-  width: 76px;
-  height: 24px;
-  line-height: 24px;
-  cursor: pointer;
-  display: block;
-  color: #FFF;
-  font-family: "Source Sans Pro";
-}
-.langues .dropdown dd ul {
-  color: #ffffff;
-  display: none;
-  left: 0px;
-  padding: 5px 0px;
-  position: absolute;
-  top: 2px;
-  width: 76px;
-  list-style: none;
-  font-size: 11px;
-  background: #364249;
-}
-.langues .dropdown span.value {
-  display: none;
-}
-.langues .dropdown dd ul li a {
-  display: block;
-  font-family: arial;
-  font-size: 10px;
-  padding: 5px 0 5px 2px;
-}
-.langues .dropdown img.flag {
-  border: none;
-  vertical-align: middle;
-  margin-left: 12px;
-}
-
 #form_dateNaissance {
   clear: both;
   width: 340px;
@@ -1824,18 +1264,171 @@ a {
 }
 
 .footer {
-  padding: 20px;
+  padding: 10px 20px 20px;
   box-sizing: border-box;
   background-image: url("../images/bg-body-footer.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
 }
-.footer .menu-footer {
-  text-align: center;
+.footer .langues-reseaux {
+  max-width: 1000px;
+  margin: auto;
 }
-.footer .menu-footer-02 {
+.footer .langues-reseaux .langues {
+  height: 25px;
+  width: 76px;
+  float: left;
+  padding-right: 15px;
+  background: url(../images/bg-langues.gif) no-repeat right top;
+}
+.footer .langues-reseaux .langues .dropdown {
+  width: 76px;
+  line-height: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  font: 13px Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+.footer .langues-reseaux .langues .dropdown dd, .footer .langues-reseaux .langues .dropdown dt, .footer .langues-reseaux .langues .dropdown ul {
+  margin: 0px;
+  padding: 0px;
+}
+.footer .langues-reseaux .langues .dropdown dt {
+  width: 76px;
+  height: 24px;
+}
+.footer .langues-reseaux .langues .dropdown dd {
+  position: relative;
+}
+.footer .langues-reseaux .langues .dropdown a {
+  color: #ffffff;
+  text-decoration: none;
+  outline: none;
+}
+.footer .langues-reseaux .langues .dropdown a:visited {
+  color: #ffffff;
+  text-decoration: none;
+  outline: none;
+}
+.footer .langues-reseaux .langues .dropdown a:hover {
+  color: #ffffff;
+}
+.footer .langues-reseaux .langues .dropdown dt a {
+  background: url(../images/puce-langue.jpg) no-repeat center right;
+  display: block;
+  width: 76px;
+  font-size: 10px;
+}
+.footer .langues-reseaux .langues .dropdown dt a:hover {
+  color: #ffffff;
+}
+.footer .langues-reseaux .langues .dropdown dt a span {
+  width: 76px;
+  height: 24px;
+  line-height: 24px;
+  cursor: pointer;
+  display: block;
+  color: #FFF;
+  font-family: "Source Sans Pro";
+}
+.footer .langues-reseaux .langues .dropdown dd ul {
+  color: #ffffff;
+  display: none;
+  left: 0px;
+  padding: 5px 0px;
+  position: absolute;
+  top: 2px;
+  width: 76px;
+  list-style: none;
+  font-size: 11px;
+  background: #364249;
+}
+.footer .langues-reseaux .langues .dropdown span.value {
+  display: none;
+}
+.footer .langues-reseaux .langues .dropdown dd ul li a {
+  display: block;
+  font-family: arial;
+  font-size: 10px;
+  padding: 5px 0 5px 2px;
+}
+.footer .langues-reseaux .langues .dropdown img.flag {
+  border: none;
+  vertical-align: middle;
+  margin-left: 12px;
+}
+.footer .langues-reseaux .reseaux {
+  float: right;
+}
+.footer .langues-reseaux .reseaux li {
+  float: left;
+  list-style: none;
+  height: 22px;
+}
+.footer .langues-reseaux .reseaux li a {
+  display: block;
+  height: 18px;
+  padding-top: 6px;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: "Source Sans Pro";
+  margin-right: 10px;
+}
+.footer .langues-reseaux .reseaux li a.facebook {
+  display: block;
+  height: 22px;
+  width: 21px;
+  text-indent: -9999px;
+  background-image: url(../images/reseaux.gif);
+  background-repeat: no-repeat;
+  background-position: left top;
+  margin: 0 0 0 3px;
+  padding: 0;
+}
+.footer .langues-reseaux .reseaux li a.twitter {
+  display: block;
+  height: 22px;
+  width: 21px;
+  text-indent: -9999px;
+  background-image: url(../images/reseaux.gif);
+  background-repeat: no-repeat;
+  background-position: left top;
+  margin: 0 0 0 3px;
+  padding: 0;
+  background-position: right top;
+}
+.footer .menu-footer.menu-footer-01 {
+  background: url(../images/bg-footer-01.gif) no-repeat center center;
+}
+.footer .menu-footer.menu-footer-02 {
   margin-bottom: 20px;
+}
+.footer .menu-footer ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer .menu-footer ul li {
+  margin: 0 12px;
+}
+.footer .menu-footer ul li a {
+  display: block;
+  font-family: "Source Sans Pro";
+  font-size: 10px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.footer .menu-footer ul li a:hover {
+  color: #cccccc;
+  text-decoration: underline;
 }
 @media (max-width: 767px) {
   .footer .menu-footer,
@@ -1845,19 +1438,26 @@ a {
 }
 .footer .mention {
   margin: 0 0 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-family: "Source Sans Pro";
+  line-height: 15px;
 }
 .footer .links {
   display: flex;
   justify-content: center;
   align-items: center;
+  line-height: 15px;
 }
 .footer .links a {
+  display: block;
   margin: 0 10px;
   font-size: 11px;
 }
 
 .main {
-  min-height: 500px;
+  min-height: calc(100vh - 330px);
   padding: 15px 0px;
 }
 @media (max-width: 767px) {
@@ -2357,6 +1957,12 @@ a {
 
 .pop-videos-content video {
   width: 100%;
+}
+
+#contact .main {
+  background-image: url(../images/bg-contact.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 #patrimoine {
@@ -3724,6 +3330,363 @@ a {
   background-color: #ffffff;
   border-color: #36424a;
   box-shadow: 0 0 0 7px #0f222d;
+}
+
+#degustation .main {
+  background: url(../images/bg_degustation.jpg) repeat-x 2% 0;
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  background-size: auto 100%;
+}
+
+#degustation .menu_degustation {
+  width: 100%;
+  height: 35px;
+  background: url(../images/degustation_submenu.png) no-repeat center;
+}
+#degustation .menu_degustation ul {
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  margin: auto;
+}
+#degustation .menu_degustation ul li {
+  display: inline;
+  position: relative;
+  padding: 5px 0;
+}
+#degustation .menu_degustation ul li a {
+  height: 25px;
+  padding: 10px 10px 0 10px;
+  display: inline-block;
+  font-size: 11px;
+  font-family: "Georgia";
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: left;
+}
+#degustation .menu_degustation ul li a:hover, #degustation .menu_degustation ul li a.active {
+  background: url(../images/bg-lien-degustation.png) no-repeat center 24px;
+}
+#degustation .menu_degustation ul li .scrollMenu {
+  position: absolute;
+  right: -33px;
+  display: none;
+  top: 35px;
+  padding: 18px;
+  width: 137px;
+  height: auto !important;
+  z-index: 99999;
+  background: url(../images/bg-ss-menu.png) no-repeat left top;
+}
+#degustation .menu_degustation ul li .scrollMenu .subMenu {
+  width: 137px;
+  height: 594px;
+  overflow: auto;
+}
+#degustation .menu_degustation ul li .scrollMenu .subMenu li {
+  display: block;
+  /*margin:5px 0;
+  height:20px;*/
+  text-align: left;
+}
+#degustation .menu_degustation ul li .scrollMenu .subMenu li a {
+  /*display:block;*/
+  padding: 0;
+  height: inherit;
+  font-size: 11px;
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: left;
+}
+#degustation .menu_degustation ul li .scrollMenu .subMenu li a:hover {
+  color: #ddd;
+  background: none;
+}
+
+.icons a.telecharger {
+  display: none;
+}
+
+.degustation, .elaboration {
+  cursor: pointer;
+}
+
+.menu_degustation .jspDrag {
+  background: #fff !important;
+}
+
+.degustation-home .content {
+  position: relative;
+  background: url(../images/degustation_overlay.png) no-repeat center;
+}
+.degustation-home .content .parralax {
+  position: relative;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.degustation-home .content .sh {
+  display: table-cell;
+  text-align: center;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.degustation-home .content h2 {
+  text-align: center;
+  font-size: 56px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Georgia";
+  text-transform: uppercase;
+  margin-bottom: 10%;
+  position: relative;
+  height: 92px;
+}
+.degustation-home .content h2 b {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 100%;
+}
+.degustation-home .content h2 span {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.degustation-home .content a.entrer {
+  width: 30px;
+  display: inline-block;
+  padding: 0 36px 0 0;
+  height: 22px;
+  line-height: 22px;
+  color: #ffffff;
+  font-size: 12px;
+  font-family: "Source Sans Pro";
+  background: url(../images/bg-entrer.png) no-repeat right top;
+}
+.degustation-home .content a.next {
+  width: 116px;
+  height: 116px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 244px;
+  background: url(../images/bg-next-degustation.png) no-repeat center;
+  top: 50%;
+  margin-top: -60px;
+}
+.degustation-home .content a.prev {
+  width: 116px;
+  height: 116px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 244px;
+  background: url(../images/bg-prev-degustation.png) no-repeat center;
+  top: 50%;
+  margin-top: -60px;
+  display: none;
+}
+
+#slideshow-1 {
+  position: relative;
+  width: 977px;
+  height: 577px;
+  padding: 0px 58px;
+}
+#slideshow-1 .cycle-next {
+  position: absolute;
+  top: 243px;
+  right: 0px;
+  width: 116px;
+  height: 116px;
+  cursor: pointer;
+  background: url(../images/suiv-degustation.png) no-repeat;
+  z-index: 12;
+}
+#slideshow-1 .cycle-prev {
+  position: absolute;
+  top: 243px;
+  left: 0px;
+  width: 116px;
+  height: 116px;
+  background: url(../images/prev-degustation.png) no-repeat;
+  z-index: 12;
+}
+
+#cycle-1 {
+  z-index: 1;
+  display: none;
+}
+#cycle-1 .cycle-slide {
+  display: none;
+  background-color: #fff;
+}
+
+#slideshow-1 img {
+  position: relative;
+  z-index: 1;
+}
+#slideshow-1 .description {
+  width: 430px;
+  position: absolute;
+  left: 131px;
+  top: 82px;
+  z-index: 10;
+}
+#slideshow-1 .description h3 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2f383e;
+  font-family: "Georgia";
+}
+#slideshow-1 .imageNoir .description h3 {
+  color: #ffffff;
+}
+#slideshow-1 .description .text {
+  font-size: 13px;
+  color: #2f383e;
+  font-family: "Georgia";
+  padding-top: 20px;
+  line-height: 20px;
+}
+#slideshow-1 .description .text span {
+  font-weight: bold;
+  color: #2f383e;
+}
+#slideshow-1 .imageNoir .description .text {
+  color: #ffffff !important;
+}
+#slideshow-1 .imageNoir .description .text span {
+  color: #ffffff !important;
+}
+#slideshow-1 .imageNoir .desconly .text {
+  color: #ffffff !important;
+}
+#slideshow-1 .imageNoir .description .text p, #slideshow-1 .imageNoir .description .text span {
+  color: #ffffff !important;
+}
+#slideshow-1 .imageNoir .desconly .text .p1, #slideshow-1 .imageNoir .description .text .p2 {
+  color: #ffffff !important;
+}
+#slideshow-1 .description .sep {
+  width: 274px;
+  height: 1px;
+  display: block;
+  margin-top: 25px;
+  background: #e2e3e4;
+}
+#slideshow-1 .description h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2f383e;
+  font-family: "Georgia";
+  margin-top: 25px;
+}
+#slideshow-1 .imageNoir .description h4 {
+  color: #ffffff;
+}
+#slideshow-1 .description .icons {
+  padding-top: 20px;
+}
+#slideshow-1 .description .icons a {
+  width: 22px;
+  height: 22px;
+  display: block;
+  float: left;
+  margin-left: 7px;
+  background-position: left top;
+}
+#slideshow-1 .imageNoir .description .icons a {
+  background-position: left bottom;
+}
+#slideshow-1 .description .icons a.facebook {
+  background-image: url(../images/facebook.png);
+}
+#slideshow-1 .description .icons a.telecharger {
+  background-image: url(../images/telecharger.png);
+  display: none;
+}
+#slideshow-1 .description .icons a.imprimer {
+  background-image: url(../images/imprimer.png);
+}
+
+#slideshow-2 {
+  position: relative;
+  width: 711px;
+  height: 37px;
+  padding: 0 22px;
+  margin: 0 auto;
+}
+#slideshow-2 .cycle-next {
+  position: absolute;
+  top: 14px;
+  right: 0px;
+  width: 5px;
+  height: 13px;
+  cursor: pointer;
+  background: url(../images/suiv2.png) no-repeat;
+  z-index: 12;
+}
+#slideshow-2 .cycle-prev {
+  position: absolute;
+  top: 14px;
+  left: 0px;
+  width: 5px;
+  height: 13px;
+  background: url(../images/prev2.png) no-repeat;
+  z-index: 12;
+}
+
+#cycle-2 {
+  z-index: 1;
+  height: 37px;
+}
+#cycle-2 .cycle-slide {
+  width: auto !important;
+  margin-right: 5px;
+}
+#cycle-2 .cycle-slide img {
+  border: 1px solid #cccccc;
+  width: 72px;
+  height: 27px;
+}
+#cycle-2 .cycle-slide-active img {
+  width: 72px;
+  height: 35px;
+  margin-top: 0;
+}
+
+.caroubas {
+  width: 977px;
+  height: 41px;
+  margin: 2px auto 0 auto;
+  padding: 5px 0;
+}
+
+.carouNoir {
+  background: #000000;
+}
+
+#degustation-produits .main {
+  background: url(../images/bg-degustation-produits.jpg) no-repeat center top;
+  background-color: #FFF;
+}
+#degustation-produits .content {
+  padding-top: 0;
+  width: 1094px;
+  height: 630px;
+  margin: auto;
+}
+#degustation-produits .degustation-home {
+  width: 1170px;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */
