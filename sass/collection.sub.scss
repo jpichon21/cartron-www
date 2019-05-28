@@ -187,14 +187,14 @@
                         width: 430px;
                         height: 300px;
                     }
-                    @include media('<medium') {
+                    @include media('<=medium') {
                         display: block !important;
                     }
                 }
                 .note-degustation,
                 .note-elaboration {
                     @include media('>=large') {
-                        display: none;
+                        display: block;
                     }
                     .dropdown {
                         display: none;
@@ -282,4 +282,14 @@
             }
         }
     }
+}
+
+
+.second_part .note-degustation h3, .second_part .note-elaboration h3{
+    padding-bottom: 5px;
+    font-size: 24px;
+    font-family: 'DIN-Bold';
+    font-weight: normal;
+    color: #dd7012;
+    background: url(../images/bg_titre.jpg) no-repeat left bottom;
 }

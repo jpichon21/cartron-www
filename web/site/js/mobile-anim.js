@@ -1,5 +1,5 @@
 //Responsive Savoir
-if (screen.width <= 568) {
+if (window.innerWidth <= 568) {
 
     $( document ).ready(function() {
         // ? a passer dans le CSS directement ?
@@ -29,7 +29,7 @@ if (screen.width <= 568) {
 
             function showTitleContent(){
                 $('.savoir-faire-creation h2, .savoir-faire-creation .retour').css("opacity", "1");
-                $('.savoir-faire-creation h2').css("transition", "2s ease");
+                $('.savoir-faire-creation h2').css({"transition" : "2s ease" , "font-smoothing" : "antialiased !important"});
                 $('.savoir-faire-creation .retour').css("transition", "3s ease");
                 setTimeout(function(){ShowTextContent(Step, ShowTimer, i);}, 600);
                 setTimeout(function(){ShowFooterMenu(Step, ShowTimer, i);}, 1800);
@@ -37,13 +37,13 @@ if (screen.width <= 568) {
 
             function ShowTextContent(Step, ShowTimer, i){
                     i = i + 1;
-                    $('.link-liqueur, .link-eau-vie-home').css({"opacity" : "1", "transition" : "2s ease" });
-                    $('.desc-creation p:nth-child('+ i + ')').css({"opacity" : "1", "transition" : "2s ease"});
+                    $('.link-liqueur, .link-eau-vie-home').css({"opacity" : "1", "transition" : "2s ease", "font-smoothing": "antialiased !important"});
+                    $('.desc-creation p:nth-child('+ i + ')').css({"opacity" : "1", "transition" : "2s ease", "font-smoothing": "antialiased !important"});
                     setTimeout(function(){ShowTextContent(ShowTimer, Step, i);}, ShowTimer);
             };
 
             function ShowFooterMenu(){
-                $('.savoir-faire-creation .link-creation-bt').css({"opacity" : "1", "transition" : "2s ease"});
+                $('.savoir-faire-creation .link-creation-bt').css({"opacity" : "1", "transition" : "2s ease", "font-smoothing": "antialiased !important"});
             }
 
     });

@@ -1,6 +1,9 @@
 {% extends "layout.html.twig" %}
 {% block title %}JOSEPH CARTRON{% endblock %}
 {% block body %}
+
+<script src="{{ asset('site/js/force-display.js') }}"></script>
+
 <div id="collection-produits" class="test2">
   <div class="main">
     <div class="collection-home">
@@ -63,6 +66,7 @@
     </div>    
   </div>
 </div>
+
 <script type="text/javascript">
 
   $('.sousMenus').owlCarousel({
@@ -145,15 +149,24 @@
     } else if (width < 1024 && barsUp) {
       removeSimpleBars();
     }
+
+    if (width < 1024 && width >= 568) {
+      $('.note-degustation, .note-elaboration').css("display", "block");
+    }else{
+      $('.note-degustation, .note-elaboration').css("display", "none");
+    }
   
   };
 
   $('.second_part').on('click', 'h3', function() {
     $(this).toggleClass('active');
-  });
+});
+
 
 </script>
+
 <style>
+
     .simplebar-scrollbar:before {
       background: #{{ defaultColor }};
     }
