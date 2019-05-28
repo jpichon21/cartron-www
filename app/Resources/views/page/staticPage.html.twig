@@ -1,6 +1,9 @@
 {% extends "layout.html.twig" %}
 {% block title %}Cartron: {{ page }}{% endblock %}
 {% block body %}
+{% if (page== "Savoir-faire-fruits") or (page== "Savoir-faire-creation") or (page== "Savoir-faire-elaboration") %}
+    <script src="{{ asset('site/js/mobile-anim.js') }}"></script>
+{% endif %}
 {% if page== "Savoir-faire" %}
 <script type="text/javascript">
   $(function() {
