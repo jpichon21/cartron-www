@@ -3192,6 +3192,15 @@ a {
   font-family: "Georgia";
   border-bottom: 1px solid #ffffff;
 }
+@media (max-width: 1023px) and (min-width: 768px) {
+  #collection-produits .sousMenus .sousMenu .description .second_part h3 {
+    padding-bottom: 5px;
+    background: url(../images/bg_titre.jpg) no-repeat left bottom;
+    border: none;
+    background-position: left bottom;
+    margin-top: 20px;
+  }
+}
 #collection-produits .sousMenus .sousMenu .description .second_part h3.active + .dropdown {
   display: block;
 }
