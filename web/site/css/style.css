@@ -1095,6 +1095,366 @@ a {
   position: relative;
 }
 
+/*************************************/
+/*         Page Degustation          */
+/*************************************/
+.menu_degustation {
+  width: 100%;
+  height: 35px;
+}
+
+#degustation .menu_degustation {
+  background: url(../images/degustation_submenu.png) no-repeat center;
+}
+
+.menu_degustation ul {
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  margin: auto;
+}
+
+.scrollMenu ul {
+  margin-left: 0;
+}
+
+.icons a.telecharger {
+  display: none;
+}
+
+.menu_degustation li {
+  /*height:35px;*/
+  display: inline;
+  position: relative;
+  padding: 5px 0;
+}
+.menu_degustation li a {
+  height: 25px;
+  padding: 10px 10px 0 10px;
+  display: inline-block;
+  font-size: 11px;
+  font-family: "Georgia";
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: left;
+}
+.menu_degustation li a:hover, .menu_degustation li a.active {
+  background: url(../images/bg-lien-degustation.png) no-repeat center 24px;
+}
+
+.degustation-home .menu_degustation li .scrollMenu {
+  position: absolute;
+  right: -33px;
+  display: none;
+  top: 35px;
+  padding: 18px;
+  width: 137px;
+  height: auto !important;
+  z-index: 99999;
+  background: url(../images/bg-ss-menu.png) no-repeat left top;
+}
+.degustation-home .menu_degustation li ul.subMenu {
+  width: 137px;
+  height: 594px;
+  overflow: auto;
+}
+.degustation-home .menu_degustation li ul.subMenu li {
+  display: block;
+  /*margin:5px 0;
+  height:20px;*/
+  text-align: left;
+}
+.degustation-home .menu_degustation li ul.subMenu li a {
+  /*display:block;*/
+  padding: 0;
+  height: inherit;
+  font-size: 11px;
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.degustation, .elaboration {
+  cursor: pointer;
+}
+
+.degustation-home .menu_degustation li ul.subMenu li a:hover {
+  color: #ddd;
+  background: none;
+}
+
+.menu_degustation .jspDrag {
+  background: #fff !important;
+}
+
+#degustation .degustation-home .content {
+  position: relative;
+  background: url(../images/degustation_overlay.png) no-repeat center;
+}
+
+.degustation-home .content .parralax {
+  position: relative;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.degustation-home .content .sh {
+  display: table-cell;
+  text-align: center;
+  height: 100%;
+  vertical-align: middle;
+}
+
+#degustation-produits .content {
+  padding-top: 0;
+  width: 1094px;
+  height: 630px;
+  margin: auto;
+}
+#degustation-produits .degustation-home {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.degustation-home .content h2 {
+  text-align: center;
+  font-size: 56px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Georgia";
+  text-transform: uppercase;
+  margin-bottom: 10%;
+  position: relative;
+  height: 92px;
+}
+.degustation-home .content h2 b {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 100%;
+}
+.degustation-home .content h2 span {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.degustation-home .content a.entrer {
+  width: 30px;
+  display: inline-block;
+  padding: 0 36px 0 0;
+  height: 22px;
+  line-height: 22px;
+  color: #ffffff;
+  font-size: 12px;
+  font-family: "Source Sans Pro";
+  background: url(../images/bg-entrer.png) no-repeat right top;
+}
+.degustation-home .content a.next {
+  width: 116px;
+  height: 116px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 244px;
+  background: url(../images/bg-next-degustation.png) no-repeat center;
+  top: 50%;
+  margin-top: -60px;
+}
+.degustation-home .content a.prev {
+  width: 116px;
+  height: 116px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 244px;
+  background: url(../images/bg-prev-degustation.png) no-repeat center;
+  top: 50%;
+  margin-top: -60px;
+  display: none;
+}
+
+#slideshow-1 {
+  position: relative;
+  width: 977px;
+  height: 577px;
+  padding: 0px 58px;
+}
+#slideshow-1 .cycle-next {
+  position: absolute;
+  top: 243px;
+  right: 0px;
+  width: 116px;
+  height: 116px;
+  cursor: pointer;
+  background: url(../images/suiv-degustation.png) no-repeat;
+  z-index: 12;
+}
+#slideshow-1 .cycle-prev {
+  position: absolute;
+  top: 243px;
+  left: 0px;
+  width: 116px;
+  height: 116px;
+  background: url(../images/prev-degustation.png) no-repeat;
+  z-index: 12;
+}
+
+#cycle-1 {
+  z-index: 1;
+  display: none;
+}
+#cycle-1 .cycle-slide {
+  display: none;
+  background-color: #fff;
+}
+
+#slideshow-1 img {
+  position: relative;
+  z-index: 1;
+}
+#slideshow-1 .description {
+  width: 430px;
+  position: absolute;
+  left: 131px;
+  top: 82px;
+  z-index: 10;
+}
+#slideshow-1 .description h3 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2f383e;
+  font-family: "Georgia";
+}
+#slideshow-1 .imageNoir .description h3 {
+  color: #ffffff;
+}
+#slideshow-1 .description .text {
+  font-size: 13px;
+  color: #2f383e;
+  font-family: "Georgia";
+  padding-top: 20px;
+  line-height: 20px;
+}
+#slideshow-1 .description .text span {
+  font-weight: bold;
+  color: #2f383e;
+}
+#slideshow-1 .imageNoir .description .text {
+  color: #ffffff !important;
+}
+#slideshow-1 .imageNoir .description .text span {
+  color: #ffffff !important;
+}
+#slideshow-1 .imageNoir .desconly .text {
+  color: #ffffff !important;
+}
+#slideshow-1 .imageNoir .description .text p, #slideshow-1 .imageNoir .description .text span {
+  color: #ffffff !important;
+}
+#slideshow-1 .imageNoir .desconly .text .p1, #slideshow-1 .imageNoir .description .text .p2 {
+  color: #ffffff !important;
+}
+#slideshow-1 .description .sep {
+  width: 274px;
+  height: 1px;
+  display: block;
+  margin-top: 25px;
+  background: #e2e3e4;
+}
+#slideshow-1 .description h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2f383e;
+  font-family: "Georgia";
+  margin-top: 25px;
+}
+#slideshow-1 .imageNoir .description h4 {
+  color: #ffffff;
+}
+#slideshow-1 .description .icons {
+  padding-top: 20px;
+}
+#slideshow-1 .description .icons a {
+  width: 22px;
+  height: 22px;
+  display: block;
+  float: left;
+  margin-left: 7px;
+  background-position: left top;
+}
+#slideshow-1 .imageNoir .description .icons a {
+  background-position: left bottom;
+}
+#slideshow-1 .description .icons a.facebook {
+  background-image: url(../images/facebook.png);
+}
+#slideshow-1 .description .icons a.telecharger {
+  background-image: url(../images/telecharger.png);
+  display: none;
+}
+#slideshow-1 .description .icons a.imprimer {
+  background-image: url(../images/imprimer.png);
+}
+
+#slideshow-2 {
+  position: relative;
+  width: 711px;
+  height: 37px;
+  padding: 0 22px;
+  margin: 0 auto;
+}
+#slideshow-2 .cycle-next {
+  position: absolute;
+  top: 14px;
+  right: 0px;
+  width: 5px;
+  height: 13px;
+  cursor: pointer;
+  background: url(../images/suiv2.png) no-repeat;
+  z-index: 12;
+}
+#slideshow-2 .cycle-prev {
+  position: absolute;
+  top: 14px;
+  left: 0px;
+  width: 5px;
+  height: 13px;
+  background: url(../images/prev2.png) no-repeat;
+  z-index: 12;
+}
+
+#cycle-2 {
+  z-index: 1;
+  height: 37px;
+}
+#cycle-2 .cycle-slide {
+  width: auto !important;
+  margin-right: 5px;
+}
+#cycle-2 .cycle-slide img {
+  border: 1px solid #cccccc;
+  width: 72px;
+  height: 27px;
+}
+#cycle-2 .cycle-slide-active img {
+  width: 72px;
+  height: 35px;
+  margin-top: 0;
+}
+
+.caroubas {
+  width: 977px;
+  height: 41px;
+  margin: 2px auto 0 auto;
+  padding: 5px 0;
+}
+
+.carouNoir {
+  background: #000000;
+}
+
 .header {
   position: relative;
   display: flex;
@@ -3352,14 +3712,22 @@ a {
 
 #degustation .menu_degustation {
   width: 100%;
-  height: 35px;
   background: url(../images/degustation_submenu.png) no-repeat center;
+}
+@media (max-width: 568px) {
+  #degustation .menu_degustation {
+    height: 35px;
+  }
 }
 #degustation .menu_degustation ul {
   width: 100%;
-  height: 35px;
   text-align: center;
   margin: auto;
+}
+@media (max-width: 568px) {
+  #degustation .menu_degustation ul {
+    height: 35px;
+  }
 }
 #degustation .menu_degustation ul li {
   display: inline;
@@ -3430,7 +3798,11 @@ a {
 
 .degustation-home .content {
   position: relative;
-  background: url(../images/degustation_overlay.png) no-repeat center;
+}
+@media (max-width: 568px) {
+  .degustation-home .content {
+    background: url(../images/degustation_overlay.png) no-repeat center;
+  }
 }
 .degustation-home .content .parralax {
   position: relative;
@@ -3686,6 +4058,39 @@ a {
 #degustation-produits .main {
   background: url(../images/bg-degustation-produits.jpg) no-repeat center top;
   background-color: #FFF;
+  padding: 0px;
+}
+#degustation-produits .menu_degustation ul {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+#degustation-produits .menu_degustation li {
+  display: inline;
+  position: relative;
+  padding: 5px 0;
+}
+#degustation-produits .menu_degustation .menuLiWithSubMenu a {
+  height: 25px;
+  padding: 10px 10px 0 10px;
+  display: inline-block;
+  font-size: 11px;
+  font-family: "Georgia";
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: left;
+}
+#degustation-produits .menu_degustation .subMenu li {
+  display: inline-block;
+  width: 100%;
+}
+#degustation-produits .menu_degustation .subMenu li a {
+  padding: 0;
+  font-size: 11px;
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: left;
 }
 #degustation-produits .content {
   padding-top: 0;

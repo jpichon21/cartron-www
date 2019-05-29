@@ -3,16 +3,16 @@
 $(function() {
 	// $.getScript("/site/js/indigen.js");
 
-    resizeMain();
+   /* resizeMain();
     function resizeMain(){
         $widthDocument = $("html").height();
         $widthDocument = $widthDocument - 246;
         //$(".main").css("height",$widthDocument+"px");
-        $(".degustation-home .menu_degustation li .scrollMenu").css("height",$(".main").height()+"px");
+        //$(".degustation-home .menu_degustation li .scrollMenu").css("height",$(".main").height()+"px");
     }
     $(window).resize(function() {
         resizeMain();
-    });
+    });*/
 
     $(":text").toggleVal();
 
@@ -178,7 +178,7 @@ $(function() {
     /************************************************************************************************************************/
     /************************************************************************************************************************/
 
-
+    
     $(".menuLiWithSubMenu").hover(
             function() {
                 $(this).find(".scrollMenu").stop().fadeTo('fast', 1).show();

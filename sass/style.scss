@@ -1040,6 +1040,8 @@ a {
     }
 }
 
+
+
 .degustation-home .jspPane p > a {
     color: #000;
 }
@@ -1117,4 +1119,386 @@ a {
 .main {
     /*height:666px;*/
     position: relative;
+}
+
+
+/*************************************/
+/*         Page Degustation          */
+/*************************************/
+
+.menu_degustation {
+    width: 100%;
+    height: 35px;
+}
+
+#degustation .menu_degustation {
+    background: url(../images/degustation_submenu.png) no-repeat center;
+}
+
+.menu_degustation ul {
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    margin: auto;
+}
+
+.scrollMenu ul {
+    margin-left: 0;
+}
+
+.icons a.telecharger {
+    display: none;
+}
+
+.menu_degustation li {
+    /*height:35px;*/
+    display: inline;
+    position: relative;
+    padding: 5px 0;
+    a {
+        height: 25px;
+        padding: 10px 10px 0 10px;
+        display: inline-block;
+        font-size: 11px;
+        font-family: 'Georgia';
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: left;
+        &:hover, &.active {
+            background: url(../images/bg-lien-degustation.png) no-repeat center 24px;
+        }
+    }
+}
+
+.degustation-home .menu_degustation li {
+    .scrollMenu {
+        position: absolute;
+        right: -33px;
+        display: none;
+        top: 35px;
+        padding: 18px;
+        width: 137px;
+        height: auto !important;
+        z-index: 99999;
+        background: url(../images/bg-ss-menu.png) no-repeat left top;
+    }
+    ul.subMenu {
+        width: 137px;
+        height: 594px;
+        overflow: auto;
+        li {
+            display: block;
+            /*margin:5px 0;
+            height:20px;*/
+            text-align: left;
+            a {
+                /*display:block;*/
+                padding: 0;
+                height: inherit;
+                font-size: 11px;
+                font-family: 'Source Sans Pro';
+                font-weight: normal;
+                text-transform: uppercase;
+                text-align: left;
+            }
+        }
+    }
+}
+
+.degustation, .elaboration {
+    cursor: pointer;
+}
+
+.degustation-home .menu_degustation li ul.subMenu li a:hover {
+    color: #ddd;
+    background: none;
+}
+
+.menu_degustation .jspDrag {
+    background: #fff !important;
+}
+
+#degustation .degustation-home .content {
+    position: relative;
+    background: url(../images/degustation_overlay.png) no-repeat center;
+}
+
+.degustation-home .content {
+    .parralax {
+        position: relative;
+        display: table;
+        height: 100%;
+        width: 100%;
+    }
+    .sh {
+        display: table-cell;
+        text-align: center;
+        height: 100%;
+        vertical-align: middle;
+    }
+}
+
+#degustation-produits {
+    .content {
+        padding-top: 0;
+        width: 1094px;
+        height: 630px;
+        margin: auto;
+    }
+    .degustation-home {
+        width: 1170px;
+        margin: 0 auto;
+    }
+}
+
+.degustation-home .content {
+    h2 {
+        text-align: center;
+        font-size: 56px;
+        color: #ffffff;
+        font-weight: bold;
+        font-family: 'Georgia';
+        text-transform: uppercase;
+        margin-bottom: 10%;
+        position: relative;
+        height: 92px;
+        b {
+            position: absolute;
+            top: 0;
+            left: 0%;
+            width: 100%;
+        }
+        span {
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+    }
+    a {
+        &.entrer {
+            width: 30px;
+            display: inline-block;
+            padding: 0 36px 0 0;
+            height: 22px;
+            line-height: 22px;
+            color: #ffffff;
+            font-size: 12px;
+            font-family: 'Source Sans Pro';
+            background: url(../images/bg-entrer.png) no-repeat right top;
+        }
+        &.next {
+            width: 116px;
+            height: 116px;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 244px;
+            background: url(../images/bg-next-degustation.png) no-repeat center;
+            top: 50%;
+            margin-top: -60px;
+        }
+        &.prev {
+            width: 116px;
+            height: 116px;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 244px;
+            background: url(../images/bg-prev-degustation.png) no-repeat center;
+            top: 50%;
+            margin-top: -60px;
+            display: none;
+        }
+    }
+}
+
+#slideshow-1 {
+    position: relative;
+    width: 977px;
+    height: 577px;
+    padding: 0px 58px;
+    .cycle-next {
+        position: absolute;
+        top: 243px;
+        right: 0px;
+        width: 116px;
+        height: 116px;
+        cursor: pointer;
+        background: url(../images/suiv-degustation.png) no-repeat;
+        z-index: 12;
+    }
+    .cycle-prev {
+        position: absolute;
+        top: 243px;
+        left: 0px;
+        width: 116px;
+        height: 116px;
+        background: url(../images/prev-degustation.png) no-repeat;
+        z-index: 12;
+    }
+}
+
+#cycle-1 {
+    z-index: 1;
+    display: none;
+    .cycle-slide {
+        display: none;
+        background-color: #fff;
+    }
+}
+
+#slideshow-1 {
+    img {
+        position: relative;
+        z-index: 1;
+    }
+    .description {
+        width: 430px;
+        position: absolute;
+        left: 131px;
+        top: 82px;
+        z-index: 10;
+        h3 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2f383e;
+            font-family: 'Georgia';
+        }
+    }
+    .imageNoir .description h3 {
+        color: #ffffff;
+    }
+    .description .text {
+        font-size: 13px;
+        color: #2f383e;
+        font-family: 'Georgia';
+        padding-top: 20px;
+        line-height: 20px;
+        span {
+            font-weight: bold;
+            color: #2f383e;
+        }
+    }
+    .imageNoir {
+        .description .text {
+            color: #ffffff !important;
+            span {
+                color: #ffffff !important;
+            }
+        }
+        .desconly .text {
+            color: #ffffff !important;
+        }
+        .description .text {
+            p, span {
+                color: #ffffff !important;
+            }
+        }
+        .desconly .text .p1, .description .text .p2 {
+            color: #ffffff !important;
+        }
+    }
+    .description {
+        .sep {
+            width: 274px;
+            height: 1px;
+            display: block;
+            margin-top: 25px;
+            background: #e2e3e4;
+        }
+        h4 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2f383e;
+            font-family: 'Georgia';
+            margin-top: 25px;
+        }
+    }
+    .imageNoir .description h4 {
+        color: #ffffff;
+    }
+    .description .icons {
+        padding-top: 20px;
+        a {
+            width: 22px;
+            height: 22px;
+            display: block;
+            float: left;
+            margin-left: 7px;
+            background-position: left top;
+        }
+    }
+    .imageNoir .description .icons a {
+        background-position: left bottom;
+    }
+    .description .icons a {
+        &.facebook {
+            background-image: url(../images/facebook.png);
+        }
+        &.telecharger {
+            background-image: url(../images/telecharger.png);
+            display: none;
+        }
+        &.imprimer {
+            background-image: url(../images/imprimer.png);
+        }
+    }
+}
+
+#slideshow-2 {
+    position: relative;
+    width: 711px;
+    height: 37px;
+    padding: 0 22px;
+    margin: 0 auto;
+    .cycle-next {
+        position: absolute;
+        top: 14px;
+        right: 0px;
+        width: 5px;
+        height: 13px;
+        cursor: pointer;
+        background: url(../images/suiv2.png) no-repeat;
+        z-index: 12;
+    }
+    .cycle-prev {
+        position: absolute;
+        top: 14px;
+        left: 0px;
+        width: 5px;
+        height: 13px;
+        background: url(../images/prev2.png) no-repeat;
+        z-index: 12;
+    }
+}
+
+#cycle-2 {
+    z-index: 1;
+    height: 37px;
+    .cycle-slide {
+        width: auto !important;
+        margin-right: 5px;
+        img {
+            border: 1px solid #cccccc;
+            width: 72px;
+            height: 27px;
+        }
+    }
+    .cycle-slide-active img {
+        width: 72px;
+        height: 35px;
+        margin-top: 0;
+    }
+}
+
+.caroubas {
+    width: 977px;
+    height: 41px;
+    margin: 2px auto 0 auto;
+    padding: 5px 0;
+}
+
+.carouNoir {
+    background: #000000;
 }
