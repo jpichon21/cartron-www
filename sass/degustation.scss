@@ -97,7 +97,7 @@
     .content {
         position: relative;
         @include media('<=small') {
-        background: url(../images/degustation_overlay.png) no-repeat center;
+        //background: url(../images/degustation_overlay.png) no-repeat center;
         }
         .parralax {
             position: relative;
@@ -110,6 +110,13 @@
             text-align: center;
             height: 100%;
             vertical-align: middle;
+        }
+        .text p{
+            @include media('<=small') {
+                margin-bottom: 18px;
+                line-height: 18px;
+                font-size: 14px;
+            }
         }
     }
 }
@@ -222,6 +229,14 @@
         left: 131px;
         top: 82px;
         z-index: 10;
+        @include media('<=small') {
+            .icons{
+                display: none;
+            }
+            h3 {
+            margin-bottom: 14px;
+            }
+        }
         h3 {
             font-size: 28px;
             font-weight: bold;
