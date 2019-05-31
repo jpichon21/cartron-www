@@ -1,4 +1,22 @@
 #degustation-produits {
+    .content{
+        .retour, .view{
+            top: 28px;
+            svg{
+                display: none;
+            }
+            
+        }
+        .view{
+            position: absolute;
+            opacity: 0.6;
+            z-index: 2;
+            right: 60px;
+            width: 20px;
+            height: 20px;
+            background: none;
+        }
+    }
     .main {
         background: url(../images/bg-degustation-produits.jpg) no-repeat center top;
         background-color: #FFF;
@@ -49,6 +67,12 @@
         margin: 0 auto;
     }
     @include media('<=small') {
+        .content{
+            .retour svg, .view svg{
+                fill: #000000;
+                display: block !important;
+            }
+        }
         .back{
             display: none;
         }
@@ -59,11 +83,22 @@
             width: 100%;
         }
         #slideshow-1{
+            .content{
+                overflow: hidden;
+            }
+            //? à optimiser
+            img{
+                position: absolute;
+                z-index: 1;
+                display: block!important;
+                left: -130%;
+                opacity: 0.1;
+            }
             .cycle-slide-active{
                 position: relative;
                 width: 100%;
             }
-            img, .cycle-prev, .cycle-next{
+            .cycle-prev, .cycle-next{
                 display: none;
             }
             .description{
@@ -73,6 +108,9 @@
                 top: 0px;
                 margin: 0 auto;
                 padding: 25px;
+                .sep{
+                    display: none;
+                }
                 .desconly{
                     width: 100%;
                 }

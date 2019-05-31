@@ -229,19 +229,21 @@
         left: 131px;
         top: 82px;
         z-index: 10;
-        @include media('<=small') {
-            .icons{
-                display: none;
-            }
-            h3 {
-            margin-bottom: 14px;
-            }
-        }
         h3 {
             font-size: 28px;
             font-weight: bold;
             color: #2f383e;
             font-family: 'Georgia';
+        }
+        @include media('<=small') {
+            height: 0px;
+            .icons{
+                display: none;
+            }
+            h3 {
+            font-size: 22px;
+            margin-bottom: 14px;
+            }
         }
     }
     .imageNoir .description h3 {

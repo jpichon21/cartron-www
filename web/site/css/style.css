@@ -2,6 +2,11 @@ html, body, .site {
   min-height: 100%;
 }
 
+@media (max-width: 568px) {
+  .site {
+    overflow-x: hidden;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -3923,19 +3928,23 @@ a {
   top: 82px;
   z-index: 10;
 }
-@media (max-width: 568px) {
-  #slideshow-1 .description .icons {
-    display: none;
-  }
-  #slideshow-1 .description h3 {
-    margin-bottom: 14px;
-  }
-}
 #slideshow-1 .description h3 {
   font-size: 28px;
   font-weight: bold;
   color: #2f383e;
   font-family: "Georgia";
+}
+@media (max-width: 568px) {
+  #slideshow-1 .description {
+    height: 0px;
+  }
+  #slideshow-1 .description .icons {
+    display: none;
+  }
+  #slideshow-1 .description h3 {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
 }
 #slideshow-1 .imageNoir .description h3 {
   color: #ffffff;
@@ -4065,6 +4074,21 @@ a {
   background: #000000;
 }
 
+#degustation-produits .content .retour, #degustation-produits .content .view {
+  top: 28px;
+}
+#degustation-produits .content .retour svg, #degustation-produits .content .view svg {
+  display: none;
+}
+#degustation-produits .content .view {
+  position: absolute;
+  opacity: 0.6;
+  z-index: 2;
+  right: 60px;
+  width: 20px;
+  height: 20px;
+  background: none;
+}
 #degustation-produits .main {
   background: url(../images/bg-degustation-produits.jpg) no-repeat center top;
   background-color: #FFF;
@@ -4113,6 +4137,10 @@ a {
   margin: 0 auto;
 }
 @media (max-width: 568px) {
+  #degustation-produits .content .retour svg, #degustation-produits .content .view svg {
+    fill: #000000;
+    display: block !important;
+  }
   #degustation-produits .back {
     display: none;
   }
@@ -4127,11 +4155,21 @@ a {
     height: 100%;
     padding: 0px;
   }
+  #degustation-produits #slideshow-1 .content {
+    overflow: hidden;
+  }
+  #degustation-produits #slideshow-1 img {
+    position: absolute;
+    z-index: 1;
+    display: block !important;
+    left: -130%;
+    opacity: 0.1;
+  }
   #degustation-produits #slideshow-1 .cycle-slide-active {
     position: relative;
     width: 100%;
   }
-  #degustation-produits #slideshow-1 img, #degustation-produits #slideshow-1 .cycle-prev, #degustation-produits #slideshow-1 .cycle-next {
+  #degustation-produits #slideshow-1 .cycle-prev, #degustation-produits #slideshow-1 .cycle-next {
     display: none;
   }
   #degustation-produits #slideshow-1 .description {
@@ -4141,6 +4179,9 @@ a {
     top: 0px;
     margin: 0 auto;
     padding: 25px;
+  }
+  #degustation-produits #slideshow-1 .description .sep {
+    display: none;
   }
   #degustation-produits #slideshow-1 .description .desconly {
     width: 100%;
