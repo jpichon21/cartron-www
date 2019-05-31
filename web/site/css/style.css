@@ -3944,6 +3944,7 @@ a {
   #slideshow-1 .description h3 {
     font-size: 22px;
     margin-bottom: 14px;
+    max-width: 276px;
   }
 }
 #slideshow-1 .imageNoir .description h3 {
@@ -4074,13 +4075,13 @@ a {
   background: #000000;
 }
 
-#degustation-produits .content .retour, #degustation-produits .content .view {
+#degustation-produits .content .retour, #degustation-produits .content .view, #degustation-produits .content .unview {
   top: 28px;
 }
-#degustation-produits .content .retour svg, #degustation-produits .content .view svg {
+#degustation-produits .content .retour svg, #degustation-produits .content .view svg, #degustation-produits .content .unview svg {
   display: none;
 }
-#degustation-produits .content .view {
+#degustation-produits .content .view, #degustation-produits .content .unview {
   position: absolute;
   opacity: 0.6;
   z-index: 2;
@@ -4139,7 +4140,12 @@ a {
 @media (max-width: 568px) {
   #degustation-produits .content .retour svg, #degustation-produits .content .view svg {
     fill: #000000;
-    display: block !important;
+  }
+  #degustation-produits .content .retour svg, #degustation-produits .content .view #viewIcon {
+    display: block;
+  }
+  #degustation-produits .content .view #hideIcon {
+    display: none;
   }
   #degustation-produits .back {
     display: none;

@@ -1,13 +1,13 @@
 #degustation-produits {
     .content{
-        .retour, .view{
+        .retour, .view, .unview{
             top: 28px;
             svg{
                 display: none;
             }
             
         }
-        .view{
+        .view, .unview{
             position: absolute;
             opacity: 0.6;
             z-index: 2;
@@ -70,7 +70,12 @@
         .content{
             .retour svg, .view svg{
                 fill: #000000;
-                display: block !important;
+            }
+            .retour svg, .view #viewIcon{
+                display: block;
+            }
+            .view #hideIcon{
+                display: none;
             }
         }
         .back{
