@@ -14,20 +14,21 @@ variables:
 #     - phpcpd src
 #     - phpmd src text unusedcode
 
-# deploy_dev:
-#   stage: deploy
-#   image: php:7-cli-alpine
-#   before_script:
-#     - apk add --update git openssh-client
-#     - mkdir -p ~/.ssh && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-#     - eval $(ssh-agent -s)
-#     - echo "$SSH_PRIVATE_KEY" | ssh-add -
-#   environment:
-#     name: dev
-#     url: https://dev.cartron.fr
-#   script:
-#         - curl -L https://deployer.org/releases/v6.4.3/deployer.phar > /usr/local/bin/deployer && chmod +x /usr/local/bin/deployer
-#         - deployer -f=deploy/deploy.php deploy dev
+deploy_dev:
+  stage: deploy
+  image: php:7-cli-alpine
+  before_script:
+    - apk add --update git openssh-client
+    - mkdir -p ~/.ssh && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+  environment:
+    name: dev
+    url: https://dev.cartron.fr
+  only: dev
+  script:
+        - curl -L https://deployer.org/releases/v6.4.3/deployer.phar > /usr/local/bin/deployer && chmod +x /usr/local/bin/deployer
+        - deployer -f=deploy/deploy.php deploy dev
 deploy_staging:
   stage: deploy
   image: php:7-cli-alpine
@@ -39,6 +40,8 @@ deploy_staging:
   environment:
     name: staging
     url: https://staging.cartron.fr
+  when: manual
+  only: staging
   script:
         - curl -L https://deployer.org/releases/v6.4.3/deployer.phar > /usr/local/bin/deployer && chmod +x /usr/local/bin/deployer
         - deployer -f=deploy/deploy.php deploy staging
