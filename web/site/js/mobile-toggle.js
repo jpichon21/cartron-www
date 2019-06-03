@@ -1,11 +1,14 @@
-if (window.innerWidth <= 568) {
-
     $( document ).ready(function() {
+
+        if ( $('.cycle-slide-active').hasClass('imageNoir')) {
+            $('.retour svg, .view svg').css("fill", "#FFF");
+            $('.content, .description, .cycle-slide-active').addClass("blackpage");
+        };
+    
         $(".view").click(function (event) {
             showImg();
-            changeSvg();
         });
-    
+
         function showImg(){
             var image = $("#slideshow-1 img")
         
@@ -23,7 +26,4 @@ if (window.innerWidth <= 568) {
             };
 
         }
-
-
     });
-}

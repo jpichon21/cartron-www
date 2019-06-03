@@ -2,12 +2,11 @@ html, body, .site {
     min-height: 100%;
 }
 
-@include media('<=small') {
+@include media('<=medium') {
     .site{
         overflow-x: hidden;
     }
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -601,10 +600,11 @@ a {
             vertical-align: middle;
         }
         &.contact {
-            width: 528px;
+            width: 100%;
             padding: 0;
             text-align: center;
             background: url(../images/bg-titre-contact.png) no-repeat;
+            background-position: center;
         }
     }
     p {
@@ -676,7 +676,7 @@ a {
 }
 
 #formContact {
-    width: 528px;
+    width: 100%;
     margin: 60px auto 0 auto;
 }
 
@@ -826,10 +826,11 @@ a {
 
 #formContact {
     .valider {
-        width: 528px;
+        width: 100%;
         height: 31px;
         margin-top: 34px;
         background: url(../images/bg-titre-contact.png) no-repeat left center;
+        background-position: center;
     }
     .submit {
         width: 144px;
@@ -1227,6 +1228,7 @@ a {
 #degustation .degustation-home .content {
     position: relative;
     background: url(../images/degustation_overlay.png) no-repeat center;
+    height: 518px;
 }
 
 .degustation-home .content {

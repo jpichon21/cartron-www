@@ -2,7 +2,7 @@ html, body, .site {
   min-height: 100%;
 }
 
-@media (max-width: 568px) {
+@media (max-width: 768px) {
   .site {
     overflow-x: hidden;
   }
@@ -585,10 +585,11 @@ a {
   vertical-align: middle;
 }
 .espacePro h2.contact {
-  width: 528px;
+  width: 100%;
   padding: 0;
   text-align: center;
   background: url(../images/bg-titre-contact.png) no-repeat;
+  background-position: center;
 }
 .espacePro p {
   padding: 0;
@@ -658,7 +659,7 @@ a {
 }
 
 #formContact {
-  width: 528px;
+  width: 100%;
   margin: 60px auto 0 auto;
 }
 
@@ -803,10 +804,11 @@ a {
 }
 
 #formContact .valider {
-  width: 528px;
+  width: 100%;
   height: 31px;
   margin-top: 34px;
   background: url(../images/bg-titre-contact.png) no-repeat left center;
+  background-position: center;
 }
 #formContact .submit {
   width: 144px;
@@ -1196,6 +1198,7 @@ a {
 #degustation .degustation-home .content {
   position: relative;
   background: url(../images/degustation_overlay.png) no-repeat center;
+  height: 518px;
 }
 
 .degustation-home .content .parralax {
@@ -1827,6 +1830,7 @@ a {
 }
 @media (max-width: 767px) {
   .main {
+    height: 100%;
     min-height: calc(100vh - 220px);
     padding: 0;
   }
@@ -4075,6 +4079,11 @@ a {
   background: #000000;
 }
 
+@media (max-width: 568px) {
+  #degustation-produits .blackpage {
+    background-color: #000000e8;
+  }
+}
 #degustation-produits .content .retour, #degustation-produits .content .view, #degustation-produits .content .unview {
   top: 28px;
 }
@@ -4134,8 +4143,17 @@ a {
   margin: auto;
 }
 #degustation-produits .degustation-home {
-  width: 1170px;
+  width: 100%;
   margin: 0 auto;
+}
+@media (max-width: 768px) and (min-width: 569px) {
+  #degustation-produits #slideshow-1 {
+    padding: 0px;
+    margin-left: -100px;
+  }
+  #degustation-produits .cycle-prev, #degustation-produits .cycle-next {
+    display: none;
+  }
 }
 @media (max-width: 568px) {
   #degustation-produits .content .retour svg, #degustation-produits .content .view svg {
@@ -4151,7 +4169,7 @@ a {
     display: none;
   }
   #degustation-produits .desconly {
-    min-height: 600px;
+    max-height: 500px;
   }
   #degustation-produits .degustation-home, #degustation-produits .content {
     width: 100%;
@@ -4170,6 +4188,7 @@ a {
     display: block !important;
     left: -130%;
     opacity: 0.1;
+    /*margin: 0 -21.875% 0;*/
   }
   #degustation-produits #slideshow-1 .cycle-slide-active {
     position: relative;
