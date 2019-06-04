@@ -599,6 +599,11 @@ a {
   margin-top: 20px;
   letter-spacing: 1px;
 }
+@media (max-width: 1024px) {
+  .espacePro p {
+    padding: 0px 20px;
+  }
+}
 
 #formIdentification {
   width: 326px;
@@ -4082,6 +4087,14 @@ a {
 @media (min-width: 1024px) {
   #degustation-produits .degustation-home .content {
     background: none;
+  }
+}
+#degustation-produits .blackpage {
+  background-color: #000000e8;
+}
+@media (max-width: 568px) {
+  #degustation-produits .blackpage {
+    background-color: #000000e8;
   }
 }
 #degustation-produits .content .retour, #degustation-produits .content .view, #degustation-produits .content .unview {

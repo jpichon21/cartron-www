@@ -6,6 +6,14 @@
             }
         }
     }
+    .blackpage{
+        background-color: #000000e8;
+    }
+    @include media('<=small') {
+        .blackpage{
+            background-color: #000000e8;
+        }
+    }
     .content{
         .retour, .view, .unview{
             top: 28px;
@@ -130,6 +138,7 @@
                 top: 0px;
                 margin: 0 auto;
                 padding: 25px;
+               
                 .sep{
                     display: none;
                 }
