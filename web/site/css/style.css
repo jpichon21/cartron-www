@@ -1194,14 +1194,6 @@ a {
   background: #fff !important;
 }
 
-#degustation .degustation-home .content {
-  position: relative;
-  background: url(../images/degustation_overlay.png) no-repeat center;
-  height: 828px;
-  max-width: 1170px;
-  margin: 0 auto;
-}
-
 .degustation-home .content .parralax {
   position: relative;
   display: table;
@@ -1226,29 +1218,6 @@ a {
   margin: 0 auto;
 }
 
-.degustation-home .content h2 {
-  text-align: center;
-  font-size: 56px;
-  color: #ffffff;
-  font-weight: bold;
-  font-family: "Georgia";
-  text-transform: uppercase;
-  margin-bottom: 10%;
-  position: relative;
-  height: 92px;
-}
-.degustation-home .content h2 b {
-  position: absolute;
-  top: 0;
-  left: 0%;
-  width: 100%;
-}
-.degustation-home .content h2 span {
-  display: block;
-  font-size: 14px;
-  font-weight: normal;
-  margin-bottom: 10px;
-}
 .degustation-home .content a.entrer {
   width: 30px;
   display: inline-block;
@@ -3808,6 +3777,15 @@ a {
 
 .degustation-home .content {
   position: relative;
+  background: url(../images/degustation_overlay.png) no-repeat center;
+  height: 828px;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+@media (max-width: 568px) {
+  .degustation-home .content {
+    height: 572px;
+  }
 }
 .degustation-home .content .parralax {
   position: relative;
@@ -3821,14 +3799,6 @@ a {
   height: 100%;
   vertical-align: middle;
 }
-@media (max-width: 568px) {
-  .degustation-home .content .text p {
-    margin-bottom: 18px;
-    line-height: 18px;
-    font-size: 14px;
-  }
-}
-
 .degustation-home .content h2 {
   text-align: center;
   font-size: 56px;
@@ -3839,6 +3809,11 @@ a {
   margin-bottom: 10%;
   position: relative;
   height: 92px;
+}
+@media (max-width: 568px) {
+  .degustation-home .content h2 {
+    font-size: 38px;
+  }
 }
 .degustation-home .content h2 b {
   position: absolute;
@@ -3852,6 +3827,14 @@ a {
   font-weight: normal;
   margin-bottom: 10px;
 }
+@media (max-width: 568px) {
+  .degustation-home .content .text p {
+    margin-bottom: 18px;
+    line-height: 18px;
+    font-size: 14px;
+  }
+}
+
 .degustation-home .content a.entrer {
   width: 30px;
   display: inline-block;
@@ -3874,6 +3857,12 @@ a {
   top: 50%;
   margin-top: -60px;
 }
+@media (max-width: 568px) {
+  .degustation-home .content a.next {
+    right: -30px;
+    top: 45%;
+  }
+}
 .degustation-home .content a.prev {
   width: 116px;
   height: 116px;
@@ -3885,6 +3874,12 @@ a {
   top: 50%;
   margin-top: -60px;
   display: none;
+}
+@media (max-width: 568px) {
+  .degustation-home .content a.prev {
+    left: -30px;
+    top: 45%;
+  }
 }
 
 #slideshow-1 {

@@ -96,8 +96,12 @@
 .degustation-home {
     .content {
         position: relative;
+        background: url(../images/degustation_overlay.png) no-repeat center;
+        height: 828px;
+        max-width: 1170px;
+        margin: 0 auto;
         @include media('<=small') {
-        //background: url(../images/degustation_overlay.png) no-repeat center;
+            height: 572px;
         }
         .parralax {
             position: relative;
@@ -111,6 +115,32 @@
             height: 100%;
             vertical-align: middle;
         }
+        h2 {
+            text-align: center;
+            font-size: 56px;
+            color: #ffffff;
+            font-weight: bold;
+            font-family: 'Georgia';
+            text-transform: uppercase;
+            margin-bottom: 10%;
+            position: relative;
+            height: 92px;
+            @include media('<=small') {
+                font-size: 38px;
+            }
+            b {
+                position: absolute;
+                top: 0;
+                left: 0%;
+                width: 100%;
+            }
+            span {
+                display: block;
+                font-size: 14px;
+                font-weight: normal;
+                margin-bottom: 10px;
+            }
+        }
         .text p{
             @include media('<=small') {
                 margin-bottom: 18px;
@@ -122,29 +152,6 @@
 }
 
 .degustation-home .content {
-    h2 {
-        text-align: center;
-        font-size: 56px;
-        color: #ffffff;
-        font-weight: bold;
-        font-family: 'Georgia';
-        text-transform: uppercase;
-        margin-bottom: 10%;
-        position: relative;
-        height: 92px;
-        b {
-            position: absolute;
-            top: 0;
-            left: 0%;
-            width: 100%;
-        }
-        span {
-            display: block;
-            font-size: 14px;
-            font-weight: normal;
-            margin-bottom: 10px;
-        }
-    }
     a {
         &.entrer {
             width: 30px;
@@ -167,6 +174,10 @@
             background: url(../images/bg-next-degustation.png) no-repeat center;
             top: 50%;
             margin-top: -60px;
+            @include media('<=small') {
+                right: -30px;
+                top: 45%;
+            }
         }
         &.prev {
             width: 116px;
@@ -179,6 +190,10 @@
             top: 50%;
             margin-top: -60px;
             display: none;
+            @include media('<=small') {
+                left: -30px;
+                top: 45%;
+            }
         }
     }
 }
