@@ -3777,7 +3777,6 @@ a {
 
 .degustation-home .content {
   position: relative;
-  background: url(../images/degustation_overlay.png) no-repeat center;
   height: 828px;
   max-width: 1170px;
   margin: 0 auto;
@@ -3785,6 +3784,11 @@ a {
 @media (max-width: 568px) {
   .degustation-home .content {
     height: 572px;
+  }
+}
+@media (min-width: 1024px) {
+  .degustation-home .content {
+    background: url(../images/degustation_overlay.png) no-repeat center;
   }
 }
 .degustation-home .content .parralax {
@@ -4075,9 +4079,9 @@ a {
   background: #000000;
 }
 
-@media (max-width: 568px) {
-  #degustation-produits .blackpage {
-    background-color: #000000e8;
+@media (min-width: 1024px) {
+  #degustation-produits .degustation-home .content {
+    background: none;
   }
 }
 #degustation-produits .content .retour, #degustation-produits .content .view, #degustation-produits .content .unview {

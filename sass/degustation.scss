@@ -96,12 +96,14 @@
 .degustation-home {
     .content {
         position: relative;
-        background: url(../images/degustation_overlay.png) no-repeat center;
         height: 828px;
         max-width: 1170px;
         margin: 0 auto;
         @include media('<=small') {
             height: 572px;
+        }
+        @include media('>=large') {
+           background: url(../images/degustation_overlay.png) no-repeat center;
         }
         .parralax {
             position: relative;

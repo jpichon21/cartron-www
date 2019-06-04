@@ -1,7 +1,9 @@
 #degustation-produits {
-    @include media('<=small') {
-        .blackpage{
-            background-color: #000000e8;
+    .degustation-home {
+        .content {
+            @include media('>=large') {
+               background: none;
+            }
         }
     }
     .content{

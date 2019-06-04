@@ -8,18 +8,19 @@ $( document ).ready(function() {
     var positionx = 2;
     var is_moving = false;
     screen_width = $(window).width();
-    var bg = false;
+    var bg = $('#degustation .main');
+    var overlay = $('.degustation-home .content');
 
-    this.move = function(){		
-    var coef = 4;
-        bg.mousemove(function(e){
-            if( is_moving ) return;
+    $(".parralax").mousemove(function(e){
+        console.log("is moving!");
+        var coef = 4;
+        var parralaxpositionx = 2;
+        if( is_moving ){
             var offset = ((e.pageX/screen_width - 0.5) * 2 *coef);
-            bg.css({'background-position': (positionx+offset/2)+'% 50%' });
-            overlay.css({'margin-left': coef*offset+'px'});
-
-        });
-    }
+            bg.css({'background-position': (parralaxpositionx+offset/2)+'% 50%' });
+            overlay.css({'left': coef*offset+'px'});
+        }
+    })
     
     $(".degustation-home .content a.next, .degustation-home .content a.prev").click(function() {
   
