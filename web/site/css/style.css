@@ -2,11 +2,10 @@ html, body, .site {
   min-height: 100%;
 }
 
-@media (max-width: 768px) {
-  .site {
-    overflow-x: hidden;
-  }
+.site {
+  overflow-x: hidden;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -1198,7 +1197,9 @@ a {
 #degustation .degustation-home .content {
   position: relative;
   background: url(../images/degustation_overlay.png) no-repeat center;
-  height: 518px;
+  height: 828px;
+  max-width: 1170px;
+  margin: 0 auto;
 }
 
 .degustation-home .content .parralax {
