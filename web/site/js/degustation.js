@@ -1,10 +1,4 @@
-/************************************************************************************************************************/
-/************************************************************************************************************************/
-/************************************************************************************************************************/
-
-// New Slider Degustation
 $( document ).ready(function() {
-
     var positionx = 2;
     var is_moving = false;
     screen_width = $(window).width();
@@ -15,7 +9,6 @@ $( document ).ready(function() {
 
     $(".parralax").mousemove(function(e){
         if( is_moving == false ){
-            console.log('test');
             var offset = ((e.pageX/screen_width - 0.5) * 2 *coef);
             bg.css({'background-position': (positionx+offset/2)+'% 50%' });
             overlay.css({'left': coef*offset+'px'});
@@ -49,7 +42,6 @@ $( document ).ready(function() {
         $next.addClass('sh').find('h2 b').css('left', goto_left?'100%':'-100%').animate({left:0}, 800); 
         setTimeout(function(){slideBackground(e);}, 100);
     };
-
 
     function slideBackground(e){
         bg.animate({'backgroundPosition': (positionx+offset/2)+'% 100%' }, 600, function(){ is_moving = false; });
