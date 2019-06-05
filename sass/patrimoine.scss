@@ -18,6 +18,7 @@
         width: 50%;
         height: 100%;
         box-sizing: border-box;
+        background-size: cover;
         @include media('<large') {
             position: relative;
             width: 100%;
@@ -79,6 +80,7 @@
         padding-top: 50px;
         background: url(../images/first_slide.png) right top no-repeat;
         z-index: 10;
+        background-size: cover;
         @include media('<large') {
             background: none;
             margin-left: 0;
@@ -89,6 +91,7 @@
         width: 100%;
         background: url(../images/second_slide.jpg) center top no-repeat;
         z-index: 9;
+        background-size: cover;
         @include media('<large') {
             background: none;
             padding: 50px 0;
@@ -102,6 +105,7 @@
         padding-bottom: 50px;
         background: url(../images/thirt_slide.png) left top no-repeat;
         z-index: 10;
+        background-size: cover;
         @include media('<large') {
             background: none;
             margin-left: 0;

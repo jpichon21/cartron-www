@@ -2332,6 +2332,7 @@ a {
   width: 50%;
   height: 100%;
   box-sizing: border-box;
+  background-size: cover;
 }
 @media (max-width: 1023px) {
   #patrimoine #slide_1,
@@ -2411,6 +2412,7 @@ a {
   padding-top: 50px;
   background: url(../images/first_slide.png) right top no-repeat;
   z-index: 10;
+  background-size: cover;
 }
 @media (max-width: 1023px) {
   #patrimoine #slide_1 {
@@ -2423,6 +2425,7 @@ a {
   width: 100%;
   background: url(../images/second_slide.jpg) center top no-repeat;
   z-index: 9;
+  background-size: cover;
 }
 @media (max-width: 1023px) {
   #patrimoine #slide_2 {
@@ -2438,6 +2441,7 @@ a {
   padding-bottom: 50px;
   background: url(../images/thirt_slide.png) left top no-repeat;
   z-index: 10;
+  background-size: cover;
 }
 @media (max-width: 1023px) {
   #patrimoine #slide_3 {
@@ -3190,6 +3194,9 @@ a {
 }
 #collection .main {
   padding: 0;
+}
+#collection * {
+  overflow: hidden scroll;
 }
 #collection .collection-home {
   position: relative;
