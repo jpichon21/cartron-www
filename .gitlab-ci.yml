@@ -25,7 +25,8 @@ deploy_dev:
   environment:
     name: dev
     url: https://dev.cartron.fr
-  only: dev
+  only: 
+    - dev
   script:
         - curl -L https://deployer.org/releases/v6.4.3/deployer.phar > /usr/local/bin/deployer && chmod +x /usr/local/bin/deployer
         - deployer -f=deploy/deploy.php deploy dev
@@ -41,7 +42,8 @@ deploy_staging:
     name: staging
     url: https://staging.cartron.fr
   when: manual
-  only: staging
+  only: 
+    - staging
   script:
         - curl -L https://deployer.org/releases/v6.4.3/deployer.phar > /usr/local/bin/deployer && chmod +x /usr/local/bin/deployer
         - deployer -f=deploy/deploy.php deploy staging
