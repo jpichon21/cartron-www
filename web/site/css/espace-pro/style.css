@@ -601,3 +601,72 @@
   #contenu-right .image-left {
     margin-left:330px;
   }
+
+  
+
+
+@media all and (max-width: 768px) {
+
+  .site{
+    overflow-x: hidden;
+  }
+
+  #pro .content {
+    width: 100%;
+  }
+
+  .content{
+    max-width: 500px;
+  }
+
+  .accueil-pro p, .accueil-pro  h1{
+    max-width: 100%;
+    margin: 0 auto;
+    line-height: 26px;
+  }
+
+  .accueil-pro  h1{
+    padding: 20px 0px;
+  }
+
+  #menu-left{
+    position: relative ;
+    width: 100%;
+    margin: 0px 0px 38px;
+  }
+
+  #menu-left #menu li {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  #menu-left #menu > li .sub {
+    position: absolute;
+    top: 0px;
+    z-index: 999;
+    left: 0px;
+    display: none;
+}
+
+  #contenu-right.accueil-pro{
+    position: relative!important;
+    margin-left: 0px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  #text-container{
+    margin-top: 20px;
+  }
+
+
+}
+
+@media all and (max-width: 568px) {
+
+#text-container{
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+}

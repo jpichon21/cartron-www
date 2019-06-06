@@ -1,9 +1,11 @@
 {% extends "espace-pro/layout.html.twig" %}
 {% block body %}
     <div id="contenu-right" class="accueil-pro responsive">
-        <h1>{{ "Bienvenue sur l’espace professionnel" |trans }}</h1>
-        <p>{{ "Vous trouverez ici" |trans }}</p>
-        <p>{{ "toutes les informations et fichiers nécessaires" |trans }}</p>
-        <p>{{ "concernant la Maison Joseph Cartron." |trans }}</p>
+        <div id="text-container">
+            <h1>{{ "Bienvenue sur l’espace professionnel" |trans }}</h1>
+            <p>{{ "Vous trouverez ici" |trans }}<br>
+            {{ "toutes les informations et fichiers nécessaires" |trans }}<br>
+            {{ "concernant la Maison Joseph Cartron." |trans }}</p>
+        </div>
     </div>
 {% endblock %}

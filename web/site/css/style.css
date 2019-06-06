@@ -1438,6 +1438,13 @@ a {
   background: #000000;
 }
 
+/**************************/
+/*******ESPACE PRO*********/
+/**************************/
+#menu-left {
+  display: none;
+}
+
 .header {
   position: relative;
   display: flex;
@@ -3184,6 +3191,9 @@ a {
 
 #collection {
   background-color: #11252d;
+  /* *{
+       overflow: hidden scroll;
+   } */
 }
 @media (min-width: 1440px) {
   #collection {
@@ -3194,9 +3204,6 @@ a {
 }
 #collection .main {
   padding: 0;
-}
-#collection * {
-  overflow: hidden scroll;
 }
 #collection .collection-home {
   position: relative;
