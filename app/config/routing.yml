@@ -5,3 +5,6 @@ site_admin:
     resource: '@AppBundle/Controller/Admin'
     type: annotation
     prefix:   /admin
+pages:
+    resource: '@AppBundle/Controller/PageController.php'
+    type: annotation

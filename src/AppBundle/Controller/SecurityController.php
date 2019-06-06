@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Controller\Admin;
+namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;

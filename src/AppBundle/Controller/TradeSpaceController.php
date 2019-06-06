@@ -39,7 +39,7 @@ class TradeSpaceController extends Controller
     }
 
     /**
-     * @Route("/accueilPro", name="pro_accueil")
+     * @Route("/pro", name="pro_accueil")
      *
      * @return View
      */
@@ -50,7 +50,6 @@ class TradeSpaceController extends Controller
             [],
             ['position' => 'ASC']
         );
-
         return $this->render(
             'espace-pro/accueil.html.twig',
             ['categoriesMenu' => $categoriesMenu, 'resourcesMenu' => $resourcesMenu]
@@ -58,7 +57,7 @@ class TradeSpaceController extends Controller
     }
 
     /**
-     * @Route("/espace-pro-liste/{category}", name="pro_list_resources")
+     * @Route("/pro/liste/{category}", name="pro_list_resources")
      *
      * @return View
      */
@@ -84,7 +83,7 @@ class TradeSpaceController extends Controller
     }
 
     /**
-     * @Route("/espace-pro/{resource}", name="pro_resource")
+     * @Route("/pro/{resource}", name="pro_resource")
      *
      * @return View
      */

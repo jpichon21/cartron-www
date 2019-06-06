@@ -294,6 +294,6 @@ class User implements UserInterface
         if ($this->profil === "admin") {
             return ['ROLE_ADMIN'];
         }
-        return ['IS_AUTHENTICATED_ANONYMOUSLY'];
+        return ['ROLE_USER'];
     }
 }

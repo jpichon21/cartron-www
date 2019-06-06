@@ -42,7 +42,7 @@ class FirstConnectionType extends AbstractType
                 ]
             )
             ->add(
-                'sesevenire',
+                'sesouvenir',
                 CheckboxType::class,
                 [
                     'label' => 'Se souvenir',
