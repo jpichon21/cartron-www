@@ -115,7 +115,6 @@
             .content{
                 overflow: hidden;
             }
-            //? à optimiser
             img{
                 position: absolute;
                 z-index: 1;
@@ -123,6 +122,9 @@
                 left: -130%;
                 opacity: 0.1;
                 /*margin: 0 -21.875% 0;*/
+            }
+            .gastronomy{
+                left: -150% !important;
             }
             .cycle-slide-active{
                 position: relative;

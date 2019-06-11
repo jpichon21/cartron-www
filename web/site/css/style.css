@@ -4219,6 +4219,9 @@ a {
     opacity: 0.1;
     /*margin: 0 -21.875% 0;*/
   }
+  #degustation-produits #slideshow-1 .gastronomy {
+    left: -150% !important;
+  }
   #degustation-produits #slideshow-1 .cycle-slide-active {
     position: relative;
     width: 100%;

@@ -1,4 +1,14 @@
 {% block menu %}
+
+<script>
+  if (window.innerWidth <= 768) {
+    $('#menu-left .menu li').click(function(event) {
+      console.log('test');
+      event.preventDefault();
+    });
+  }
+
+</script>
     <div id="menu-left">
         <ul id="menu">
             {% set index = 1 %}

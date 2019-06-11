@@ -27,6 +27,16 @@
   $('.subMenu').jScrollPane({scrollbarWidth: 6});  
   });
 </script>
+<script type="text/javascript">
+ /*gestion du sous menu sur devices mobiles et tablettes*/
+    if (window.innerWidth <= 768) {
+      $('.menuLiWithSubMenu > a:first-of-type').click(function(event) {
+      event.preventDefault();
+              $(this).find(".scrollMenu").stop().fadeTo('fast', 1).show();
+              $('.subMenu').jScrollPane({scrollbarWidth: 6, dragMaxHeight: 34});
+      });
+    }
+</script>
 <div id="degustation">
   <div class="main">
     <div class="degustation-home">

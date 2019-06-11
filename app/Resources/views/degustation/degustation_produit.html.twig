@@ -133,10 +133,10 @@
           <a href="#" class="cycle-next"></a>
           
           <div id="cycle-1" data-cycle-slides=".cycle" data-cycle-fx="scrollHorz"  data-cycle-timeout="0" data-cycle-prev="#slideshow-1 .cycle-prev" data-cycle-next="#slideshow-1 .cycle-next" data-cycle-caption="#slideshow-1 .custom-caption">
-      
+
             {% for sousMenuDegustation in sousMenusDegustation %}
             <div class="article_{{ sousMenuDegustation.id }} cycle {% if(sousMenuDegustation.couleurArrierePlan=='noir') %} {{ "imageNoir" }} {% endif %} {% if sousMenuDegustation.id == app.request.get('id') %}cycle-slide-active{% endif %}">
-              <img src="{{ asset('upload/'~sousMenuDegustation.image) }}" width="977" height="577" alt="" />
+              <img src="{{ asset('upload/'~sousMenuDegustation.image) }}" width="977" height="577" alt="" class="  {% for degustation in degustations %}{% if(degustation.id == '4') %} {{ "gastronomy"}} {% endif %}{% endfor %}"/>     
               <a href="javascript:window.history.back()" class="back">{{ "Retour" | trans }}</a>
               <div class="description">
                 <h3>{% if(app.session.get('_locale')=='en') %} {{ sousMenuDegustation.titreEn }} {% else %} {{ sousMenuDegustation.titreFr }} {% endif %}</h3>
@@ -169,7 +169,7 @@
               </div>
             </div>
             {% endfor %}
-
+   
 
 
           </div>
