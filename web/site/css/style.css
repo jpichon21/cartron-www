@@ -3191,9 +3191,6 @@ a {
 
 #collection {
   background-color: #11252d;
-  /* *{
-       overflow: hidden scroll;
-   } */
 }
 @media (min-width: 1440px) {
   #collection {
@@ -3204,6 +3201,9 @@ a {
 }
 #collection .main {
   padding: 0;
+}
+#collection .simplebar-content {
+  height: 400px;
 }
 #collection .collection-home {
   position: relative;
