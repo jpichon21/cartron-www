@@ -1,7 +1,26 @@
 {% extends "layout.html.twig" %}
 {% block title %}JOSEPH CARTRON{% endblock %}
 {% block body %}
-
+<script src="{{ asset('site/js/jquery.js') }}"></script>
+<script src="{{ asset('site/js/jquery-ui.js') }}"></script>
+<script src="{{ asset('site/js/jquery.toggleval.js') }}"></script>
+<script src="{{ asset('site/js/jquery.jcarousel.min.js') }}"></script>
+<script src="{{ asset('site/js/jquery.jqtransform.js') }}"></script>
+<script src="{{ asset('site/js/jquery.easing.1.3.js') }}"></script>
+<script src="{{ asset('site/js/camera.min.js') }}"></script>
+<script src="{{ asset('site/js/jquery.jscrollpane.js') }}"></script>
+<script src="{{ asset('site/js/jquery.mousewheel.js') }}"></script>
+<script src="{{ asset('site/js/jquery.hoverflow.js') }}"></script>
+<script src="{{ asset('site/js/jquery.hoverIntent.minified.js') }}"></script>
+<script src="{{ asset('site/js/jquery.backgroundpos.min.js') }}"></script>
+<script src="{{ asset('site/js/owl.carousel.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('site/js/jquery.cycle2.js') }}"></script>
+<script type="text/javascript" src="{{ asset('site/js/jquery.cycle2.carousel.js') }}"></script>
+<script type="text/javascript" src="{{ asset('site/js/jquery.cycle2.tile.js') }}"></script>
+<script type="text/javascript" src="{{ asset('site/js/mobile-toggle.js') }}"></script>
+<script type="text/javascript" src="{{ asset('site/js/degustation.js') }}"></script>
+<script src="{{ asset('site/js/main.js') }}"></script>
+<script src="{{ asset('site/js/main1.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('site/js/jquery.cycle2.js') }}"></script>
 <script type="text/javascript" src="{{ asset('site/js/jquery.cycle2.carousel.js') }}"></script>
@@ -22,11 +41,17 @@
 		
 		$('.imprimer').click(function(){ window.print() })
 
-    if (window.innerWidth <= 568) {
-      $('.menuLiWithSubMenu a').click(function(event) {
+  /*gestion du sous menu sur devices mobiles et tablettes*/
+    if (window.innerWidth <= 768) {
+      $('.menuLiWithSubMenu > a:first-of-type').click(function(event) {
       event.preventDefault();
+              console.log('click');
+              $(this).find(".scrollMenu").stop().fadeTo('fast', 1).show();
+              $('.subMenu').jScrollPane({scrollbarWidth: 6, dragMaxHeight: 34});
       });
     }
+
+   
 
 	})
 

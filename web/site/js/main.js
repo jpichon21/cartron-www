@@ -187,7 +187,7 @@ $(function() {
             function() {
                 $(this).find(".scrollMenu").stop().hide();
             }
-    );
+        );
 
 
 
