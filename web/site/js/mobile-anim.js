@@ -8,7 +8,8 @@ if (window.innerWidth <= 568) {
         $('.savoir-faire-creation .retour').css("opacity", "0");
         $('.savoir-faire-creation .link-creation-bt').css("opacity", "0");
         $('.link-liqueur, .link-eau-vie-home').css("opacity", "0");
-        $('.savoir-faire-creation img').css("left", "-300px");
+        $('.savoir-faire-creation img').css({"left" : "-300px", 'min-width' : '640px'});
+    
         setTimeout(function(){moveImgSlow();}, 200);
 
         ///variables

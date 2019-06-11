@@ -3106,6 +3106,7 @@ a {
     top: 0;
     left: 0;
     height: 100%;
+    min-width: 640px;
   }
 }
 .savoir-faire-creation .desc-creation,
