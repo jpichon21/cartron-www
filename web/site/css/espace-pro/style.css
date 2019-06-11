@@ -639,6 +639,10 @@
     padding: 20px 0px;
   }
 
+  #menu-left #menu > li .sub ul{
+    margin-left: 0px;
+  }
+
   #menu-left{
     position: relative ;
     width: 100%;
@@ -709,7 +713,7 @@
 
   #menu-left #menu > li .sub .sub-2{
     top: 50px;
-    left: -22px;
+    left:-10px;
   }
 
   #text-container, #detail-right.paysage, #slider-liste-pro, h1#tax-title{

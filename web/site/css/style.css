@@ -3490,6 +3490,7 @@ a {
   #collection-produits .sousMenus .sousMenu .description .first_part {
     height: calc(100vh - 205px);
     overflow: auto;
+    min-height: 600px;
   }
 }
 #collection-produits .sousMenus .sousMenu .description .first_part h2 {
@@ -3612,7 +3613,7 @@ a {
 #collection-produits .sousMenus .sousMenu .description .link-produits {
   position: absolute;
   right: 0px;
-  bottom: 140px;
+  bottom: 110px;
 }
 @media (max-width: 1023px) {
   #collection-produits .sousMenus .sousMenu .description .link-produits {

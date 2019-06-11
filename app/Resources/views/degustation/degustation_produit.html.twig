@@ -45,7 +45,6 @@
     if (window.innerWidth <= 768) {
       $('.menuLiWithSubMenu > a:first-of-type').click(function(event) {
       event.preventDefault();
-              console.log('click');
               $(this).find(".scrollMenu").stop().fadeTo('fast', 1).show();
               $('.subMenu').jScrollPane({scrollbarWidth: 6, dragMaxHeight: 34});
       });
