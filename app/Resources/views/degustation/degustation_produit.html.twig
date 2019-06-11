@@ -22,6 +22,12 @@
 		
 		$('.imprimer').click(function(){ window.print() })
 
+    if (window.innerWidth <= 568) {
+      $('.menuLiWithSubMenu a').click(function(event) {
+      event.preventDefault();
+      });
+    }
+
 	})
 
     window.onresize = function() {
