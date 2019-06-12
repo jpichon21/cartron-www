@@ -1,0 +1,47 @@
+{% extends "layout.html.twig" %}
+{% block title %}JOSEPH CARTRON{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{{ asset('site/css/pro_login.css') }}" type="text/css" media="screen" title="default" />
+<body id="login-bg"> 
+ 
+<!-- Start: login-holder -->
+<div id="login-holder">
+	
+	<div class="clear"></div>
+	
+	<!--  start loginbox ................................................................................. -->
+	<div id="loginbox">
+
+	<h2> Accéder à l'espace pro </h2>
+	
+	<!--  start login-inner -->
+	<div id="login-inner">
+		<form action="{{ path('login') }}" method="post">
+			<table border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<th {% if(error) %} style=" color:red" {% endif %}></th>
+					<td><input class="login-inp" type="text" id="username" name="_username" placeholder="Identifiant" value="{{ last_username }}" /></td>
+				</tr>
+				<tr>
+					<th {% if(error) %} style=" color:red" {% endif %}></th>
+					<td><input class="login-inp" type="password" id="password" name="_password" value="Password"/></td>
+				</tr>
+				<tr>
+					<th></th>
+					<td><button class ="submit-login" type="submit" class="button-primary">OK</button></td>
+				</tr>
+			</table>
+        <form>
+	</div>
+ 	<!--  end login-inner -->
+	<div class="clear"></div>
+	
+ </div>
+ <!--  end loginbox -->
+ 
+	
+
+</div>
+<!-- End: login-holder -->
+</body>
+{% endblock %}
