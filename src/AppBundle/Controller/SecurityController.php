@@ -37,6 +37,22 @@ class SecurityController extends Controller
         );
     }
 
+    
+    /**
+     * @Route("/request_access", name="request access")
+     *
+     * @return View
+     */
+    public function requestAccessAction()
+    {
+        return $this->render(
+            'request_access.html.twig',
+            [
+               
+            ]
+        );
+    }
+
     /**
      * @Route("/logout", name="logout")
      *
