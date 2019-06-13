@@ -46,7 +46,7 @@ class SecurityController extends Controller
     public function requestAccessAction()
     {
         return $this->render(
-            'request_access.html.twig',
+            'contact/request_access.html.twig',
             [
                
             ]

@@ -656,13 +656,7 @@ a {
   background: #3e4951;
 }
 
-#formAcces {
-  width: 326px;
-  margin: auto;
-  margin-top: 10px;
-}
-
-#formContact {
+#formContact, #formAccess {
   width: 100%;
   margin: 60px auto 0 auto;
 }
@@ -702,7 +696,7 @@ a {
   letter-spacing: 1px;
 }
 
-#formContact .input {
+#formContact .input, #formAccess .input {
   width: 304px;
   height: 26px;
   line-height: 26px;
@@ -719,18 +713,7 @@ a {
   display: block;
 }
 
-#formAcces textarea {
-  width: 314px;
-  height: 78px;
-  padding: 5px;
-  color: #9aa6b2;
-  font-size: 10px;
-  font-family: "Georgia";
-  border: 1px solid #535a5e;
-  background: none;
-}
-
-#formContact textarea {
+#formContact textarea, #formAccess textarea {
   width: 314px;
   height: 78px;
   padding: 5px;
@@ -791,30 +774,15 @@ a {
 #formAcces a.passeOubli:hover {
   text-decoration: underline;
 }
-#formAcces .submit {
-  width: 39px;
-  height: 16px;
-  line-height: 16px;
-  margin: 10px 0 0 6px;
-  float: right;
-  display: block;
-  color: #fff;
-  font-size: 11px;
-  font-family: "Georgia";
-  text-transform: uppercase;
-  cursor: pointer;
-  border: none;
-  background: #3e4951;
-}
 
-#formContact .valider {
+#formContact .valider, #formAccess .valider {
   width: 100%;
   height: 31px;
   margin-top: 34px;
   background: url(../images/bg-titre-contact.png) no-repeat left center;
   background-position: center;
 }
-#formContact .submit {
+#formContact .submit, #formAccess .submit {
   width: 144px;
   height: 29px;
   line-height: 29px;
@@ -1443,6 +1411,10 @@ a {
 /**************************/
 #menu-left {
   display: none;
+}
+
+#requestAccess .espacePro h2 .contact, #requestAccess .espacePro h2 .valider {
+  background: none;
 }
 
 .header {
@@ -2312,6 +2284,12 @@ a {
 
 #contact .main {
   background-image: url(../images/bg-contact.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#requestAccess .main {
+  background: url(../images/img-fond-pro.jpg) no-repeat center top;
   background-size: cover;
   background-position: center;
 }
