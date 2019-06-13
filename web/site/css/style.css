@@ -4083,9 +4083,6 @@ a {
     background: none;
   }
 }
-#degustation-produits .blackpage {
-  background-color: #000000e8;
-}
 @media (max-width: 568px) {
   #degustation-produits .blackpage {
     background-color: #000000e8;

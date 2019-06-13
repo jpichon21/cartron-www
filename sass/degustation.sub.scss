@@ -6,9 +6,6 @@
             }
         }
     }
-    .blackpage{
-        background-color: #000000e8;
-    }
     @include media('<=small') {
         .blackpage{
             background-color: #000000e8;
