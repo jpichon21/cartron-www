@@ -1417,6 +1417,13 @@ a {
   background: none;
 }
 
+@media (max-width: 767px) {
+  #loginbox .submit-login {
+    width: 100%;
+    height: 32px;
+  }
+}
+
 .header {
   position: relative;
   display: flex;

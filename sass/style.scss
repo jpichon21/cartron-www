@@ -1465,3 +1465,14 @@ a {
 #requestAccess .espacePro h2 .contact, #requestAccess .espacePro h2 .valider{
     background: none;
 }
+
+
+#loginbox {
+    @include media('<medium') {
+        .submit-login{
+            width: 100%;
+            height: 32px;
+            font-size: 12px;
+        }
+    }
+}
