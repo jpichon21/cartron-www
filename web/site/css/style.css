@@ -1139,6 +1139,11 @@ a {
   z-index: 99999;
   background: url(../images/bg-ss-menu.png) no-repeat left top;
 }
+@media (max-width: 360px) {
+  .degustation-home .menu_degustation li .scrollMenu {
+    right: -53px;
+  }
+}
 .degustation-home .menu_degustation li ul.subMenu {
   width: 137px;
   height: 594px;

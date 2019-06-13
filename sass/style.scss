@@ -1166,6 +1166,9 @@ a {
         height: auto !important;
         z-index: 99999;
         background: url(../images/bg-ss-menu.png) no-repeat left top;
+        @include media('<=xsmall'){
+            right: -53px;
+        }
     }
     ul.subMenu {
         width: 137px;
