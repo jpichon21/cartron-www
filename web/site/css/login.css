@@ -127,11 +127,17 @@ h2 {
     display: inline-block;
 }
 
-#loginbox .disclaimer{
+#loginbox .disclaimer, #to_login{
     text-transform: none;
     font-style: italic;
     line-height: 18px;
     text-align: center;
+    color: #9AA6B2;
+}
+
+#to_login:hover, #to_login:active, #to_login:focus{
+    color: #ffffff;
+    cursor: pointer;
 }
 
 #loginbox .separator{

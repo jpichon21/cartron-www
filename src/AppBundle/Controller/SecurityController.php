@@ -39,7 +39,7 @@ class SecurityController extends Controller
 
     
     /**
-     * @Route("/request_access", name="request access")
+     * @Route("/request_access", name="request_access")
      *
      * @return View
      */

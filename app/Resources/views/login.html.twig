@@ -12,7 +12,7 @@
 	<!--  start loginbox ................................................................................. -->
 	<div id="loginbox">
 
-	<h2> Accéder à l'espace pro </h2>
+	<h2> Se connecter à l'espace pro </h2>
 	
 	<!--  start login-inner -->
 	<div id="login-inner">
@@ -30,11 +30,16 @@
 					<th></th>
 					<td><button class ="submit-login" type="submit" class="button-primary">OK</button></td>
 				</tr>
+				<tr>
+					<td class="separator"></td>
+				</tr>
 			</table>
         <form>
+		<a id="to_login" href="{{ path('request_access') }}">Demander un accès à l'espace professionnel →</a>
 	</div>
  	<!--  end login-inner -->
 	<div class="clear"></div>
+
 	
  </div>
  <!--  end loginbox -->
