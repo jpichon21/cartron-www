@@ -5,7 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use AppBundle\Form\ContactType;
+use AppBundle\Form\RequestAccessType;
 
 class AccessFormController extends Controller
 {
@@ -31,7 +31,8 @@ class AccessFormController extends Controller
      */
     public function accessAction(Request $request, $status)
     {
-        $form = $this->createForm(ContactType::class);
+        $form = $this->createForm(RequestAccessType::class);
+
         
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
@@ -40,6 +41,9 @@ class AccessFormController extends Controller
             $prenom = $data['prenom'];
             $email = $data['email'];
             $societe = $data['societe'];
+            $agent = $data['agent'];
+            $importateur = $data['importateur'];
+            $professionnel = $data['professionnel'];
             $message = $data['message'];
             $content = $nom . "\n\r" .
                     $prenom . "\n\r" .

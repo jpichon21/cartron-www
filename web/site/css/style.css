@@ -658,7 +658,14 @@ a {
 
 #formContact, #formAccess {
   width: 100%;
+}
+
+#formContact {
   margin: 60px auto 0 auto;
+}
+
+#formAccess {
+  margin: 30px auto 0 auto;
 }
 
 #formAcces h3 {
@@ -1417,11 +1424,48 @@ a {
   background: none;
 }
 
+@media (max-width: 568px) {
+  #loginbox {
+    margin-left: -16px;
+  }
+}
 @media (max-width: 767px) {
   #loginbox .submit-login {
     width: 100%;
     height: 32px;
+    font-size: 12px;
   }
+}
+
+#requestAccess .checkbox_container {
+  width: 320px;
+  padding: 20px;
+  margin: 0 auto;
+}
+#requestAccess .checkbox_container label, #requestAccess .checkbox_container span {
+  color: #9AA6B2;
+  font-size: 12px;
+  font-family: "Georgia";
+  text-transform: uppercase;
+  padding: 4px;
+}
+#requestAccess .checkbox_container span {
+  width: 100%;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+#requestAccess .checkbox_container input[type=checkbox] {
+  opacity: 0;
+}
+#requestAccess .checkbox_container .ez-hide {
+  opacity: 0;
+}
+#requestAccess .checkbox_container .ez-checkbox {
+  background: transparent url(../images/checkbox-red.png) 0 1px no-repeat;
+  display: inline-block;
+}
+#requestAccess .checkbox_container .ez-checked {
+  background-position: 0 -18px;
 }
 
 .header {

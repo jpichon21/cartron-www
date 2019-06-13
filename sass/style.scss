@@ -673,7 +673,14 @@ a {
 
 #formContact, #formAccess {
     width: 100%;
+}
+
+#formContact {
     margin: 60px auto 0 auto;
+}
+
+#formAccess {
+    margin: 30px auto 0 auto;
 }
 
 #formAcces {
@@ -1468,6 +1475,9 @@ a {
 
 
 #loginbox {
+    @include media('<=small') {
+        margin-left: -16px;
+    }
     @include media('<medium') {
         .submit-login{
             width: 100%;
@@ -1476,3 +1486,34 @@ a {
         }
     }
 }
+
+    #requestAccess .checkbox_container{
+        width: 320px;
+        padding: 20px;
+        margin: 0 auto;
+        label, span{
+            color: #9AA6B2;
+            font-size: 12px;
+            font-family: 'Georgia';
+            text-transform: uppercase;
+            padding: 4px;
+        }
+        span{
+            width: 100%;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        input[type="checkbox"]{
+            opacity: 0;
+        }
+        .ez-hide{
+            opacity: 0;
+        }
+        .ez-checkbox{
+            background: transparent url(../images/checkbox-red.png) 0 1px no-repeat;
+            display: inline-block;
+        }
+        .ez-checked {
+            background-position: 0 -18px;
+        }
+    }

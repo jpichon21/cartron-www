@@ -1,11 +1,20 @@
 {% extends "layout.html.twig" %}
 {% block title %}JOSEPH CARTRON{% endblock %}
 {% block body %}
+<script type="text/javascript">
+    $( document ).ready(function() {
+        // gestion des checkboxes
+        $('input[type="checkbox"]').change(function () {
+            var $this = this.closest(".ez-checkbox");
+            $($this).toggleClass("ez-checked");
+        });
+    });
+</script>
 
 <div id="requestAccess">
     <div class="main">
         <div class="espacePro">
-            <h2 class="contact">{{"Demande d'accès à l'espace professionnel"|trans}}</h2>
+            <h2 class="contact">{{"Demande d'accès professionnel"|trans}}</h2>
             {% if status %}
         	    <p class="address">{{ "Votre message a bien été envoyé"|trans }}</p>
             {% endif %}
@@ -14,6 +23,22 @@
                 {{ form_widget(form.prenom) }}
                 {{ form_widget(form.email) }}
                 {{ form_widget(form.societe) }}
+                <div class="checkbox_container">
+                    <span>Votre Profil</span>
+                    <br>
+                    <div class="ez-checkbox">
+                        {{ form_widget(form.agent) }}
+                    </div>
+                    {{ form_label(form.agent, 'Agent') }}
+                    <div class="ez-checkbox">
+                        {{ form_widget(form.importateur) }}
+                    </div>
+                    {{ form_label(form.importateur, 'Importateur') }}
+                    <div class="ez-checkbox">
+                        {{ form_widget(form.professionnel) }}
+                    </div>
+                    {{ form_label(form.professionnel, 'Professionnel') }}
+                </div>
                 {{ form_widget(form.message) }}
                 <br clear="all" />
                 <div class="valider">
