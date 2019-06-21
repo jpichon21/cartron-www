@@ -3,7 +3,24 @@
 {% block body %}
 
 <script src="{{ asset('site/js/force-display.js') }}"></script>
-
+<script>
+$( document ).ready(function() {
+  if (window.innerWidth >= 1024) {
+    $('.degustation').click(function() {
+        $(".note-degustation").css("display","block");
+        $(".note-degustation .dropdown").css("display","block");
+        $(".note-elaboration").css("display","none");
+        $(".accueil-produits").css("display","none");
+    })
+      $('.elaboration').click(function() {
+        $(".note-elaboration").css("display","block");
+        $(".note-elaboration .dropdown").css("display","block");
+        $(".note-degustation").css("display","none");
+        $(".accueil-produits").css("display","none");
+    })
+  }
+});
+</script>
 <div id="collection-produits" class="test2">
   <div class="main">
     <div class="collection-home">
