@@ -615,7 +615,7 @@
 
 
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 1024px) {
 
   .site{
     overflow-x: hidden;
@@ -623,6 +623,7 @@
 
   #pro .content {
     width: 100%;
+    padding: 25px 0 0 0;
   }
 
   .content{
