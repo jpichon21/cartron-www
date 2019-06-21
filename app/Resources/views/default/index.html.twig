@@ -4,7 +4,6 @@
 <script type="text/javascript">
     $(function() 
     {
-    	
         $('#liste-news').owlCarousel({
             items: 2,
             margin: 20,
@@ -33,7 +32,27 @@
         });
 
     });
-    </script>
+</script>
+<script>
+$( document ).ready(function() {
+    $('.lanch_video').click(function() {
+        $(".overlay-videos").css("display","block");
+        $(".overlay").css("display","block");
+    })
+    $('.overlay-videos .close').click(function() {
+        $(".overlay-videos").css("display","none");
+        $(".overlay").css("display","none");
+    })
+    $('.lanch_news').click(function() {
+        $(".overlay-news").css("display","block");
+        $(".overlay").css("display","block");
+    })
+    $('.overlay-news .close').click(function() {
+        $(".overlay-news").css("display","none");
+        $(".overlay").css("display","none");
+    })
+});
+</script>
     <div id="home">
         <div class="main">
 
