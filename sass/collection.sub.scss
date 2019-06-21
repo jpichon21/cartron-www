@@ -242,14 +242,15 @@
             .owl-prev,
             .owl-next {
                 position: absolute;
-                top: 50%;
+                top: 60%;
                 margin-top: -35px;
                 padding: 20px 20px 20px 15px;
                 @include media('<large') {
                     background-color: rgba(17, 37, 45, 0.8);
                 }
                 @include media('<medium') {
-                    top: 175px;
+                        position: fixed;
+                        top: 55%;
                 }
                 svg {
                     fill: #303030;

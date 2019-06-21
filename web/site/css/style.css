@@ -3675,7 +3675,7 @@ a {
 #collection-produits .owl-carousel .owl-nav .owl-prev,
 #collection-produits .owl-carousel .owl-nav .owl-next {
   position: absolute;
-  top: 50%;
+  top: 60%;
   margin-top: -35px;
   padding: 20px 20px 20px 15px;
 }
@@ -3688,7 +3688,8 @@ a {
 @media (max-width: 767px) {
   #collection-produits .owl-carousel .owl-nav .owl-prev,
 #collection-produits .owl-carousel .owl-nav .owl-next {
-    top: 175px;
+    position: fixed;
+    top: 55%;
   }
 }
 #collection-produits .owl-carousel .owl-nav .owl-prev svg,

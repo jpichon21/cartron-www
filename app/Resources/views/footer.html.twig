@@ -1,4 +1,16 @@
 {% block footer %}
+<script>
+$( document ).ready(function() {
+    $('#mentions-legales').click(function() {
+        $(".overlay-mentions").show();
+    })
+      $('.close').click(function(e) {
+          e.preventDefault();
+        $(".overlay-mentions").hide();
+    })
+});
+
+</script>
 <div class="footer">
 <div class="langues-reseaux">
     <div class="langues">
@@ -43,7 +55,7 @@
                 <li><a href="{{ path('collection_product', { id:49 }) }}">{{ "APERITIFS DE tradition" | trans }}</a></li>
                 <li><a href="{{ path('collection_product', { id:57 }) }}">{{ "EAUX DE VIE de tradition" | trans }}</a></li>
                 <li><a href="{{ path('collection_product', { id:53 }) }}">{{ "MARC ET FINE DE BOURGOGNE" | trans }}</a></li>
-              <li><a href="#0" class="mentions-legales">{{ "Mentions légales" | trans }}</a></li>
+              <li><a href="#0" id="mentions-legales" class="mentions-legales">{{ "Mentions légales" | trans }}</a></li>
             </ul>
         </div>
 
@@ -58,7 +70,7 @@
 
         <div class="overlay-mentions">
             <div class="pop-up-mentions">
-                <a href="" class="close dn"><span>{{ "Fermer" | trans }}</span></a>
+                <a href="#" class="close dn TEST"><span>{{ "Fermer" | trans }}</span></a>
                 <h1>{{ "mentions légales" | trans }}</h1>
                 <p>{{ "Propriétaire du Site Internet: Joseph Cartron" | trans }}<br />
 				  {{ "Adresse: 25, Rue du Docteur Legrand – BP 28" | trans }}<br />
