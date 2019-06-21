@@ -6,21 +6,23 @@
 {% endif %}
 {% if page== "Savoir-faire" %}
 <script type="text/javascript">
-  $(function() {
-  var myPlayer = _V_("example_video_1");
-
-  $('.close').click(function() {  
-      myPlayer.pause();
-  });
-
-  $('.savoir-faire-home li a')
-  .hover(function(e) {
-  $(this).next('.captionShine').hoverFlow(e.type, {left: 214}, 'slow');
-  }, function(e) {
-  $(this).next('.captionShine').hoverFlow(e.type, {left: -214}, 0);
-  });
+ $( document ).ready(function() {
+    $('.lanch_video').click(function() {
+        $(".overlay-news").css("display","none");
+        $(".overlay-videos").css("display","block");
+    })
+    $('.overlay-videos .close').click(function() {
+        $(".overlay-videos").css("display","none");
+        $(".overlay-videos video").get(0).pause();
+        $(".overlay").css("display","none");
+    })
+  $('.savoir-faire-home li a').hover(function(e) {
+    $(this).next('.captionShine').hoverFlow(e.type, {left: 214}, 'slow');
+    }, function(e) {
+    $(this).next('.captionShine').hoverFlow(e.type, {left: -214}, 0);
+    });
   $('.savoir-faire').addClass("active");
-  })
+  });
 </script>
 <link href="{{ asset('site/css/video-js.css') }}" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="{{ asset('site/js/video.js') }}"></script>

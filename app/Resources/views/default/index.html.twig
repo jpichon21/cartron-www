@@ -41,10 +41,12 @@ $( document ).ready(function() {
     })
     $('.overlay-videos .close').click(function() {
         $(".overlay-videos").css("display","none");
+        $(".overlay-videos video").get(0).pause();
         $(".overlay").css("display","none");
     })
     $('.lanch_news').click(function() {
         $(".overlay-videos").css("display","none");
+        $(".overlay-videos video").get(0).pause();
         $(".overlay-news").css("display","block");
     })
     $('.overlay-news .close').click(function() {
