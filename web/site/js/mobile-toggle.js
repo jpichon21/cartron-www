@@ -18,14 +18,16 @@
                 $("#viewIcon").css("display", "none");
                 $("#hideIcon").css("display", "block");
                 $(".description").css("background", "none");
+            }else{
+                return false;
             }
-            else{
+            if(image.css('opacity') == '1'){
                 $(".desconly").css("opacity", "1");
                 image.css("opacity", "0.1");
                 $("#viewIcon").css("display", "block");
                 $("#hideIcon").css("display", "none");
-  
-            };
-
-        }
+            }else{
+                return false;
+            }
+        };
     });
