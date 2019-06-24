@@ -1548,12 +1548,15 @@ a {
         z-index: 100;
     }
 
-    .langueTxt{
-        font-size: 10px;
-    }
-
     #languesIcon .flag{
         vertical-align: text-top;
+    }
+
+    #languesIcon{
+        span{
+            font-size: 10px!important;
+            display: none;
+        }
     }
 
     #languesIcon:after{
