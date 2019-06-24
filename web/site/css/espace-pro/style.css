@@ -701,8 +701,17 @@
     text-align: center;
   }
 
+  #menu-left #menu li.hover > div.sub-2{
+    top: 45px;
+    left: 0px;
+  }
+
 
 }
+
+
+
+
 
 @media all and (max-width: 568px) {
 
@@ -712,7 +721,7 @@
     left:-10px;
   }
 
-  #menu-left #menu > li .sub .sub-2{
+  #menu-left #menu li.hover > div.sub-2{
     top: 50px;
     left: 0px;
   }
