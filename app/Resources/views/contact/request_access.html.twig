@@ -14,7 +14,7 @@
 <div id="requestAccess">
     <div class="main">
         <div class="espacePro">
-            <h2 class="contact">{{"Demande d'accès professionnel"|trans}}</h2>
+            <h2 class="contact">{{"Demande d'accès professionnel" |trans}}</h2>
             {% if status %}
         	    <p class="address">{{ "Votre message a bien été envoyé"|trans }}</p>
             {% endif %}
@@ -24,7 +24,7 @@
                 {{ form_widget(form.email) }}
                 {{ form_widget(form.societe) }}
                 <div class="checkbox_container">
-                    <span>Votre Profil</span>
+                    <span>{{"Votre Profil" |trans}}</span>
                     <br>
                     <div class="ez-checkbox">
                         {{ form_widget(form.agent) }}

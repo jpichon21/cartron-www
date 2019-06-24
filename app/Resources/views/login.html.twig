@@ -9,7 +9,7 @@
 	<div class="clear"></div>
 	<!--  start loginbox ................................................................................. -->
 	<div id="loginbox">
-	<h2> Se connecter</h2>
+	<h2> {{ "Se connecter" |trans}}</h2>
 	<!--  start login-inner -->
 	<div id="login-inner">
 		<form action="{{ path('login') }}" method="post">
@@ -19,7 +19,7 @@
 			<table border="0" cellpadding="0" cellspacing="0">
 				<tr>
 					<th {% if(error) %} style=" color:red" {% endif %}></th>
-					<td><input class="login-inp" type="text" id="username" name="_username" placeholder="Identifiant" value="{{ last_username }}" /></td>
+					<td><input class="login-inp" type="text" id="username" name="_username" placeholder={{ "Identifiant" |trans}}  value="{{ last_username }}" /></td>
 				</tr>
 				<tr>
 					<th {% if(error) %} style=" color:red" {% endif %}></th>
@@ -34,7 +34,7 @@
 				</tr>
 			</table>
         <form>
-		<a id="to_login" href="{{ path('request_access') }}">Demander un accès à l'espace professionnel →</a>
+		<a id="to_login" href="{{ path('request_access') }}">{{ "Demander un accès à l'espace professionnel" |trans}} →</a>
 	</div>
 	<div class="clear"></div>
  </div>

@@ -675,6 +675,26 @@ After graduating from HEC (Ecole des Hautes Etudes Commerciales) and a career of
     <trans-unit id="1539">
         <source>Espace pro</source>
         <target><![CDATA[Trade<br> space]]></target>
+    </trans-unit>    
+    <trans-unit id="1540">
+        <source>Se connecter</source>
+        <target>Login</target>
+    </trans-unit>      
+    <trans-unit id="1541">
+        <source>Demander un accès à l'espace professionnel</source>
+        <target>Request a trade space account</target>
+    </trans-unit>
+    <trans-unit id="1542">
+        <source>Demande d'accès professionnel</source>
+        <target>Trade Space account request</target>
+    </trans-unit>
+    <trans-unit id="1543">
+        <source>Votre Profil</source>
+        <target>Your Profile</target>
+    </trans-unit>
+    <trans-unit id="1544">
+        <source>Identifiant</source>
+        <target>Login</target>
     </trans-unit>
     </body>
   </file>
