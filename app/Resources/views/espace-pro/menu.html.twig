@@ -1,13 +1,10 @@
 {% block menu %}
-
 <script>
-  if (window.innerWidth <= 768) {
-    $('#menu li').click(function(event) {
-      console.log('test');
-      event.stopPropagation();
+if (window.innerWidth <= 768) {
+    $( document ).ready(function() {
+        $('.mobileUnclickable').removeAttr("href");
     });
-  }
-
+}
 </script>
     <div id="menu-left">
         <ul id="menu">
@@ -39,7 +36,7 @@
                                         {% endfor %}
                                         </ul>
                                     </div>
-                                    <a href="{{ path('pro_list_resources', { 'category': subCategory.id }) }}">
+                                    <a class="mobileUnclickable" href="{{ path('pro_list_resources', { 'category': subCategory.id }) }}">
                                     {% if length <= 2 %}
                                         <span>{{ subCategory.nom  }}</span>
                                     {% else %}

@@ -1479,6 +1479,16 @@ a {
   }
 }
 
+.alert-danger {
+  text-align: center;
+  width: 240px;
+  padding: 15px 20px;
+  margin: 0 auto;
+  margin-bottom: 18px;
+  background-color: #c0392b;
+  color: #ffffff;
+}
+
 .header {
   position: relative;
   display: flex;
@@ -3384,14 +3394,6 @@ a {
 }
 #collection .owl-carousel .owl-next {
   right: 0;
-}
-@media (max-width: 568px) {
-  #collection .owl-carousel .owl-carousel .owl-stage-outer {
-    position: relative;
-    overflow: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-    height: 586px;
-  }
 }
 #collection .owl-carousel .owl-item {
   z-index: 0;
