@@ -1489,6 +1489,32 @@ a {
   color: #ffffff;
 }
 
+/**************************/
+/*****REFAC LANGUES********/
+/**************************/
+#languesContainer {
+  display: none;
+}
+#languesContainer li {
+  margin: 8px 0px;
+}
+
+#languesIcon .flag {
+  vertical-align: text-top;
+}
+
+#languesIcon:after {
+  content: "";
+  background: url(../images/puce-langue.jpg) no-repeat center right;
+  width: 8px;
+  position: absolute;
+  height: 8px;
+  background-size: contain;
+  margin-left: 8px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
 .header {
   position: relative;
   display: flex;

@@ -8,26 +8,29 @@ $( document ).ready(function() {
           e.preventDefault();
         $(".overlay-mentions").hide();
     })
+
+    $("#languesIcon").click(function() {
+      $("#languesContainer").toggle();
+    })
 });
 </script>
 <div class="footer">
 <div class="langues-reseaux">
     <div class="langues">
-        <dl id="sample" class="dropdown">
-            <dt><a href="#0"><span>
+            <span id="languesIcon">
 						{% if app.request.locale == "en" %} 
-                            EN <img class="flag" src="{{ asset('site/images/gb.png') }}" alt="" />
+                            <span class="langueTxt">EN </span><img class="flag" src="{{ asset('site/images/gb.png') }}" alt="" />
 						{% else %}
-                            FR <img class="flag" src="{{ asset('site/images/fr.jpg') }}" alt="" />
+                            <span class="langueTxt">FR </span> <img class="flag" src="{{ asset('site/images/fr.jpg') }}" alt="" />
 						{% endif %}
-                        </span></a></dt>
-                    <dd>
-                        <ul>
-                            <li><a href="{{ path('choose_locale', {'locale' : 'fr'}) }}">FR <img class="flag" src="{{ asset('site/images/fr.jpg') }}" alt="" /></a></li>
-                            <li><a href="{{ path('choose_locale', {'locale' : 'en'}) }}">EN <img class="flag" src="{{ asset('site/images/gb.png') }}" alt="" /></a></li>
-                        </ul>
-                    </dd>
-                </dl>
+                        </span>
+            <ul id="languesContainer">
+            	{% if app.request.locale == "en" %} 
+                                <li><a href="{{ path('choose_locale', {'locale' : 'fr'}) }}">FR <img class="flag" src="{{ asset('site/images/fr.jpg') }}" alt="" /></a></li>
+              {% else %}
+                                <li><a href="{{ path('choose_locale', {'locale' : 'en'}) }}">EN <img class="flag" src="{{ asset('site/images/gb.png') }}" alt="" /></a></li>
+              {% endif %}             
+            </ul>    
             </div>
             <ul class="reseaux">
                 <li><a href="{{ path('contact') }}" class="contactez-nous">{{ "Contactez-nous" | trans }}</a></li>
