@@ -678,12 +678,11 @@
         <source>Espace pro</source>
         <target><![CDATA[Espace<br> pro]]></target>
     </trans-unit>
-        <trans-unit id="1540">
+    <trans-unit id="1540">
         <source>Se connecter</source>
         <target>Se connecter</target>
     </trans-unit>
-      </trans-unit>
-      <trans-unit id="1541">
+    <trans-unit id="1541">
         <source>Demander un accès à l'espace professionnel</source>
         <target>Demander un accès à l'espace professionnel</target>
     </trans-unit>    
