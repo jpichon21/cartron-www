@@ -1520,3 +1520,9 @@ a {
             background-position: 0 -18px;
         }
     }
+
+    .owl-stage-outer {
+        @include media('<=large') {
+        max-height: 586px;
+        }
+    }

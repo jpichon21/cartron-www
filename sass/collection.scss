@@ -152,6 +152,7 @@
         .owl-next {
             right: 0;
         }
+     
         .owl-item {
             z-index: 0;
             @include media('<xxlarge') {
@@ -175,3 +176,4 @@
         }
     }
 }
+

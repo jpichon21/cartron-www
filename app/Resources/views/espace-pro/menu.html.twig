@@ -2,9 +2,9 @@
 
 <script>
   if (window.innerWidth <= 768) {
-    $('#menu-left .menu li').click(function(event) {
+    $('#menu li').click(function(event) {
       console.log('test');
-      event.preventDefault();
+      event.stopPropagation();
     });
   }
 
