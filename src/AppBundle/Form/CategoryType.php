@@ -24,6 +24,7 @@ class CategoryType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        dump($options);
         $this->options = $options;
         $builder
             ->add(
@@ -58,8 +59,10 @@ class CategoryType extends AbstractType
                     'expanded' => false,
                     'multiple' => false,
                     'query_builder' => function (EntityRepository $er) {
-                        return $er->createQueryBuilder('u')
-                            ->where('u.lvl = 0 AND u.id != '.$this->options['category']);
+                        if ($this->options['category']) {
+                            return $er->createQueryBuilder('u')
+                                ->where('u.lvl = 0 AND u.id != '.$this->options['category']);
+                        }
                     },
                 ]
             )
