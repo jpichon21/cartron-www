@@ -706,6 +706,13 @@
     left: 0px;
   }
 
+  #menu-left #menu > li .sub .sub-1{
+    display: none!important;
+  }
+
+  #menu-left #menu li.hover > div.sub-2{
+    display: none!important;
+  }
 
 }
 
@@ -722,11 +729,13 @@
   #menu-left #menu > li .sub .sub-1{
     top: 30px;
     left:-10px;
+    display: none!important;
   }
 
   #menu-left #menu li.hover > div.sub-2{
     top: 50px;
     left: 0px;
+    display: none!important;
   }
 
   #text-container, #detail-right.paysage, #slider-liste-pro, h1#tax-title{
