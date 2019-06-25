@@ -1473,12 +1473,6 @@ a {
   background-position: 0 -18px;
 }
 
-@media (max-width: 1024px) {
-  .owl-stage-outer {
-    max-height: 586px;
-  }
-}
-
 .alert-danger {
   text-align: center;
   width: 240px;
@@ -1494,13 +1488,18 @@ a {
 /**************************/
 #languesContainer {
   display: none;
-}
-#languesContainer li {
-  margin: 8px 0px;
+  background-color: #35424a;
+  padding: 8px 0px;
+  z-index: 100;
 }
 
 #languesIcon .flag {
   vertical-align: text-top;
+}
+
+#languesIcon span {
+  font-size: 10px !important;
+  display: none;
 }
 
 #languesIcon:after {
