@@ -75,36 +75,39 @@ class RequestAccessType extends AbstractType
                     ]
                 ]
             )
-           ->add(
+            ->add(
                 'agent',
-                CheckboxType::class, [
-                'label'    => 'Agent',
-                'required' => false,
+                CheckboxType::class,
+                [
+                    'label'    => 'Agent',
+                    'required' => false,
                 ]
             )
             ->add(
-                 'importateur',
-                 CheckboxType::class, [
-                 'label'    => 'Importateur',
-                 'required' => false,
-                 ]
-             )
-             ->add(
-                'professionnel', 
-                 CheckboxType::class, [
-                 'label'    => 'Professionnel',
-                 'required' => false,
-                 ]
-             )
+                'importateur',
+                CheckboxType::class,
+                [
+                    'label'    => 'Importateur',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'professionnel',
+                CheckboxType::class,
+                [
+                    'label'    => 'Professionnel',
+                    'required' => false,
+                ]
+            )
             ->add(
                 'message',
                 TextAreaType::class,
                 [
-                'label' => false,
-                'required' => true,
-                'attr' => [
-                    'placeholder' => $this->translator->trans('Message'),
-                    ]
+                    'label' => false,
+                    'required' => true,
+                    'attr' => [
+                        'placeholder' => $this->translator->trans('Message'),
+                        ]
                 ]
             )
             ->add(

@@ -178,7 +178,10 @@ class ResourceAdminController extends Controller
 
             $this->em->persist($resource);
             $this->em->flush();
-            return $this->redirectToRoute('admin_edit_resource', ['resource' => $resource->getId(), 'locale' => $locale]);
+            return $this->redirectToRoute(
+                'admin_edit_resource',
+                ['resource' => $resource->getId(), 'locale' => $locale]
+            );
         }
 
         return $this->render(
