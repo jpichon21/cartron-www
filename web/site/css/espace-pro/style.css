@@ -745,7 +745,7 @@
 
   #slider-liste-pro{
     height: 800px;
-    width: 200px;
+    width: 200px !important;
     overflow: visible;
   }
 
