@@ -24,7 +24,6 @@ class CategoryType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        dump($options);
         $this->options = $options;
         $builder
             ->add(
