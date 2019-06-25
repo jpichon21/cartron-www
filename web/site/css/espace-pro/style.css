@@ -689,7 +689,7 @@
   #pro .main{
     height: 900px;
     margin: 0px;
-    min-height: 600px;
+    min-height: 800px;
   }
 
   #text-container, #detail-right.paysage, #slider-liste-pro, h1#tax-title{
@@ -715,6 +715,9 @@
 
 @media all and (max-width: 568px) {
 
+  #pro .main{
+    min-height: 620px;
+  }
 
   #menu-left #menu > li .sub .sub-1{
     top: 30px;
@@ -740,5 +743,15 @@
     text-align: center;
   }
 
+  .slider-liste-pro{
+    height: 800px;
+    width: 200px;
+    overflow: visible;
+  }
+
+  #slider-liste-pro ul > li ul li{
+    float: none;
+    display: inline-block;
+  }
 
 }
