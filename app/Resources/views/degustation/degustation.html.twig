@@ -25,10 +25,13 @@
 $( document ).ready(function() {
   		$('.desconly').jScrollPane({scrollbarWidth: 4, autoReinitialise: true});
   		$('.subMenu').jScrollPane({scrollbarWidth: 6});
-      if (window.innerWidth <= 768) {
-          $('.menuLiWithSubMenu > a:first-of-type').click(function(event) {
-            event.preventDefault();
-        })
+       /*gestion du sous menu sur devices mobiles et tablettes*/
+        if (window.innerWidth <= 768) {
+        $('.menuLiWithSubMenu > a:first-of-type').click(function(event) {
+        event.preventDefault();
+                $(this).find(".scrollMenu").stop().fadeTo('fast', 1).show();
+                $('.subMenu').jScrollPane({scrollbarWidth: 6, dragMaxHeight: 34});
+        });
       }
 });
 </script>
