@@ -21,7 +21,7 @@
             }
             else{
                 $(".desconly").css("opacity", "1");
-                image.css("opacity", "0.1");
+                image.css("opacity", "0.3");
                 $("#viewIcon").css("display", "block");
                 $("#hideIcon").css("display", "none");
             };
