@@ -79,6 +79,17 @@ a {
     width: 100%;
     height: 100%;
     z-index: 100;
+    @include media('<medium') {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        padding-top: 40px;
+        box-sizing: border-box;
+        overflow: auto;
+    }
 }
 
 .pop-demande-envoyee, .pop-up-mentions, .popup-espace-pro {
@@ -88,6 +99,19 @@ a {
     margin: 142px auto 0;
     padding: 57px 40px;
     position: relative;
+    @include media('<medium') {
+        width: 100%;
+        margin-left: 0;
+        padding-top: 40px;
+        box-sizing: border-box;
+        overflow: auto;
+        .scrollMention {
+            height: auto;
+            p {
+                width: auto;
+            }
+        }
+    }
 }
 
 .pop-up-passe-oublie {
