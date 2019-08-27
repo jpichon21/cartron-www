@@ -23,13 +23,15 @@
             <img src="{{ asset('upload/' ~ collection.image) }}" alt="{{ collection.titreFr | raw }}" />
             <div class="blockDesc">
               <ul>
+                {% set productIndex = 1 %}
                 {% for sousMenu in sousMenus %}
                 {% if sousMenu.idCollection.id == collection.id %}
                 <li>
-                  <a href="{{ path('collection_product', { id: sousMenu.id }) }}">
+                  <a href="{{ path('collection_product', { id: sousMenu.id }) ~ '#' ~ productIndex }}">
                     {% if app.session.get('_locale') == 'en' %}{{ sousMenu.titreEn }}{% else %}{{ sousMenu.titreFr }}{% endif %}
                   </a>
                 </li>
+                {% set productIndex = productIndex + 1 %}
                 {% endif %}
                 {% endfor %}
               </ul>
