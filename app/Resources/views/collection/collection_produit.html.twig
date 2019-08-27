@@ -177,7 +177,11 @@ $( document ).ready(function() {
 
   $('.second_part').on('click', 'h3', function() {
     $(this).toggleClass('active');
-});
+  });
+  $('#collection-produits .close').click(function(e) {
+    window.history.back()
+    e.stopPropagation()
+  })
 
 
 </script>
