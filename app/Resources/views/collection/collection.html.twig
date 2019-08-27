@@ -82,7 +82,6 @@
       width = $(window).width();
     
       if (width < 1440 && !up) {
-        console.log('init carousel 2');
         initOwlCarousel();
       } else if (width >= 1440 && up) {
         owl.trigger('destroy.owl.carousel');
