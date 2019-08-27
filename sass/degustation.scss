@@ -249,11 +249,12 @@
         h3 {
             font-size: 28px;
             font-weight: bold;
-            color: #2f383e;
+            // color: #2f383e;
             font-family: 'Georgia';
+            color: #fff;
         }
         @include media('<=small') {
-            height: 0px;
+            height: 2em;
             .icons{
                 display: none;
             }
