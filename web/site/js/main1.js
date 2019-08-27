@@ -132,7 +132,6 @@ cartron.Degustation = function(config)
 	{
 		$('.degustation-home .content a.next, .degustation-home .content a.prev').click(function(e) 
 		{
-			console.log('clicked')
 			var goto_left = $(this).hasClass('next'); 
 			
 			if( goto_left ) that.positionx += 48;

@@ -21,12 +21,16 @@
         }
         .view, .unview{
             position: absolute;
-            opacity: 0.6;
+            // opacity: 0.6;
             z-index: 2;
             right: 60px;
             width: 20px;
             height: 20px;
             background: none;
+            mix-blend-mode: difference;
+        }
+        .retour {
+            mix-blend-mode: difference;
         }
     }
     .main {
@@ -90,7 +94,7 @@
     @include media('<=small') {
         .content{
             .retour svg, .view svg{
-                fill: #000000;
+                fill: #fff;
             }
             .retour svg, .view #viewIcon{
                 display: block;
@@ -137,7 +141,7 @@
                 top: 0px;
                 margin: 0 auto;
                 padding: 25px;
-               
+                mix-blend-mode: difference;
                 .sep{
                     display: none;
                 }

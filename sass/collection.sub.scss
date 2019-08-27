@@ -14,6 +14,7 @@
         top: 0;
         right: 0;
         padding: 20px;
+        z-index: 1000;
         @include media('>=large') {
             display: none;
         }
@@ -87,6 +88,9 @@
                         top: -75px;
                         right: -75px;
                         width: auto;
+                        &[alt="LES CERISES DE MONSIEUR JOSEPH"] {
+                            top: -120px;
+                        }
                     }
                 }
             }
