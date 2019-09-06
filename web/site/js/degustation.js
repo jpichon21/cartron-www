@@ -6,7 +6,6 @@ $( document ).ready(function() {
     var overlay = $('.degustation-home .content');
     var coef = 4;
     var offset = '';
-
     $(".parralax").mousemove(function(e){
         if( is_moving == false ){
             var offset = ((e.pageX/screen_width - 0.5) * 2 *coef);
@@ -48,5 +47,7 @@ $( document ).ready(function() {
     };
 
  });
-
+$(window).load(function () {
+    $('#degustation-produits .description').height($('#degustation-produits .cycle-slide-active .description h3').height()+'px');
+})
         

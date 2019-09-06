@@ -240,8 +240,12 @@
         position: relative;
         z-index: 1;
     }
+    @include media('<=large','>small') {
+        width: 100%;    
+        padding: 0;   
+    }
     .description {
-        width: 430px;
+        width: 425px;
         position: absolute;
         left: 131px;
         top: 82px;
@@ -251,7 +255,6 @@
             font-weight: bold;
             // color: #2f383e;
             font-family: 'Georgia';
-            color: #fff;
         }
         @include media('<=small') {
             height: 2em;
@@ -259,6 +262,7 @@
                 display: none;
             }
             h3 {
+            color: #fff;
             font-size: 22px;
             margin-bottom: 14px;
             max-width: 242px;

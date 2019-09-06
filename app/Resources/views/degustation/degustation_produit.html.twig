@@ -87,7 +87,7 @@
             {% set break = false %}
                 {% for sousMenu in sousMenus if not break %}
                     {% if(degustation.id == sousMenu.idDegustation.id) %}
-                    <a href="{{ path('tasting_product',{id:sousMenu.id}) }}" >
+                    <a href="#" >
                         {% if(app.session.get('_locale')=='en') %} {{ degustation.titreEn|raw }} {% else %} {{ degustation.titreFr|raw }} {% endif %}
                     </a>
                     {% set break = true %}
