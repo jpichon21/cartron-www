@@ -56,7 +56,7 @@ $( document ).ready(function() {
                   </div>
                 </div>
                 <div class="second_part">
-                  <a class="recette" href="{% if app.session.get('_locale') == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}">{{ "Recettes" | trans }}</a>
+                  <a class="recette" href="{% if app.session.get('_locale') == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}?id={{sousMenu.id}}&index={{loop.index}}">{{ "Recettes" | trans }}</a>
                   <div class="note-degustation">
                     <h3>{{ "Note de dégustation" | trans }}</h3>
                     <div class="dropdown">
