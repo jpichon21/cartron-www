@@ -5,19 +5,22 @@
   <div class="main">
     <div class="collection-home">
       <div class="owl-carousel">
+        {% set collectionIndex = -1 %}
+        {% set carouselStartPosition = 0 %}
         {% for collection in collections %}
+        {% set collectionIndex = collectionIndex + 1 %}
         <div class="collection" id="marc_{{ collection.id }}">
           <span class="close">
             <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg>
           </span>
           {% set break = false %}
           {% for sousMenu in sousMenus if not break %}
-            {% if collection.id == sousMenu.idCollection.id %}
-            <a class="title" href="{{ path('collection_product', { id: sousMenu.id }) }}" style="border-color: #{{ collection.color }};">
-              {% if app.session.get('_locale') == 'en' %}{{ collection.titreEn | raw }}{% else %}{{ collection.titreFr | raw }}{% endif %}
-            </a>
-            {% set break = true %}
-            {% endif %}
+          {% if collection.id == sousMenu.idCollection.id %}
+          <a class="title" href="{{ path('collection_product', { id: sousMenu.id }) }}" style="border-color: #{{ collection.color }};">
+            {% if app.session.get('_locale') == 'en' %}{{ collection.titreEn | raw }}{% else %}{{ collection.titreFr | raw }}{% endif %}
+          </a>
+          {% set break = true %}
+          {% endif %}
           {% endfor %}
           <div class="block">
             <img src="{{ asset('upload/' ~ collection.image) }}" alt="{{ collection.titreFr | raw }}" />
@@ -26,6 +29,11 @@
                 {% set productIndex = 1 %}
                 {% for sousMenu in sousMenus %}
                 {% if sousMenu.idCollection.id == collection.id %}
+                  {% if app.request.query.get('id')|number_format == sousMenu.id %}
+
+                    {% set carouselStartPosition = collectionIndex %}
+                  {% endif %}
+
                 <li>
                   <a href="{{ path('collection_product', { id: sousMenu.id }) ~ '#' ~ productIndex }}">
                     {% if app.session.get('_locale') == 'en' %}{{ sousMenu.titreEn }}{% else %}{{ sousMenu.titreFr }}{% endif %}
@@ -48,14 +56,14 @@
     </div>
   </div>
   <script type="text/javascript">
-
+    var carouselStartPosition = {{ carouselStartPosition }};
     var elementsToSimplyBar = document.querySelectorAll('.blockDesc');
     elementsToSimplyBar.forEach(function(elementToSimplyBar) { new SimpleBar(elementToSimplyBar, { autoHide: true }); })
 
     var owl = $('.owl-carousel');
     var up = false;
     var options = {
-      startPosition: 1,
+      startPosition: carouselStartPosition,
       nav: true,
       dots: false,
       autoWidth: true,
