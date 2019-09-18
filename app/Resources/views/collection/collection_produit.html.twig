@@ -91,7 +91,7 @@ $( document ).ready(function() {
     nav: true,
     loop: true,
     URLhashListener: true,
-    startPosition: 'URLHash',
+    startPosition: getAnchor(),
     navText: [
       '<div class="owl-prev"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',  
       '<div class="owl-next"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
@@ -116,6 +116,12 @@ $( document ).ready(function() {
     mouseDrag: false,
     touchDrag: false
   };
+
+  function getAnchor() {
+    var currentUrl = document.URL,
+    urlParts   = currentUrl.split('#');
+    return (urlParts.length > 1) ? urlParts[1] : null;
+  }
 
   function initOwlMenu() {
     owl.owlCarousel(options);
@@ -178,10 +184,6 @@ $( document ).ready(function() {
   $('.second_part').on('click', 'h3', function() {
     $(this).toggleClass('active');
   });
-  $('#collection-produits .close').click(function(e) {
-    window.history.back()
-    e.stopPropagation()
-  })
 
 
 </script>
