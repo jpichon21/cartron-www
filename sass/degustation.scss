@@ -150,6 +150,11 @@
                 font-size: 14px;
             }
         }
+        &.show-img {
+            #viewIcon {
+                opacity: 0;
+            }
+        }
     }
 }
 
@@ -262,15 +267,17 @@
                 display: none;
             }
             h3 {
-            color: #fff;
+            color: #000;
+            text-shadow: #fff 0 0 15px;
             font-size: 22px;
             margin-bottom: 14px;
             max-width: 242px;
-            }
         }
     }
-    .imageNoir .description h3 {
-        color: #ffffff;
+}
+.imageNoir .description h3 {
+    color: #ffffff;
+    text-shadow: #000000 0 0 15px;
     }
     .description .text {
         font-size: 13px;
@@ -347,6 +354,14 @@
             background-image: url(../images/imprimer.png);
         }
     }
+    &.show-img {
+        img {
+            opacity: 1 !important;
+        }
+        .desconly, h3 {
+            opacity: 0 !important;
+        }
+    }
 }
 
 #slideshow-2 {
@@ -404,4 +419,8 @@
 
 .carouNoir {
     background: #000000;
+}
+
+#viewImg, h3, #slideshow-1 img {
+    transition: opacity 0.2s;
 }

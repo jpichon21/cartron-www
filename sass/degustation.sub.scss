@@ -27,10 +27,10 @@
             width: 20px;
             height: 20px;
             background: none;
-            mix-blend-mode: difference;
+            // mix-blend-mode: difference;
         }
         .retour {
-            mix-blend-mode: difference;
+            // mix-blend-mode: difference;
         }
     }
     .main {
@@ -93,7 +93,7 @@
     @include media('<=small') {
         .content{
             .retour svg, .view svg{
-                fill: #fff;
+                fill: #444;
             }
             .retour svg, .view #viewIcon{
                 display: block;
@@ -141,7 +141,7 @@
                 top: 0px;
                 margin: 0 auto;
                 padding: 25px;
-                mix-blend-mode: difference;
+                // mix-blend-mode: difference;
                 .sep{
                     display: none;
                 }
