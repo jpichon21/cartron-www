@@ -661,17 +661,28 @@
     </trans-unit>
     <trans-unit id="1538">
         <source>texte mentions légales</source>
-        <target><![CDATA[Propriétaire du Site Internet: Joseph Cartron<br />
-          Adresse: 25, Rue du Docteur Legrand – BP 28<br />
-          21701 nuits-Saint-Georges Cedex - France<br />
-                  Email: cartron@cartron.fr<br />
-          Telephone : +33 (0)3 80 62 00 90<br />
-          Design & Développement & maintenance technique: BIGGERBAND<br />
-          Crédits Images: Joseph Cartron <br />
-          Conditions d'utilisation et propriétés:<br />
-          Toute représentation totale ou partielle de ce site et de son contenu, par quelques procédés que ce soient, sans autorisation préalable est interdite et constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont la violation est passible de sanctions pénales. Ils doivent notamment s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de toute collecte, de toute utilisation détournée, et d'une manière générale, de tout acte susceptible de porter atteinte à la vie privée ou à la réputation des personnes.<br />
-          Hébergeur: Oleane<br />
-          <a href="https://clients.fr.oleane.com" target="_blank">https://clients.fr.oleane.com</a>]]>
+        <target><![CDATA[Raison sociale : Joseph Cartron<br>
+          Capital de 638 400,00 Euros<br>
+          RCS 035 780 253<br>
+          Directeur de la publication : Judith Cartron<br>
+          <b>Adresse:</b>
+          Joseph Cartron - 25, Rue du Docteur Louis Legrand – CS 30028<br>
+          21701 Nuits-Saint-Georges Cedex - France<br>
+          <b>Email:</b> cartron@cartron.fr
+          <b>Téléphone:</b> +33 (0)3 80 62 00 90
+          <b>Design & Développement:</b> BIGGERBAND<br>
+          1 rue de Paradis 75010 Paris & 19 rue Esprit des Lois 33000 Bordeaux<br>
+          <b>Maintenance technique:</b> LOGOMOTION<br>
+          19, rue Champ Passavent - BP2 - 21380 Messigny et Vantoux<br>
+          <b>Hébergeur:</b>
+          Ce site est hébergé sur les serveurs de la société :<br>
+          OVH SAS (http://www.ovh.com)<br>
+          140 Quai du Sartel 59100 ROUBAIX<br>
+          Tél : +33 (0)3 20 45 36 80<br>
+          <b>Crédits Images:</b> Joseph Cartron
+          <b>Conditions d'utilisation et propriétés:</b><br>
+          Toute représentation totale ou partielle de ce site et de son contenu, par quelques procédés que ce soient, sans autorisation préalable est interdite et constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont la violation est passible de sanctions pénales. Ils doivent notamment s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de toute collecte, de toute utilisation détournée, et d'une manière générale, de tout acte susceptible de porter atteinte à la vie privée ou à la réputation des personnes.
+          L’abus d’alcool est dangereux pour la santé. Consommer avec modération.]]>
         </target>
     </trans-unit>
     <trans-unit id="1539">
