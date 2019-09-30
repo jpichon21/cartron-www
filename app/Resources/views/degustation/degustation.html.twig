@@ -47,7 +47,7 @@ $( document ).ready(function() {
                     {% for sousMenu in sousMenus if not break %}
                         {% if(degustation.id == sousMenu.idDegustation.id) %}
                         <a class="marc_{{ degustation.id }}" href="{{ path('tasting_product',{id:sousMenu.id}) }}" >
-                            {% if(app.session.get('_locale')=='en') %} {{ degustation.titreEn|raw }} {% else %} {{ degustation.titreFr|raw }} {% endif %}
+                            {% if(app.request.locale =='en') %} {{ degustation.titreEn|raw }} {% else %} {{ degustation.titreFr|raw }} {% endif %}
                         </a>
                         {% set break = true %}
                         {% endif %}
@@ -58,7 +58,7 @@ $( document ).ready(function() {
 	              {% if(sousMenu.idDegustation.id == degustation.id) %}
 	              <li>
 	                <a href="{{ path('tasting_product',{id:sousMenu.id}) }}">
-	                  {% if(app.session.get('_locale')=='en') %} {{ sousMenu.titreEn }} {% else %} {{ sousMenu.titreFr }} {% endif %}
+	                  {% if(app.request.locale =='en') %} {{ sousMenu.titreEn }} {% else %} {{ sousMenu.titreFr }} {% endif %}
 	                </a>
 	              </li>
 	              {% endif %}
@@ -78,7 +78,7 @@ $( document ).ready(function() {
           {% for degustation in degustations %}
 
           <div {% if(loop.index >1) %} class="hd" {% else %} class="sh" {% endif %} id="ar_{{ loop.index }}">
-            <h2><b><span>{{ "sélection" | trans }}</span> {% if(app.session.get('_locale')=='en') %} {{ degustation.titreEn }} {% else %} {{ degustation.titreFr }} {% endif %}</b></h2>                                
+            <h2><b><span>{{ "sélection" | trans }}</span> {% if(app.request.locale =='en') %} {{ degustation.titreEn }} {% else %} {{ degustation.titreFr }} {% endif %}</b></h2>                                
             {% set break = false %}
             {% for sousMenu in sousMenus if not break %}
                 {% if(degustation.id == sousMenu.idDegustation.id) %}

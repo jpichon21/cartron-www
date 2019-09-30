@@ -17,7 +17,7 @@
           {% for sousMenu in sousMenus if not break %}
           {% if collection.id == sousMenu.idCollection.id %}
           <a class="title" href="{{ path('collection_product', { id: sousMenu.id }) }}" style="border-color: #{{ collection.color }};">
-            {% if app.session.get('_locale') == 'en' %}{{ collection.titreEn | raw }}{% else %}{{ collection.titreFr | raw }}{% endif %}
+            {% if app.request.locale  == 'en' %}{{ collection.titreEn | raw }}{% else %}{{ collection.titreFr | raw }}{% endif %}
           </a>
           {% set break = true %}
           {% endif %}
@@ -36,7 +36,7 @@
 
                 <li>
                   <a href="{{ path('collection_product', { id: sousMenu.id }) ~ '#' ~ productIndex }}">
-                    {% if app.session.get('_locale') == 'en' %}{{ sousMenu.titreEn }}{% else %}{{ sousMenu.titreFr }}{% endif %}
+                    {% if app.request.locale  == 'en' %}{{ sousMenu.titreEn }}{% else %}{{ sousMenu.titreFr }}{% endif %}
                   </a>
                 </li>
                 {% set productIndex = productIndex + 1 %}

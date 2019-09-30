@@ -49,7 +49,7 @@
         <a class="menu-lang" href="{{ path('choose_locale', {'locale' : app.request.locale == 'fr' ? 'en' : 'fr'}) }}">
           {{ app.request.locale }}
         </a>
-        <a class="menu-pro" href="/pro{% if (app.session.get('_locale') == 'en') %}/en{% endif %}">
+        <a class="menu-pro" href="/pro{% if (app.request.locale  == 'en') %}/en{% endif %}">
           {{ 'Espace pro' | trans | raw }}
         </a>
         <div class="menu-top">
@@ -64,7 +64,7 @@
         </div>
         <div class="menu-top-right">
           <a href="{{ path('contact') }}" class="contactez-nous">{{ "Contactez-nous" | trans }}</a>
-          <a href="/pro{% if(app.session.get('_locale')=='en') %}/en{%endif %}" class="espace-pro-header">{{ "Espace" | trans }}<br /><strong>{{ "professionnel" | trans }}</strong></a>
+          <a href="/pro{% if(app.request.locale =='en') %}/en{%endif %}" class="espace-pro-header">{{ "Espace" | trans }}<br /><strong>{{ "professionnel" | trans }}</strong></a>
         </div>
       </div>
       {% block body %}{% endblock %}

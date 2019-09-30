@@ -65,15 +65,15 @@ $( document ).ready(function() {
             <div class="video-home">
                 <a href="#0" class="voir-video lanch_video" onclick="return false"><img  src="{{ asset('site/images/img-video-home.jpg') }}" alt="" /></a>
                 <div class="txt-video-news-home">
-                    <h2><a href="#" class="lanch_video"><span id="s_vd">{{ "Vidéo" | trans }} / </span>{% if(app.session.get('_locale')=='en') %} {{ video.0.titreEn  }} {% else %} {{ video.0.titreFr }} {% endif %}</a></h2>
+                    <h2><a href="#" class="lanch_video"><span id="s_vd">{{ "Vidéo" | trans }} / </span>{% if(app.request.locale =='en') %} {{ video.0.titreEn  }} {% else %} {{ video.0.titreFr }} {% endif %}</a></h2>
                     <a href="#" class="voir-video lanch_video">{{ "voir la vidéo" | trans }}</a>
                 </div>
             </div>
             <div class="news-home">
                 <a href="#" class="lanch_news" ><img width="109" height="59" src="{{ asset('upload/'~articles.0.image) }}" alt="" /></a>
                 <div class="txt-video-news-home">
-                    <h2><a href="#" class="lanch_news"><span id="s_news">{{ "NEWS" | trans }} / </span>{% if(app.session.get('_locale')=='en') %} {{ articles.0.titreEn }} {% else %} {{ articles.0.titleFr }} {% endif %}</a></h2>
-                    <p>{% if(app.session.get('_locale')=='en') %} {{ articles.0.descEn|striptags|truncate(100, true, '...')|raw }} {% else %} {{ articles.0.descFr|striptags|truncate(100, true, '...')|raw }} {% endif %}</p>
+                    <h2><a href="#" class="lanch_news"><span id="s_news">{{ "NEWS" | trans }} / </span>{% if(app.request.locale =='en') %} {{ articles.0.titreEn }} {% else %} {{ articles.0.titleFr }} {% endif %}</a></h2>
+                    <p>{% if(app.request.locale =='en') %} {{ articles.0.descEn|striptags|truncate(100, true, '...')|raw }} {% else %} {{ articles.0.descFr|striptags|truncate(100, true, '...')|raw }} {% endif %}</p>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@ $( document ).ready(function() {
                 {% for article in articles %}
                     <li>
                         <img src="{{ asset('upload/'~article.image) }}" />
-                        {% if(app.session.get('_locale')=='en') %} {{ article.descEn|raw }} {% else %} {{ article.descFr|raw }} {% endif %}
+                        {% if(app.request.locale =='en') %} {{ article.descEn|raw }} {% else %} {{ article.descFr|raw }} {% endif %}
                         <div class="share"><a class="facebook" href="">facebook</a><a class="twitter" href="">twitter</a><br clear="all"></div>
                     </li>
                 {% endfor %}
@@ -95,7 +95,7 @@ $( document ).ready(function() {
             {% for article in articles %}
                 <li class="news_hp" id="news_hp_{{ article.id }}" style=" cursor: pointer">
                     <img src="{{ asset('upload/'~article.image) }}" />
-                    <h3>{% if(app.session.get('_locale')=='en') %} {{ article.titreEn|raw }} {% else %} {{ article.titleFr|raw }} {% endif %}</h3>
+                    <h3>{% if(app.request.locale =='en') %} {{ article.titreEn|raw }} {% else %} {{ article.titleFr|raw }} {% endif %}</h3>
                 </li>
             {% endfor %}
         </ul>
@@ -104,7 +104,7 @@ $( document ).ready(function() {
         <div class="pop-videos-content">
             <span class="close"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg></span>
             <video controls preload="none" poster="{{ asset('site/images/video-home.jpg') }}">
-                {% if(app.session.get('_locale')=='fr') %}
+                {% if(app.request.locale =='fr') %}
                 <source src="{{ asset('upload/video_hp/cartron_fr.mp4')  }}" type='video/mp4' />
                 <track kind="captions" src="demo.captions.vtt" srclang="fr" label="Français" />
                 {% else %}

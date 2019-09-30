@@ -88,7 +88,7 @@
                 {% for sousMenu in sousMenus if not break %}
                     {% if(degustation.id == sousMenu.idDegustation.id) %}
                     <a href="#" >
-                        {% if(app.session.get('_locale')=='en') %} {{ degustation.titreEn|raw }} {% else %} {{ degustation.titreFr|raw }} {% endif %}
+                        {% if(app.request.locale =='en') %} {{ degustation.titreEn|raw }} {% else %} {{ degustation.titreFr|raw }} {% endif %}
                     </a>
                     {% set break = true %}
                     {% endif %}
@@ -99,7 +99,7 @@
                 {% if(sousMenu.idDegustation.id == degustation.id) %}
                 <li>
                   <a href="{{ path('tasting_product',{id:sousMenu.id}) }}">
-                    {% if(app.session.get('_locale')=='en') %} {{ sousMenu.titreEn }} {% else %} {{ sousMenu.titreFr }} {% endif %}
+                    {% if(app.request.locale =='en') %} {{ sousMenu.titreEn }} {% else %} {{ sousMenu.titreFr }} {% endif %}
                   </a>
                 </li>
                 {% endif %}
@@ -139,24 +139,24 @@
               <img src="{{ asset('upload/'~sousMenuDegustation.image) }}" width="977" height="577" alt="" class="  {% for degustation in degustations %}{% if(degustation.id == '4') %} {{ "gastronomy"}} {% endif %}{% endfor %}"/>     
               <a href="javascript:window.history.back()" class="back">{{ "Retour" | trans }}</a>
               <div class="description">
-                <h3>{% if(app.session.get('_locale')=='en') %} {{ sousMenuDegustation.titreEn }} {% else %} {{ sousMenuDegustation.titreFr }} {% endif %}</h3>
+                <h3>{% if(app.request.locale =='en') %} {{ sousMenuDegustation.titreEn }} {% else %} {{ sousMenuDegustation.titreFr }} {% endif %}</h3>
                 <div class="desconly">
   
                   <div class="text txtScroll">
-                    {% if(app.session.get('_locale')=='en') %} {{ sousMenuDegustation.descriptionEn|raw }} {% else %} {{ sousMenuDegustation.descriptionFr|raw }} {% endif %}
+                    {% if(app.request.locale =='en') %} {{ sousMenuDegustation.descriptionEn|raw }} {% else %} {{ sousMenuDegustation.descriptionFr|raw }} {% endif %}
                   </div>
                   <div class="sep"></div>
-          {% if app.session.get('_locale')=='en' and sousMenuDegustation.noteDegustationEn|trim != '' %}
+          {% if app.request.locale =='en' and sousMenuDegustation.noteDegustationEn|trim != '' %}
                   <h4>Tasting Tip</h4>
                   <div class="text">
-                    {% if(app.session.get('_locale')=='en') %} {{ sousMenuDegustation.noteDegustationEn|raw }} {% else %} {{ sousMenuDegustation.noteDegustationFr|raw }} {% endif %}
+                    {% if(app.request.locale =='en') %} {{ sousMenuDegustation.noteDegustationEn|raw }} {% else %} {{ sousMenuDegustation.noteDegustationFr|raw }} {% endif %}
                   </div>
           {% endif %}
                   
-          {% if app.session.get('_locale')=='fr' and sousMenuDegustation.noteDegustationFr|trim != '' %}
+          {% if app.request.locale =='fr' and sousMenuDegustation.noteDegustationFr|trim != '' %}
                   <h4>Note de Dégustation</h4>
                   <div class="text">
-                    {% if(app.session.get('_locale')=='en') %} {{ sousMenuDegustation.noteDegustationEn|raw }} {% else %} {{ sousMenuDegustation.noteDegustationFr|raw }} {% endif %}
+                    {% if(app.request.locale =='en') %} {{ sousMenuDegustation.noteDegustationEn|raw }} {% else %} {{ sousMenuDegustation.noteDegustationFr|raw }} {% endif %}
                   </div>
           {% endif %}
                   
