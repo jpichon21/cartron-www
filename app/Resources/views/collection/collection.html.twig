@@ -26,7 +26,7 @@
             <img src="{{ asset('upload/' ~ collection.image) }}" alt="{{ collection.titreFr | raw }}" />
             <div class="blockDesc">
               <ul>
-                {% set productIndex = 1 %}
+                {% set productIndex = 0 %}
                 {% for sousMenu in sousMenus %}
                 {% if sousMenu.idCollection.id == collection.id %}
                   {% if app.request.query.get('id')|number_format == sousMenu.id %}
