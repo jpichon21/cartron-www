@@ -51,6 +51,8 @@
                     z-index: 99999;
                     background: url(../images/bg-ss-menu.png) no-repeat left top;
                     .subMenu {
+                        scrollbar-face-color: #bbb;
+                        scrollbar-track-color: #fff;
                         width: 137px;
                         height: 594px;
                         overflow: auto;
@@ -73,6 +75,13 @@
                                     background: none;
                                 }
                             }
+                        }
+                        &::-webkit-scrollbar {
+                            background: #bbb;
+                            width: 3px;
+                        }
+                        &::-webkit-scrollbar-thumb {
+                            background: #fff;
                         }
                     }
                 }
