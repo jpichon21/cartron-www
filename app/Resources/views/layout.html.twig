@@ -46,9 +46,11 @@
         <a class="logo" href="{{ path('homepage') }}">
           <img src="{{ asset('site/images/logo-header.png') }}" alt="Joseph Cartron" />
         </a>
-        <a class="menu-lang" href="{{ path('choose_locale', {'locale' : app.request.locale == 'fr' ? 'en' : 'fr'}) }}">
+        {% set targetLocale = app.request.locale == 'fr' ? 'en' : 'fr' %}
+        <div class="menu-lang" >
           {{ app.request.locale }}
-        </a>
+          <a class="choose-lang" href="{{ path('choose_locale', {'locale' : targetLocale}) }}">{{ targetLocale }}</a>
+        </div>
         <a class="menu-pro" href="/pro{% if (app.request.locale  == 'en') %}/en{% endif %}">
           {{ 'Espace pro' | trans | raw }}
         </a>
@@ -139,6 +141,10 @@
       
       ga('create', 'UA-44915246-1', 'cartron.fr');
       ga('send', 'pageview');  
+      $(".menu-lang").click(function(event) {
+        $(this).toggleClass("hover");
+        event.stopPropagation();
+      });
     </script>
   </body>
 </html>
