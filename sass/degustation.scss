@@ -190,6 +190,10 @@
             background: url(../images/bg-next-degustation.png) no-repeat center;
             top: 50%;
             margin-top: -60px;
+            display: none;
+            &.show {
+                display: block;
+            }
             @include media('<=small') {
                 right: -30px;
                 top: 45%;
@@ -206,6 +210,9 @@
             top: 50%;
             margin-top: -60px;
             display: none;
+            &.show {
+                display: block;
+            }
             @include media('<=small') {
                 left: -30px;
                 top: 45%;

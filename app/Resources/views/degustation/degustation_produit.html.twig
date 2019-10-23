@@ -107,7 +107,7 @@
             {% if(app.request.query.get('id')) %}
               {% set closeLink = path('collection_product', { id: app.request.query.get('id') }) ~ '#' ~ app.request.query.get('index') %}
             {% else %}
-              {% set closeLink = path('tasting') %}
+              {% set closeLink = path('tasting') ~ '?id=' ~ app.request.query.get('index') %}
             {% endif %}
              <a href="{{ closeLink }}" class="retour dn">
           <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg>
