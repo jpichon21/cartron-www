@@ -23,7 +23,7 @@ class FirstConnectionType extends AbstractType
                 [
                     'years' => range(1920, date('Y')),
                     'label' => 'Date de naissance',
-                    'format' => 'yyyy-MM-dd',
+                    'format' => 'ddMMyyyy',
                     'widget' => 'choice',
                     'required' => true
                 ]

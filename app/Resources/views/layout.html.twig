@@ -46,10 +46,12 @@
         <a class="logo" href="{{ path('homepage') }}">
           <img src="{{ asset('site/images/logo-header.png') }}" alt="Joseph Cartron" />
         </a>
-        <a class="menu-lang" href="{{ path('choose_locale', {'locale' : app.request.locale == 'fr' ? 'en' : 'fr'}) }}">
+        {% set targetLocale = app.request.locale == 'fr' ? 'en' : 'fr' %}
+        <div class="menu-lang" >
           {{ app.request.locale }}
-        </a>
-        <a class="menu-pro" href="/pro{% if (app.session.get('_locale') == 'en') %}/en{% endif %}">
+          <a class="choose-lang" href="{{ path('choose_locale', {'locale' : targetLocale}) }}">{{ targetLocale }}</a>
+        </div>
+        <a class="menu-pro" href="/pro{% if (app.request.locale  == 'en') %}/en{% endif %}">
           {{ 'Espace pro' | trans | raw }}
         </a>
         <div class="menu-top">
@@ -64,7 +66,7 @@
         </div>
         <div class="menu-top-right">
           <a href="{{ path('contact') }}" class="contactez-nous">{{ "Contactez-nous" | trans }}</a>
-          <a href="/pro{% if(app.session.get('_locale')=='en') %}/en{%endif %}" class="espace-pro-header">{{ "Espace" | trans }}<br /><strong>{{ "professionnel" | trans }}</strong></a>
+          <a href="/pro{% if(app.request.locale =='en') %}/en{%endif %}" class="espace-pro-header">{{ "Espace" | trans }}<br /><strong>{{ "professionnel" | trans }}</strong></a>
         </div>
       </div>
       {% block body %}{% endblock %}
@@ -75,18 +77,28 @@
             <a href="" class="close dn"><span>Fermer</span></a>
             <h1>mentions légales</h1>
             <div class="scrollMention">
-            <p><strong>Propriétaire du Site Internet: </strong>Joseph Cartron<br />
-            <strong>Adresse: </strong>25, Rue du Docteur  Legrand – CS 30028<br />
-            21701 nuits-Saint-Georges Cedex - France<br />
-            <strong>Email: </strong>cartron@cartron.fr<br />
-            <strong>Téléphone&nbsp;:</strong> +33 (0)3 80 62 00 90<u><br />
-            </u><strong>Design &amp; Développement &amp; maintenance technique: </strong>BIGGERBAND<br />
-            <strong>Crédits Images</strong>: Joseph Cartron <br />
-            <strong>Conditions d'utilisation et  propriétés:<br />
-            </strong>Toute  représentation totale ou partielle de ce site et de son contenu, par quelques  procédés que ce soient, sans autorisation préalable est interdite et  constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants  du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de  respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont  la violation est passible de sanctions pénales. Ils doivent notamment  s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de  toute collecte, de toute utilisation détournée, et d'une manière générale, de  tout acte susceptible de porter atteinte à la vie privée ou à la réputation des  personnes.<br />
-            L&rsquo;abus  d&rsquo;alcool est dangereux pour la santé. Consommer avec modération.<br />
-            <strong>Hébergeur: </strong>OVH<br />
-            <a href="http://www.ovh.com" target="_blank">www.ovh.com</a></p></div>
+            <p><b>Raison sociale :</b> Joseph Cartron<br>
+              Capital de 638 400,00 Euros<br>
+              RCS 035 780 253<br>
+              Directeur de la publication : Judith Cartron<br>
+              <b>Adresse:</b>
+              Joseph Cartron - 25, Rue du Docteur Louis Legrand – CS 30028<br>
+              21701 Nuits-Saint-Georges Cedex - France<br>
+              <b>Email:</b> cartron@cartron.fr<br>
+              <b>Téléphone:</b> +33 (0)3 80 62 00 90<br>
+              <b>Design & Développement:</b> BIGGERBAND<br>
+              1 rue de Paradis 75010 Paris & 19 rue Esprit des Lois 33000 Bordeaux<br>
+              <b>Maintenance technique:</b> LOGOMOTION<br>
+              19, rue Champ Passavent - BP2 - 21380 Messigny et Vantoux<br>
+              <b>Hébergeur:</b>
+              Ce site est hébergé sur les serveurs de la société :<br>
+              OVH SAS (http://www.ovh.com)<br>
+              140 Quai du Sartel 59100 ROUBAIX<br>
+              Tél : +33 (0)3 20 45 36 80<br>
+              <b>Crédits Images:</b> Joseph Cartron<br>
+              <b>Conditions d'utilisation et propriétés:</b><br>
+              Toute représentation totale ou partielle de ce site et de son contenu, par quelques procédés que ce soient, sans autorisation préalable est interdite et constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont la violation est passible de sanctions pénales. Ils doivent notamment s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de toute collecte, de toute utilisation détournée, et d'une manière générale, de tout acte susceptible de porter atteinte à la vie privée ou à la réputation des personnes.
+              L’abus d’alcool est dangereux pour la santé. Consommer avec modération.</p></div>
           </div>
         </div>
       {% else %}
@@ -95,18 +107,28 @@
             <a href="" class="close dn"><span>Fermer</span></a>
             <h1>legal terms</h1>
             <div class="scrollMention">
-            <p><strong>Website owner: </strong>Joseph Cartron<br />
-            <strong>Address: </strong>25, Rue du Docteur  Legrand – CS 30028<br />
-            21701 nuits-Saint-Georges Cedex - France<br />
-            <strong>Email: </strong>cartron@cartron.fr<br />
-            <strong>Telephone&nbsp;:</strong> +33 (0)3 80 62 00 90<u><br />
-            </u><strong>Design & Development & technical maintenance:: </strong>BIGGERBAND<br />
-            <strong>Image Credits:</strong>: Joseph Cartron <br />
-            <strong>Conditions of Use & Property:<br />
-            </strong>Any reproduction of this site and its content, in part or in whole by whatsoever means, without prior consent is forbidden and would be considered as an act of counterfeit punishable under articles L335-2 and thereafter of the Code of Intellectual Property. Site users are required to respect the provisions of the Data Processing, Files & Liberties Act, any violation of which would expose the offender to criminal sanctions. Most notably and regarding the nominative information to which they have access, users shall refrain from any collection, unlawful use and, more generally, any act likely to affect the private life or reputation of other persons.<br />
-            This website is reserved exclusively for persons of a legal age to drink alcoholic beverages in their country of residence. Please, drink responsibly.<br />
-            <strong>Host: </strong>OVH<br />
-            <a href="http://www.ovh.com" target="_blank">www.ovh.com</a></p></div>
+            <p><b>Raison sociale :</b> Joseph Cartron<br>
+              Capital de 638 400,00 Euros<br>
+              RCS 035 780 253<br>
+              Directeur de la publication : Judith Cartron<br>
+              <b>Adresse:</b>
+              Joseph Cartron - 25, Rue du Docteur Louis Legrand – CS 30028<br>
+              21701 Nuits-Saint-Georges Cedex - France<br>
+              <b>Email:</b> cartron@cartron.fr<br>
+              <b>Téléphone:</b> +33 (0)3 80 62 00 90<br>
+              <b>Design & Développement:</b> BIGGERBAND<br>
+              1 rue de Paradis 75010 Paris & 19 rue Esprit des Lois 33000 Bordeaux<br>
+              <b>Maintenance technique:</b> LOGOMOTION<br>
+              19, rue Champ Passavent - BP2 - 21380 Messigny et Vantoux<br>
+              <b>Hébergeur:</b>
+              Ce site est hébergé sur les serveurs de la société :<br>
+              OVH SAS (http://www.ovh.com)<br>
+              140 Quai du Sartel 59100 ROUBAIX<br>
+              Tél : +33 (0)3 20 45 36 80<br>
+              <b>Crédits Images:</b> Joseph Cartron<br>
+              <b>Conditions d'utilisation et propriétés:</b><br>
+              Toute représentation totale ou partielle de ce site et de son contenu, par quelques procédés que ce soient, sans autorisation préalable est interdite et constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont la violation est passible de sanctions pénales. Ils doivent notamment s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de toute collecte, de toute utilisation détournée, et d'une manière générale, de tout acte susceptible de porter atteinte à la vie privée ou à la réputation des personnes.
+              L’abus d’alcool est dangereux pour la santé. Consommer avec modération.</p></div>
           </div>
         </div>
       {% endif %}
@@ -119,6 +141,10 @@
       
       ga('create', 'UA-44915246-1', 'cartron.fr');
       ga('send', 'pageview');  
+      $(".menu-lang").click(function(event) {
+        $(this).toggleClass("hover");
+        event.stopPropagation();
+      });
     </script>
   </body>
 </html>

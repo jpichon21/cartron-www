@@ -51,6 +51,8 @@
                     z-index: 99999;
                     background: url(../images/bg-ss-menu.png) no-repeat left top;
                     .subMenu {
+                        scrollbar-face-color: #bbb;
+                        scrollbar-track-color: #fff;
                         width: 137px;
                         height: 594px;
                         overflow: auto;
@@ -73,6 +75,13 @@
                                     background: none;
                                 }
                             }
+                        }
+                        &::-webkit-scrollbar {
+                            background: #bbb;
+                            width: 3px;
+                        }
+                        &::-webkit-scrollbar-thumb {
+                            background: #fff;
                         }
                     }
                 }
@@ -150,6 +159,11 @@
                 font-size: 14px;
             }
         }
+        &.show-img {
+            #viewIcon {
+                opacity: 0;
+            }
+        }
     }
 }
 
@@ -176,6 +190,10 @@
             background: url(../images/bg-next-degustation.png) no-repeat center;
             top: 50%;
             margin-top: -60px;
+            display: none;
+            &.show {
+                display: block;
+            }
             @include media('<=small') {
                 right: -30px;
                 top: 45%;
@@ -192,6 +210,9 @@
             top: 50%;
             margin-top: -60px;
             display: none;
+            &.show {
+                display: block;
+            }
             @include media('<=small') {
                 left: -30px;
                 top: 45%;
@@ -240,8 +261,12 @@
         position: relative;
         z-index: 1;
     }
+    @include media('<=large','>small') {
+        width: 100%;    
+        padding: 0;   
+    }
     .description {
-        width: 430px;
+        width: 425px;
         position: absolute;
         left: 131px;
         top: 82px;
@@ -251,7 +276,6 @@
             font-weight: bold;
             // color: #2f383e;
             font-family: 'Georgia';
-            color: #fff;
         }
         @include media('<=small') {
             height: 2em;
@@ -259,14 +283,17 @@
                 display: none;
             }
             h3 {
+            color: #000;
+            text-shadow: #fff 0 0 15px;
             font-size: 22px;
             margin-bottom: 14px;
             max-width: 242px;
-            }
         }
     }
-    .imageNoir .description h3 {
-        color: #ffffff;
+}
+.imageNoir .description h3 {
+    color: #ffffff;
+    text-shadow: #000000 0 0 15px;
     }
     .description .text {
         font-size: 13px;
@@ -343,6 +370,14 @@
             background-image: url(../images/imprimer.png);
         }
     }
+    &.show-img {
+        img {
+            opacity: 1 !important;
+        }
+        .desconly, h3 {
+            opacity: 0 !important;
+        }
+    }
 }
 
 #slideshow-2 {
@@ -400,4 +435,8 @@
 
 .carouNoir {
     background: #000000;
+}
+
+#viewImg, h3, #slideshow-1 img {
+    transition: opacity 0.2s;
 }

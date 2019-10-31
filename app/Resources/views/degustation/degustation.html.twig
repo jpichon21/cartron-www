@@ -8,7 +8,6 @@
     <script src="{{ asset('site/js/jquery.jqtransform.js') }}"></script>
     <script src="{{ asset('site/js/jquery.easing.1.3.js') }}"></script>
     <script src="{{ asset('site/js/camera.min.js') }}"></script>
-    <script src="{{ asset('site/js/jquery.jscrollpane.js') }}"></script>
     <script src="{{ asset('site/js/jquery.mousewheel.js') }}"></script>
     <script src="{{ asset('site/js/jquery.hoverflow.js') }}"></script>
     <script src="{{ asset('site/js/jquery.hoverIntent.minified.js') }}"></script>
@@ -21,20 +20,6 @@
     <script type="text/javascript" src="{{ asset('site/js/degustation.js') }}"></script>
     <script src="{{ asset('site/js/main.js') }}"></script>
     <script src="{{ asset('site/js/main1.js') }}"></script>
-<script type="text/javascript">
-$( document ).ready(function() {
-  		$('.desconly').jScrollPane({scrollbarWidth: 4, autoReinitialise: true});
-  		$('.subMenu').jScrollPane({scrollbarWidth: 6});
-       /*gestion du sous menu sur devices mobiles et tablettes*/
-        if (window.innerWidth <= 768) {
-        $('.menuLiWithSubMenu > a:first-of-type').click(function(event) {
-        event.preventDefault();
-                $(this).find(".scrollMenu").stop().fadeTo('fast', 1).show();
-                $('.subMenu').jScrollPane({scrollbarWidth: 6, dragMaxHeight: 34});
-        });
-      }
-});
-</script>
 <div id="degustation">
   <div class="main">
     <div class="degustation-home">
@@ -46,8 +31,8 @@ $( document ).ready(function() {
                     {% set break = false %}
                     {% for sousMenu in sousMenus if not break %}
                         {% if(degustation.id == sousMenu.idDegustation.id) %}
-                        <a class="marc_{{ degustation.id }}" href="{{ path('tasting_product',{id:sousMenu.id}) }}" >
-                            {% if(app.session.get('_locale')=='en') %} {{ degustation.titreEn|raw }} {% else %} {{ degustation.titreFr|raw }} {% endif %}
+                        <a class="marc_{{ degustation.id }}">
+                            {% if(app.request.locale =='en') %} {{ degustation.titreEn|raw }} {% else %} {{ degustation.titreFr|raw }} {% endif %}
                         </a>
                         {% set break = true %}
                         {% endif %}
@@ -58,7 +43,7 @@ $( document ).ready(function() {
 	              {% if(sousMenu.idDegustation.id == degustation.id) %}
 	              <li>
 	                <a href="{{ path('tasting_product',{id:sousMenu.id}) }}">
-	                  {% if(app.session.get('_locale')=='en') %} {{ sousMenu.titreEn }} {% else %} {{ sousMenu.titreFr }} {% endif %}
+	                  {% if(app.request.locale =='en') %} {{ sousMenu.titreEn }} {% else %} {{ sousMenu.titreFr }} {% endif %}
 	                </a>
 	              </li>
 	              {% endif %}
@@ -77,20 +62,21 @@ $( document ).ready(function() {
         <div class="parralax">
           {% for degustation in degustations %}
 
-          <div {% if(loop.index >1) %} class="hd" {% else %} class="sh" {% endif %} id="ar_{{ loop.index }}">
-            <h2><b><span>{{ "sélection" | trans }}</span> {% if(app.session.get('_locale')=='en') %} {{ degustation.titreEn }} {% else %} {{ degustation.titreFr }} {% endif %}</b></h2>                                
+          <div {% if(loop.index0 == app.request.get('id')) %} class="sh" {% else %} class="hd" {% endif %} id="ar_{{ loop.index }}">
+            {% set degustationId = loop.index0 %}
+            <h2><b><span>{{ "sélection" | trans }}</span> {% if(app.request.locale =='en') %} {{ degustation.titreEn }} {% else %} {{ degustation.titreFr }} {% endif %}</b></h2>                                
             {% set break = false %}
             {% for sousMenu in sousMenus if not break %}
                 {% if(degustation.id == sousMenu.idDegustation.id) %}
-                <a href="{{ path('tasting_product',{id:sousMenu.id}) }}" class="entrer">{{ 'Entrez' | trans }}</a>
+                <a href="{{ path('tasting_product',{id:sousMenu.id}) ~ '?index=' ~ degustationId}}" class="entrer">{{ 'Entrez' | trans }}</a>
                 {% set break = true %}
                 {% endif %}
             {% endfor %}
           </div>
           {% endfor %}
 
-          <a href="#0" class="next"></a>
-          <a href="#0" class="prev"></a>
+          <a href="#0" class="next{% if app.request.get('id') < 2 %} show{% endif %}"></a>
+          <a href="#0" class="prev{% if app.request.get('id') > 0 %} show{% endif %}"></a>
           <input type="hidden" id="nbr" value="{{ degustations|length }}" />
         </div> <!-- # end content degustation -->            
       </div> 

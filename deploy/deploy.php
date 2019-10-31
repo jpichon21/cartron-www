@@ -62,6 +62,7 @@
         run('cd {{release_path}} && {{bin/php}} composer.phar install --optimize-autoloader --no-scripts');
         run('cd {{release_path}} && {{bin/php}} bin/console cache:clear --env=prod');
         run('cd {{release_path}} && {{bin/php}} bin/console assets:install --env=prod');
+        run('cd {{release_path}} && {{bin/php}} bin/console ckeditor:install');
         run('cd {{release_path}} && npm install');
         run('cd {{release_path}} && npm run sass-build');
     });

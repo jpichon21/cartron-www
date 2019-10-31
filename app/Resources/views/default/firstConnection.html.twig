@@ -25,14 +25,13 @@
   $(document).ready(function(){ $(window).resize()});
 
 </script>
-
 <div class="site">
   <img class="logo" src="{{ asset('site/images/logo-bis.png') }}" alt="Joseph Cartron" />
   <div class="form-visite-content">
       {{ form_start(form, {'attr': { 'class': 'form-visite jqtransform'} }) }}
       <div class="form-langue">
-        <a href="{{ path('choose_locale', {'locale' : 'fr'}) }}" {% if(app.session.get('_locale')=='fr') %} class="active" {% endif %}>FR</a>
-        <a href="{{ path('choose_locale', {'locale' : 'en'}) }}" {% if(app.session.get('_locale')=='en') %} class="active" {% endif %}>EN</a>
+        <a href="{{ path('choose_locale', {'locale' : 'fr'}) }}" {% if(app.request.locale == 'fr') %} class="active" {% endif %}>FR</a>
+        <a href="{{ path('choose_locale', {'locale' : 'en'}) }}" {% if(app.request.locale == 'en') %} class="active" {% endif %}>EN</a>
       </div>
       <div class="content-form">
         <p class="pour-visiter">{{ "Pour visiter"|trans }} <strong>CARTRON.FR</strong><br />

@@ -1,12 +1,13 @@
 $( document ).ready(function() {
-    var positionx = 2;
+    var params = new URLSearchParams(document.location.search.substring(1));
+    var id = parseInt(params.get("id"), 10);
+    var positionx = 2 + (id * 48);
     var is_moving = false;
     screen_width = $(window).width();
     var bg = $('#degustation .main');
     var overlay = $('.degustation-home .content');
     var coef = 4;
     var offset = '';
-
     $(".parralax").mousemove(function(e){
         if( is_moving == false ){
             var offset = ((e.pageX/screen_width - 0.5) * 2 *coef);
@@ -22,12 +23,12 @@ $( document ).ready(function() {
         else positionx -= 48;
         
         /* hide next icon*/
-        if( positionx >= 98 ){ $('.degustation-home .content a.next').hide(); }
-        else $('.degustation-home .content a.next').show();
+        if( positionx >= 98 ){ $('.degustation-home .content a.next').removeClass('show'); }
+        else $('.degustation-home .content a.next').addClass('show');
         
         /*hide prev icon*/
-        if( positionx <= 2 ){ $('.degustation-home .content a.prev').hide(); }
-        else $('.degustation-home .content a.prev').show();
+        if( positionx <= 2 ){ $('.degustation-home .content a.prev').removeClass('show'); }
+        else $('.degustation-home .content a.prev').addClass('show');
 
         /*change active*/
         var $active = $('.degustation-home .content .sh');
@@ -48,5 +49,7 @@ $( document ).ready(function() {
     };
 
  });
-
+$(window).load(function () {
+    $('#degustation-produits .description').height($('#degustation-produits .cycle-slide-active .description h3').height()+'px');
+})
         

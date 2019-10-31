@@ -24,14 +24,14 @@ $( document ).ready(function() {
 <div id="collection-produits" class="test2">
   <div class="main">
     <div class="collection-home">
-      <span class="close"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg></span>
+      <a class="close" href="{{ path('collection') ~ '?id=' ~ app.request.get('id') }}"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg></a>
       <div class="menus owl-carousel">
         {% for collection in collections %}
           {% set break = false %}
           {% for sousMenu in sousMenus if not break %}
             {% if (collection.id == sousMenu.idCollection.id) %}
               <a class="menu {% if sousMenu.idCollection.id == idCollection %}active{% endif %}" href="{{ path('collection_product', { id: sousMenu.id }) }}" style="border-color: #{{ collection.color }};">
-                {% if (app.session.get('_locale') == 'en') %}{{ collection.titreEn | raw }}{% else %}{{ collection.titreFr | raw }}{% endif %}
+                {% if (app.request.locale == 'en') %}{{ collection.titreEn | raw }}{% else %}{{ collection.titreFr | raw }}{% endif %}
               </a>
               {% set break = true %}
             {% endif %}
@@ -47,30 +47,30 @@ $( document ).ready(function() {
               </div>
               <div class="description">
                 <div class="first_part">
-                  <h2>{% if app.session.get('_locale') == 'en' %}{{ sousMenu.titreEn }}{% else %}{{ sousMenu.titreFr }}{% endif %}</h2>
+                  <h2>{% if app.request.locale == 'en' %}{{ sousMenu.titreEn }}{% else %}{{ sousMenu.titreFr }}{% endif %}</h2>
                   <div class="accueil-produits">
-                    {% if app.session.get('_locale') == 'en' %}{{ sousMenu.descriptionEn | raw }}{% else %}{{ sousMenu.descriptionFr | raw }}{% endif %}
+                    {% if app.request.locale == 'en' %}{{ sousMenu.descriptionEn | raw }}{% else %}{{ sousMenu.descriptionFr | raw }}{% endif %}
                     <p class="marge9"><span>{{ "Degré" | trans }} :</span> {{ sousMenu.degre }}%</p>
-                    <p class="marge9"><span>{{ "Contenance" | trans }} :</span> {% if app.session.get('_locale') == 'en' %}{{ sousMenu.contenanceEn }}{% else %}{{ sousMenu.contenanceFr }}{% endif %}</p>
-                    <p class="marge9"><span>{{ "Conserver" | trans }}</span> {% if app.session.get('_locale') == 'en' %}{{ sousMenu.conserverEn }}{% else %}{{ sousMenu.conserverFr }}{% endif %}</p>
+                    <p class="marge9"><span>{{ "Contenance" | trans }} :</span> {% if app.request.locale == 'en' %}{{ sousMenu.contenanceEn }}{% else %}{{ sousMenu.contenanceFr }}{% endif %}</p>
+                    <p class="marge9"><span>{{ "Conserver" | trans }}</span> {% if app.request.locale == 'en' %}{{ sousMenu.conserverEn }}{% else %}{{ sousMenu.conserverFr }}{% endif %}</p>
                   </div>
                 </div>
                 <div class="second_part">
-                  <a class="recette" href="{% if app.session.get('_locale') == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}">{{ "Recettes" | trans }}</a>
+                  <a class="recette" href="{% if app.request.locale == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}?id={{sousMenu.id}}&index={{loop.index0}}">{{ "Recettes" | trans }}</a>
                   <div class="note-degustation">
                     <h3>{{ "Note de dégustation" | trans }}</h3>
                     <div class="dropdown">
-                      {% if app.session.get('_locale') == 'en' %}{{ sousMenu.noteDegustationEn | raw }}{% else %}{{ sousMenu.noteDegustationFr | raw }}{% endif %}
+                      {% if app.request.locale == 'en' %}{{ sousMenu.noteDegustationEn | raw }}{% else %}{{ sousMenu.noteDegustationFr | raw }}{% endif %}
                     </div>
                   </div>
                   <div class="note-elaboration">
                     <h3>{{ "Elaboration" | trans }}</h3>
                     <div class="dropdown">
-                      {% if app.session.get('_locale') == 'en' %}{{ sousMenu.elaborationEn | raw }}{% else %}{{ sousMenu.elaborationFr | raw }}{% endif %}
+                      {% if app.request.locale == 'en' %}{{ sousMenu.elaborationEn | raw }}{% else %}{{ sousMenu.elaborationFr | raw }}{% endif %}
                     </div>
                   </div>
                   <div class="link-produits">
-                    <a href="{% if app.session.get('_locale') == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}"><span><b>&rsaquo;</b>{{ "Recettes" | trans }}</span></a>
+                    <a href="{% if app.request.locale == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}"><span><b>&rsaquo;</b>{{ "Recettes" | trans }}</span></a>
                     <a class="degustation"><span><b>&rsaquo;</b>{{ "Note de dégustation" | trans }}</span></a>
                     <a class="elaboration"><span><b>&rsaquo;</b>{{ "Elaboration" | trans }}</span></a>
                   </div>
@@ -91,7 +91,7 @@ $( document ).ready(function() {
     nav: true,
     loop: true,
     URLhashListener: true,
-    startPosition: 'URLHash',
+    startPosition: getAnchor(),
     navText: [
       '<div class="owl-prev"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',  
       '<div class="owl-next"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
@@ -116,6 +116,12 @@ $( document ).ready(function() {
     mouseDrag: false,
     touchDrag: false
   };
+
+  function getAnchor() {
+    var currentUrl = document.URL,
+    urlParts   = currentUrl.split('#');
+    return (urlParts.length > 1) ? urlParts[1] : null;
+  }
 
   function initOwlMenu() {
     owl.owlCarousel(options);
@@ -178,10 +184,6 @@ $( document ).ready(function() {
   $('.second_part').on('click', 'h3', function() {
     $(this).toggleClass('active');
   });
-  $('#collection-produits .close').click(function(e) {
-    window.history.back()
-    e.stopPropagation()
-  })
 
 
 </script>

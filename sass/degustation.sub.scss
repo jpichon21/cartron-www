@@ -27,10 +27,10 @@
             width: 20px;
             height: 20px;
             background: none;
-            mix-blend-mode: difference;
+            // mix-blend-mode: difference;
         }
         .retour {
-            mix-blend-mode: difference;
+            // mix-blend-mode: difference;
         }
     }
     .main {
@@ -77,6 +77,9 @@
         width: 1094px;
         height: 630px;
         margin: auto;
+        @include media('<=large','>small') {
+            width: auto;
+        }    
     }
     .degustation-home {
         width: 100%;
@@ -85,16 +88,12 @@
     @include media('<=medium','>small') {
         #slideshow-1{
              padding: 0px;
-             margin-left: -100px;
-        }
-        .cycle-prev, .cycle-next{
-                display: none;
         }
     }
     @include media('<=small') {
         .content{
             .retour svg, .view svg{
-                fill: #fff;
+                fill: #444;
             }
             .retour svg, .view #viewIcon{
                 display: block;
@@ -113,6 +112,7 @@
             width: 100%;
         }
         #slideshow-1{
+            // margin-left: -100px;
             .content{
                 overflow: hidden;
             }
@@ -141,7 +141,7 @@
                 top: 0px;
                 margin: 0 auto;
                 padding: 25px;
-                mix-blend-mode: difference;
+                // mix-blend-mode: difference;
                 .sep{
                     display: none;
                 }

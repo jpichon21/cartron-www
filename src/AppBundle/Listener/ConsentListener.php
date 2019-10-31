@@ -22,15 +22,19 @@ class ConsentListener
         $requestUri = $event->getRequest()->getRequestUri();
         if ($event->getRequestType() === HttpKernelInterface::MASTER_REQUEST) {
             $targetRoute = $event->getRequest()->get('_route');
-            if ($targetRoute !== 'first_connection' && $targetRoute !== 'login' && $targetRoute !== 'admin_homepage') {
+            if ($targetRoute !== 'first_connection'
+                && $targetRoute !== 'login'
+                && $targetRoute !== 'admin_homepage'
+                && $targetRoute !== 'choose_locale'
+                ) {
                 if (!$event->getRequest()->getSession()->get('firstConnection')
-                    && !$event->getRequest()->cookies->has('firstConnection')
+                && !$event->getRequest()->cookies->has('firstConnection')
                 ) {
                     $event->setResponse(
                         new RedirectResponse(
                             $this->router->generate(
                                 'first_connection',
-                                ['t' => $requestUri]
+                                ['t' => $targetRoute !== 'choose_locale' ? $requestUri : '/']
                             )
                         )
                     );
