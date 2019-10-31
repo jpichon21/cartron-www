@@ -53,3 +53,16 @@ Exécuter composer
 
 Exécuter le contrôle de qualité du code
 `script/cq`  
+
+
+# Production
+
+
+## Serveur
+Les environnements staging, dev et prod sont hébergés sur NS4 https://ns4.logomotion-serveur.com:2087 et sont accessibles respectivement sur https://staging.cartron.fr https://dev.cartron.fr et https://cartron.fr
+
+
+## Déploiement
+Le déploiement de la branche dev est automatique
+
+Le déploiement de la branche staging est semi-automatique https://gitlab.com/logomotion/cartron-www/-/jobs pour lancer le déploiement
