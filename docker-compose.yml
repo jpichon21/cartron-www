@@ -3,13 +3,14 @@ version: '3'
 services:
     db:
         container_name: ${COMPOSE_PROJECT_NAME}_mysql_con
-        image: mysql:5.6
+        image: mariadb:10.2
         volumes:
-            - ./var/logs/mysql:/var/log/mysql
-            - ./database:/var/lib/mysql
+            - db-data:/var/lib/mysql
+            - ${PWD}/cartron.sql:/docker-entrypoint-initdb.d/dump.sql
         environment:
             MYSQL_ROOT_PASSWORD: mysql
             MYSQL_DATABASE: ${COMPOSE_PROJECT_NAME}
+
     php:
         container_name: ${COMPOSE_PROJECT_NAME}_php_con
         image: thecodingmachine/php:7.2-v2-apache
@@ -44,3 +45,6 @@ services:
             -  ${FAKETOOLS_EXPOSED_PORT}:8080
         volumes:
             - ./var/smtp:/fake-smtp/data/smtp
+
+volumes:
+    db-data: {}

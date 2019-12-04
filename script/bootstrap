@@ -19,15 +19,24 @@ if [[ "$1" == "-u" ]]; then
     do_update=1
 fi
 
+echo "==> Setting up DB…"
+unzip cartron.sql.zip
+
+echo "==> Starting docker…"
+docker-compose up -d
+
+rm cartron.sql
+
 echo "==> Installing Php dependencies…"
-phprunning=0
-if [ -z `docker ps -q --no-trunc | grep $(docker-compose ps -q php)` ]; then
-    docker-compose up -d --build php
-else
-    phprunning=1
-fi
 docker-compose exec php composer install
 
-if [ $phprunning = 0 ]; then
-    docker-compose down
-fi
+echo "==> Installing NPM dependencies…"
+yarn install
+
+echo "==> Update database schema…"
+docker-compose exec php bin/console doctrine:schema:update --force
+
+echo "==> Setup assets…"
+docker-compose exec php bin/console assets:install web
+
+exit $exit_code

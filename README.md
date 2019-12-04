@@ -59,7 +59,8 @@ Exécuter le contrôle de qualité du code
 
 
 ## Serveur
-Les environnements staging, dev et prod sont hébergés sur NS4 https://ns4.logomotion-serveur.com:2087 et sont accessibles respectivement sur https://staging.cartron.fr https://dev.cartron.fr et https://cartron.fr
+Les environnements staging, dev et prod sont hébergés sur NS4 https://ns4.logomotion-serveur.com:2087 
+et sont accessibles respectivement sur https://staging.cartron.fr (cartron::demo) https://dev.cartron.fr et https://cartron.fr
 
 
 ## Déploiement
