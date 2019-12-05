@@ -1,16 +1,16 @@
 stages:
-  - test
+  #- test
   - deploy
 
 variables:
   IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
 
-test:
-  stage: test
-  image: logomotion/code-quality
-  script: 
-    - phpcs --standard=PSR2 ./src
-    - security-checker security:check
+#test:
+#  stage: test
+#  image: logomotion/code-quality
+#  script:
+#    - phpcs --standard=PSR2 ./src
+#    - security-checker security:check
 
 deploy_dev:
   stage: deploy
