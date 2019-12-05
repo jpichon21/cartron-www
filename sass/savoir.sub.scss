@@ -47,6 +47,14 @@
             min-width: 640px;
         }
     }
+    .desc-creation-empty {
+        position: relative;
+        top: 102px;
+        left: 47px;
+        height: 330px;
+        width: 100%;z-index: -10;
+        padding: 0 20px 85px;
+    }
     .desc-creation,
     .desc-creation-noScroll {
         position: absolute;

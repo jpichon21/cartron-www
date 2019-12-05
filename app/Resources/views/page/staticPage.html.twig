@@ -233,7 +233,7 @@
       </a>
       <img src="{{ asset('site/images/img-elaboration-home.jpg') }}" />
   {% if app.request.locale == 'fr' %}
-      <h2><span>l’élaboration</span> du goût</h2>                
+      <h2><span>l’élaboration</span> du goût</h2>
       <a href="{{ path('static_page',{'page':'savoir-faire-elaboration-creme'}) }}" class="link-liqueur">Les Crèmes et les Liqueurs de création</a>
       <a href="{{ path('static_page',{'page':'savoir-faire-elaboration-eau'}) }}" class="link-eau-vie-home">Les Eaux-de-vie de tradition</a>
       <div class="link-creation-bt">
@@ -241,7 +241,7 @@
         <a href="{{ path('static_page',{'page':'Savoir-faire-fruits'}) }}"><span>{{ "la sélection" | trans }}</span> {{ "des fruits" | trans }}</a>
       </div>
   {% else %}
-      <h2><span>Creating </span>taste</h2>                
+      <h2><span>Creating </span>taste</h2>
       <a href="{{ path('static_page',{'page':'savoir-faire-elaboration-creme'}) }}" class="link-liqueur">Les Crèmes et les Liqueurs de création</a>
       <a href="{{ path('static_page',{'page':'savoir-faire-elaboration-eau'}) }}" class="link-eau-vie-home">Les Eaux-de-vie de tradition</a>
       <div class="link-creation-bt">
@@ -249,8 +249,10 @@
         <a href="{{ path('static_page',{'page':'Savoir-faire-fruits'}) }}"><span>{{ "la sélection" | trans }}</span> {{ "des fruits" | trans }}</a>
       </div>
   {% endif %}
+      <div class="desc-creation-empty">
+      </div>
     </div>
-  </div>    
+  </div>
 </div>
 {% elseif page== "Savoir-faire-creation" %}
 <script type="text/javascript">

@@ -19,19 +19,31 @@ $( document ).ready(function() {
 <div class="langues-reseaux">
     <div class="langues">
             <span id="languesIcon">
-						{% if app.request.locale == "en" %} 
-                            <span class="" >EN </span><img class="flag" src="{{ asset('site/images/gb.png') }}" alt="" />
-						{% else %}
-                            <span class=""> FR </span> <img class="flag" src="{{ asset('site/images/fr.jpg') }}" alt="" />
-						{% endif %}
-                        </span>
+            {% if app.request.locale == "en" %}
+                <img class="flag" src="{{ asset('site/images/gb.png') }}" alt="" />
+                <span class="" >EN </span>
+            {% else %}
+                <img class="flag" src="{{ asset('site/images/fr.jpg') }}" alt="" />
+                <span class=""> FR </span>
+            {% endif %}
+            </span>
             <ul id="languesContainer">
-            	{% if app.request.locale == "en" %} 
-                                <li><a href="{{ path('choose_locale', {'locale' : 'fr'}) }}">FR <img class="flag" src="{{ asset('site/images/fr.jpg') }}" alt="" /></a></li>
-              {% else %}
-                                <li><a href="{{ path('choose_locale', {'locale' : 'en'}) }}">EN <img class="flag" src="{{ asset('site/images/gb.png') }}" alt="" /></a></li>
-              {% endif %}             
-            </ul>    
+                {% if app.request.locale == "en" %}
+                <li>
+                    <a href="{{ path('choose_locale', {'locale' : 'fr'}) }}">
+                        <img class="flag" src="{{ asset('site/images/fr.jpg') }}" alt="" />
+                        <span class=""> FR </span>
+                    </a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{{ path('choose_locale', {'locale' : 'en'}) }}">
+                        <img class="flag" src="{{ asset('site/images/gb.png') }}" alt="" />
+                        <span class=""> EN </span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
             </div>
             <ul class="reseaux">
                 <li><a href="{{ path('contact') }}" class="contactez-nous">{{ "Contactez-nous" | trans }}</a></li>
