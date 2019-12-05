@@ -85,13 +85,12 @@ $( document ).ready(function() {
 </div>
 
 <script type="text/javascript">
-
   $('.sousMenus').owlCarousel({
     items: 1,
     nav: true,
     loop: true,
     URLhashListener: true,
-    startPosition: getAnchor(),
+    startPosition: (getAnchor() -1),
     navText: [
       '<div class="owl-prev"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',  
       '<div class="owl-next"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'

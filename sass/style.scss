@@ -1600,3 +1600,12 @@ a {
         margin-top: 4px;
         cursor: pointer;
     }
+
+
+.collection-home, #liste-news-full {
+    .owl-next, .owl-prev {
+        @include media('<medium') {
+            display: none;
+        }
+    }
+}

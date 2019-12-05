@@ -152,11 +152,17 @@
                 margin-bottom: 10px;
             }
         }
-        .text p{
-            @include media('<=small') {
-                margin-bottom: 18px;
-                line-height: 18px;
-                font-size: 14px;
+        .text {
+            p {
+                a {
+                    color: #35424a;
+                }
+                
+                @include media('<=small') {
+                    margin-bottom: 18px;
+                    line-height: 18px;
+                    font-size: 14px;
+                }
             }
         }
         &.show-img {
