@@ -34,7 +34,6 @@ class FirstConnectionType extends AbstractType
                 [
                     'label' => 'Pays',
                     'class' => Pays::class,
-                    'placeholder' => 'Sélectionnez votre pays',
                     'choice_label' => 'pays',
                     'expanded' => false,
                     'multiple' => false,

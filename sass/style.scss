@@ -289,6 +289,10 @@ a {
 }
 
 .form-visite {
+    select {
+        width: 280px;
+    }
+
     .se-souvenir span {
         float: right;
         display: block;
@@ -1028,6 +1032,7 @@ a {
     width: 340px;
     select {
         padding: 0 3px;
+        width: 55px;
     }
     .jqTransformSelectWrapper {
         float: left;
