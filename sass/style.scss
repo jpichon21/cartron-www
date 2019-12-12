@@ -15,6 +15,14 @@ html, body, .site {
     outline: none;
 }
 
+.privacy-policy {
+    margin-left: 20px;
+}
+
+.text-black {
+    color: black;
+}
+
 ul {
     list-style: none;
 }
@@ -705,6 +713,20 @@ a {
 
 #formContact {
     margin: 60px auto 0 auto;
+
+    #consentement {
+        width: 325px;
+        line-height: 15px;
+        padding: 0 0px;
+        color: #9aa6b2;
+        font-size: 11px;
+        font-family: 'Georgia';
+        text-transform: uppercase;
+        background: none;
+        letter-spacing: 1px;
+        margin: 6px auto 0 auto;
+        display: block;
+    }
 }
 
 #formAccess {
