@@ -696,6 +696,22 @@ After graduating from HEC (Ecole des Hautes Etudes Commerciales) and a career of
         <source>Identifiant</source>
         <target>Login</target>
     </trans-unit>
+    <trans-unit id="user.validation.password.min">
+        <source>user.validation.password.min</source>
+        <target>Your password must contain at least 8 characters.</target>
+    </trans-unit>
+    <trans-unit id="user.validation.password.regex">
+        <source>user.validation.password.regex</source>
+        <target>Your password must contain at least one lowercase, uppercase letter, and one special character.</target>
+    </trans-unit>
+    <trans-unit id="privacy_policy">
+        <source>privacy_policy</source>
+        <target>Privacy Policy</target>
+    </trans-unit>
+    <trans-unit id="contact.consentement">
+        <source>contact.consentement</source>
+        <target>By submitting this form, I agree that the data entered will be used by Cartron as part of a contact request and the commercial relationship that may result.</target>
+    </trans-unit>
     </body>
   </file>
 </xliff>

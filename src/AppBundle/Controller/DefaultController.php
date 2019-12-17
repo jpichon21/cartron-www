@@ -135,4 +135,12 @@ class DefaultController extends Controller
     public function resetProPasswordAction()
     {
     }
+
+    /**
+     * @Route(path="/privacy-policy", name="privacy_policy")
+     */
+    public function privacyPolicyAction()
+    {
+        return $this->render('privacy_policy.html.twig');
+    }
 }
