@@ -15,6 +15,10 @@
                 {{ form_widget(form.email) }}
                 {{ form_widget(form.societe) }}
                 {{ form_widget(form.message) }}
+                <label id="consentement">
+                    {{ form_widget(form.consentement) }}
+                    {{ 'contact.consentement'|trans }}
+                </label>
                 <br clear="all" />
                 <div class="valider">
                     {{ form_rest(form) }}

@@ -14,7 +14,7 @@
         top: 0;
         right: 0;
         padding: 20px;
-        z-index: 1000;
+        z-index: 2;
         @include media('>=large') {
             display: none;
         }
@@ -122,7 +122,7 @@
                             position: absolute;
                             top: 133px;
                             left: -325px;
-                            width: 201px;                        
+                            width: 201px;
                             text-align: right;
                         }
                         @include media('<large') {
@@ -175,7 +175,7 @@
                         @include media('<medium') {
                             margin-bottom: 20px;
                             padding-bottom: 10px;
-                            
+
                         }
                     }
                     .recette {
