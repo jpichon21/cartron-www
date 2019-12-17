@@ -67,3 +67,6 @@ et sont accessibles respectivement sur https://staging.cartron.fr (cartron::demo
 Le déploiement de la branche dev est automatique
 
 Le déploiement de la branche staging est semi-automatique https://gitlab.com/logomotion/cartron-www/-/jobs pour lancer le déploiement
+
+# MEP for late-2019
+- check schema update before MEP
