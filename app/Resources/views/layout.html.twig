@@ -71,98 +71,59 @@
         </div>
       </div>
       {% block body %}{% endblock %}
-      {% include 'footer.html.twig'  %} 
-      {% if app.request.locale == "fr" %} 
-        <div class="overlay-mentions">
-          <div class="pop-up-mentions">
-            <div style="width: 80%;margin:0 auto;">
-              <a href="#" class="close dn TEST"><span>{{ "Fermer" | trans }}</span></a>
-              <h1>{{ "mentions légales" | trans }}</h1>
-              <p>
-                <b>Raison sociale :</b> <br>Joseph Cartron<br>
-                Capital de 638 400,00 Euros<br>
-                RCS DIJON B 035 780 253<br>
-                <b>Directeur de la publication :</b> Judith Cartron<br>
-              <hr style="border-bottom: 1px rgba(255,255,255,0.15) solid;margin: 10px;"/>
-              </p>
-              <p>
-                <b>Adresse:</b><br>
-                Joseph Cartron <br>
-                25, Rue du Docteur Louis Legrand – CS 30028<br>
-                21701 Nuits-Saint-Georges Cedex - France<br>
-                <b>Email:</b> cartron@cartron.fr<br/>
-                <b>Téléphone:</b> +33 (0)3 80 62 00 90
-              <hr style="border-bottom: 1px rgba(255,255,255,0.15) solid;margin: 10px;"/>
-              </p>
-              <p>
-                <b>Design & Développement:</b> <br>BIGGERBAND<br>
-                1 rue de Paradis <br/>75010 Paris<br>
-                <b>Maintenance technique:</b> <br>LOGOMOTION<br>
-                19, rue Champ Passavent - BP2 <br/>21380 Messigny et Vantoux<br>
-                <b>Hébergeur:</b><br>
-                http://www.ovh.com<br>
-                Ce site est hébergé sur les serveurs de la société :<br>
-                OVH SAS (http://www.ovh.com)<br>
-                140 Quai du Sartel 59100 ROUBAIX<br>
-                Tél : +33 (0)3 20 45 36 80<br>
-              <hr style="border-bottom: 1px rgba(255,255,255,0.15) solid;margin: 10px;"/>
-              </p>
-              <p>
-                <b>Crédits Images:</b> Joseph Cartron
-              </p>
-              <p>
-                <b>Conditions d'utilisation et propriétés:</b><br>
-                Toute représentation totale ou partielle de ce site et de son contenu, par quelques procédés que ce soient, sans autorisation préalable est interdite et constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont la violation est passible de sanctions pénales. Ils doivent notamment s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de toute collecte, de toute utilisation détournée, et d'une manière générale, de tout acte susceptible de porter atteinte à la vie privée ou à la réputation des personnes.
-                <br>
-                <br>
-                <b>L’abus d’alcool est dangereux pour la santé. Consommer avec modération.</b>
-              </p>
-            </div>
-          </div>
-        </div>
-      {% else %}
-        <div class="overlay-mentions">
-          <div class="pop-up-mentions">
-            <a href="" class="close dn"><span>Fermer</span></a>
-            <h1>legal terms</h1>
+      {% include 'footer.html.twig'  %}
+      <div class="overlay-mentions">
+        <div class="pop-up-mentions">
+          <div style="width: 80%;margin:0 auto;">
+            <a href="#" class="close dn TEST"><span>{{ "Fermer" | trans }}</span></a>
+            <h1>{{ "mentions légales" | trans }}</h1>
             <div class="scrollMention">
-              <p>
-                Raison sociale : SOCIETE DES ETABLISSEMENTS CARTRON (S.E.C.) <br>
-                Capital de 638 400,00 Euros<br>
-                RCS DIJON B 035 780 253<br>
-                Directeur de la publication : Judith Cartron<br>
-              </p>
-              <p>
-                <b>Adresse:</b><br>
-                Joseph Cartron - 25, Rue du Docteur Louis Legrand – CS 30028<br>
-                21701 Nuits-Saint-Georges Cedex - France<br>
-                <b>Email:</b> cartron@cartron.fr
-                <b>Téléphone:</b> +33 (0)3 80 62 00 90
-              </p>
-              <p>
-                <b>Design & Développement:</b> BIGGERBAND<br>
-                1 rue de Paradis 75010 Paris<br>
-                <b>Maintenance technique:</b> LOGOMOTION<br>
-                19, rue Champ Passavent - BP2 - 21380 Messigny et Vantoux<br>
-                <b>Hébergeur:</b><br>
-                Ce site est hébergé sur les serveurs de la société :<br>
-                OVH SAS (http://www.ovh.com)<br>
-                140 Quai du Sartel 59100 ROUBAIX<br>
-                Tél : +33 (0)3 20 45 36 80<br>
-              </p>
-              <p>
-                <b>Crédits Images:</b> Joseph Cartron
-              </p>
-              <p>
-                <b>Conditions d'utilisation et propriétés:</b><br>
-                Toute représentation totale ou partielle de ce site et de son contenu, par quelques procédés que ce soient, sans autorisation préalable est interdite et constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont la violation est passible de sanctions pénales. Ils doivent notamment s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de toute collecte, de toute utilisation détournée, et d'une manière générale, de tout acte susceptible de porter atteinte à la vie privée ou à la réputation des personnes.
-                L’abus d’alcool est dangereux pour la santé. Consommer avec modération.
-
-              </p>
+              <div style="width: 80%;margin:0 auto;">
+                <p>
+                  <b>Raison sociale :</b> <br>Joseph Cartron<br>
+                  Capital de 638 400,00 Euros<br>
+                  RCS DIJON B 035 780 253<br>
+                  <b>Directeur de la publication :</b> Judith Cartron<br>
+                <hr style="border-bottom: 1px rgba(255,255,255,0.15) solid;margin: 10px;"/>
+                </p>
+                <p>
+                  <b>Adresse:</b><br>
+                  Joseph Cartron <br>
+                  25, Rue du Docteur Louis Legrand – CS 30028<br>
+                  21701 Nuits-Saint-Georges Cedex - France<br>
+                  <b>Email:</b> cartron@cartron.fr<br/>
+                  <b>Téléphone:</b> +33 (0)3 80 62 00 90
+                <hr style="border-bottom: 1px rgba(255,255,255,0.15) solid;margin: 10px;"/>
+                </p>
+                <p>
+                  <b>Design & Développement:</b> <br>BIGGERBAND<br>
+                  1 rue de Paradis <br/>75010 Paris<br>
+                  <b>Maintenance technique:</b> <br>LOGOMOTION<br>
+                  19, rue Champ Passavent - BP2 <br/>21380 Messigny et Vantoux<br>
+                  <b>Hébergeur:</b><br>
+                  http://www.ovh.com<br>
+                  Ce site est hébergé sur les serveurs de la société :<br>
+                  OVH SAS (http://www.ovh.com)<br>
+                  140 Quai du Sartel 59100 ROUBAIX<br>
+                  Tél : +33 (0)3 20 45 36 80<br>
+                <hr style="border-bottom: 1px rgba(255,255,255,0.15) solid;margin: 10px;"/>
+                </p>
+                <p>
+                  <b>Crédits Images:</b> Joseph Cartron
+                <hr style="border-bottom: 1px rgba(255,255,255,0.15) solid;margin: 10px;"/>
+                </p>
+                <p>
+                  <b>Conditions d'utilisation et propriétés:</b><br>
+                  Toute représentation totale ou partielle de ce site et de son contenu, par quelques procédés que ce soient, sans autorisation préalable est interdite et constituerait une contrefaçon sanctionnée par les articles L335-2 et suivants du Code de la Propriété Intellectuelle. Les utilisateurs du site sont tenus de respecter les dispositions de la Loi Informatique, Fichiers et Libertés, dont la violation est passible de sanctions pénales. Ils doivent notamment s'abstenir, s'agissant des informations nominatives auxquelles ils accèdent, de toute collecte, de toute utilisation détournée, et d'une manière générale, de tout acte susceptible de porter atteinte à la vie privée ou à la réputation des personnes.
+                  <br>
+                  <br>
+                  <b>L’abus d’alcool est dangereux pour la santé. <br>Consommer avec modération.</b>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      {% endif %}
+      </div>
     </div>
     <script>
       // Script to manage cookies
