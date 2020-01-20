@@ -125,9 +125,6 @@
                data-cycle-prev="#slideshow-1 .cycle-prev"
                data-cycle-next="#slideshow-1 .cycle-next"
                data-cycle-caption="#slideshow-1 .custom-caption"
-
-               data-cycle-swipe="true"
-               data-cycle-swipe-fx="scrollHorz"
           >
 
             {% for sousMenuDegustation in sousMenusDegustation %}
@@ -179,6 +176,7 @@
   .text p {color: #2F383E}
 </style>
 
+<script src="{{ asset('site/js/jquery.touchwipe.min.js') }}"></script>
 <script>
 $(document).ready(function() { 
 
@@ -208,6 +206,15 @@ $(document).ready(function() {
 	
 	var position = $('#cycle-1 .cycle').index( $('.article_{{sousMenuDegustationDefault.id}}') );
 	$('#cycle-1').show().cycle({'startingSlide':position, 'log':false});
+
+
+    $("#cycle-1").touchwipe({
+        wipeLeft: function() { $('.cycle-slideshow').cycle('prev'); },
+        wipeRight: function() { $('.cycle-slideshow').cycle('next'); },
+        min_move_x: 20,
+        min_move_y: 20,
+        preventDefaultEvents: true
+    });
 });
 
 </script>
