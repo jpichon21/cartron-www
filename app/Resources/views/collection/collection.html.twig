@@ -16,14 +16,14 @@
             {% set break = false %}
             {% for sousMenu in sousMenus if not break %}
               {% if collection.id == sousMenu.idCollection.id %}
-                <a class="title" href="{{ path('collection_product', { id: sousMenu.id }) }}" style="border-color: #{{ collection.color }}; ">
+                <a class="title" href="{{ path('collection_product', { id: sousMenu.id }) }}" style="border-color: #{{ collection.color }};">
                   {% if app.request.locale  == 'en' %}{{ collection.titreEn | raw }}{% else %}{{ collection.titreFr | raw }}{% endif %}
                 </a>
                 {% set break = true %}
               {% endif %}
             {% endfor %}
             <div class="block">
-              <img src="{{ asset('upload/' ~ collection.image) }}" alt="{{ collection.titreFr | raw }}" />
+              <img src="https://staging.cartron.fr/upload/{{ collection.image }}" alt="{{ collection.titreFr | raw }}" />
               <div class="blockDesc">
                 <ul>
                   {% set productIndex = 0 %}

@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     var params = new URLSearchParams(document.location.search.substring(1));
-    var id = parseInt(params.get("id"), 10);
+    var id = parseInt(params.get("index"), 10) || 0;
     var positionx = 2 + (id * 48);
     var is_moving = false;
     screen_width = $(window).width();
@@ -21,7 +21,7 @@ $( document ).ready(function() {
         var goto_left = $(this).hasClass('next'); 
         if( goto_left ) positionx += 48;
         else positionx -= 48;
-        
+
         /* hide next icon*/
         if( positionx >= 98 ){ $('.degustation-home .content a.next').removeClass('show'); }
         else $('.degustation-home .content a.next').addClass('show');

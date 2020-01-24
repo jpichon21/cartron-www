@@ -24,7 +24,6 @@
  <script type="text/javascript">
 	$(function() 
 	{
-
 	  	$('.next').hover(function() { $('#degustation .main').stop().animate({backgroundPosition: '45% 0px'}, 2000) }, 
 	  	function() { $('#degustation .main').stop().animate({backgroundPosition: '50% 0'}, 2000) });
 
@@ -109,62 +108,55 @@
             {% else %}
               {% set closeLink = path('tasting') ~ '?id=' ~ app.request.query.get('index') %}
             {% endif %}#}
-             <a href="javascript:window.history.back()" class="retour dn">
+             <a href="{{ backUrl }}" class="retour dn">
           <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg>
         </a>
         
 
         <div id="slideshow-1">
-          <a href="#" class="cycle-prev"></a>
-          <a href="#" class="cycle-next"></a>
-          
-          <div id="cycle-1"
-               data-cycle-slides=".cycle"
-               data-cycle-fx="scrollHorz"
-               data-cycle-timeout="0"
-               data-cycle-prev="#slideshow-1 .cycle-prev"
-               data-cycle-next="#slideshow-1 .cycle-next"
-               data-cycle-caption="#slideshow-1 .custom-caption"
-          >
-
+          <div id="cycle-1" class="owl-carousel sousMenus" style="display: flex">
             {% for sousMenuDegustation in sousMenusDegustation %}
-            <div class="article_{{ sousMenuDegustation.id }} cycle {% if(sousMenuDegustation.couleurArrierePlan=='noir') %} {{ "imageNoir" }} {% endif %} {% if sousMenuDegustation.id == app.request.get('id') %}cycle-slide-active{% endif %}">
-              <img src="{{ asset('upload/'~sousMenuDegustation.image) }}" width="977" height="577" alt="" class="  {% for degustation in degustations %}{% if(degustation.id == '4') %} {{ "gastronomy"}} {% endif %}{% endfor %}"/>     
-              <a href="javascript:window.history.back()" class="back">{{ "Retour" | trans }}</a>
-              <div class="description">
-                <h3>{% if(app.request.locale =='en') %} {{ sousMenuDegustation.titreEn }} {% else %} {{ sousMenuDegustation.titreFr }} {% endif %}</h3>
-                <div class="desconly">
-  
-                  <div class="text txtScroll">
-                    {% if(app.request.locale =='en') %} {{ sousMenuDegustation.descriptionEn|raw }} {% else %} {{ sousMenuDegustation.descriptionFr|raw }} {% endif %}
-                  </div>
-                  <div class="sep"></div>
-          {% if app.request.locale =='en' and sousMenuDegustation.noteDegustationEn|trim != '' %}
-                  <h4>Tasting Tip</h4>
-                  <div class="text">
-                    {% if(app.request.locale =='en') %} {{ sousMenuDegustation.noteDegustationEn|raw }} {% else %} {{ sousMenuDegustation.noteDegustationFr|raw }} {% endif %}
-                  </div>
-          {% endif %}
-                  
-          {% if app.request.locale =='fr' and sousMenuDegustation.noteDegustationFr|trim != '' %}
-                  <h4>Note de Dégustation</h4>
-                  <div class="text">
-                    {% if(app.request.locale =='en') %} {{ sousMenuDegustation.noteDegustationEn|raw }} {% else %} {{ sousMenuDegustation.noteDegustationFr|raw }} {% endif %}
-                  </div>
-          {% endif %}
-                  
+                <div
+                    data-hash="{{ loop.index0 }}"
+                    data-id="{{ sousMenuDegustation.id }}"
+                    style="height: 577px;position: relative;overflow: hidden"
+                    class="_owlitem article_{{ sousMenuDegustation.id }}">
+                    <div class="visuel">
+                        {#<img src="{{ asset('upload/'~sousMenuDegustation.image) }}" width="977" height="577" alt="" class="  {% for degustation in degustations %}{% if(degustation.id == '4') %} {{ "gastronomy"}} {% endif %}{% endfor %}"/>#}
+                        <img src="https://staging.cartron.fr/upload/{{ sousMenuDegustation.image }}"
+                             class="{% for degustation in degustations %}{% if(degustation.id == '4') %} {{ "gastronomy"}} {% endif %}{% endfor %}" />
+                    </div>
+
+                    <a href="{{ backUrl }}" class="back">{{ "Retour" | trans }}</a>
+                    <div class="description">
+                        <h3>{% if(app.request.locale =='en') %} {{ sousMenuDegustation.titreEn }} {% else %} {{ sousMenuDegustation.titreFr }} {% endif %}</h3>
+                        <div class="desconly">
+                            <div class="text txtScroll">
+                                {% if(app.request.locale =='en') %} {{ sousMenuDegustation.descriptionEn|raw }} {% else %} {{ sousMenuDegustation.descriptionFr|raw }} {% endif %}
+                            </div>
+                            <div class="sep"></div>
+                            {% if app.request.locale =='en' and sousMenuDegustation.noteDegustationEn|trim != '' %}
+                                <h4>Tasting Tip</h4>
+                                <div class="text">
+                                    {% if(app.request.locale =='en') %} {{ sousMenuDegustation.noteDegustationEn|raw }} {% else %} {{ sousMenuDegustation.noteDegustationFr|raw }} {% endif %}
+                                </div>
+                            {% endif %}
+
+                            {% if app.request.locale =='fr' and sousMenuDegustation.noteDegustationFr|trim != '' %}
+                                <h4>Note de Dégustation</h4>
+                                <div class="text">
+                                    {% if(app.request.locale =='en') %} {{ sousMenuDegustation.noteDegustationEn|raw }} {% else %} {{ sousMenuDegustation.noteDegustationFr|raw }} {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="icons">
+                            <a href="http://www.facebook.com/sharer.php?u=http://www.cartron.fr" class="facebook"></a>
+                            <a href="#" class="telecharger"></a>
+                            <a href="javascript:window.print();" class="imprimer"></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="icons">
-                  <a href="http://www.facebook.com/sharer.php?u=http://www.cartron.fr" class="facebook"></a>
-                  <a href="#" class="telecharger"></a>
-                  <a href="javascript:window.print();" class="imprimer"></a>
-                </div>
-              </div>
-            </div>
             {% endfor %}
-   
-
-
           </div>
         </div>
 
@@ -173,49 +165,59 @@
   </div>
 </div>
 <style>
+    .owl-item {z-index: 100}
   .text p {color: #2F383E}
 </style>
 
-<script src="{{ asset('site/js/jquery.touchwipe.min.js') }}"></script>
-<script>
-$(document).ready(function() { 
+<script type="text/javascript">
+    var owl = $('.sousMenus');
 
-	$(".cycle").each(function() {
-		var $links = $(this).find(".text a");
-		var ids = "#";
-		$links.each(function() {
-			ids += $(this).attr("href") + ",";
-		});
-		$links.each(function() {
-			var url = "{{ path('tasting_product', {id: 'id'}) }}";
-			url = url.replace("id", $(this).attr("href"));
-			$(this).attr("href", url + ids);
-		});		
-	});
+    var hash = document.location.hash.substring(1);
+    var isRecipePage = hash.indexOf(",") !== -1;
 
-	if(document.location.hash){
-		var elements = [];
-		var parameters = document.location.hash;
-		parameters = parameters.substring(1,parameters.length);
-		parameters = parameters.split(",");
-		for(var i= 0; i < parameters.length; i++) {
-			elements.push($(".article_"+parameters[i]));
-		}
-		$("#cycle-1").html(elements);
-	} 
-	
-	var position = $('#cycle-1 .cycle').index( $('.article_{{sousMenuDegustationDefault.id}}') );
-	$('#cycle-1').show().cycle({'startingSlide':position, 'log':false});
+    if(isRecipePage) {
+        var recipesToDisplay = hash.split(",");
+        $('._owlitem').filter(function (i) {
+            if(recipesToDisplay.indexOf($(this).attr('data-id')) === -1) {
+                $(this).remove();
+                return;
+            }
+            $(this).removeAttr('data-hash');
+        });
+    }
 
+    function initOwlMenu() {
+        var options = {
+            startPosition: getAnchor(),
+            dots: false,
+            center: true,
+            items: 1,
+            nav: window.innerWidth >= 1024,
+            loop: true,
+            URLhashListener: !isRecipePage,
+            navText: [
+                '<div class="owl-prev" style="position: absolute;top: 50%;left:0;margin-top: -20px;padding: 20px;"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',
+                '<div class="owl-next" style="position: absolute;top: 50%;right:0;margin-top: -20px;padding: 20px;"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
+            ]
+        };
+        owl.owlCarousel(options);
+    }
 
-    $("#cycle-1").touchwipe({
-        wipeLeft: function() { $('.cycle-slideshow').cycle('prev'); },
-        wipeRight: function() { $('.cycle-slideshow').cycle('next'); },
-        min_move_x: 20,
-        min_move_y: 20,
-        preventDefaultEvents: true
+    owl.on('changed.owl.carousel', function(event) {
+        console.log(event);
     });
-});
+
+    function getAnchor() {
+        var currentUrl = document.URL,
+            urlParts   = currentUrl.split('#');
+        return (urlParts.length > 1) ? urlParts[1] : 0;
+    }
+
+    window.onresize = function() {
+        width = window.innerWidth;
+        initOwlMenu();
+    }
+    initOwlMenu();
 
 </script>
 

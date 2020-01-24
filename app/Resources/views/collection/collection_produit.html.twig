@@ -41,9 +41,9 @@ $( document ).ready(function() {
       <div class="sousMenus owl-carousel">
         {% for sousMenu in sousMenusCollection %}
             {% if sousMenu.idCollection.id == idCollection %}
-            <div class="sousMenu" data-hash="{{ loop.index }}">
+            <div class="sousMenu" data-hash="{{ loop.index0 }}">
               <div class="visuel">
-                <img src="{{ asset('upload/'~sousMenu.image) }}" alt="{{ sousMenu.titreFr }}">
+                <img src="https://staging.cartron.fr/upload/{{ sousMenu.image }}" alt="{{ sousMenu.titreFr }}">
               </div>
               <div class="description">
                 <div class="first_part">
@@ -56,7 +56,7 @@ $( document ).ready(function() {
                   </div>
                 </div>
                 <div class="second_part">
-                  <a class="recette" href="{% if app.request.locale == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}?id={{sousMenu.id}}&index={{loop.index0}}">{{ "Recettes" | trans }}</a>
+                  <a class="recette" href="{% if app.request.locale == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}?id={{sousMenu.id}}&index={{loop.index0}}&backUrl={{sousMenu.id}}/collection_produit&backUrlHash={{loop.index0}}">{{ "Recettes" | trans }}</a>
                   <div class="note-degustation">
                     <h3>{{ "Note de dégustation" | trans }}</h3>
                     <div class="dropdown">
@@ -77,10 +77,10 @@ $( document ).ready(function() {
                 </div>
               </div>
             </div>
-            {% endif %} 
+            {% endif %}
         {% endfor %}
       </div>
-    </div>    
+    </div>
   </div>
 </div>
 
@@ -92,7 +92,7 @@ $( document ).ready(function() {
     URLhashListener: true,
     startPosition: getAnchor(),
     navText: [
-      '<div class="owl-prev"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',  
+      '<div class="owl-prev"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',
       '<div class="owl-next"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
     ]
   });
@@ -132,7 +132,7 @@ $( document ).ready(function() {
     barsElements.forEach(function(barsElement) { barsObjects.push(new SimpleBar(barsElement, { autoHide: false })); });
     barsUp = true;
   }
-  
+
   function removeSimpleBars() {
     barsObjects.forEach(function(barObject, index) {
       var content = barObject.getContentElement();
@@ -156,16 +156,16 @@ $( document ).ready(function() {
   }
 
   window.onresize = function() {
-  
+
     width = window.innerWidth;
-  
+
     if (width < 1440 && !owlUp) {
       initOwlMenu();
     } else if (width >= 1440 && owlUp) {
       owl.trigger('destroy.owl.carousel');
       owlUp = false;
     }
-  
+
     if (width >= 1024 && !barsUp) {
       initSimpleBars();
     } else if (width < 1024 && barsUp) {
@@ -177,7 +177,7 @@ $( document ).ready(function() {
     }else{
       $('.note-degustation, .note-elaboration').css("display", "none");
     }
-  
+
   };
 
   $('.second_part').on('click', 'h3', function() {
