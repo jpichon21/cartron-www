@@ -23,7 +23,7 @@
               {% endif %}
             {% endfor %}
             <div class="block">
-              <img src="https://staging.cartron.fr/upload/{{ collection.image }}" alt="{{ collection.titreFr | raw }}" />
+                <img src="{{ asset('upload/'~collection.image) }}" alt="{{ collection.titreFr | raw }}" />
               <div class="blockDesc">
                 <ul>
                   {% set productIndex = 0 %}

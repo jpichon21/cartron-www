@@ -43,7 +43,7 @@ $( document ).ready(function() {
             {% if sousMenu.idCollection.id == idCollection %}
             <div class="sousMenu" data-hash="{{ loop.index0 }}">
               <div class="visuel">
-                <img src="https://staging.cartron.fr/upload/{{ sousMenu.image }}" alt="{{ sousMenu.titreFr }}">
+                <img src="{{ asset('upload/'~sousMenu.image) }}" alt="{{ sousMenu.titreFr }}">
               </div>
               <div class="description">
                 <div class="first_part">

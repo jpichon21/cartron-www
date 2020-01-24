@@ -122,8 +122,7 @@
                     style="height: 577px;position: relative;overflow: hidden"
                     class="_owlitem article_{{ sousMenuDegustation.id }}">
                     <div class="visuel">
-                        {#<img src="{{ asset('upload/'~sousMenuDegustation.image) }}" width="977" height="577" alt="" class="  {% for degustation in degustations %}{% if(degustation.id == '4') %} {{ "gastronomy"}} {% endif %}{% endfor %}"/>#}
-                        <img src="https://staging.cartron.fr/upload/{{ sousMenuDegustation.image }}"
+                        <img src="{{ asset('upload/'~sousMenuDegustation.image) }}"
                              class="{% for degustation in degustations %}{% if(degustation.id == '4') %} {{ "gastronomy"}} {% endif %}{% endfor %}" />
                     </div>
 
@@ -186,9 +185,13 @@
         });
     }
 
-    function initOwlMenu() {
+    function initOwlMenu(id = null) {
+        var startPosition = getAnchor();
+        if(id && !startPosition) {
+            startPosition = $('._owlitem[data-id="'+ id +'"]').attr('data-hash');
+        }
         var options = {
-            startPosition: getAnchor(),
+            startPosition,
             dots: false,
             center: true,
             items: 1,
@@ -203,10 +206,6 @@
         owl.owlCarousel(options);
     }
 
-    owl.on('changed.owl.carousel', function(event) {
-        console.log(event);
-    });
-
     function getAnchor() {
         var currentUrl = document.URL,
             urlParts   = currentUrl.split('#');
@@ -217,7 +216,7 @@
         width = window.innerWidth;
         initOwlMenu();
     }
-    initOwlMenu();
+    initOwlMenu({{ sousMenuDegustationDefault.id }});
 
 </script>
 
