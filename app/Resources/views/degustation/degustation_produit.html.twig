@@ -163,8 +163,11 @@
   </div>
 </div>
 <style>
-    .owl-item {z-index: 100}
+    .tns-item {z-index: 100}
   .text p {color: #2F383E}
+    .tns-nav {
+        display: none;
+    }
 </style>
 
 <script type="text/javascript">
@@ -186,6 +189,7 @@
 
     function initOwlMenu(id = null) {
         var startPosition = getAnchor();
+
         if(id && !startPosition) {
             startPosition = $('._owlitem[data-id="'+ id +'"]').attr('data-hash');
         }
@@ -202,11 +206,20 @@
                 '<div class="owl-next" style="position: absolute;top: 50%;right:0;margin-top: -20px;padding: 20px;"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
             ]
         };
-        tns({
+        var slider = tns({
+            startIndex: startPosition,
             container: '.sousMenus',
             //items: 3,
             //slideBy: 'page',
             //autoplay: true
+            controls: window.innerWidth >= 1024,
+            controlsText: [
+                '<div class="owl-prev" style="position: absolute;top: 50%;left:0;margin-top: -20px;padding: 20px;"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',
+                '<div class="owl-next" style="position: absolute;top: 50%;right:0;margin-top: -20px;padding: 20px;"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
+            ]
+        });
+        slider.events.on('indexChanged', function (d) {
+            document.location.hash = (d.index -1);
         });
         //owl.owlCarousel(options);
     }
