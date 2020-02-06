@@ -12,7 +12,6 @@
 <script src="{{ asset('site/js/jquery.hoverflow.js') }}"></script>
 <script src="{{ asset('site/js/jquery.hoverIntent.minified.js') }}"></script>
 <script src="{{ asset('site/js/jquery.backgroundpos.min.js') }}"></script>
-<script src="{{ asset('site/js/owl.carousel.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('site/js/jquery.cycle2.js') }}"></script>
 <script type="text/javascript" src="{{ asset('site/js/jquery.cycle2.carousel.js') }}"></script>
 <script type="text/javascript" src="{{ asset('site/js/jquery.cycle2.tile.js') }}"></script>
@@ -203,7 +202,13 @@
                 '<div class="owl-next" style="position: absolute;top: 50%;right:0;margin-top: -20px;padding: 20px;"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
             ]
         };
-        owl.owlCarousel(options);
+        tns({
+            container: '.sousMenus',
+            //items: 3,
+            //slideBy: 'page',
+            //autoplay: true
+        });
+        //owl.owlCarousel(options);
     }
 
     function getAnchor() {
