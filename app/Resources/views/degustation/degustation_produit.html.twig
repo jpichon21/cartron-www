@@ -171,6 +171,22 @@
 </style>
 
 <script type="text/javascript">
+
+    $(document).ready(function() {
+        $("._owlitem").each(function () {
+            var $links = $(this).find(".text a");
+            var ids = "#";
+            $links.each(function () {
+                ids += $(this).attr("href") + ",";
+            });
+            $links.each(function () {
+                var url = "/id/degustation_produit";
+                url = url.replace("id", $(this).attr("href"));
+                $(this).attr("href", url + ids);
+            });
+        });
+    });
+
     var owl = $('.sousMenus');
 
     var hash = document.location.hash.substring(1);
@@ -237,8 +253,5 @@
     initOwlMenu({{ sousMenuDegustationDefault.id }});
 
 </script>
-
-
-
 {% endblock %}
 
