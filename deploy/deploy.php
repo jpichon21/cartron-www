@@ -22,14 +22,23 @@
         ->set('deploy_path', '/home/{{account_dir}}/src_staging');
 
     host('dev.cartron.fr')
-    ->stage('dev')
-    ->user('root')
-    ->hostname('ns4.logomotion-serveur.com')
-    ->port('2222')
-    ->set('account_dir', 'cartron')
-    ->set('branch', 'dev')
-    ->set('deploy_path', '/home/{{account_dir}}/src_dev');
-    
+        ->stage('dev')
+        ->user('root')
+        ->hostname('ns4.logomotion-serveur.com')
+        ->port('2222')
+        ->set('account_dir', 'cartron')
+        ->set('branch', 'dev')
+        ->set('deploy_path', '/home/{{account_dir}}/src_dev');
+
+    host('prod.cartron.fr')
+        ->stage('prod')
+        ->user('root')
+        ->hostname('ns4.logomotion-serveur.com')
+        ->port('2222')
+        ->set('account_dir', 'cartron')
+        ->set('branch', 'prod')
+        ->set('deploy_path', '/home/{{account_dir}}/src_prod');
+
 
     task('deploy', [
         'deploy:info',
