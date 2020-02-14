@@ -1,17 +1,17 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: '%env(DATABASE_HOST)%'
+    database_host: localhost
     database_port: null
-    database_name: '%env(DATABASE_NAME)%'
-    database_user: '%env(DATABASE_USER)%'
-    database_password: '%env(DATABASE_PASSWORD)%'
+    database_name: cartron_prod
+    database_user: cartron_prod
+    database_password: PysXiZX54bSC
     mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_port: 2525
-    mailer_user: null
-    mailer_password: null
+    mailer_host: ns0.ovh.net
+    mailer_port: 25
+    mailer_user: smtp@logomotion.fr
+    mailer_password: DC6yN9Y4nX
     secret: ThisTokenIsNotSoSecretChangeIt
-    locale: 'fr'
+    locale: fr
     email_from: null
     email_to: null
     uploadDirectory: '%kernel.project_dir%/web/upload'
