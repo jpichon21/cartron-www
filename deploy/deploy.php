@@ -65,7 +65,7 @@
     });
 
     task('install', function () {
-        // run('cd {{release_path}} && cp deploy/parameters.yml app/config/parameters.yml');
+        run('cd {{release_path}} && cp deploy/parameters.yml app/config/parameters.yml');
         run('cd {{release_path}} && curl -sS https://getcomposer.org/installer | {{bin/php}}');
         run('export SYMFONY_ENV=prod');
         run('cd {{release_path}} && {{bin/php}} composer.phar install --optimize-autoloader --no-scripts');

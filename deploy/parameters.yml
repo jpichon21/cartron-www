@@ -12,3 +12,6 @@ parameters:
     mailer_password: null
     secret: ThisTokenIsNotSoSecretChangeIt
     locale: 'fr'
+    email_from: null
+    email_to: null
+    uploadDirectory: '%kernel.project_dir%/web/upload'
