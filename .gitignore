@@ -22,6 +22,6 @@
 !.vscode/settings.json
 web/site/images/upload
 web/.htaccess
-web/site/css/style.css*
+web/site/css/style.css.map
 .idea
 cartron.sql
