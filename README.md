@@ -55,18 +55,41 @@ Exécuter le contrôle de qualité du code
 `script/cq`  
 
 
-# Production
+## Serveurs
 
+### Dev/staging
+Les environnements staging et dev sont hébergés sur NS4 https://ns4.logomotion-serveur.com:2087 
+et sont accessibles respectivement sur https://staging.cartron.fr (cartron::demo) https://dev.cartron.fr
 
-## Serveur
-Les environnements staging, dev et prod sont hébergés sur NS4 https://ns4.logomotion-serveur.com:2087 
-et sont accessibles respectivement sur https://staging.cartron.fr (cartron::demo) https://dev.cartron.fr et https://cartron.fr
-
-
-## Déploiement
+### Déploiement
 Le déploiement de la branche dev est automatique
 
 Le déploiement de la branche staging est semi-automatique https://gitlab.com/logomotion/cartron-www/-/jobs pour lancer le déploiement
 
-# MEP for late-2019
-- check schema update before MEP
+
+## PROD
+La prod N'EST PAS hébergée sur ns4, mais sur un mutu OVH toupourri.
+Le CI et/ou script deployer ne fonctionne pas pour cet environment (freeze au ssh connect).
+
+Donc mise en prod old school à la main :
+### pré-MEP
+Comme les mutu OVH ne connaissent pas npm, il faut préparer les assets dans la branche `prod` :
+```
+git checkout prod
+git merge dev
+npm install
+npm run sass-build
+git add web/site/css/style.css
+git commit -m "Update prod"
+git push
+```
+
+### MEP
+```sh
+ssh cartronfwi@ssh.cluster027.hosting.ovh.net # password in lastpass "CARTRON SSH/FTP"
+cd src_new
+git pull
+php bin/console cache:clear --env=prod
+php bin/console cache:warmup --env=prod
+```
+NE PAS UTILISER `bin/console assets:install` :)
