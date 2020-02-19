@@ -56,6 +56,7 @@ Exécuter le contrôle de qualité du code
 
 
 ## Serveurs
+**Historique:** Malgré les infos affichés sur ovh, Logomotion ne gère pas le domaine cartron.fr.
 
 ### Dev/staging
 Les environnements staging et dev sont hébergés sur NS4 https://ns4.logomotion-serveur.com:2087 
@@ -71,7 +72,10 @@ Le déploiement de la branche staging est semi-automatique https://gitlab.com/lo
 La prod N'EST PAS hébergée sur ns4, mais sur un mutu OVH toupourri.
 Le CI et/ou script deployer ne fonctionne pas pour cet environment (freeze au ssh connect).
 
-Donc mise en prod old school à la main :
+Donc mise en prod old school et à la main :
+
+**\/!\\** branch prod track quelques fichiers depuis web/, pas la branch dev.   
+
 ### pré-MEP
 Comme les mutu OVH ne connaissent pas npm, il faut préparer les assets dans la branche `prod` :
 ```
