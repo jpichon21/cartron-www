@@ -118,14 +118,21 @@
             }
             img{
                 position: absolute;
-                z-index: 1;
-                display: block!important;
-                left: -130%;
+                z-index: -1;
+                //display: block!important;
                 opacity: 0.3;
                 /*margin: 0 -21.875% 0;*/
+                top: 0;
+                right: -15%;
+
+
+                max-width:977px;
+                max-height:577px;
+                width: auto;
+                height: auto;
             }
-            .gastronomy{
-                left: -150% !important;
+            .gastronomy {
+
             }
             .cycle-slide-active{
                 position: relative;
@@ -160,6 +167,13 @@
         td{
             display: block;
             padding: 0px;
+        }
+    }
+    @include media('<=xsmall') {
+        #slideshow-1 {
+            img {
+                right: -30%;
+            }
         }
     }
 }

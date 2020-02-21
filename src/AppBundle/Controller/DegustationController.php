@@ -85,7 +85,10 @@ class DegustationController extends Controller
             'sousMenusDegustation' => $sousMenusDegustation,
             'degustations' => $degustations,
             'sousMenuDegustationDefault' => $sousMenuDegustationDefault,
-            'article' => $article
+            'article' => $article,
+            'backUrl' => $request->get('backUrl')
+                ? sprintf('/%s#%s', $request->get('backUrl'), $request->get('backUrlHash'))
+                : 'javascript:window.history.back()',
             ]
         );
     }
