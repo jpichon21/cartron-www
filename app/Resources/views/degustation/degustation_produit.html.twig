@@ -189,53 +189,49 @@
 
     var owl = $('.sousMenus');
 
-    var hash = document.location.hash.substring(1);
-    var isRecipePage = hash.indexOf(",") !== -1;
-
-    if(isRecipePage) {
-        var recipesToDisplay = hash.split(",");
-        $('._owlitem').filter(function (i) {
-            if(recipesToDisplay.indexOf($(this).attr('data-id')) === -1) {
-                $(this).remove();
-                return;
-            }
-            $(this).removeAttr('data-hash');
-        });
-    }
-
     function initOwlMenu(id = null) {
         var startPosition = getAnchor();
+        var hash = document.location.hash.substring(1);
+        var isRecipePage = hash.indexOf(",") !== -1;
+
+        if(isRecipePage) {
+            var recipesToDisplay = hash.split(",");
+            var idSelectedRecipe = document.location.pathname.split('/')[1];
+            $('._owlitem').filter(function (i) {
+                if(recipesToDisplay.indexOf($(this).attr('data-id')) === -1) {
+                    $(this).remove();
+                    return;
+                }
+                //$(this).removeAttr('data-hash');
+            });
+            $('._owlitem').each(function (i) {
+                if ($(this).attr('data-id') == idSelectedRecipe) {
+                    startPosition = i;
+                }
+            });
+            console.log(startPosition);
+        }
 
         if(id && !startPosition) {
             startPosition = $('._owlitem[data-id="'+ id +'"]').attr('data-hash');
         }
-        var options = {
-            startPosition,
-            dots: false,
-            center: true,
-            items: 1,
-            nav: window.innerWidth >= 1024,
-            loop: true,
-            URLhashListener: !isRecipePage,
-            navText: [
-                '<div class="owl-prev" style="position: absolute;top: 50%;left:0;margin-top: -20px;padding: 20px;"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',
-                '<div class="owl-next" style="position: absolute;top: 50%;right:0;margin-top: -20px;padding: 20px;"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
-            ]
-        };
+
         var slider = tns({
             startIndex: startPosition,
             container: '.sousMenus',
-            //items: 3,
-            //slideBy: 'page',
-            //autoplay: true
-            controls: window.innerWidth >= 1024,
+            items: 1,
+            slideBy: 1,
+            autoplay: false,
+            controls: (window.innerWidth >= 1024),
             controlsText: [
                 '<div class="owl-prev" style="position: absolute;top: 50%;left:0;margin-top: -20px;padding: 20px;"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',
                 '<div class="owl-next" style="position: absolute;top: 50%;right:0;margin-top: -20px;padding: 20px;"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg></div>'
             ]
         });
         slider.events.on('indexChanged', function (d) {
-            document.location.hash = (d.index -1);
+            if(! isRecipePage) {
+                document.location.hash = (d.index -1);
+            }
         });
         //owl.owlCarousel(options);
     }
