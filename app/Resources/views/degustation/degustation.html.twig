@@ -62,21 +62,21 @@
         <div class="parralax">
           {% for degustation in degustations %}
 
-          <div {% if(loop.index0 == app.request.get('id')) %} class="sh" {% else %} class="hd" {% endif %} id="ar_{{ loop.index }}">
+          <div {% if(loop.index0 == app.request.get('index')) %} class="sh" {% else %} class="hd" {% endif %} id="ar_{{ loop.index0 }}">
             {% set degustationId = loop.index0 %}
             <h2><b><span>{{ "sélection" | trans }}</span> {% if(app.request.locale =='en') %} {{ degustation.titreEn }} {% else %} {{ degustation.titreFr }} {% endif %}</b></h2>                                
             {% set break = false %}
             {% for sousMenu in sousMenus if not break %}
                 {% if(degustation.id == sousMenu.idDegustation.id) %}
-                <a href="{{ path('tasting_product',{id:sousMenu.id}) ~ '?index=' ~ degustationId}}" class="entrer">{{ 'Entrez' | trans }}</a>
+                <a href="{{ path('tasting_product',{id:sousMenu.id}) ~ '?index=' ~ degustationId}}&backUrl=degustation?index={{ degustationId}}" class="entrer">{{ 'Entrez' | trans }}</a>
                 {% set break = true %}
                 {% endif %}
             {% endfor %}
           </div>
           {% endfor %}
 
-          <a href="#0" class="next{% if app.request.get('id') < 2 %} show{% endif %}"></a>
-          <a href="#0" class="prev{% if app.request.get('id') > 0 %} show{% endif %}"></a>
+          <a href="#0" class="next{% if app.request.get('index') < 2 %} show{% endif %}"></a>
+          <a href="#0" class="prev{% if app.request.get('index') > 0 %} show{% endif %}"></a>
           <input type="hidden" id="nbr" value="{{ degustations|length }}" />
         </div> <!-- # end content degustation -->            
       </div> 
