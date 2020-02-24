@@ -209,15 +209,14 @@
                     startPosition = i;
                 }
             });
-            console.log(startPosition);
         }
 
-        if(id && !startPosition) {
+        if(id && (startPosition != parseInt(startPosition, 10))) {
             startPosition = $('._owlitem[data-id="'+ id +'"]').attr('data-hash');
         }
 
         var slider = tns({
-            startIndex: startPosition,
+            startIndex: startPosition || 0,
             container: '.sousMenus',
             items: 1,
             slideBy: 1,
@@ -239,7 +238,7 @@
     function getAnchor() {
         var currentUrl = document.URL,
             urlParts   = currentUrl.split('#');
-        return (urlParts.length > 1) ? urlParts[1] : 0;
+        return (urlParts.length > 1) ? urlParts[1] : null;
     }
 
     window.onresize = function() {
