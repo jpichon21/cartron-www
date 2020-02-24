@@ -221,6 +221,7 @@
             items: 1,
             slideBy: 1,
             autoplay: false,
+            preventScrollOnTouch: 'auto',
             controls: (window.innerWidth >= 1024),
             controlsText: [
                 '<div class="owl-prev" style="position: absolute;top: 50%;left:0;margin-top: -20px;padding: 20px;"><svg width="30" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="none" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg></div>',
@@ -241,10 +242,10 @@
         return (urlParts.length > 1) ? urlParts[1] : null;
     }
 
-    window.onresize = function() {
+    /*window.onresize = function() {
         width = window.innerWidth;
         initOwlMenu();
-    }
+    }*/
     initOwlMenu({{ sousMenuDegustationDefault.id }});
 
 </script>
