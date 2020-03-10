@@ -3,6 +3,7 @@
 namespace AppBundle\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Resource;
 use AppBundle\Entity\Category;
@@ -74,13 +75,15 @@ class ResourceAdminController extends Controller
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+
             $data = $form->getData();
             $downloads = $data->getDownloads();
             foreach ($downloads as $download) {
                 $download->setLocale('fr');
             }
+
             $uploadFile = $data->getPicture();
-            if ($uploadFile) {
+            if ($uploadFile instanceof UploadedFile) {
                 $nameOriginalFile = $uploadFile->getClientOriginalName();
                 $name = 'resourcePic' . time() . '_' . $nameOriginalFile;
                 $uploadFile->move(
@@ -91,7 +94,7 @@ class ResourceAdminController extends Controller
             }
 
             $uploadFile = $data->getMiniature();
-            if ($uploadFile) {
+            if ($uploadFile instanceof UploadedFile) {
                 $nameOriginalFile = $uploadFile->getClientOriginalName();
                 $name = 'resourceMin' . time() . '_' . $nameOriginalFile;
                 $uploadFile->move(
@@ -147,7 +150,7 @@ class ResourceAdminController extends Controller
             }
 
             $uploadFile = $data->getPicture();
-            if ($uploadFile) {
+            if ($uploadFile instanceof UploadedFile) {
                 $nameOriginalFile = $uploadFile->getClientOriginalName();
                 $name = 'resourcePic' . time() . '_' . $nameOriginalFile;
                 $uploadFile->move(
@@ -155,6 +158,13 @@ class ResourceAdminController extends Controller
                     $name
                 );
                 $resource->setPicture($name);
+
+                // yolo
+                if ($picture != null) {
+                    if (file_exists('upload/'.$picture)) {
+                        unlink('upload/'.$picture);
+                    }
+                }
             } else {
                 if (isset($picture)) {
                     $resource->setPicture($picture);
@@ -162,7 +172,7 @@ class ResourceAdminController extends Controller
             }
 
             $uploadFile = $data->getMiniature();
-            if ($uploadFile) {
+            if ($uploadFile instanceof UploadedFile) {
                 $nameOriginalFile = $uploadFile->getClientOriginalName();
                 $name = 'resourceMin' . time() . '_' . $nameOriginalFile;
                 $uploadFile->move(
@@ -170,6 +180,13 @@ class ResourceAdminController extends Controller
                     $name
                 );
                 $resource->setMiniature($name);
+
+                // yolo
+                if ($miniature != null) {
+                    if (file_exists('upload/'.$miniature)) {
+                        unlink('upload/'.$miniature);
+                    }
+                }
             } else {
                 if (isset($miniature)) {
                     $resource->setMiniature($miniature);

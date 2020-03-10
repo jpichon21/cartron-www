@@ -13,6 +13,7 @@
             <img src="{{ asset('upload/'~resource.picture) }}" class="magic_fields"> </div>
         <div id="detail-right" class="paysage">
             <h1>{{ category.nom }} <span>- {{ resource.title }}</span></h1>
+            <p>{{ resource.description }}</p>
             <div id="downloads">
                 <ul>
                 {% for download in resource.downloads %}

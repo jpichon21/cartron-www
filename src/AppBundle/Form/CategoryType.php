@@ -37,7 +37,7 @@ class CategoryType extends AbstractType
                         ]
                 ]
             )
-            ->add(
+            /*->add(
                 'description',
                 TextareaType::class,
                 [
@@ -47,7 +47,7 @@ class CategoryType extends AbstractType
                         'class' => 'form-textarea',
                         ]
                 ]
-            )
+            )*/
             ->add(
                 'parent',
                 EntityType::class,

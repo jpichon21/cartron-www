@@ -34,7 +34,7 @@
                             <tbody>
                                 <tr>
                                     <th class="table-header-repeat line-left minwidth-1"><a href="#0">Titre</a></th>
-                                    <th class="table-header-repeat line-left minwidth-1"><a href="#0">Titre SEO</a></th>
+                                    {#<th class="table-header-repeat line-left minwidth-1"><a href="#0">Titre SEO</a></th>#}
                                     {% if isSortable is defined and isSortable %}
                                         <th class="table-header-options line-left"><a href="#0">Ordonner</a></th>
                                     {% endif %}
@@ -45,7 +45,7 @@
                                     {% set indice = indice + 1 %}
                                     <tr>
                                         <td>{{ resource.title }}</td>
-                                        <td>{{ resource.titleSEO }}</td>
+                                        {#<td>{{ resource.titleSEO }}</td>#}
                                         {% if isSortable is defined and isSortable %}
                                             <td class="options-width">
                                                 {% if loop.first == false %}

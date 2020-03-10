@@ -44,7 +44,7 @@ class ResourceType extends AbstractType
                         ]
                 ]
             )
-            ->add(
+            /*->add(
                 'titleSEO',
                 TextType::class,
                 [
@@ -54,7 +54,7 @@ class ResourceType extends AbstractType
                         'class' => 'inp-form',
                         ]
                 ]
-            )
+            )*/
             ->add(
                 'picture',
                 FileType::class,
