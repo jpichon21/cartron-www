@@ -28,7 +28,7 @@
 Rentrer dans le conteneur php (ex. pour utiliser composer)  
 `docker-compose exec php bash`   
 `composer update`   
-Rentrer dans le conteneur mysql  
+Rentrer dans le conteneur mysql
 `docker-compose exec mysql bash` 
 
 ### PhpMyAdmin
@@ -69,7 +69,7 @@ Le déploiement de la branche staging est semi-automatique https://gitlab.com/lo
 
 
 ## PROD
-La prod N'EST PAS hébergée sur ns4, mais sur un mutu OVH toupourri.
+La prod N'EST PAS hébergée sur ns4, mais sur un mutu OVH (administré par logo).
 Le CI et/ou script deployer ne fonctionne pas pour cet environment (freeze au ssh connect).
 
 Donc mise en prod old school et à la main :
@@ -95,5 +95,6 @@ cd src_new
 git pull
 php bin/console cache:clear --env=prod
 php bin/console cache:warmup --env=prod
+php bin/console ckeditor:install
 ```
 NE PAS UTILISER `bin/console assets:install` :)

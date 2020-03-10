@@ -39,7 +39,7 @@ class PageController extends Controller
             "la-bourgogne-et-le-coeur"
         ];
         if (!in_array($page, $pages)) {
-            throw new NotFoundHttpException();
+            throw new NotFoundHttpException(sprintf('"%s" page not found.'));
         }
         return $this->render(
             'page/staticPage.html.twig',
@@ -49,3 +49,5 @@ class PageController extends Controller
         );
     }
 }
+//admin admin123456
+//AGENT agentcartronpro

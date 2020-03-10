@@ -83,7 +83,7 @@
                             </li>
                         </ul>
 
-                        <div class="nav-divider">&nbsp;</div>
+                        {#<div class="nav-divider">&nbsp;</div>
 
 
                         <ul {% if (app.request.get('_route') == 'admin_menu_pro' or app.request.get('_route') == 'admin_manage_sous_menu_degustation_pro' or app.request.get('_route') == 'admin_manage_sous_menu_produit_pro' or app.request.get('_route') == 'admin_produit_pro' or app.request.get('_route') == 'admin_manage_produits_pro' or app.request.get('_route') == 'admin_manage_degustation_pro' or app.request.get('_route') == 'admin_degustation_pro' or app.request.get('_route') == 'admin_sous_menu_produit_pro' or app.request.get('_route') == 'admin_manage_menu_pro') %} class="current" {% else %} class="select" {% endif %} ><li><a href="{{ path('admin_sous_menu_produit_pro') }}"><b>Espace pro</b><!--[if IE 7]><!--></a><!--<![endif]-->
@@ -97,7 +97,7 @@
                                 </div>
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
                             </li>
-                        </ul>
+                        </ul>#}
                         
                         <div class="nav-divider">&nbsp;</div>
 
