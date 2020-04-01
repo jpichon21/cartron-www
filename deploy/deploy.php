@@ -37,7 +37,7 @@
         ->hostname('ns4.logomotion-serveur.com')
         ->port('2222')
         ->set('account_dir', 'cartron')
-        ->set('branch', 'staging')
+        ->set('branch', 'prod')
         ->set('deploy_path', '/home/{{account_dir}}/src_staging');
 
 
