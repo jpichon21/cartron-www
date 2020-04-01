@@ -33,12 +33,12 @@
     // warning: staging & dev are on the ns4, production is on its own host
     host('prod.cartron.fr')
         ->stage('prod')
-        ->user('cartronfwi')
-        ->hostname('cartron.fr')
+        ->user('root')
+        ->hostname('ns4.logomotion-serveur.com')
         ->port('2222')
-        ->set('account_dir', 'cartronfwi')
-        ->set('branch', 'prod')
-        ->set('deploy_path', '/home/{{account_dir}}/src_prod');
+        ->set('account_dir', 'cartron')
+        ->set('branch', 'staging')
+        ->set('deploy_path', '/home/{{account_dir}}/src_staging');
 
 
     task('deploy', [
