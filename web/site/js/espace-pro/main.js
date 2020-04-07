@@ -91,7 +91,7 @@ var resizing = {
       }
     }
     
-    $('#pro .main').height(heigth_content);
+    //$('#pro .main').height(heigth_content);
     if(heigth_content > 710){
       
       $('#pro .main').find('#contenu-right.responsive').css({
