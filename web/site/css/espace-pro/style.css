@@ -2,7 +2,6 @@
  *Style Espace pro
 */
 
-
 /* - Layout - */
 #pro .content {
     width: 1120px;
@@ -11,7 +10,7 @@
   }
   
   #pro .main {
-    height: 710px;
+    padding-bottom: 150px;
   }
   
   /* - Menu - */
@@ -240,27 +239,9 @@
   #downloads ul li a span {
     color: #505e68;
   }
-  
-  #post-nav {
-    position: absolute;
-    top: 275px;
-    left: 50%;
-    margin-left: -310px;
-  }
-  
-  #post-nav a {
-    display: block;
-    width: 55px;
-    height: 10px;
-    text-indent: -9999px;
-    margin: 0;
-  }
-  
+
   #post-nav a[rel=next] {
     background: url(../../images/next-nav-slide.png) no-repeat 0 0;
-    position: absolute;
-    left: 880px;
-    top: 0;
   }
   
   #post-nav a[rel=prev]{
@@ -493,31 +474,32 @@
     color: #fff;
     margin: 0;
   }
-  
-  #controls {
-    position: absolute;
-    top: 325px;
-    left: 50%;
-    margin-left: -280px;
+
+  #contenu-right {
+    position: relative;
+    padding-bottom: 20px;
   }
-  
+
+  #post-nav a,
   #controls a {
+    position: absolute;
     display: block;
+    top: 50%;
     width: 55px;
     height: 10px;
     text-indent: -9999px;
     margin: 0;
   }
-  
+  #post-nav a[rel=next],
   #controls a.nextBtn {
     background: url(../../images/next-nav-slide.png) no-repeat 0 0;
-    position: absolute;
-    left: 800px;
-    top: 0;
+    right: 10px;
   }
-  
+
+  #post-nav a[rel=prev],
   #controls a.prevBtn {
     background: url(../../images/prev-nav-slide.png) no-repeat 0 0;
+    left: 313px;
   }
   
   /* - Language Selector - */
@@ -616,7 +598,9 @@
 
 
 @media all and (max-width: 1024px) {
-
+  #controls a.prevBtn {
+    left: 10px;
+  }
   .site{
     overflow-x: hidden;
   }
@@ -627,7 +611,7 @@
   }
 
   .content{
-    max-width: 500px;
+
   }
 
   .accueil-pro p, .accueil-pro  h1{
@@ -645,7 +629,8 @@
   }
 
   #menu-left{
-    position: relative ;
+    float: none;
+    position: relative;
     width: 100%;
     margin: 0px 0px 38px;
   }
@@ -657,11 +642,11 @@
 
   #menu-left #menu > li .sub {
     position: absolute;
-    top: 40px;
+    /*top: 40px;*/
     z-index: 999;
-    left: 0px;
+    left: 233px;
     display: none;
-}
+  }
 
   #contenu-right.accueil-pro{
     position: relative!important;
@@ -687,7 +672,6 @@
   }
 
   #pro .main{
-    height: 900px;
     margin: 0px;
     min-height: 800px;
   }
@@ -721,9 +705,16 @@
 
 
 @media all and (max-width: 568px) {
-
   #pro .main{
-    min-height: 620px;
+    //min-height: 620px;
+  }
+
+  #menu-left #menu > li .sub {
+    position: absolute;
+    top: 40px;
+    z-index: 999;
+    left: 0;
+    display: none;
   }
 
   #menu-left #menu > li .sub .sub-1{
