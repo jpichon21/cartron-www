@@ -13,9 +13,9 @@
         <div id="page-heading">
 
              {% if (app.request.get('_route') == 'admin_manage_produits_pro') %}
-            <h1>Ajouter produit (Espace pro) </h1>   
+            <h1>Ajouter un produit (Espace pro) </h1>   
             {% else %}
-            <h1>Ajouter dégustation (Espace pro) </h1>
+            <h1>Ajouter une dégustation (Espace pro) </h1>
             {% endif %} 
         </div>
         <!-- end page-heading -->
@@ -198,7 +198,7 @@
                                             <th>&nbsp;</th>
                                             <td valign="top">
                                                 {{ form_widget(form._token) }}
-                                                {{ form_widget(form.submit), { 'label': 'Valider' }) }}
+                                                {{ form_widget(form.submit, { 'label': 'Valider' }) }}
 
                                             </td>
                                             <td></td>

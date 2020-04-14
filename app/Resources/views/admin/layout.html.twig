@@ -42,7 +42,7 @@
                                 <div class="select_sub show">
                                     <ul class="sub">
                                         <li {% if app.request.get('_route') == 'admin_homepage' %}class="sub_show"{% endif %}><a href="{{ path('admin_homepage') }}">Liste des articles</a></li>
-                                        <li {% if app.request.get('_route') == 'admin_homepage_add_article' %}class="sub_show"{% endif %}><a href="{{ path('admin_homepage_add_article') }}">Ajouter article</a></li>
+                                        <li {% if app.request.get('_route') == 'admin_homepage_add_article' %}class="sub_show"{% endif %}><a href="{{ path('admin_homepage_add_article') }}">Ajouter un article</a></li>
                                         <li {% if app.request.get('_route') == 'admin_homepage_add_video' %}class="sub_show"{% endif %}><a href="{{ path('admin_homepage_add_video', { 'id': 1 }) }}">Video</a></li>
                                     </ul>
                                 </div>
@@ -57,9 +57,9 @@
                                 <div class="select_sub show">
                                     <ul class="sub">
                                         <li {% if app.request.get('_route') == 'admin_collection' %}class="sub_show"{% endif %}><a href="{{ path('admin_collection') }}">Collection</a></li>
-                                        <li {% if app.request.get('_route') == 'admin_add_collection' %}class="sub_show"{% endif %}><a href="{{ path('admin_add_collection') }}">Ajouter collection</a></li>
+                                        <li {% if app.request.get('_route') == 'admin_add_collection' %}class="sub_show"{% endif %}><a href="{{ path('admin_add_collection') }}">Ajouter une collection</a></li>
                                         <li {% if app.request.get('_route') == 'admin_sous_menu' %}class="sub_show"{% endif %}><a href="{{ path('admin_sous_menu') }}">Sous menu collection</a></li>
-                                        <li {% if app.request.get('_route') == 'admin_add_sous_menu' %}class="sub_show"{% endif %}><a href="{{ path('admin_add_sous_menu') }}">Ajouter sous menu collection</a></li>
+                                        <li {% if app.request.get('_route') == 'admin_add_sous_menu' %}class="sub_show"{% endif %}><a href="{{ path('admin_add_sous_menu') }}">Ajouter un sous menu collection</a></li>
                                     </ul>
                                 </div>
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -74,9 +74,9 @@
                                 <div class="select_sub show">
                                     <ul class="sub">
                                         <li {% if app.request.get('_route') == 'admin_degustation' %}class="sub_show"{% endif %}><a href="{{ path('admin_degustation') }}">Dégustation</a></li>
-                                        <li {% if app.request.get('_route') == 'admin_add_degustation' %}class="sub_show"{% endif %}><a href="{{ path('admin_add_degustation') }}">Ajouter Dégustation</a></li>
+                                        <li {% if app.request.get('_route') == 'admin_add_degustation' %}class="sub_show"{% endif %}><a href="{{ path('admin_add_degustation') }}">Ajouter une Dégustation</a></li>
                                         <li {% if app.request.get('_route') == 'admin_sous_menu_degustation' %}class="sub_show"{% endif %}><a href="{{ path('admin_sous_menu_degustation') }}">Sous menu dégustation</a></li>
-                                        <li {% if app.request.get('_route') == 'admin_add_sous_menu_degustation' %}class="sub_show"{% endif %}><a href="{{ path('admin_add_sous_menu_degustation') }}">Ajouter sous menu dégustation</a></li>
+                                        <li {% if app.request.get('_route') == 'admin_add_sous_menu_degustation' %}class="sub_show"{% endif %}><a href="{{ path('admin_add_sous_menu_degustation') }}">Ajouter un sous menu dégustation</a></li>
                                     </ul>
                                 </div>
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -106,7 +106,7 @@
                                 <div class="select_sub show">
                                     <ul class="sub">
                                         <li {% if (app.request.get('_route') == 'liste_pays')%}class="sub_show"{% endif %}><a href="{{ path('liste_pays') }}">Pays</a></li>
-                                        <li {% if (app.request.get('_route') == 'add_pays')  %}class="sub_show"{% endif %}><a href="{{ path('add_pays') }}">Ajouter pays</a></li>
+                                        <li {% if (app.request.get('_route') == 'add_pays')  %}class="sub_show"{% endif %}><a href="{{ path('add_pays') }}">Ajouter un pays</a></li>
                                     </ul>
                                 </div>
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -120,7 +120,7 @@
                                 <div class="select_sub show">
                                     <ul class="sub">
                                         <li {% if (app.request.get('_route') == 'admin_category')%}class="sub_show"{% endif %}><a href="{{ path('admin_category') }}">Catégorie</a></li>
-                                        <li {% if (app.request.get('_route') == 'admin_add_category')  %}class="sub_show"{% endif %}><a href="{{ path('admin_add_category') }}">Ajouter catégorie</a></li>
+                                        <li {% if (app.request.get('_route') == 'admin_add_category')  %}class="sub_show"{% endif %}><a href="{{ path('admin_add_category') }}">Ajouter une catégorie</a></li>
                                     </ul>
                                 </div>
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
