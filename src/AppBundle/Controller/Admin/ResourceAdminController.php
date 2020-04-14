@@ -49,7 +49,7 @@ class ResourceAdminController extends Controller
             $resources = $category->getResources();
             $isSortable = true;
         } else {
-            $resources = $this->resourceRepository->findAll();
+            $resources = $this->resourceRepository->findBy([], ['title' => 'ASC']);
             $isSortable = false;
         }
 
