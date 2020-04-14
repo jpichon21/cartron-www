@@ -98,8 +98,8 @@ class TradeSpaceController extends Controller
         $category = $resource->getCategory();
         $position = $resource->getPosition();
 
-        $resourcePrev = $this->resourceRepository->findOneByPosition($position - 1);
-        $resourceNext = $this->resourceRepository->findOneByPosition($position + 1);
+        $resourcePrev = $this->resourceRepository->findOneBy(['position' => $position - 1, 'category' => $category->getId()]);
+        $resourceNext = $this->resourceRepository->findOneBy(['position' => $position + 1, 'category' => $category->getId()]);
         return $this->render(
             'espace-pro/resource.html.twig',
             [
