@@ -12,3 +12,6 @@ parameters:
     mailer_password: null
     secret: ThisTokenIsNotSoSecretChangeIt
     locale: 'fr'
+    email_from: "production@logomotion.fr"
+    email_to: "cartron@cartron.fr"
+    uploadDirectory: '%kernel.project_dir%/web/upload'
