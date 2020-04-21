@@ -7,7 +7,7 @@
     <div id="page-heading">
         
         {% if isEdit %}
-            <h1>Modifier Catégorie </h1>
+            <h1>Modifier une Catégorie </h1>
             {% if locale == 'en' %}
                 <a href="{{ path('admin_edit_category', { 'category': category.id, 'locale': 'fr' }) }}"><img class="flag flagOpacity" src="{{ asset('admin/images/shared/flag-france.svg')}}"/></a>
                 <a href="{{ path('admin_edit_category', { 'category': category.id, 'locale': 'en' }) }}"><img class="flag" src="{{ asset('admin/images/shared/flag-england.svg')}}"/></a>
@@ -16,7 +16,7 @@
                 <a href="{{ path('admin_edit_category', { 'category': category.id, 'locale': 'en' }) }}"><img class="flag flagOpacity" src="{{ asset('admin/images/shared/flag-england.svg')}}"/></a>
             {% endif %}
         {% else %}
-            <h1>Ajouter Catégorie </h1>
+            <h1>Ajouter une Catégorie </h1>
         {% endif %}
     </div>
     <!-- end page-heading -->
@@ -58,7 +58,7 @@
                             <tr>
                                 <th>&nbsp;</th>
                                 <td valign="top">
-                                    {{ form_widget(form.submit) }}
+                                    {{ form_widget(form.submit, { 'label': 'Valider' }) }}
                                 </td>
                                 <td></td>
                             </tr>

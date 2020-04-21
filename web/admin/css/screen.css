@@ -672,7 +672,7 @@ a:hover.action-delete {
 /* FORM ------------------------------------------------------- */
 
 .form-submit {
-    background: url(../images/forms/form_submit.gif) no-repeat;
+    background: url(../images/forms/form_valider.gif) no-repeat;
     border: none;
     cursor: pointer;
     display: block;

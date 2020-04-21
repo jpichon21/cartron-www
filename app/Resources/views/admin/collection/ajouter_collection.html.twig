@@ -12,7 +12,7 @@
 
         <!--  start page-heading -->
         <div id="page-heading">
-            <h1>Ajouter collection </h1>
+            <h1>Ajouter une collection </h1>
         </div>
         <!-- end page-heading -->
 
@@ -64,7 +64,7 @@
                                     <tr>
                                         <th>&nbsp;</th>
                                         <td valign="top">
-                                        {{ form_widget(form.submit) }}
+                                        {{ form_widget(form.submit, { 'label': 'Valider' }) }}
                                         {{ form_rest(form) }} 
                                         </td>
                                         <td></td>
