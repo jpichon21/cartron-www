@@ -35,10 +35,11 @@ class CryptPasswordsCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $users = $this->managerRegistry->getRepository(User::class)->findAll();
+        $accountsDoNotUpdate = array('export', 'agent', 'admin');
 
         /** @var User $user */
         foreach ($users as $user) {
-            if (!empty($user->getPassword())) {
+            if (!empty($user->getPassword()) && !in_array($user->getLogin(), $accountsDoNotUpdate)) {
                 $passwordEncoded = $this->encoder->encodePassword($user, $user->getPassword());
                 $user->setPassword($passwordEncoded);
             }
