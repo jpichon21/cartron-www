@@ -146,24 +146,4 @@ class DefaultController extends Controller
     {
         return $this->render('privacy_policy.html.twig');
     }
-
-    /**
-     * @Route(path="/oneshot/crypt-passwords", name="crypt_passwords")
-     */
-    public function cryptPasswordsAction(UserPasswordEncoderInterface $encoder)
-    {
-        $users = $this->getDoctrine()->getManager()->getRepository(User::class)->findAll();
-        $accountsDoNotUpdate = array('export', 'agent', 'admin');
-
-        /** @var User $user */
-        foreach ($users as $user) {
-            if (!empty($user->getPassword()) && !in_array($user->getLogin(), $accountsDoNotUpdate)) {
-                $passwordEncoded = $encoder->encodePassword($user, $user->getPassword());
-                $user->setPassword($passwordEncoded);
-            }
-        }
-
-        $this->getDoctrine()->getManager()->flush();
-        return new Response('OK');
-    }
 }
