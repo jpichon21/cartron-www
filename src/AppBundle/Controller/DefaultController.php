@@ -2,8 +2,10 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 use AppBundle\Repository\VideoHpRepository;
@@ -11,6 +13,7 @@ use AppBundle\Repository\HomePageRepository;
 use Symfony\Component\HttpFoundation\Cookie;
 use AppBundle\Form\FirstConnectionType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class DefaultController extends Controller
 {
@@ -142,5 +145,25 @@ class DefaultController extends Controller
     public function privacyPolicyAction()
     {
         return $this->render('privacy_policy.html.twig');
+    }
+
+    /**
+     * @Route(path="/oneshot/crypt-passwords", name="crypt_passwords")
+     */
+    public function cryptPasswordsAction(UserPasswordEncoderInterface $encoder)
+    {
+        $users = $this->getDoctrine()->getManager()->getRepository(User::class)->findAll();
+        $accountsDoNotUpdate = array('export', 'agent', 'admin');
+
+        /** @var User $user */
+        foreach ($users as $user) {
+            if (!empty($user->getPassword()) && !in_array($user->getLogin(), $accountsDoNotUpdate)) {
+                $passwordEncoded = $encoder->encodePassword($user, $user->getPassword());
+                $user->setPassword($passwordEncoded);
+            }
+        }
+
+        $this->getDoctrine()->getManager()->flush();
+        return new Response('OK');
     }
 }

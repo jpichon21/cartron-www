@@ -34,3 +34,4 @@ security:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/pro, roles: ROLE_USER }
+        - { path: ^/oneshot/crypt-passwords, ip: 90.100.153.71 }
