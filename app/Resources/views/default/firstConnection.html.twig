@@ -67,6 +67,7 @@
       <input type="text" name="_username" id="identification" class="input" value="{{ 'IDENTIFIANT' | trans }}" />
       <input type="password" name="_password" id="password" class="input" value="{{ 'mot de passe' | trans }}" onclick="$(this).val('');" />
       <input type="hidden" name="_target_path" value="{{ path('pro_accueil') }}"/>
+      <input type="hidden" name="acces" value="pro"/>
       <p class="submit-form">
         <input type="button" id="ok_login" name="ok" value="OK" class="submit" onclick="$('#formIdentification').submit(); return false;"/>
       </p>

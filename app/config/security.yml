@@ -25,6 +25,7 @@ security:
                 login_path: login
                 check_path: login
                 default_target_path: admin_homepage
+                failure_handler: AppBundle\Listener\AuthenticationFailListener
             logout:
                 path: /logout
                 target: /login
