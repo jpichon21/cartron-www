@@ -2,6 +2,7 @@
 namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -23,16 +24,22 @@ class SecurityController extends Controller
      *
      * @return View
      */
-    public function loginAction()
+    public function loginAction(Request $request)
     {
         $error = $this->authenticationUtils->getLastAuthenticationError();
         $lastUsername = $this->authenticationUtils->getLastUsername();
+
+        $access = 'admin';
+        if ($request->getSession()->get('acces') == 'pro') {
+            $access = 'pro';
+        }
 
         return $this->render(
             'login.html.twig',
             [
                 'last_username' => $lastUsername,
-                'error' => $error
+                'error' => $error,
+                'access' => $access
             ]
         );
     }

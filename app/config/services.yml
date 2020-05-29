@@ -110,7 +110,10 @@ services:
         arguments: ['@router.default']
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: checkConsent }
+            - { name: kernel.event_listener, event: kernel.request, method: checkConsent }
 
+    AppBundle\Listener\AuthenticationFailListener:
+        arguments: ['@kernel', '@security.http_utils', [], '@logger', '@router']
     # Twig\Extension\AbstractExtension
     twig.extension.text:
         class: Twig_Extensions_Extension_Text

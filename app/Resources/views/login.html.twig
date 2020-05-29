@@ -33,6 +33,9 @@
 					<td class="separator"></td>
 				</tr>
 			</table>
+			{% if access == 'pro' %}
+				<input type="hidden" name="_target_path" value="{{ path('pro_accueil') }}"/>
+			{% endif %}
         <form>
 		<a id="to_login" href="{{ path('request_access') }}">{{ "Demander un accès à l'espace professionnel" |trans}} →</a>
 	</div>

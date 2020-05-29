@@ -26,6 +26,7 @@ class ConsentListener
                 && $targetRoute !== 'login'
                 && $targetRoute !== 'admin_homepage'
                 && $targetRoute !== 'choose_locale'
+                && substr($targetRoute, 0, 3) !== 'pro'
                 ) {
                 if (!$event->getRequest()->getSession()->get('firstConnection')
                 && !$event->getRequest()->cookies->has('firstConnection')
