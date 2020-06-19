@@ -116,6 +116,7 @@ class TradeSpaceController extends Controller
     {
         $ret = [];
         $categories = $this->categoryRepository->findBy(['lvl' => 0], ['position' => 'ASC']);
+
         foreach ($categories as $category) {
             $cat = [];
             $cat['parent'] = $category;
