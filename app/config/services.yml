@@ -1,6 +1,8 @@
 # Learn more about services, parameters and containers at
 # https://symfony.com/doc/current/service_container.html
 parameters:
+    email_from: "production@logomotion.fr"
+    email_to: "cartron@cartron.fr"
     #parameter_name: value
 
 services:
@@ -108,7 +110,10 @@ services:
         arguments: ['@router.default']
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: checkConsent }
+            - { name: kernel.event_listener, event: kernel.request, method: checkConsent }
 
+    AppBundle\Listener\AuthenticationFailListener:
+        arguments: ['@kernel', '@security.http_utils', [], '@logger', '@router']
     # Twig\Extension\AbstractExtension
     twig.extension.text:
         class: Twig_Extensions_Extension_Text
