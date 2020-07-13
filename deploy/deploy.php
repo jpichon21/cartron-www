@@ -38,7 +38,7 @@
         ->port('2222')
         ->set('account_dir', 'cartronfwi')
         ->set('branch', 'prod')
-        ->set('deploy_path', '/home/{{account_dir}}/src_prod');
+        ->set('deploy_path', '/home/{{account_dir}}/src_new');
 
 
     task('deploy', [
