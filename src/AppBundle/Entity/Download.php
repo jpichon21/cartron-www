@@ -92,9 +92,7 @@ class Download
      */
     public function setFile($file)
     {
-        if ($file == null) {
-            $this->file = 'download1554360080_colorpicker_hex.png';
-        } else {
+        if ($file != null) {
             if ($this->file != null) {
                 if (file_exists('upload/'.$this->file)) {
                     unlink('upload/'.$this->file);
