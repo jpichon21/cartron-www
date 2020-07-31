@@ -69,7 +69,7 @@
         </div>
         <div class="menu-top-right">
           <a href="{{ path('contact') }}" class="contactez-nous">{{ "Contactez-nous" | trans }}</a>
-          <a href="/pro{% if(app.request.locale =='en') %}/en{%endif %}" class="espace-pro-header">{{ "Espace" | trans }}<br /><strong>{{ "professionnel" | trans }}</strong></a>
+          <a href="/pro" class="espace-pro-header">{{ "Espace" | trans }}<br /><strong>{{ "professionnel" | trans }}</strong></a>
         </div>
       </div>
       {% block body %}{% endblock %}
