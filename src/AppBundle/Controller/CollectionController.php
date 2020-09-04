@@ -46,6 +46,7 @@ class CollectionController extends Controller
         $collectionsArray[] = $collections[3];
         $collectionsArray[] = $collections[4];
         $collectionsArray[] = $collections[5];
+        $collectionsArray[] = $collections[8];
         $collectionsArray[] = $collections[7];
 
         $sousMenus = $this->sousMenuRepository->findBy(
@@ -79,6 +80,7 @@ class CollectionController extends Controller
         $collectionsArray[] = $collections[3];
         $collectionsArray[] = $collections[4];
         $collectionsArray[] = $collections[5];
+        $collectionsArray[] = $collections[8];
         $collectionsArray[] = $collections[7];
     
 
