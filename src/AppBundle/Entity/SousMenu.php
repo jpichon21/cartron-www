@@ -42,9 +42,9 @@ class SousMenu
     private $elaboration;
 
     /**
-     * @var integer
+     * @var float
      *
-     * @ORM\Column(name="degre", type="integer", nullable=true)
+     * @ORM\Column(name="degre", type="float", nullable=true)
      */
     private $degre;
 
@@ -273,7 +273,7 @@ class SousMenu
     /**
      * Set degre
      *
-     * @param integer $degre
+     * @param float $degre
      * @return SousMenu
      */
     public function setDegre($degre)
