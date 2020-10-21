@@ -16,7 +16,7 @@
             <p>{{ resource.description }}</p>
             <div id="downloads">
                 <ul>
-                {% for download in resource.downloads %}
+                {% for download in downloads %}
                     {% if download.locale == app.request.locale %}
                         <li>
                             <a target="_blank" download="{{ download.title }}" href="{{ asset('upload/'~download.file) }}">
