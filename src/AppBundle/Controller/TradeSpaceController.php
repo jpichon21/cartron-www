@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Download;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Repository\ResourceRepository;
@@ -9,6 +10,7 @@ use AppBundle\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
 use AppBundle\Entity\Category;
 use AppBundle\Entity\Resource;
+use Symfony\Component\HttpFoundation\Request;
 
 class TradeSpaceController extends Controller
 {
@@ -70,7 +72,7 @@ class TradeSpaceController extends Controller
         );
 
         $resources = $category->getResources();
-        
+
         return $this->render(
             'espace-pro/list_resources.html.twig',
             [
@@ -87,7 +89,7 @@ class TradeSpaceController extends Controller
      *
      * @return View
      */
-    public function resourceAction(Resource $resource)
+    public function resourceAction(Request $request, Resource $resource)
     {
         $categoriesMenu = $this->generateCategoriesTree();
         $resourcesMenu = $this->resourceRepository->findBy(
@@ -100,11 +102,42 @@ class TradeSpaceController extends Controller
 
         $resourcePrev = $this->resourceRepository->findOneBy(['position' => $position - 1, 'category' => $category->getId()]);
         $resourceNext = $this->resourceRepository->findOneBy(['position' => $position + 1, 'category' => $category->getId()]);
+
+        $downloads = $resource->getDownloads()->toArray();
+        $downloadsOrdered = [];
+        $productInformation = new Download();
+        $packshot = new Download();
+        $productTransport = new Download();
+        /** @var Download $download */
+        foreach ($downloads as $key => $download) {
+            if ($download->getLocale() === $request->getLocale()) {
+                if (strpos($download->getTitle(), 'FICHE PRODUIT') !== false) {
+                    $productInformation = $download;
+                    unset($downloads[$key]);
+                }
+
+                if (strpos($download->getTitle(), 'PACKSHOT') !== false) {
+                    $packshot = $download;
+                    unset($downloads[$key]);
+                }
+
+                if (strpos($download->getTitle(), 'FICHE LOGISTIQUE') !== false) {
+                    $productTransport = $download;
+                    unset($downloads[$key]);
+                }
+            }
+        }
+
+        $downloadsOrdered[] = $productInformation;
+        $downloadsOrdered[] = $packshot;
+        $downloadsOrdered[] = $productTransport;
+
         return $this->render(
             'espace-pro/resource.html.twig',
             [
                 'category' => $category,
                 'resource' => $resource,
+                'downloads' => array_merge($downloadsOrdered, $downloads),
                 'prev' => $resourcePrev,
                 'next' => $resourceNext,
                 'categoriesMenu' => $categoriesMenu,
