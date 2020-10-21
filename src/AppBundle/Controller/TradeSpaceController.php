@@ -105,25 +105,32 @@ class TradeSpaceController extends Controller
 
         $downloads = $resource->getDownloads()->toArray();
         $downloadsOrdered = [];
+        $productInformation = new Download();
+        $packshot = new Download();
+        $productTransport = new Download();
         /** @var Download $download */
         foreach ($downloads as $key => $download) {
             if ($download->getLocale() === $request->getLocale()) {
                 if (strpos($download->getTitle(), 'FICHE PRODUIT') !== false) {
-                    $downloadsOrdered[0] = $download;
+                    $productInformation = $download;
                     unset($downloads[$key]);
                 }
 
                 if (strpos($download->getTitle(), 'PACKSHOT') !== false) {
-                    $downloadsOrdered[1] = $download;
+                    $packshot = $download;
                     unset($downloads[$key]);
                 }
 
                 if (strpos($download->getTitle(), 'FICHE LOGISTIQUE') !== false) {
-                    $downloadsOrdered[2] = $download;
+                    $productTransport = $download;
                     unset($downloads[$key]);
                 }
             }
         }
+
+        $downloadsOrdered[] = $productInformation;
+        $downloadsOrdered[] = $packshot;
+        $downloadsOrdered[] = $productTransport;
 
         return $this->render(
             'espace-pro/resource.html.twig',
