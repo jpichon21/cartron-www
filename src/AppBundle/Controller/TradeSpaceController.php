@@ -110,20 +110,22 @@ class TradeSpaceController extends Controller
         $productTransport = new Download();
         /** @var Download $download */
         foreach ($downloads as $key => $download) {
-            if ($download->getLocale() === $request->getLocale()) {
-                if (strpos($download->getTitle(), 'FICHE PRODUIT') !== false) {
-                    $productInformation = $download;
-                    unset($downloads[$key]);
-                }
+            if (!is_null($category->getParent()) && $category->getParent()->getIdentifiant() === 'produits') {
+                if ($download->getLocale() === $request->getLocale()) {
+                    if (strpos($download->getTitle(), 'FICHE PRODUIT') !== false) {
+                        $productInformation = $download;
+                        unset($downloads[$key]);
+                    }
 
-                if (strpos($download->getTitle(), 'PACKSHOT') !== false) {
-                    $packshot = $download;
-                    unset($downloads[$key]);
-                }
+                    if (strpos($download->getTitle(), 'PACKSHOT') !== false) {
+                        $packshot = $download;
+                        unset($downloads[$key]);
+                    }
 
-                if (strpos($download->getTitle(), 'FICHE LOGISTIQUE') !== false) {
-                    $productTransport = $download;
-                    unset($downloads[$key]);
+                    if (strpos($download->getTitle(), 'FICHE LOGISTIQUE') !== false) {
+                        $productTransport = $download;
+                        unset($downloads[$key]);
+                    }
                 }
             }
         }
