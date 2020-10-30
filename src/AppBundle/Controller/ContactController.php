@@ -32,7 +32,7 @@ class ContactController extends Controller
     public function contactAction(Request $request, $status)
     {
         $form = $this->createForm(ContactType::class);
-        
+
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
             $data = $form->getData();
@@ -48,16 +48,16 @@ class ContactController extends Controller
                     $message;
 
             $message = (new \Swift_Message('Demande de contact'))
-                ->setFrom($this->getParameter('email_from'))
+                ->setFrom($email)
                 ->setTo($this->getParameter('email_to'))
                 ->setBody($content)
                 ->setReplyTo($email);
 
             $this->mailer->send($message);
-            
+
             return $this->redirectToRoute('contact', ['status' => 'success']);
         }
-        
+
         return $this->render(
             'contact/contact.html.twig',
             [
