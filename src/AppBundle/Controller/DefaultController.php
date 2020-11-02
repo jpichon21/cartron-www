@@ -112,7 +112,7 @@ class DefaultController extends Controller
         }
         $url = $request->headers->get('referer');
         if (empty($url)) {
-            $url = $this->get('router')->generateUrl('homepage');
+            $url = $this->get('router')->generate('homepage');
         }
         return new RedirectResponse($url);
     }
