@@ -105,34 +105,54 @@ class TradeSpaceController extends Controller
 
         $downloads = $resource->getDownloads()->toArray();
         $downloadsOrdered = [];
-        $productInformation = new Download();
-        $packshot = new Download();
-        $productTransport = new Download();
+        $productInformation = [];
+        $packshot = [];
+        $productTransport = [];
         /** @var Download $download */
         foreach ($downloads as $key => $download) {
             if (!is_null($category->getParent()) && $category->getParent()->getIdentifiant() === 'produits') {
                 if ($download->getLocale() === $request->getLocale()) {
                     if (strpos($download->getTitle(), 'FICHE PRODUIT') !== false) {
-                        $productInformation = $download;
+                        $productInformation[] = $download;
                         unset($downloads[$key]);
                     }
 
                     if (strpos($download->getTitle(), 'PACKSHOT') !== false) {
-                        $packshot = $download;
+                        $packshot[] = $download;
                         unset($downloads[$key]);
                     }
 
                     if (strpos($download->getTitle(), 'FICHE LOGISTIQUE') !== false) {
-                        $productTransport = $download;
+                        $productTransport[] = $download;
                         unset($downloads[$key]);
                     }
                 }
             }
         }
 
-        $downloadsOrdered[] = $productInformation;
-        $downloadsOrdered[] = $packshot;
-        $downloadsOrdered[] = $productTransport;
+        if (empty($productInformation)) {
+            $productInformation = new Download();
+        }
+
+        if (empty($packshot)) {
+            $packshot = new Download();
+        }
+
+        if (empty($productTransport)) {
+            $productTransport = new Download();
+        }
+
+        foreach ($productInformation as $productInfo) {
+            $downloadsOrdered[] = $productInfo;
+        }
+
+        foreach ($packshot as $packshotValue) {
+            $downloadsOrdered[] = $packshotValue;
+        }
+
+        foreach ($productTransport as $productTransportValue) {
+            $downloadsOrdered[] = $productTransportValue;
+        }
 
         return $this->render(
             'espace-pro/resource.html.twig',
