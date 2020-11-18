@@ -112,37 +112,35 @@ class TradeSpaceController extends Controller
         foreach ($downloads as $key => $download) {
             if (!is_null($category->getParent()) && $category->getParent()->getIdentifiant() === 'produits') {
                 if ($download->getLocale() === $request->getLocale()) {
-                    if ($request->getLocale() === 'fr') {
-                        if (strpos($download->getTitle(), 'FICHE PRODUIT') !== false) {
-                            $productInformation[] = $download;
-                            unset($downloads[$key]);
-                        }
-
-                        if (strpos($download->getTitle(), 'PACKSHOT') !== false) {
-                            $packshot[] = $download;
-                            unset($downloads[$key]);
-                        }
-
-                        if (strpos($download->getTitle(), 'FICHE LOGISTIQUE') !== false) {
-                            $productTransport[] = $download;
-                            unset($downloads[$key]);
-                        }
-                    } else {
-                        if (strpos($download->getTitle(), 'PRODUCT INFORMATION') !== false) {
-                            $productInformation[] = $download;
-                            unset($downloads[$key]);
-                        }
-
-                        if (strpos($download->getTitle(), 'PACKSHOT') !== false) {
-                            $packshot[] = $download;
-                            unset($downloads[$key]);
-                        }
-
-                        if (strpos($download->getTitle(), 'TECHNICAL INFORMATION') !== false) {
-                            $productTransport[] = $download;
-                            unset($downloads[$key]);
-                        }
+                    if (strpos($download->getTitle(), 'FICHE PRODUIT') !== false) {
+                        $productInformation[] = $download;
+                        unset($downloads[$key]);
                     }
+
+                    if (strpos($download->getTitle(), 'PACKSHOT') !== false) {
+                        $packshot[] = $download;
+                        unset($downloads[$key]);
+                    }
+
+                    if (strpos($download->getTitle(), 'FICHE LOGISTIQUE') !== false) {
+                        $productTransport[] = $download;
+                        unset($downloads[$key]);
+                    }
+                }
+            } else if (!is_null($category->getParent()) && $category->getParent()->getIdentifiant() === 'products') {
+                if (strpos($download->getTitle(), 'PRODUCT INFORMATION') !== false) {
+                    $productInformation[] = $download;
+                    unset($downloads[$key]);
+                }
+
+                if (strpos($download->getTitle(), 'PACKSHOT') !== false) {
+                    $packshot[] = $download;
+                    unset($downloads[$key]);
+                }
+
+                if (strpos($download->getTitle(), 'TECHNICAL INFORMATION') !== false) {
+                    $productTransport[] = $download;
+                    unset($downloads[$key]);
                 }
             }
         }
