@@ -45,13 +45,16 @@ class TradeSpaceController extends Controller
      *
      * @return View
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $categoriesMenu = $this->generateCategoriesTree();
+        $categoriesMenu = $this->filterCategoriesForLocale($request, $categoriesMenu);
         $resourcesMenu = $this->resourceRepository->findBy(
             [],
             ['position' => 'ASC']
         );
+
+
         return $this->render(
             'espace-pro/accueil.html.twig',
             ['categoriesMenu' => $categoriesMenu, 'resourcesMenu' => $resourcesMenu]
@@ -63,9 +66,10 @@ class TradeSpaceController extends Controller
      *
      * @return View
      */
-    public function listResourcesAction(Category $category)
+    public function listResourcesAction(Request $request, Category $category)
     {
         $categoriesMenu = $this->generateCategoriesTree();
+        $categoriesMenu = $this->filterCategoriesForLocale($request, $categoriesMenu);
         $resourcesMenu = $this->resourceRepository->findBy(
             [],
             ['position' => 'ASC']
@@ -92,6 +96,7 @@ class TradeSpaceController extends Controller
     public function resourceAction(Request $request, Resource $resource)
     {
         $categoriesMenu = $this->generateCategoriesTree();
+        $categoriesMenu = $this->filterCategoriesForLocale($request, $categoriesMenu);
         $resourcesMenu = $this->resourceRepository->findBy(
             [],
             ['position' => 'ASC']
@@ -126,6 +131,21 @@ class TradeSpaceController extends Controller
                         $productTransport[] = $download;
                         unset($downloads[$key]);
                     }
+                }
+            } else if (!is_null($category->getParent()) && $category->getParent()->getIdentifiant() === 'products') {
+                if (strpos($download->getTitle(), 'PRODUCT INFORMATION') !== false) {
+                    $productInformation[] = $download;
+                    unset($downloads[$key]);
+                }
+
+                if (strpos($download->getTitle(), 'PACKSHOT') !== false) {
+                    $packshot[] = $download;
+                    unset($downloads[$key]);
+                }
+
+                if (strpos($download->getTitle(), 'TECHNICAL INFORMATION') !== false) {
+                    $productTransport[] = $download;
+                    unset($downloads[$key]);
                 }
             }
         }
@@ -167,6 +187,7 @@ class TradeSpaceController extends Controller
             ]
         );
     }
+
     private function generateCategoriesTree()
     {
         $ret = [];
@@ -181,5 +202,17 @@ class TradeSpaceController extends Controller
             array_push($ret, $cat);
         }
         return $ret;
+    }
+
+    private function filterCategoriesForLocale(Request $request, array $categoriesMenu)
+    {
+        if ($request->getLocale() === 'en') {
+            foreach ($categoriesMenu as $key => $categoryMenu) {
+                if (array_key_exists('parent', $categoryMenu) && $categoryMenu['parent']->getIdentifiant() === 'others-brand') {
+                    unset($categoriesMenu[$key]);
+                }
+            }
+        }
+        return $categoriesMenu;
     }
 }
