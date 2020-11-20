@@ -223,7 +223,7 @@ class TradeSpaceController extends Controller
     {
         if ($request->getLocale() === 'en') {
             foreach ($resourcesMenu as $key => $resourceMenu) {
-                if (in_array($resourceMenu->getId(), [763, 819, 795, 782, 700])) {
+                if (in_array($resourceMenu->getId(), [763, 819, 795, 782, 700, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980])) {
                     unset($resourcesMenu[$key]);
                 }
             }
