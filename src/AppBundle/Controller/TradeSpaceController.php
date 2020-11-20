@@ -53,6 +53,7 @@ class TradeSpaceController extends Controller
             [],
             ['position' => 'ASC']
         );
+        $resourcesMenu = $this->filterResourcesForLocale($request, $resourcesMenu);
 
 
         return $this->render(
@@ -74,6 +75,7 @@ class TradeSpaceController extends Controller
             [],
             ['position' => 'ASC']
         );
+        $resourcesMenu = $this->filterResourcesForLocale($request, $resourcesMenu);
 
         $resources = $category->getResources();
 
@@ -101,6 +103,7 @@ class TradeSpaceController extends Controller
             [],
             ['position' => 'ASC']
         );
+        $resourcesMenu = $this->filterResourcesForLocale($request, $resourcesMenu);
 
         $category = $resource->getCategory();
         $position = $resource->getPosition();
@@ -214,5 +217,17 @@ class TradeSpaceController extends Controller
             }
         }
         return $categoriesMenu;
+    }
+
+    private function filterResourcesForLocale(Request $request, array $resourcesMenu)
+    {
+        if ($request->getLocale() === 'en') {
+            foreach ($resourcesMenu as $key => $resourceMenu) {
+                if (in_array($resourceMenu->getId(), [763, 819, 795, 782, 700])) {
+                    unset($resourcesMenu[$key]);
+                }
+            }
+        }
+        return $resourcesMenu;
     }
 }
