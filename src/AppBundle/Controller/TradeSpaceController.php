@@ -76,8 +76,7 @@ class TradeSpaceController extends Controller
             ['position' => 'ASC']
         );
         $resourcesMenu = $this->filterResourcesForLocale($request, $resourcesMenu);
-
-        $resources = $category->getResources();
+        $resources = $this->filterResourcesForLocale($request, $category->getResources());
 
         return $this->render(
             'espace-pro/list_resources.html.twig',
@@ -207,7 +206,7 @@ class TradeSpaceController extends Controller
         return $ret;
     }
 
-    private function filterCategoriesForLocale(Request $request, array $categoriesMenu)
+    private function filterCategoriesForLocale(Request $request, $categoriesMenu)
     {
         if ($request->getLocale() === 'en') {
             foreach ($categoriesMenu as $key => $categoryMenu) {
@@ -219,7 +218,7 @@ class TradeSpaceController extends Controller
         return $categoriesMenu;
     }
 
-    private function filterResourcesForLocale(Request $request, array $resourcesMenu)
+    private function filterResourcesForLocale(Request $request, $resourcesMenu)
     {
         if ($request->getLocale() === 'en') {
             foreach ($resourcesMenu as $key => $resourceMenu) {
