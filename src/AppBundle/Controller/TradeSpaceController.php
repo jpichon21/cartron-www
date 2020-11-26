@@ -107,8 +107,13 @@ class TradeSpaceController extends Controller
         $category = $resource->getCategory();
         $position = $resource->getPosition();
 
-        $resourcePrev = $this->resourceRepository->findOneBy(['position' => $position - 1, 'category' => $category->getId()]);
-        $resourceNext = $this->resourceRepository->findOneBy(['position' => $position + 1, 'category' => $category->getId()]);
+        if ($request->getLocale() === 'en') {
+            $resourcePrev = $this->resourceRepository->prevResourceFilteredForEnglish($position, $category->getId());
+            $resourceNext = $this->resourceRepository->nextResourceFilteredForEnglish($position, $category->getId());
+        } else {
+            $resourcePrev = $this->resourceRepository->findOneBy(['position' => $position - 1, 'category' => $category->getId()]);
+            $resourceNext = $this->resourceRepository->findOneBy(['position' => $position + 1, 'category' => $category->getId()]);
+        }
 
         $downloads = $resource->getDownloads()->toArray();
         $downloadsOrdered = [];
@@ -221,8 +226,9 @@ class TradeSpaceController extends Controller
     private function filterResourcesForLocale(Request $request, $resourcesMenu)
     {
         if ($request->getLocale() === 'en') {
+            $resourceIdsIgnoredForEnglish = [763, 819, 795, 782, 700, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980];
             foreach ($resourcesMenu as $key => $resourceMenu) {
-                if (in_array($resourceMenu->getId(), [763, 819, 795, 782, 700, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980])) {
+                if (in_array($resourceMenu->getId(), $resourceIdsIgnoredForEnglish)) {
                     unset($resourcesMenu[$key]);
                 }
             }
