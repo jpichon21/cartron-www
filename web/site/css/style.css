@@ -1900,6 +1900,18 @@ a {
   padding: 0;
   background-position: right top;
 }
+.footer .langues-reseaux .reseaux li a.instagram {
+  display: block;
+  height: 22px;
+  width: 21px;
+  text-indent: -9999px;
+  background-image: url(../images/instagram.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  margin: 0 0 0 3px;
+  padding: 0;
+  background-position: right top;
+}
 .footer .menu-footer.menu-footer-01 {
   background: url(../images/bg-footer-01.gif) no-repeat center center;
 }
