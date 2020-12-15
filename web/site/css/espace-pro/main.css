@@ -269,6 +269,17 @@ body#agegate{
     margin:0 0 0 3px;
     padding:0;
 }
+.reseaux li a.instagram{
+    display:block;
+    height:22px;
+    width:21px;
+    text-indent:-9999px;
+    background-image:url(../../images/instagram.png);
+    background-repeat:no-repeat;
+    background-position:left top;
+    margin:0 0 0 3px;
+    padding:0;
+}
 .reseaux li a.twitter{
     background-position:right top;
 }

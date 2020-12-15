@@ -305,6 +305,18 @@
                         padding: 0;
                         background-position: right top;
                     }
+                    &.instagram {
+                        display: block;
+                        height: 22px;
+                        width: 21px;
+                        text-indent: -9999px;
+                        background-image: url(../images/instagram.png);
+                        background-repeat: no-repeat;
+                        background-position: left top;
+                        margin: 0 0 0 3px;
+                        padding: 0;
+                        background-position: right top;
+                    }
                 }
             }
         }
