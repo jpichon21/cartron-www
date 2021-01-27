@@ -202,6 +202,17 @@ class SousMenuType extends AbstractType
                 ]
             )
             ->add(
+                'urlShop',
+                TextType::class,
+                [
+                'label' => false,
+                'required' => true,
+                'attr' => [
+                    'class' => 'inp-form'
+                    ]
+                ]
+            )
+            ->add(
                 'idCollection',
                 EntityType::class,
                 [
