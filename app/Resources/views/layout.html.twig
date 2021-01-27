@@ -62,7 +62,7 @@
           <a class="savoir-faire" href="{{ path('static_page',{'page':'Savoir-faire'}) }}">{{ "Savoir-faire"| trans }}</a>
           <a {% if app.request.get('_route') == 'collection' or  app.request.get('_route') == 'collection_produit' %}class="active"{% endif %} href="{{ path('collection') }}">{{ "Collection"| trans }}</a>
           <a {% if app.request.get('_route') == 'degustation' or app.request.get('_route') == 'degustation_produit' %}class="active"{% endif %} href="{{ path('tasting') }}">{{ "Dégustation" | trans }}</a>
-          <a href="https://www.boutique-cartron.fr/">{{ "e-commerce" | trans }}</a>
+          <a href="https://www.boutique-cartron.fr/" target="_blank">{{ "e-commerce" | trans }}</a>
 
           <div class="menu-plus">
             <a href="{{ path('contact') }}">{{ "Contactez-nous" | trans }}</a>
