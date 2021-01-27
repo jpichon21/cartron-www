@@ -206,7 +206,7 @@ class SousMenuType extends AbstractType
                 TextType::class,
                 [
                 'label' => false,
-                'required' => true,
+                'required' => false,
                 'attr' => [
                     'class' => 'inp-form'
                     ]
