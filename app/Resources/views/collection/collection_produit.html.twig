@@ -56,7 +56,7 @@ $( document ).ready(function() {
                   </div>
                 </div>
                 <div class="second_part">
-                  {% if sousMenu.urlShop %}<a class="recette" href={{sousMenu.urlShop}} target="_blank"><span></span><b>&rsaquo;</b>{{ "Acheter ce produit" | trans }}</a>{% endif %}
+                  {% if sousMenu.urlShop and app.request.locale == 'fr' %}<a class="recette" style="color: #fff!important; background: linear-gradient(#bc6518, #9a4911);" href={{sousMenu.urlShop}} target="_blank">{{ "Acheter" | trans }}</a>{% endif %}
                   <a class="recette" href="{% if app.request.locale == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}?id={{sousMenu.id}}&index={{loop.index0}}&backUrl={{sousMenu.id}}/collection_produit&backUrlHash={{loop.index0}}">{{ "Recettes" | trans }}</a>
                   <div class="note-degustation">
                     <h3>{{ "Note de dégustation" | trans }}</h3>
@@ -71,9 +71,7 @@ $( document ).ready(function() {
                     </div>
                   </div>
                   <div class="link-produits">
-                    <div class="link-produits">
-                      {% if sousMenu.urlShop %}<a href={{sousMenu.urlShop}} target="_blank"><span><b>&rsaquo;</b>{{ "Acheter ce produit" | trans }}</span></a>{% endif %}
-                    </div>
+                    {% if sousMenu.urlShop and app.request.locale == 'fr'%}<a class="buy" href={{sousMenu.urlShop}} target="_blank"><span><b style="color: #fff!important">&rsaquo;</b>{{ "Acheter" | trans }}</span></a>{% endif %}
                     <a href="{% if app.request.locale == 'en' %}{{ sousMenu.recetteEn }}{% else %}{{ sousMenu.recetteFr }}{% endif %}"><span><b>&rsaquo;</b>{{ "Recettes" | trans }}</span></a>
                     <a class="degustation"><span><b>&rsaquo;</b>{{ "Note de dégustation" | trans }}</span></a>
                     <a class="elaboration"><span><b>&rsaquo;</b>{{ "Elaboration" | trans }}</span></a>

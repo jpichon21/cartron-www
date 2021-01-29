@@ -3802,6 +3802,19 @@ a {
     display: none;
   }
 }
+
+#collection-produits .sousMenus .sousMenu .description .link-produits .buy{
+  height: 29px;
+  float: left;
+  font-size: 13px;
+  font-family: "Georgia";
+  margin-right: 2px;
+  background-image: none;
+  background: linear-gradient(#bc6518, #9a4911);
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
 #collection-produits .sousMenus .sousMenu .description .link-produits a {
   height: 29px;
   float: left;
@@ -3812,6 +3825,7 @@ a {
   background-repeat: no-repeat;
   background-position: left top;
 }
+
 #collection-produits .sousMenus .sousMenu .description .link-produits a span {
   padding: 0 10px 0 25px;
   height: 29px;
