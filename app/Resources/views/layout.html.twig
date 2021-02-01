@@ -62,6 +62,8 @@
           <a class="savoir-faire" href="{{ path('static_page',{'page':'Savoir-faire'}) }}">{{ "Savoir-faire"| trans }}</a>
           <a {% if app.request.get('_route') == 'collection' or  app.request.get('_route') == 'collection_produit' %}class="active"{% endif %} href="{{ path('collection') }}">{{ "Collection"| trans }}</a>
           <a {% if app.request.get('_route') == 'degustation' or app.request.get('_route') == 'degustation_produit' %}class="active"{% endif %} href="{{ path('tasting') }}">{{ "Dégustation" | trans }}</a>
+          {% if app.request.locale == 'fr'%}<a href="https://www.boutique-cartron.fr/" target="_blank">{{ "e-boutique" | trans }}</a>{% endif %}
+
           <div class="menu-plus">
             <a href="{{ path('contact') }}">{{ "Contactez-nous" | trans }}</a>
             <a href="#mentions-legales" class="mentions-legales">{{ "Mentions légales" | trans }}</a>

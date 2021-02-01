@@ -179,6 +179,13 @@ class SousMenu
     private $idCollection;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="urlShop", type="string", length=255, nullable=true)
+     */
+    private $urlShop;
+
+    /**
      * Set titre
      *
      * @param string $titre
@@ -739,5 +746,28 @@ class SousMenu
     public function getRecetteEn()
     {
         return $this->recetteEn;
+    }
+
+    /**
+     * Set urlShop
+     *
+     * @param string $urlShop
+     * @return SousMenu
+     */
+    public function setUrlShop($urlShop)
+    {
+        $this->urlShop = $urlShop;
+    
+        return $this;
+    }
+
+    /**
+     * Get urlShop
+     *
+     * @return string
+     */
+    public function getUrlShop()
+    {
+        return $this->urlShop;
     }
 }

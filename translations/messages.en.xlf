@@ -696,6 +696,18 @@ After graduating from HEC (Ecole des Hautes Etudes Commerciales) and a career of
         <source>Identifiant</source>
         <target>Login</target>
     </trans-unit>
+    <trans-unit id="1545">
+      <source>e-boutique</source>
+      <target>e-shop</target>
+    </trans-unit>
+    <trans-unit id="1546">
+      <source>Acheter</source>
+      <target>Buy</target>
+    </trans-unit>
+    <trans-unit id="1547">
+        <source>e-commerce</source>
+        <target>e-shop</target>
+    </trans-unit>
     <trans-unit id="user.validation.password.min">
         <source>user.validation.password.min</source>
         <target>Your password must contain at least 8 characters.</target>
