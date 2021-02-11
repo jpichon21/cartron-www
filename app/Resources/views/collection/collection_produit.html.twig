@@ -41,7 +41,7 @@ $( document ).ready(function() {
       <div class="sousMenus owl-carousel">
         {% for sousMenu in sousMenusCollection %}
             {% if sousMenu.idCollection.id == idCollection %}
-            <div class="sousMenu" data-hash="{{ loop.index0 }}">
+            <div class="sousMenu" data-hash="{{ loop.index0 }}" data-dot='<img src="{{ asset('upload/'~sousMenu.image) }}" alt="{{ sousMenu.titreFr }}">'>
               <div class="visuel">
                 <img src="{{ asset('upload/'~sousMenu.image) }}" alt="{{ sousMenu.titreFr }}">
               </div>
@@ -91,6 +91,7 @@ $( document ).ready(function() {
     items: 1,
     nav: true,
     loop: true,
+    dotsData: true,
     URLhashListener: true,
     startPosition: getAnchor(),
     navText: [
@@ -99,7 +100,11 @@ $( document ).ready(function() {
     ]
   });
 
-  var owl = $('.menus');
+  $('.owl-dot').click(function() {
+    owl.trigger('to.owl.carousel', [$(this).index(), 1000]);
+})
+
+  var owl = $('.sousMenus');
   var barsElements = [];
   var barsObjects = [];
 
@@ -190,6 +195,18 @@ $( document ).ready(function() {
 </script>
 
 <style>
+
+    #collection-produits .owl-carousel .owl-dots .owl-dot img{
+      display: none;
+      width: 100px;
+      position: absolute;
+      right: -19px;
+      bottom: 10px;
+    }
+
+    #collection-produits .owl-carousel .owl-dots .owl-dot:hover img{
+      display: block;
+    }
 
     .simplebar-scrollbar:before {
       background: #{{ defaultColor }};
