@@ -41,7 +41,8 @@ $( document ).ready(function() {
       <div class="sousMenus owl-carousel">
         {% for sousMenu in sousMenusCollection %}
             {% if sousMenu.idCollection.id == idCollection %}
-            <div class="sousMenu" data-hash="{{ loop.index0 }}" data-dot='<img src="{{ asset('upload/'~sousMenu.image) }}" alt="{{ sousMenu.titreFr }}">'>
+            <div class="sousMenu" data-hash="{{ loop.index0 }}" data-dot='<div class="miniature"><img src="{{ asset('upload/'~sousMenu.image) }}" alt="{{ sousMenu.titreFr }}">
+              <p>{% if app.request.locale == 'en' %}{{ sousMenu.titreEn }}{% else %}{{ sousMenu.titreFr }}{% endif %}</p></div> '>
               <div class="visuel">
                 <img src="{{ asset('upload/'~sousMenu.image) }}" alt="{{ sousMenu.titreFr }}">
               </div>
@@ -198,13 +199,29 @@ $( document ).ready(function() {
 
     #collection-produits .owl-carousel .owl-dots .owl-dot img{
       display: none;
-      width: 100px;
+      width: 130px;
       position: absolute;
-      right: -19px;
-      bottom: 10px;
+      right: 52px;
+      bottom: 15px;
     }
 
-    #collection-produits .owl-carousel .owl-dots .owl-dot:hover img{
+    #collection-produits .owl-carousel .owl-dots .owl-dot .miniature{
+      height: 100px;
+      width: 150px;
+      position: absolute;
+      left: -70px;
+      bottom: 16px;
+    }
+
+    #collection-produits .owl-carousel .owl-dots .owl-dot p{
+      display: none;
+      padding-top: 80px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    #collection-produits .owl-carousel .owl-dots .owl-dot:hover img,
+    #collection-produits .owl-carousel .owl-dots .owl-dot:hover p{
       display: block;
     }
 
