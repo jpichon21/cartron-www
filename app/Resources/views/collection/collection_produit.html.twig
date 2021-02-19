@@ -92,6 +92,8 @@ $( document ).ready(function() {
     items: 1,
     nav: true,
     loop: true,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
     dotsData: true,
     URLhashListener: true,
     startPosition: getAnchor(),
@@ -120,6 +122,8 @@ $( document ).ready(function() {
     autoWidth: true,
     center: true,
     loop: true,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
     mouseDrag: false,
     touchDrag: false
   };
@@ -196,6 +200,13 @@ $( document ).ready(function() {
 </script>
 
 <style>
+      /* to remove slide effect  css */
+    .animated  {
+      -webkit-animation-duration : 0s  !important;
+      animation-duration : 0s  !important;
+      -webkit-animation-fill-mode : both  !important;
+      animation-fill-mode : both  !important;
+    }  
 
     #collection-produits .owl-carousel .owl-dots .owl-dot img{
       display: none;
@@ -206,6 +217,7 @@ $( document ).ready(function() {
     }
 
     #collection-produits .owl-carousel .owl-dots .owl-dot .miniature{
+      display: none;
       height: 100px;
       width: 400px;
       position: absolute;
@@ -219,7 +231,8 @@ $( document ).ready(function() {
       text-align: center;
       font-size: 13px;
     }
-
+    
+    #collection-produits .owl-carousel .owl-dots .owl-dot:hover .miniature,
     #collection-produits .owl-carousel .owl-dots .owl-dot:hover img,
     #collection-produits .owl-carousel .owl-dots .owl-dot:hover p{
       display: block;
