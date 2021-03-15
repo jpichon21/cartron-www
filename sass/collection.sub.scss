@@ -1,3 +1,31 @@
+.overlay-news {
+    .owl-dots {
+        margin-top: -30px;
+        margin: -20px 145px;
+        width: max-content; 
+        padding-bottom: 45px;
+        @include media('<large') {
+            display: none;
+        }
+        .owl-dot {
+            position: relative;
+            width: 3px;
+            height: 3px;
+            float: left;
+            margin: 7px;
+            border-radius: 100%;
+            background-color: #303030;
+            border: 4px #303030 solid;
+            box-sizing: content-box;
+            &.active {
+                background-color: #ffffff;
+                border-color: #36424a;
+                box-shadow: 0 0 0 7px #0f222d;
+            }
+        }
+    }
+}
+
 #collection-produits {
     .main {
         padding: 0;

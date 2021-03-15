@@ -1,3 +1,5 @@
+
+
 {% extends "layout.html.twig" %}
 {% block title %}JOSEPH CARTRON{% endblock %}
 {% block body %}
@@ -29,6 +31,13 @@
                 0: { nav: true },
                 768: { nav: false }
             }
+        });
+
+        $('[id^="carousel-"]').owlCarousel({
+            items: 1,
+            dots: true,
+            margin: 20,
+            nav: false
         });
 
     });
@@ -70,7 +79,15 @@ $( document ).ready(function() {
                 </div>
             </div>
             <div class="news-home">
-                <a href="#" class="lanch_news" ><img width="109" height="59" src="{{ asset('upload/'~articles.0.image) }}" alt="" /></a>
+                <a href="#" class="lanch_news" ></a>              
+                {% if articles.0.type == "VIDEO" %}
+                    <img width="109" height="59" src="{{ asset(articles.0.miniatureVideo) }}" alt="" />      
+                {% elseif articles.0.type != NULL and articles.0.type != "VIDEO" %}
+                    <img width="109" height="59" src="{{ asset(articles.0.image) }}" alt="" />
+                {% else %}
+                    <img width="109" height="59" src="{{ asset('upload/'~articles.0.image) }}" alt="" />
+                {% endif %}
+                </a>
                 <div class="txt-video-news-home">
                     <h2><a href="#" class="lanch_news"><span id="s_news">{{ "NEWS" | trans }} / </span>{% if(app.request.locale =='en') %} {{ articles.0.titreEn }} {% else %} {{ articles.0.titleFr }} {% endif %}</a></h2>
                     <p>{% if(app.request.locale =='en') %} {{ articles.0.descEn|striptags|truncate(100, true, '...')|raw }} {% else %} {{ articles.0.descFr|striptags|truncate(100, true, '...')|raw }} {% endif %}</p>
@@ -81,20 +98,62 @@ $( document ).ready(function() {
     <div class="overlay-news overlay">
         <div class="pop-news-content">
             <span class="close"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg></span>
-            <ul id="liste-news-full" class="owl-carousel">
+            <div id="liste-news-full" class="owl-carousel">
                 {% for article in articles %}
-                    <li>
-                        <img src="{{ asset('upload/'~article.image) }}" />
-                        {% if(app.request.locale =='en') %} {{ article.descEn|raw }} {% else %} {{ article.descFr|raw }} {% endif %}
-                        <div class="share"><a class="facebook" href="">facebook</a><a class="twitter" href="">twitter</a><br clear="all"></div>
-                    </li>
+                    {% if article.type != "CAROUSEL_ALBUM" and article.instagram == 1 %}
+                        <div class="item">
+                            <div class="instagram">
+                                {% if article.type == "VIDEO" %}
+                                    <div class="visuel"> <video controls width= "100%" src="{{ asset(article.image)~'&autoplay=false' }}" /></video> </div>                      
+                                {% elseif article.type == "IMAGE" %}
+                                    <div class="visuel"><img  width= "100%" src="{{ asset(article.image) }}" /></div>
+                                {% endif %}
+                                <div class="description">
+                                    {% if(app.request.locale =='en') %} <p>{{ article.descEn|nl2br }}</p> {% else %} <p>{{ article.descFr|nl2br }}</p> {% endif %}
+                                </div>
+                                <div class="share"><a class="facebook" href="">facebook</a><a href="https://www.instagram.com/joseph.cartron/" class="instagram" title="instagram">Instagram</a><br clear="all"></div>
+
+                            </div>
+                        </div>
+                    {% elseif article.type == "CAROUSEL_ALBUM" %}
+                        <div id="carousel-{{ random(0, 10000) }}" class="owl-carousel owl-loaded owl-drag">
+                            
+                            {% for slider in article.instagramSlider %}
+                                <div class="item">
+                                    <div class="instagram">
+                                        {% if slider.type == "VIDEO" %}
+                                        <div class="visuel"> <video controls="true" width= "100%" src="{{ asset(slider.url)~'&autoplay=false' }}" /></video> </div>          
+                                        {% else %}
+                                        <div class="visuel">  <img  width= "100%" src="{{ asset(slider.url) }}" /> </div>
+                                        {% endif %}
+                                        <div class="description">
+                                            {% if(app.request.locale =='en') %} <p>{{ article.descEn|nl2br }}</p> {% else %} <p>{{ article.descFr|nl2br }}|nl2br</p> {% endif %}
+                                        </div>
+                                        <div class="share"><a class="facebook" href="https://www.facebook.com/jcartron">facebook</a><a href="https://www.instagram.com/joseph.cartron/" class="instagram" title="instagram">Instagram</a><br clear="all"></div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="item">
+                            <img src="{{ asset('upload/'~article.image) }}" />
+                            {% if(app.request.locale =='en') %} {{ article.descEn|raw }} {% else %} {{ article.descFr|raw }} {% endif %}
+                            <div class="share"><a class="facebook" href="https://www.facebook.com/jcartron">facebook</a><a href="https://www.instagram.com/joseph.cartron/" class="instagram" title="instagram">Instagram</a><br clear="all"></div>
+                        </div>
+                    {% endif %}
                 {% endfor %}
-            </ul>
+            </div>
         </div>
         <ul id="liste-news" class="owl-carousel">
             {% for article in articles %}
                 <li class="news_hp" id="news_hp_{{ article.id }}" style=" cursor: pointer">
-                    <img src="{{ asset('upload/'~article.image) }}" />
+                    {% if article.type == "VIDEO" %}
+                        <img width="109" height="59" src="{{ asset(article.miniatureVideo) }}" alt="" />                         
+                    {% elseif article.type != NULL and article.type != "VIDEO" %}
+                        <img src="{{ asset(article.image) }}" />
+                    {% else %}
+                        <img src="{{ asset('upload/'~article.image) }}" />
+                    {% endif %}
                     <h3>{% if(app.request.locale =='en') %} {{ article.titreEn|raw }} {% else %} {{ article.titleFr|raw }} {% endif %}</h3>
                 </li>
             {% endfor %}
@@ -114,4 +173,36 @@ $( document ).ready(function() {
             </video>
         </div>
     </div>
+
+
+    <style>
+        @font-face {
+            font-family: 'sanFrancisco';
+            src: url('../../../../web/site/css/fonts/sansFrancisco.ttf');
+        }
+        .instagram {
+            height: 335px;
+        }
+
+        .instagram .visuel {
+            float: left;
+            width: 335px;
+        }
+    
+        .instagram .description {
+            float: left;
+            width: 225px;
+            background: white;       
+            height: 100%; 
+        }
+
+        .instagram .description p {
+            color: black;
+            padding: 0 13px 13px 13px;
+            font-family: 'sanFrancisco';
+        }
+    </style>
+
 {% endblock %}
+
+
