@@ -34,7 +34,7 @@ class OneShotInstagramCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->logger->info('Starting porting one shot instagram post');
+        $this->logger->info('Starting importing one shot instagram post');
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, self::API_ENDPOINT_INSTAGRAM);
@@ -81,7 +81,7 @@ class OneShotInstagramCommand extends Command
         
 
         $this->managerRegistry->getManager()->flush();
-        $this->logger->info('End porting one shot instagram post');
+        $this->logger->info('End importing one shot instagram post');
         $output->writeln('done.');
         }
     }   

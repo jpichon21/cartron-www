@@ -34,7 +34,7 @@ class InstagramCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->logger->info('Starting porting instagram post');
+        $this->logger->info('Starting importing instagram post');
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, self::API_ENDPOINT_INSTAGRAM);
@@ -83,7 +83,7 @@ class InstagramCommand extends Command
         }
 
         $this->managerRegistry->getManager()->flush();
-        $this->logger->info('End porting instagram post');
+        $this->logger->info('End importing instagram post');
         $output->writeln('done.');
         }
 }
