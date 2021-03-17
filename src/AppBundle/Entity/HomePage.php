@@ -52,9 +52,44 @@ class HomePage
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=300, nullable=true)
+     * @ORM\Column(name="image", type="text", nullable=true)
      */
     private $image;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="instagram", type="boolean", nullable=false, options={"default"=0})
+     */
+    private $instagram = 0;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(type="string", length=100 , nullable=true)
+     */
+    private $instagramId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="text", nullable=true)
+     */
+    private $type;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="miniatureVideo", type="text", nullable=true)
+     */
+    private $miniatureVideo;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="instagramSlider", type="array", nullable=true)
+     */
+    private $instagramSlider;
 
     /**
      * Set titleFr
@@ -170,6 +205,122 @@ class HomePage
     {
         return $this->image;
     }
+
+    /**
+     * Set instagram
+     *
+     * @param bool $instagram
+     * @return HomePage
+     */
+    public function setInstagram($instagram)
+    {
+        $this->instagram = $instagram;
+    
+        return $this;
+    }
+
+    /**
+     * Is instagram
+     *
+     * @return bool
+     */
+    public function isInstagram()
+    {
+        return $this->instagram;
+    }
+
+    /**
+     * Set instagramId
+     *
+     * @param bool $instagramId
+     * @return HomePage
+     */
+    public function setInstagramId($instagramId)
+    {
+        $this->instagramId = $instagramId;
+    
+        return $this;
+    }
+
+    /**
+     * Get instagramId
+     *
+     * @return bool
+     */
+    public function getInstagramId()
+    {
+        return $this->instagramId;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     * @return HomePage
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set miniature Video
+     *
+     * @param string $miniatureVideo
+     * @return HomePage
+     */
+    public function setMiniatureVideo($miniatureVideo)
+    {
+        $this->miniatureVideo = $miniatureVideo;
+    
+        return $this;
+    }
+
+    /**
+     * Get miniature video
+     *
+     * @return string
+     */
+    public function getMiniatureVideo()
+    {
+        return $this->miniatureVideo;
+    }
+
+     /**
+     * Set instagramSlider
+     *
+     * @param string $instagramSlider
+     * @return HomePage
+     */
+    public function setInstagramSlider($instagramSlider)
+    {
+        $this->instagramSlider = $instagramSlider;
+    
+        return $this;
+    }
+
+    /**
+     * Get instagramSlider
+     *
+     * @return string
+     */
+    public function getInstagramSlider()
+    {
+        return $this->instagramSlider;
+    }
+
 
     /**
      * Get id
