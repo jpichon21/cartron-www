@@ -37,9 +37,13 @@
             items: 1,
             dots: true,
             margin: 20,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn',
+            mouseDrag: false,
+            touchDrag: false,
             nav: false
         });
-
+        
     });
 </script>
 <script>
@@ -127,7 +131,7 @@ $( document ).ready(function() {
                                         <div class="visuel">  <img  width= "100%" src="{{ asset(slider.url) }}" /> </div>
                                         {% endif %}
                                         <div class="description">
-                                            {% if(app.request.locale =='en') %} <p>{{ article.descEn|nl2br }}</p> {% else %} <p>{{ article.descFr|nl2br }}|nl2br</p> {% endif %}
+                                            {% if(app.request.locale =='en') %} <p>{{ article.descEn|nl2br }}</p> {% else %} <p>{{ article.descFr|nl2br }}</p> {% endif %}
                                         </div>
                                         <div class="share"><a class="facebook" href="https://www.facebook.com/jcartron">facebook</a><a href="https://www.instagram.com/joseph.cartron/" class="instagram" title="instagram">Instagram</a><br clear="all"></div>
                                     </div>
@@ -186,17 +190,17 @@ $( document ).ready(function() {
 
         .instagram .visuel {
             float: left;
-            width: 335px;
+            width: 395px;
         }
     
-        .instagram .description {
+         .description {
             float: left;
             width: 225px;
             background: white;       
-            height: 100%; 
+            height: 395px; 
         }
 
-        .instagram .description p {
+        .description p {
             color: black;
             padding: 0 13px 13px 13px;
             font-family: 'sanFrancisco';
