@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * HomePage
  *
- * @ORM\Table(name="home_page")
+ * @ORM\Table(name="home_page", options={"collate"="utf8mb4_unicode_ci", "charset"="utf8mb4"})
  * @ORM\Entity(repositoryClass="AppBundle\Repository\HomePageRepository")
  */
 class HomePage
