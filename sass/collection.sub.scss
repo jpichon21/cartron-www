@@ -4,9 +4,6 @@
         margin: -20px 145px;
         width: max-content; 
         padding-bottom: 45px;
-        @include media('<large') {
-            display: none;
-        }
         .owl-dot {
             position: relative;
             width: 3px;
